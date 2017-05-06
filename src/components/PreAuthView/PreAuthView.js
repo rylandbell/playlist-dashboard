@@ -12,8 +12,6 @@ const authURI = 'https://accounts.spotify.com/authorize?'
   + '&scope=' + scopes.join('%20')
   + '&show-dialog=true';
 
-console.log(authURI);
-
 class PreAuthView extends Component {
   handleClick() {
     window.location = authURI;

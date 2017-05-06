@@ -10,12 +10,41 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 //create a store from the above reducer, then subscribe a React render function to it
 const store = createStore(reducers);
+dispatchAccessToken();
 store.subscribe(render);
 render();
 
 function render() {
   ReactDOM.render(
-    <App />,
+    <App 
+      reduxState={store.getState()} 
+    />,
     document.getElementById('root')
   );
+}
+
+//helper functions:
+function getHashParams() {
+  var hashParams = {};
+  var e, r = /([^&;=]+)=?([^&;]*)/g,
+      q = window.location.hash.substring(1);
+  e = r.exec(q);
+  while ( e ) {
+     hashParams[e[1]] = decodeURIComponent(e[2]);
+     e = r.exec(q)
+  }
+  return hashParams;
+}
+
+function dispatchAccessToken() {
+  const params = getHashParams();
+  let data = "";
+  if (params && params.access_token) {
+    data = params.access_token;
+  }
+  const action = {
+    type: 'SET_ACCESS_TOKEN',
+    data: data
+  }
+  store.dispatch(action);
 }
