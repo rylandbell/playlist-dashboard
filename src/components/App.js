@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PreAuthView from './PreAuthView/PreAuthView';
-import ShowListsView from './ShowListsView/ShowListsView';
+import SelectPlaylistsView from './SelectPlaylistsView/SelectPlaylistsView';
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-md-6 col-md-offset-3 App">
-            {this.props.reduxState.accessToken ? <ShowListsView {...this.props} /> : <PreAuthView /> }
+            {this.props.reduxState.accessToken ? <SelectPlaylistsView {...this.props} /> : <PreAuthView /> }
           </div>
         </div>
       </div>
