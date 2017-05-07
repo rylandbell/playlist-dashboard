@@ -12,7 +12,7 @@ class SelectPlaylistsTable extends Component {
         <table className="table">
           <tbody>
             {this.props.reduxState.playlists.map(list => 
-              <SelectPlaylistsRow key={list.id} name={list.name} />
+              <SelectPlaylistsRow key={list.id} playlist={list} {...this.props} />
             )}
           </tbody>
         </table>

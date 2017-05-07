@@ -3,10 +3,6 @@ import SelectPlaylistsTable from './SelectPlaylistsTable';
 import './SelectPlaylistsView.css';
 
 class SelectPlaylistsView extends Component {
-  componentDidMount() {
-    this.props.getPlaylists();
-  }
-
   render() {
     return (
       <div className="select-playlists__view">

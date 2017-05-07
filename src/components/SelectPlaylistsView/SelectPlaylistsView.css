@@ -1,10 +1,23 @@
-.glyphicon-plus {
-  cursor: pointer;
-}
-
 .select-playlists__table {
   max-height: 70vh;
   overflow-y: scroll;
   background-color: white;
   margin-bottom: 20px;
+}
+
+.select-playlists__table > table {
+  margin-bottom: 0;
+}
+
+.select-playlists__row {
+  cursor: pointer;
+}
+
+.select-playlists__row--active {
+  background-color: #cccccc;
+  font-weight: bold;
+}
+
+.select-playlists__table > table tr:first-of-type > td {
+  border-top-width: 0;
 }

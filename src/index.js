@@ -30,13 +30,22 @@ function render() {
           fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
             .then(res => res.json())
             .then(res => {
-              console.log(res);
+              console.log('fetched playlists: ', res.items);
               store.dispatch({
                 type: 'ADD_PLAYLISTS_DATA',
                 data: res.items
               });
             })
             .catch(console.log)
+        }
+      }
+      handlePlaylistSelect={
+        function(id) {
+          const action = {
+            type: 'TOGGLE_PLAYLIST_SELECT',
+            id: id
+          }
+          store.dispatch(action);
         }
       }
     />,
