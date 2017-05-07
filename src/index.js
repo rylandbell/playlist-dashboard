@@ -48,6 +48,15 @@ function render() {
           store.dispatch(action);
         }
       }
+      handleViewChange={
+        function(view) {
+          const action = {
+            type: 'CHANGE_VIEW',
+            view: view
+          }
+          store.dispatch(action);
+        }
+      }
     />,
     document.getElementById('root')
   );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PreAuthView from './PreAuthView/PreAuthView';
 import SelectPlaylistsView from './SelectPlaylistsView/SelectPlaylistsView';
+import SelectFiltersView from './SelectFiltersView/SelectFiltersView';
 
 class App extends Component {
   render() {
@@ -10,7 +11,8 @@ class App extends Component {
     //use enum instead of switch statement to select visible view:
     const viewEnum = {
       preAuth: <PreAuthView />,
-      selectPlaylist: <SelectPlaylistsView {...this.props} />
+      selectPlaylist: <SelectPlaylistsView {...this.props} />,
+      selectFilters: <SelectFiltersView {...this.props} />
     }
     return (
       <div className="container">
