@@ -5,11 +5,18 @@ import SelectPlaylistsView from './SelectPlaylistsView/SelectPlaylistsView';
 
 class App extends Component {
   render() {
+    const activeView = this.props.reduxState.activeView;
+
+    //use enum instead of switch statement to select visible view:
+    const viewEnum = {
+      preAuth: <PreAuthView />,
+      selectPlaylist: <SelectPlaylistsView {...this.props} />
+    }
     return (
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-md-6 col-md-offset-3 App">
-            {this.props.reduxState.accessToken ? <SelectPlaylistsView {...this.props} /> : <PreAuthView /> }
+            {viewEnum[activeView]}
           </div>
         </div>
       </div>
