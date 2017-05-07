@@ -6,8 +6,12 @@ import ShowListsView from './ShowListsView/ShowListsView';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        {this.props.reduxState.accessToken ? <ShowListsView /> : <PreAuthView /> }
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12 col-md-6 col-md-offset-3 App">
+            {this.props.reduxState.accessToken ? <ShowListsView {...this.props} /> : <PreAuthView /> }
+          </div>
+        </div>
       </div>
     );
   }

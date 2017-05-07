@@ -17,7 +17,27 @@ render();
 function render() {
   ReactDOM.render(
     <App 
-      reduxState={store.getState()} 
+      reduxState={store.getState()}
+      getPlaylists={
+        function() {
+          const requestOptions = {
+            method: 'GET',
+            headers: {
+              Authorization: 'Bearer ' + store.getState().accessToken
+            },
+          }
+          fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
+            .then(res => res.json())
+            .then(res => {
+              console.log(res);
+              store.dispatch({
+                type: 'ADD_PLAYLISTS_DATA',
+                data: res.items
+              });
+            })
+            .catch(console.log)
+        }
+      }
     />,
     document.getElementById('root')
   );

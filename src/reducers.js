@@ -9,8 +9,18 @@ const accessToken = (state = "", action) => {
   }
 }
 
+const playlists = (state = [], action) => {
+  switch (action.type){
+    case 'ADD_PLAYLISTS_DATA':
+      return action.data.slice();
+    default:
+      return state;
+  }
+}
+
 const app = combineReducers({
-  accessToken
+  accessToken,
+  playlists
 });
 
 // const app = (state = false, action) => {
