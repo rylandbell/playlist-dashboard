@@ -6,6 +6,10 @@ class ShowListsView extends Component {
     // window.location = authURI;
   }
 
+  componentDidMount() {
+    console.log('mount up!');
+  }
+
   render() {
     return (
       <div className="ShowListsView">
