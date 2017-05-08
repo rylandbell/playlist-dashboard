@@ -38,7 +38,7 @@ const activeView = (state = "preAuth", action) => {
       return action.view;
     case 'SET_ACCESS_TOKEN':
       const isToken = action.data && action.data.length > 0;
-      const view = isToken ? "selectPlaylists" : "preAuth";
+      const view = isToken ? "auth" : "preAuth";
       return view;
     default:
       return state;

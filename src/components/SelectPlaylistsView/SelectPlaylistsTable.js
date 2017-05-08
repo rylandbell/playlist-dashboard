@@ -11,7 +11,7 @@ class SelectPlaylistsTable extends Component {
   render() {
     return (
       <div className="select-playlists__table">
-        <table className="table">
+        <table className="table table-condensed table-hover">
           <tbody>
             {this.props.reduxState.playlists.map(list => 
               <SelectPlaylistsRow key={list.id} playlist={list} {...this.props} />

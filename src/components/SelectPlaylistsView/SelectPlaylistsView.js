@@ -15,9 +15,9 @@ class SelectPlaylistsView extends Component {
   render() {
     return (
       <div className="select-playlists__view">
-        <h3 className="text-center">Choose playlists to filter:</h3>
+        <h4 className="text-center">Choose a playlist:</h4>
         <SelectPlaylistsTable {...this.props} />
-        <button onClick={this.onClick} className="btn btn-primary center-block">Next: Choose Filters</button>
+        {/*<button onClick={this.onClick} className="btn btn-primary center-block">Next: Choose Filters</button>*/}
       </div>
     );
   }
