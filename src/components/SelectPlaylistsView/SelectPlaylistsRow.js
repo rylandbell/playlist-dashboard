@@ -12,7 +12,8 @@ class SelectPlaylistsRow extends Component {
 
   render() {
     const playlist = this.props.playlist;
-    const trClassList = playlist.selected ? 'select-playlists__row select-playlists__row--active' : 'select-playlists__row'
+    const selectedPlaylist = this.props.reduxState.selectedPlaylist;
+    const trClassList = playlist.id === selectedPlaylist ? 'select-playlists__row select-playlists__row--active' : 'select-playlists__row'
     const spanClassList = playlist.selected ? 'glyphicon glyphicon-ok' : 'glyphicon';
 
     return (

@@ -44,7 +44,7 @@ function render() {
       handlePlaylistSelect={
         function(id) {
           const action = {
-            type: 'TOGGLE_PLAYLIST_SELECT',
+            type: 'SELECT_PLAYLIST',
             id: id
           }
           store.dispatch(action);

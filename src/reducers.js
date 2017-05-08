@@ -13,11 +13,20 @@ const playlists = (state = [], action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
       return action.data.slice();
-    case 'TOGGLE_PLAYLIST_SELECT':
-      const playlists = state.slice();
-      const chosen = playlists.find(playlist => playlist.id === action.id);
-      chosen.selected ? chosen.selected = false : chosen.selected = true;
-      return playlists;
+    // case 'TOGGLE_PLAYLIST_SELECT':
+    //   const playlists = state.slice();
+    //   const chosen = playlists.find(playlist => playlist.id === action.id);
+    //   chosen.selected ? chosen.selected = false : chosen.selected = true;
+    //   return playlists;
+    default:
+      return state;
+  }
+}
+
+const selectedPlaylist = (state = null, action) => {
+  switch(action.type) {
+    case 'SELECT_PLAYLIST':
+      return action.id;
     default:
       return state;
   }
@@ -71,6 +80,7 @@ const filters = combineReducers({
 const app = combineReducers({
   accessToken,
   playlists,
+  selectedPlaylist,
   activeView,
   receivedPlaylists,
   filters
