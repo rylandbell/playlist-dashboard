@@ -42,10 +42,10 @@ function render() {
         }
       }
       handlePlaylistSelect={
-        function(id) {
+        function(data) {
           const action = {
             type: 'SELECT_PLAYLIST',
-            id: id
+            data: data
           }
           store.dispatch(action);
         }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SelectPlaylistsView from '../SelectPlaylistsView/SelectPlaylistsView';
-import SelectFiltersView from '../SelectFiltersView/SelectFiltersView';
+import SelectPlaylistsPane from '../SelectPlaylistsPane/SelectPlaylistsPane';
+import SelectFiltersPane from '../SelectFiltersPane/SelectFiltersPane';
 import './AuthView.css';
 
 class AuthView extends Component {
@@ -9,10 +9,10 @@ class AuthView extends Component {
       <div>
         <div className="col-xs-12 col-md-4">
           <row>
-            <SelectPlaylistsView {...this.props} />
-          </row>
-          <row>
-            <SelectFiltersView {...this.props} />
+            {this.props.reduxState.selectedPlaylist ?
+              <SelectFiltersPane {...this.props} />
+              : <SelectPlaylistsPane {...this.props} />
+            }
           </row>
         </div>
         <div className="col-xs-12 col-md-8">

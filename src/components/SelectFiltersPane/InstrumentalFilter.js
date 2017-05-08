@@ -17,9 +17,9 @@ class InstrumentalFilter extends Component {
         <p>Instrumentals:</p>
         <div className="text-center">
           <div onClick={this.onClick} className="btn-group" role="group" aria-label="...">
-            <button type="button" className={"btn btn-default " + (selectedValue==="noInstrumentals" ? "active" : "")} value="noInstrumentals">No Instrumentals</button>
-            <button type="button" className={"btn btn-default " + (selectedValue==="noFilter" ? "active" : "")} value="noFilter">Don't Filter</button>
-            <button type="button" className={"btn btn-default " + (selectedValue==="onlyInstrumentals" ? "active" : "")} value="onlyInstrumentals">Only Instrumentals</button>
+            <button type="button" className={"btn btn-default btn-sm " + (selectedValue==="noInstrumentals" ? "active" : "")} value="noInstrumentals">No Instrumentals</button>
+            <button type="button" className={"btn btn-default btn-sm " + (selectedValue==="noFilter" ? "active" : "")} value="noFilter">Don't Filter</button>
+            <button type="button" className={"btn btn-default btn-sm " + (selectedValue==="onlyInstrumentals" ? "active" : "")} value="onlyInstrumentals">Only Instrumentals</button>
           </div>
         </div>
       </div>

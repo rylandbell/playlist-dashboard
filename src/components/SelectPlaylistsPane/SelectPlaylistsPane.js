@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SelectPlaylistsTable from './SelectPlaylistsTable';
-import './SelectPlaylistsView.css';
+import './SelectPlaylistsPane.css';
 
 class SelectPlaylistsView extends Component {
   constructor(props) {

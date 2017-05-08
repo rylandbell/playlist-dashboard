@@ -26,7 +26,7 @@ const playlists = (state = [], action) => {
 const selectedPlaylist = (state = null, action) => {
   switch(action.type) {
     case 'SELECT_PLAYLIST':
-      return action.id;
+      return action.data;
     default:
       return state;
   }
