@@ -6,7 +6,6 @@
   width: 98%;
   height: 346px;
   overflow-y: scroll;
-  background-color: white;
   margin-bottom: 20px;
 }
 
@@ -14,13 +13,8 @@
   margin-bottom: 0;
 }
 
-.tracks__table p:first-of-type {
-  margin-bottom: -4px;
-}
-
-.tracks__table p:nth-of-type(2),
 .tracks__table small {
-  color: #888;
+  color: #444;
 }
 
 .tracks__table .table td {

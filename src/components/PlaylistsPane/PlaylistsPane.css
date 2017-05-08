@@ -1,7 +1,6 @@
 .playlists__table {
   max-height: 690px;
   overflow-y: scroll;
-  background-color: white;
   margin-bottom: 20px;
 }
 
@@ -11,11 +10,6 @@
 
 .playlists__row {
   cursor: pointer;
-}
-
-.playlists__row--active {
-  background-color: #cccccc;
-  font-weight: bold;
 }
 
 .playlists__table > table tr:first-of-type > td {

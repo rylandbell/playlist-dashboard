@@ -2,8 +2,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  /*background-image: url('/maxime-bhm-110035.jpg');*/
+  background-size: cover;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
   outline-width: 0;
+}
+
+.table {
+  background-color: #7D8C76;
+}
+
+.table.table-condensed td,
+.table.table-condensed th {
+  font-weight: bold;
+  border-color: #555;
+}
+
+.table * {
+  border-color: #555;
 }

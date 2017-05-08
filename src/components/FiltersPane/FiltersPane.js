@@ -6,26 +6,28 @@ import FilterInput from './FilterInput';
 import './FiltersPane.css';
 import 'rc-slider/assets/index.css';
 
-const filters = [
-  {
-    name: 'Danceability',
-    min: 0,
-    max: 1
-  },
-  {
-    name: 'Instrumentalness',
-    min: 0,
-    max: 1
-  },
-  {
-    name: 'Valence',
-    min: 0,
-    max: 1
-  },
-]
+
 
 class FiltersPane extends Component {
   render() {
+    const filters = [
+      {
+        name: 'Danceability',
+        min: 0,
+        max: 1
+      },
+      {
+        name: 'Instrumentalness',
+        min: 0,
+        max: 1
+      },
+      {
+        name: 'Valence',
+        min: 0,
+        max: 1
+      },
+    ];
+
     return (
       <div className="filters__pane">
         <div className="filters__filters">
