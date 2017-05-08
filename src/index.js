@@ -43,11 +43,37 @@ function render() {
       }
       handlePlaylistSelect={
         function(data) {
+          //dispatch name of selected playlist to Redux store:
           const action = {
             type: 'SELECT_PLAYLIST',
             data: data
           }
           store.dispatch(action);
+          
+          if(data) {
+            //get track list from Spotify, dispatch to Redux store:
+            const requestOptions = {
+              method: 'GET',
+              headers: {
+                Authorization: 'Bearer ' + store.getState().accessToken
+              },
+            }
+
+            const userId = data.owner.id;
+            const playlistId = data.id;
+            const playlistURI = `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`;
+
+            fetch(playlistURI, requestOptions)
+              .then(res => res.json())
+              .then(res => {
+                console.log('fetched tracks: ', res.items);
+                store.dispatch({
+                  type: 'ADD_TRACKS_DATA',
+                  data: res.items
+                });
+              })
+              .catch(console.log)
+          }
         }
       }
       handleViewChange={
