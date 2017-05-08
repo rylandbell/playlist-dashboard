@@ -19,8 +19,8 @@ class TracksTableRow extends Component {
     return (
       <tr className="tracks__row" onClick={this.onClick}> 
         <td>{track.name}</td>
-        <td>{danceability || 'none found'}</td>
-        <td>{instrumentalness || 0}</td>
+        <td>{danceability || '0'}</td>
+        <td>{instrumentalness || '0'}</td>
       </tr>
     );
   }
