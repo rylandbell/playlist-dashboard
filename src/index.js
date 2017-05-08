@@ -57,6 +57,15 @@ function render() {
           store.dispatch(action);
         }
       }
+      handleDanceChange={
+        function(inputValue) {
+          const action = {
+            type: 'UPDATE_DANCE_FILTER',
+            data: inputValue
+          }
+          store.dispatch(action);
+        }
+      }
     />,
     document.getElementById('root')
   );

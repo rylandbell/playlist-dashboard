@@ -45,11 +45,35 @@ const activeView = (state = "preAuth", action) => {
   }
 }
 
+const instrumentalFilter = (state = 'noFilter', action) => {
+  switch(action.type) {
+    case 'SET_INSTRUMENTAL_FILTER':
+      return action.data;
+    default:
+      return state;
+  }
+}
+
+const danceFilter = (state = [0,1], action) => {
+  switch(action.type) {
+    case 'UPDATE_DANCE_FILTER':
+      return action.data;
+    default:
+      return state;
+  }
+}
+
+const filters = combineReducers({
+  instrumentalFilter,
+  danceFilter
+})
+
 const app = combineReducers({
   accessToken,
   playlists,
   activeView,
-  receivedPlaylists
+  receivedPlaylists,
+  filters
 });
 
 export default app;
