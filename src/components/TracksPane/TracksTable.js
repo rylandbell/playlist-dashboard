@@ -41,6 +41,7 @@ class SelectPlaylistsTable extends Component {
               <th>Title</th>
               <th>Danceability</th>
               <th>Instrumentalness</th>
+              <th>Valence</th>
             </tr>
           </thead>
           <tbody>

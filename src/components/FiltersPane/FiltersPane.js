@@ -16,7 +16,12 @@ const filters = [
     name: 'Instrumentalness',
     min: 0,
     max: 1
-  }
+  },
+  {
+    name: 'Valence',
+    min: 0,
+    max: 1
+  },
 ]
 
 class FiltersPane extends Component {

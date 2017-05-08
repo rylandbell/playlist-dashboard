@@ -4,10 +4,28 @@
 
 .tracks__table {
   width: 98%;
-  max-height: 690px;
+  height: 346px;
   overflow-y: scroll;
   background-color: white;
   margin-bottom: 20px;
+}
+
+.tracks__table p {
+  margin-bottom: 0;
+}
+
+.tracks__table p:first-of-type {
+  margin-bottom: -4px;
+}
+
+.tracks__table p:nth-of-type(2),
+.tracks__table small {
+  color: #888;
+}
+
+.tracks__table .table td {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .tracks__table > table {
