@@ -36,6 +36,15 @@ const selectedPlaylistTracks = (state = [], action) => {
   }
 }
 
+const audioFeatures = (state = [], action) => {
+  switch (action.type){
+    case 'ADD_AUDIO_FEATURES':
+      return action.data.slice();
+    default:
+      return state;
+  }
+}
+
 const hasReceivedPlaylists = (state = false, action) => {
   switch(action.type) {
     case 'ADD_PLAYLISTS_DATA':
@@ -88,6 +97,7 @@ const app = combineReducers({
   playlists,
   selectedPlaylist,
   selectedPlaylistTracks,
+  audioFeatures,
   activeView,
   hasReceivedPlaylists,
   hasReceivedTracks,

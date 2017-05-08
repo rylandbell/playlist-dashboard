@@ -19,9 +19,8 @@ fetchCalls.getPlaylists = function(store) {
     .catch(console.log);
 }
 
+//get track info for a given playlist
 fetchCalls.getTracks = function(store, data) {
-  
-  //get track list from Spotify, dispatch to Redux store:
   const requestOptions = {
     method: 'GET',
     headers: {
@@ -45,6 +44,7 @@ fetchCalls.getTracks = function(store, data) {
     .catch(console.log);
 }
 
+//get audio features given an array of tracks
 fetchCalls.getTrackFeatures = function(store, tracks) {
   console.log('fetched trackssss: ', tracks);
   //get track list from Spotify, dispatch to Redux store:
@@ -61,11 +61,11 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
   fetch(featuresURI, requestOptions)
     .then(res => res.json())
     .then(res => {
-      // store.dispatch({
-      //   type: 'ADD_TRACKS_DATA',
-      //   data: res.items
-      // });
-      console.log(res);
+      store.dispatch({
+        type: 'ADD_AUDIO_FEATURES',
+        data: res.audio_features
+      });
+      console.log('fetched audio features: ', res.audio_features);
     })
     .catch(console.log);
 }
