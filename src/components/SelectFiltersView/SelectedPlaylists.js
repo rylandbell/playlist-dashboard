@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
 class SelectedPlaylists extends Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.props.handleViewChange('selectPlaylists');
+  }
+
   render() {
     const selectedPlaylists = this.props.reduxState.playlists.filter(list => list.selected);
     return (
@@ -9,7 +18,7 @@ class SelectedPlaylists extends Component {
         <ul>
           {selectedPlaylists.map(list => <li key={list.id}>{list.name}</li>)}
         </ul>
-        <button type="button" className="btn btn-default">Edit List</button>
+        <button type="button" onClick={this.onClick} className="btn btn-default">Edit List</button>
       </div>
     );
   }

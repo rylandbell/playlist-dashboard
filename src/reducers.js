@@ -23,19 +23,22 @@ const playlists = (state = [], action) => {
   }
 }
 
+const receivedPlaylists = (state = false, action) => {
+  switch(action.type) {
+    case 'ADD_PLAYLISTS_DATA':
+      return true;
+    default:
+      return state;
+  }
+}
+
 const activeView = (state = "preAuth", action) => {
   switch (action.type){
-    // case 'GOTO_PRE_AUTH_VIEW':
-    //   return "preAuth";
-    // case 'GOTO_SELECT_PLAYLIST_VIEW':
-    //   return "selectPlaylist";
-    // case 'GOTO_SELECT_FILTERS_VIEW':
-    //   return "selectFilters";
     case 'CHANGE_VIEW':
       return action.view;
     case 'SET_ACCESS_TOKEN':
       const isToken = action.data && action.data.length > 0;
-      const view = isToken ? "selectPlaylist" : "preAuth";
+      const view = isToken ? "selectPlaylists" : "preAuth";
       return view;
     default:
       return state;
@@ -45,7 +48,8 @@ const activeView = (state = "preAuth", action) => {
 const app = combineReducers({
   accessToken,
   playlists,
-  activeView
+  activeView,
+  receivedPlaylists
 });
 
 export default app;

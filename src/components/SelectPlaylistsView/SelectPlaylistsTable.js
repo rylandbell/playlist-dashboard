@@ -3,7 +3,9 @@ import SelectPlaylistsRow from './SelectPlaylistsRow';
 
 class SelectPlaylistsTable extends Component {
   componentDidMount() {
-    this.props.getPlaylists();
+    if (!this.props.reduxState.receivedPlaylists) {
+      this.props.getPlaylists();
+    }
   }
 
   render() {

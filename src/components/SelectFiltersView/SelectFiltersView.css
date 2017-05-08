@@ -1,0 +1,12 @@
+.select-filters__filter-section {
+  margin-bottom: 25px;
+}
+
+.rc-slider.select-filters__range {
+  width: 80%;
+  margin: 0 auto 30px auto;
+}
+
+.rc-slider.select-filters__range * {
+  font-size: 14px;
+}
