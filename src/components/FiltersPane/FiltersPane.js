@@ -13,7 +13,7 @@ const filters = [
     max: 1
   },
   {
-    name: 'Instrumental',
+    name: 'Instrumentalness',
     min: 0,
     max: 1
   }

@@ -78,7 +78,7 @@ const activeView = (state = "preAuth", action) => {
 
 const filtersInitial = {
   danceability: [0,1],
-  instrumental: [0,1]
+  instrumentalness: [0,1]
 }
 
 const filters = (state = filtersInitial, action) => {

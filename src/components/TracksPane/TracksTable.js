@@ -5,14 +5,29 @@ class SelectPlaylistsTable extends Component {
   render() {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
     const features = this.props.reduxState.audioFeatures;
-    const filterValues = this.props.reduxState.filters;
+    const filters = this.props.reduxState.filters;
 
     function filterByFeatures(track, index) {
+
+      //don't do any filtering before features data loads
       if (!features || features.length < 1) {
         return true;
       }
-      const danceabilityPasses = features[index].danceability >= filterValues.danceability[0] && features[index].danceability <= filterValues.danceability[1];
-      return danceabilityPasses;
+
+      const filterBooleans = [];
+      for (let key in filters) {
+        if (filters.hasOwnProperty(key)) {
+          let passesFilter = features[index][key] >= filters[key][0] && features[index][key] <= filters[key][1];
+          filterBooleans.push(passesFilter);
+        }
+      }
+
+      const passesFilters = filterBooleans.reduce(
+        (accumulator, currentValue) => accumulator && currentValue,
+        true
+      )
+
+      return passesFilters;
     }
 
     const filteredTracks = tracks.filter(filterByFeatures);
@@ -30,7 +45,7 @@ class SelectPlaylistsTable extends Component {
           </thead>
           <tbody>
             {filteredTracks.map((track, index) => 
-              <TracksTableRow key={track.track.id} track={track.track} features={filteredFeatures[index]} {...this.props} />
+              <TracksTableRow key={track.track.id + track.added_at + index} track={track.track} features={filteredFeatures[index]} {...this.props} />
             )}
           </tbody>
         </table>
