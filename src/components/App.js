@@ -9,7 +9,7 @@ class App extends Component {
 
     //use enum instead of switch statement to select visible view:
     const viewEnum = {
-      preAuth: <PreAuthView />,
+      preAuth: <PreAuthView {...this.props} />,
       auth: <AuthView {...this.props} />,
     }
     return (

@@ -1,5 +1,24 @@
 const fetchCalls = {};
 
+function renewAuth() {
+  this.handleAuthRequest();
+}
+
+fetchCalls.handleAuthRequest = function() {
+  console.log('handleAuthRequest');
+  const clientID = '74436b5dd9624f8782f138387e69daaf';
+  const redirectURI = 'http://localhost:3000';
+  const scopes = ['playlist-read-private','playlist-modify-private'];
+
+  const authURI = 'https://accounts.spotify.com/authorize?'
+    + 'client_id=' + clientID
+    + '&redirect_uri=' + encodeURIComponent(redirectURI)
+    + '&response_type=token'
+    + '&scope=' + scopes.join('%20')
+    + '&show-dialog=true';
+  window.location = authURI;
+}
+
 fetchCalls.getPlaylists = function(store) {
   const requestOptions = {
     method: 'GET',
@@ -8,15 +27,20 @@ fetchCalls.getPlaylists = function(store) {
     },
   }
   fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
+    .then(res => {
+      if (!res.ok && res.status === 401) {
+        throw Error(res.statusText);
+      }
+      return res;
+    })
     .then(res => res.json())
     .then(res => {
-      console.log('fetched playlists: ', res.items);
       store.dispatch({
         type: 'ADD_PLAYLISTS_DATA',
         data: res.items
       });
     })
-    .catch(console.log);
+    .catch(renewAuth.bind(this));
 }
 
 //get track info for a given playlist
@@ -33,6 +57,12 @@ fetchCalls.getTracks = function(store, data) {
   const playlistURI = `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`;
 
   fetch(playlistURI, requestOptions)
+    .then(res => {
+      if (!res.ok && res.status === 401) {
+        throw Error(res.statusText);
+      }
+      return res;
+    })
     .then(res => res.json())
     .then(res => {
       store.dispatch({
@@ -41,7 +71,7 @@ fetchCalls.getTracks = function(store, data) {
       });
       this.getTrackFeatures(store, res.items);
     })
-    .catch(console.log);
+    .catch(renewAuth.bind(this));
 }
 
 //get audio features given an array of tracks
@@ -59,6 +89,12 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
   const featuresURI = `https://api.spotify.com/v1/audio-features?ids=${trackIds}`;
 
   fetch(featuresURI, requestOptions)
+    .then(res => {
+      if (!res.ok && res.status === 401) {
+        throw Error(res.statusText);
+      }
+      return res;
+    })
     .then(res => res.json())
     .then(res => {
       store.dispatch({
@@ -67,7 +103,7 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
       });
       console.log('fetched audio features: ', res.audio_features);
     })
-    .catch(console.log);
+    .catch(renewAuth.bind(this));
 }
 
 export default fetchCalls;
