@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 
 import App from './components/App';
 import reducers from './reducers';
+import fetchCalls from './fetchCalls';
 
 import './index.css';
 
@@ -17,28 +18,32 @@ dispatchAccessToken();
 store.subscribe(render);
 render();
 
+// function _getPlaylists() {
+//   const requestOptions = {
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + store.getState().accessToken
+//     },
+//   }
+//   fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
+//     .then(res => res.json())
+//     .then(res => {
+//       console.log('fetched playlists: ', res.items);
+//       store.dispatch({
+//         type: 'ADD_PLAYLISTS_DATA',
+//         data: res.items
+//       });
+//     })
+//     .catch(console.log);
+// }
+
 function render() {
   ReactDOM.render(
     <App 
       reduxState={store.getState()}
       getPlaylists={
         function() {
-          const requestOptions = {
-            method: 'GET',
-            headers: {
-              Authorization: 'Bearer ' + store.getState().accessToken
-            },
-          }
-          fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
-            .then(res => res.json())
-            .then(res => {
-              console.log('fetched playlists: ', res.items);
-              store.dispatch({
-                type: 'ADD_PLAYLISTS_DATA',
-                data: res.items
-              });
-            })
-            .catch(console.log)
+          fetchCalls.getPlaylists(store)
         }
       }
       handlePlaylistSelect={
@@ -51,28 +56,29 @@ function render() {
           store.dispatch(action);
           
           if(data) {
-            //get track list from Spotify, dispatch to Redux store:
-            const requestOptions = {
-              method: 'GET',
-              headers: {
-                Authorization: 'Bearer ' + store.getState().accessToken
-              },
-            }
+            fetchCalls.getTracks(store, data);
+            // //get track list from Spotify, dispatch to Redux store:
+            // const requestOptions = {
+            //   method: 'GET',
+            //   headers: {
+            //     Authorization: 'Bearer ' + store.getState().accessToken
+            //   },
+            // }
 
-            const userId = data.owner.id;
-            const playlistId = data.id;
-            const playlistURI = `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`;
+            // const userId = data.owner.id;
+            // const playlistId = data.id;
+            // const playlistURI = `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`;
 
-            fetch(playlistURI, requestOptions)
-              .then(res => res.json())
-              .then(res => {
-                console.log('fetched tracks: ', res.items);
-                store.dispatch({
-                  type: 'ADD_TRACKS_DATA',
-                  data: res.items
-                });
-              })
-              .catch(console.log)
+            // fetch(playlistURI, requestOptions)
+            //   .then(res => res.json())
+            //   .then(res => {
+            //     console.log('fetched tracks: ', res.items);
+            //     store.dispatch({
+            //       type: 'ADD_TRACKS_DATA',
+            //       data: res.items
+            //     });
+            //   })
+            //   .catch(console.log)
           }
         }
       }
