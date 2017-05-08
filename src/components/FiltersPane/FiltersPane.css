@@ -1,5 +1,8 @@
-.filters__filter-section {
-  margin-bottom: 25px;
+.filters__filter {
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 .rc-slider.filters__range {
@@ -10,3 +13,4 @@
 .rc-slider.filters__range * {
   font-size: 14px;
 }
+

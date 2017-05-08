@@ -59,19 +59,11 @@ function render() {
           store.dispatch(action);
         }
       }
-      handleDanceChange={
-        function(inputValue) {
+      handleFilterChange={
+        function(filterName, inputValue) {
           const action = {
-            type: 'UPDATE_DANCE_FILTER',
-            data: inputValue
-          }
-          store.dispatch(action);
-        }
-      }
-      handleInstrumentalChange={
-        function(inputValue) {
-          const action = {
-            type: 'UPDATE_INSTRUMENTAL_FILTER',
+            type: 'UPDATE_FILTER',
+            name: filterName,
             data: inputValue
           }
           store.dispatch(action);

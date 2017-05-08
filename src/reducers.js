@@ -13,11 +13,6 @@ const playlists = (state = [], action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
       return action.data.slice();
-    // case 'TOGGLE_PLAYLIST_SELECT':
-    //   const playlists = state.slice();
-    //   const chosen = playlists.find(playlist => playlist.id === action.id);
-    //   chosen.selected ? chosen.selected = false : chosen.selected = true;
-    //   return playlists;
     default:
       return state;
   }
@@ -54,28 +49,26 @@ const activeView = (state = "preAuth", action) => {
   }
 }
 
-const instrumentalFilter = (state = 'noFilter', action) => {
+const filtersInitial = {
+  danceability: [0,1],
+  instrumental: [0,1]
+}
+
+const filters = (state = filtersInitial, action) => {
   switch(action.type) {
-    case 'UPDATE_INSTRUMENTAL_FILTER':
-      return action.data;
+    case 'UPDATE_FILTER':
+      const updatedFilter = {};
+      updatedFilter[action.name] = action.data;
+      return Object.assign({}, state, updatedFilter);
     default:
       return state;
   }
 }
 
-const danceFilter = (state = [0,1], action) => {
-  switch(action.type) {
-    case 'UPDATE_DANCE_FILTER':
-      return action.data;
-    default:
-      return state;
-  }
-}
-
-const filters = combineReducers({
-  instrumentalFilter,
-  danceFilter
-})
+// const filters = combineReducers({
+//   instrumental,
+//   danceability
+// })
 
 const app = combineReducers({
   accessToken,
