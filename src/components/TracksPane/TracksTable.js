@@ -35,7 +35,7 @@ class SelectPlaylistsTable extends Component {
 
     return (
       <div className="tracks__table">
-        <table className="table table-condensed">
+        <table className="table table-condensed table-striped">
           <thead>
             <tr>
               <th>Title</th>

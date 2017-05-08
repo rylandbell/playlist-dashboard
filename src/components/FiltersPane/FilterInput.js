@@ -19,8 +19,10 @@ class Filter extends Component {
     const options = this.props.options;
 
     const marks = {};
-    marks[options.min] = 0;
-    marks[options.max] = 100;
+    marks[options.min] = options.min;
+    marks[options.max] = options.max;
+
+    const currentValue = this.props.reduxState.filters[options.name.toLowerCase()];
 
     const rangeOptions = {
       min: options.min,
@@ -28,6 +30,7 @@ class Filter extends Component {
       step: (options.max - options.min)/20,
       marks: marks,
       defaultValue: [options.min, options.max],
+      value: currentValue,
       className: "filters__range",
       onChange: this.onChange
     }
