@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import SelectPlaylistsTable from './SelectPlaylistsTable';
-import './SelectPlaylistsPane.css';
+import './PlaylistsPane.css';
 
-class SelectPlaylistsView extends Component {
+class PlaylistsPane extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
@@ -14,7 +14,7 @@ class SelectPlaylistsView extends Component {
 
   render() {
     return (
-      <div className="select-playlists__view">
+      <div className="playlists__pane">
         <h4 className="text-center">Choose a playlist:</h4>
         <SelectPlaylistsTable {...this.props} />
         {/*<button onClick={this.onClick} className="btn btn-primary center-block">Next: Choose Filters</button>*/}
@@ -23,4 +23,4 @@ class SelectPlaylistsView extends Component {
   }
 }
 
-export default SelectPlaylistsView;
+export default PlaylistsPane;

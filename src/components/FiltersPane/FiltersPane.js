@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './SelectFiltersPane.css';
+import './FiltersPane.css';
 import DanceFilter from './DanceFilter';
 import InstrumentalFilter from './InstrumentalFilter';
 
-class SelectPlaylistsView extends Component {
+class FiltersPane extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
@@ -15,8 +15,8 @@ class SelectPlaylistsView extends Component {
 
   render() {
     return (
-      <div className="select-filters__view">
-        <div className="select-filters__filters">
+      <div className="filters__pane">
+        <div className="filters__filters">
           <h4>{this.props.reduxState.selectedPlaylist.name}</h4>
           <button onClick={this.onClick} className="btn btn-primary btn-sm">Change Playlist</button>
           <hr />
@@ -28,4 +28,4 @@ class SelectPlaylistsView extends Component {
   }
 }
 
-export default SelectPlaylistsView;
+export default FiltersPane;

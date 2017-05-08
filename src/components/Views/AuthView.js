@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import SelectPlaylistsPane from '../SelectPlaylistsPane/SelectPlaylistsPane';
-import SelectFiltersPane from '../SelectFiltersPane/SelectFiltersPane';
+import PlaylistsPane from '../PlaylistsPane/PlaylistsPane';
+import FiltersPane from '../FiltersPane/FiltersPane';
 import './AuthView.css';
 
 class AuthView extends Component {
   render() {
     return (
       <div>
-        <div className="col-xs-12 col-md-4">
+        <div className="col-xs-12 col-md-3">
           <row>
             {this.props.reduxState.selectedPlaylist ?
-              <SelectFiltersPane {...this.props} />
-              : <SelectPlaylistsPane {...this.props} />
+              <FiltersPane {...this.props} />
+              : <PlaylistsPane {...this.props} />
             }
           </row>
         </div>
-        <div className="col-xs-12 col-md-8">
+        <div className="col-xs-12 col-md-9">
           <div className="row">
             <h4>Chart</h4>
           </div>

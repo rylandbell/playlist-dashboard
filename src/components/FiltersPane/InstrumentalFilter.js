@@ -13,7 +13,7 @@ class InstrumentalFilter extends Component {
   render() {
     const selectedValue = this.props.reduxState.filters.instrumentalFilter;
     return (
-      <div className="select-filters__filter-section">
+      <div className="filters__filter-section">
         <p>Instrumentals:</p>
         <div className="text-center">
           <div onClick={this.onClick} className="btn-group" role="group" aria-label="...">

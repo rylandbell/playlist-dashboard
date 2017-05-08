@@ -18,12 +18,12 @@ class DanceFilter extends Component {
         1: 'Most Danceable'
       },
       defaultValue: [danceFilterMin, danceFilterMax],
-      className: "select-filters__range",
+      className: "filters__range",
       onChange: this.props.handleDanceChange
     }
 
     return (
-      <div className="select-filters__filter-section">
+      <div className="filters__filter-section">
         <p>Danceability:</p>
         <Range {...DanceabilityOptions} />
       </div>

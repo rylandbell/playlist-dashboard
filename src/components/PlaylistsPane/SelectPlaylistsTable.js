@@ -10,7 +10,7 @@ class SelectPlaylistsTable extends Component {
 
   render() {
     return (
-      <div className="select-playlists__table">
+      <div className="playlists__table">
         <table className="table table-condensed table-hover">
           <tbody>
             {this.props.reduxState.playlists.map(list => 
