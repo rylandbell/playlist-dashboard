@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PlaylistsPane from '../PlaylistsPane/PlaylistsPane';
 import FiltersPane from '../FiltersPane/FiltersPane';
+import TracksPane from '../TracksPane/TracksPane';
 import './AuthView.css';
 
 class AuthView extends Component {
@@ -17,10 +18,7 @@ class AuthView extends Component {
         </div>
         <div className="col-xs-12 col-md-9">
           <div className="row">
-            <h4>Chart</h4>
-          </div>
-          <div className="row">
-            <h4>Tracks</h4>
+            <TracksPane {...this.props} />
           </div>
         </div>
       </div>

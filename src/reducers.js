@@ -45,6 +45,15 @@ const hasReceivedPlaylists = (state = false, action) => {
   }
 }
 
+const hasReceivedTracks = (state = false, action) => {
+  switch(action.type) {
+    case 'ADD_TRACKS_DATA':
+      return true;
+    default:
+      return state;
+  }
+}
+
 const activeView = (state = "preAuth", action) => {
   switch (action.type){
     case 'CHANGE_VIEW':
@@ -74,11 +83,6 @@ const filters = (state = filtersInitial, action) => {
   }
 }
 
-// const filters = combineReducers({
-//   instrumental,
-//   danceability
-// })
-
 const app = combineReducers({
   accessToken,
   playlists,
@@ -86,6 +90,7 @@ const app = combineReducers({
   selectedPlaylistTracks,
   activeView,
   hasReceivedPlaylists,
+  hasReceivedTracks,
   filters
 });
 
