@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
@@ -6,7 +8,7 @@ import App from './components/App';
 import reducers from './reducers';
 
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
+
 // import 'bootstrap/dist/css/bootstrap-theme.css';
 
 //create a store from the above reducer, then subscribe a React render function to it
@@ -61,6 +63,15 @@ function render() {
         function(inputValue) {
           const action = {
             type: 'UPDATE_DANCE_FILTER',
+            data: inputValue
+          }
+          store.dispatch(action);
+        }
+      }
+      handleInstrumentalChange={
+        function(inputValue) {
+          const action = {
+            type: 'UPDATE_INSTRUMENTAL_FILTER',
             data: inputValue
           }
           store.dispatch(action);

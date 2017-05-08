@@ -47,7 +47,7 @@ const activeView = (state = "preAuth", action) => {
 
 const instrumentalFilter = (state = 'noFilter', action) => {
   switch(action.type) {
-    case 'SET_INSTRUMENTAL_FILTER':
+    case 'UPDATE_INSTRUMENTAL_FILTER':
       return action.data;
     default:
       return state;
