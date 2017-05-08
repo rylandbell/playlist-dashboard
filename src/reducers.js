@@ -27,7 +27,16 @@ const selectedPlaylist = (state = null, action) => {
   }
 }
 
-const receivedPlaylists = (state = false, action) => {
+const selectedPlaylistTracks = (state = [], action) => {
+  switch (action.type){
+    case 'ADD_TRACKS_DATA':
+      return action.data.slice();
+    default:
+      return state;
+  }
+}
+
+const hasReceivedPlaylists = (state = false, action) => {
   switch(action.type) {
     case 'ADD_PLAYLISTS_DATA':
       return true;
@@ -74,8 +83,9 @@ const app = combineReducers({
   accessToken,
   playlists,
   selectedPlaylist,
+  selectedPlaylistTracks,
   activeView,
-  receivedPlaylists,
+  hasReceivedPlaylists,
   filters
 });
 
