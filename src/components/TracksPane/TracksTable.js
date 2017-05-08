@@ -11,7 +11,7 @@ class SelectPlaylistsTable extends Component {
   render() {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
     return (
-      <div className="playlists__table">
+      <div className="tracks__table">
         <table className="table table-condensed">
           <tbody>
             {tracks.map(track => 

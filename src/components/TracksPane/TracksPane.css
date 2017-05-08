@@ -1,0 +1,19 @@
+.tracks__change-playlist-btn {
+  margin-left: 10px;
+}
+
+.tracks__table {
+  width: 98%;
+  max-height: 690px;
+  overflow-y: scroll;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.tracks__table > table {
+  margin-bottom: 0;
+}
+
+.tracks__table > table tr:first-of-type > td {
+  border-top-width: 0;
+}

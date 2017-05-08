@@ -18,7 +18,10 @@ class AuthView extends Component {
         </div>
         <div className="col-xs-12 col-md-9">
           <div className="row">
-            <TracksPane {...this.props} />
+            {this.props.reduxState.selectedPlaylist ? 
+              <TracksPane {...this.props} /> :
+              null
+            }
           </div>
         </div>
       </div>

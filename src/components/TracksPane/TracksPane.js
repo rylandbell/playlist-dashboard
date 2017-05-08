@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TracksTable from './TracksTable';
-// import './TracksPane.css';
+import './TracksPane.css';
 
 class TracksPane extends Component {
   constructor(props) {
@@ -9,14 +9,24 @@ class TracksPane extends Component {
   }
 
   onClick() {
-    this.props.handleViewChange('selectFilters');
+    this.props.handlePlaylistSelect(null);
   }
 
   render() {
     return (
       <div className="tracks__pane">
-        <h4 className="text-center">Tracks:</h4>
-        <TracksTable {...this.props} />
+        <div className="row">
+          <div className="col-xs-12">
+            <h4 className="clearfix">{this.props.reduxState.selectedPlaylist.name}
+              <button onClick={this.onClick} className="btn btn-primary btn-xs tracks__change-playlist-btn">Change</button>
+            </h4>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12">
+            <TracksTable {...this.props} />
+          </div>
+        </div>
       </div>
     );
   }

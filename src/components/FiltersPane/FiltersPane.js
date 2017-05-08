@@ -20,22 +20,11 @@ const filters = [
 ]
 
 class FiltersPane extends Component {
-  constructor(props) {
-    super(props);
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
-    this.props.handlePlaylistSelect(null);
-  }
-
   render() {
     return (
       <div className="filters__pane">
         <div className="filters__filters">
-          <h4>{this.props.reduxState.selectedPlaylist.name}</h4>
-          <button onClick={this.onClick} className="btn btn-primary btn-sm">Change Playlist</button>
-          <hr />
+          <h4>Filters:</h4>
           {filters.map((filter,index) => <FilterInput key={index} options={filter} {...this.props} />)}
         </div>
       </div>
