@@ -12,10 +12,15 @@ class TracksTableRow extends Component {
 
   render() {
     const track = this.props.track;
-
+    const features = this.props.features;
+    const danceability = features ? features.danceability : 'N/A';
+    const instrumentalness = features ? features.instrumentalness : 'N/A';
+    
     return (
       <tr className="tracks__row" onClick={this.onClick}> 
         <td>{track.name}</td>
+        <td>{danceability || 'none found'}</td>
+        <td>{instrumentalness || 0}</td>
       </tr>
     );
   }
