@@ -14,7 +14,7 @@ class TracksPane extends Component {
 
   render() {
     return (
-      <div className="tracks__pane">
+      <div className="col-xs-12 tracks__pane">
         <div className="row">
           <div className="col-xs-12">
             <h4 className="clearfix">{this.props.reduxState.selectedPlaylist.name}

@@ -13,9 +13,9 @@ class TracksTableRow extends Component {
         <td>{track.name}&nbsp;
           <small>{track.artists[0].name}</small>
         </td>
-        <td>{danceability || '0'}</td>
-        <td>{instrumentalness || '0'}</td>
-        <td>{valence || '0'}</td>
+        <td className="text-right">{danceability || '0'}</td>
+        <td className="text-right">{instrumentalness || '0'}</td>
+        <td className="text-right">{valence || '0'}</td>
       </tr>
     );
   }

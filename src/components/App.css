@@ -1,7 +1,11 @@
 .App {
-  background-color: #aaa;
-  margin-top: 10px;
-  padding-bottom: 20px;
-  border-radius: 15px;
+  background-color: #2B3E50;
+  max-width: 1400px;
+  padding: 10px 10px;
+  border-radius: 10px;
   height: 750px;
+}
+
+h4, h5 {
+  /*color: #eee;*/
 }

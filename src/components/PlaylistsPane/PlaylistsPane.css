@@ -1,3 +1,11 @@
+.playlists__pane {
+  padding: 0 10px 10px 10px;
+}
+
+.playlists__pane h4 {
+  margin-top: 0;
+}
+
 .playlists__table {
   max-height: 690px;
   overflow-y: scroll;

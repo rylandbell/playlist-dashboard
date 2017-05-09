@@ -1,3 +1,7 @@
+.filters__pane {
+  padding: 0 10px 10px 10px;
+}
+
 .filters__filter {
   margin-bottom: 10px;
   border: 1px solid grey;
