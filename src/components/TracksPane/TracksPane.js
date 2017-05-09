@@ -13,11 +13,12 @@ class TracksPane extends Component {
   }
 
   render() {
+    const selectedPlaylist = this.props.reduxState.selectedPlaylist;
     return (
       <div className="col-xs-12 tracks__pane">
         <div className="row">
           <div className="col-xs-12">
-            <h4 className="clearfix">{this.props.reduxState.selectedPlaylist.name}
+            <h4 className="clearfix">{selectedPlaylist.name}
               <button onClick={this.onClick} className="btn btn-primary btn-xs tracks__change-playlist-btn">Change</button>
             </h4>
           </div>

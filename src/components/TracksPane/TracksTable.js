@@ -1,37 +1,14 @@
 import React, { Component } from 'react';
 import TracksTableRow from './TracksTableRow';
+import {filterByFeatures} from '../../helper';
 
 class SelectPlaylistsTable extends Component {
   render() {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
     const features = this.props.reduxState.audioFeatures;
-    const filters = this.props.reduxState.filters;
 
-    function filterByFeatures(track, index) {
-
-      //don't do any filtering before features data loads
-      if (!features || features.length < 1) {
-        return true;
-      }
-
-      const filterBooleans = [];
-      for (let key in filters) {
-        if (filters.hasOwnProperty(key)) {
-          let passesFilter = features[index][key] >= filters[key][0] && features[index][key] <= filters[key][1];
-          filterBooleans.push(passesFilter);
-        }
-      }
-
-      const passesFilters = filterBooleans.reduce(
-        (accumulator, currentValue) => accumulator && currentValue,
-        true
-      )
-
-      return passesFilters;
-    }
-
-    const filteredTracks = tracks.filter(filterByFeatures);
-    const filteredFeatures = features.filter(filterByFeatures);
+    const filteredTracks = tracks.filter(filterByFeatures.bind(this));
+    const filteredFeatures = features.filter(filterByFeatures.bind(this));
 
     return (
       <div className="tracks__table">

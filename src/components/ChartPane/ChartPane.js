@@ -5,6 +5,11 @@ import FeaturesLineChart from './FeaturesLineChart';
 
 class TracksPane extends Component {
   render() {
+    // const tracks = this.props.reduxState.selectedPlaylistTracks;
+    // const features = this.props.reduxState.audioFeatures;
+
+    // const filteredTracks = tracks.filter(filterByFeatures.bind(this));
+    // const filteredFeatures = features.filter(filterByFeatures.bind(this));
     return (
       <div className="col-xs-12 chart__pane">
         {/*<select className="form-control chart__filter-select center-block">
