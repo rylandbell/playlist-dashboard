@@ -1,6 +1,15 @@
 .chart__pane {
   /*border: 1px dashed red;*/
-  padding: 20px 0;
+  /*padding-bottom: 20px;*/
+}
+
+.chart__filter-select {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+.chart__pane h4 {
+  margin-left: -5px;
 }
 
 /*.chart__pane .center-block {
