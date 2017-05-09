@@ -9,7 +9,7 @@ class FeaturesLineChart extends Component {
     const features = this.props.reduxState.audioFeatures;
     const filteredTracks = tracks.filter(filterByFeatures.bind(this));
     const filteredFeatures = features.filter(filterByFeatures.bind(this));
-    
+
     //add track name and artist to the features data, to pass to Recharts
     const chartData = filteredFeatures.map((track, index) => {
       const trackInfo = {
@@ -19,17 +19,22 @@ class FeaturesLineChart extends Component {
       return Object.assign({}, track, trackInfo);
     });
 
+    //count track numbers from 1, not 0:
+    const shiftedChartData = [{}].concat(chartData);
+
     //display vertical reference line for track when hovered in the table (not the chart);
     const hoveredTrack = this.props.reduxState.hoveredTrack;
     const hoveredTrackName = hoveredTrack ? hoveredTrack.track.name : null;
 
-    //gives position of hovered track in filtered playlist
-    const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack);
+    //gives position of hovered track in filtered playlist (shifted by 1 for indexing-from-1)
+    const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
+
+
 
     return (
       <ResponsiveContainer width="95%" height={280}>
         <LineChart
-          data={chartData}
+          data={shiftedChartData}
           margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
         >
           <XAxis stroke="#ebebeb" strokeWidth={2} interval={4} />
