@@ -5,8 +5,10 @@ import {filterByFeatures} from '../../helper';
 
 class FeaturesLineChart extends Component {
   render () {
+    const graphedFilters = this.props.reduxState.filters.filter(x => x.isGraphed);
     const tracks = this.props.reduxState.selectedPlaylistTracks;
     const features = this.props.reduxState.audioFeaturesData;
+
     const filteredTracks = tracks.filter(filterByFeatures.bind(this));
     const filteredFeatures = features.filter(filterByFeatures.bind(this));
 
@@ -29,8 +31,6 @@ class FeaturesLineChart extends Component {
     //gives position of hovered track in filtered playlist (shifted by 1 for indexing-from-1)
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
 
-
-
     return (
       <ResponsiveContainer width="95%" height={280}>
         <LineChart
@@ -42,7 +42,21 @@ class FeaturesLineChart extends Component {
           <Legend />
           <ReferenceLine x={hoveredTrackPosition} stroke="#5CB85C" label={hoveredTrackName} />
           <Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}}/>
-          <Line isAnimationActive={false} type="monotone" dataKey="danceability" stroke="#5bc0de" strokeWidth={3} dot={false} connectNulls={true} activeDot={{r: 8}}/>
+          {graphedFilters.map(filter => 
+            <Line 
+              dataKey={filter.name}
+              name={filter.displayName}
+              isAnimationActive={false} 
+              type="monotone" 
+              stroke={filter.color} 
+              strokeWidth={3} 
+              dot={false} 
+              connectNulls={true} 
+              activeDot={{r: 8}} 
+              key={filter.name} 
+            />
+          )}
+          
         </LineChart>
       </ResponsiveContainer>
     );

@@ -54,10 +54,10 @@ function render() {
         }
       }
       handleFilterChange={
-        function(filterName, inputValue) {
+        function(filterIndex, inputValue) {
           const action = {
             type: 'UPDATE_FILTER',
-            name: filterName,
+            filterIndex: filterIndex,
             data: inputValue
           }
           store.dispatch(action);

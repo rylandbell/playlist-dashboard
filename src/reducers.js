@@ -109,22 +109,72 @@ const activeView = (state = "preAuth", action) => {
   }
 }
 
-const filtersInitial = {
-  danceability: [0,1],
-  instrumentalness: [0,1],
-  valence: [0,1]
-}
+//next colors: #d9534f #DF691A
+
+const filtersInitial = [
+  {
+    name: 'danceability',
+    displayName: 'Danceability',
+    isActive: true,
+    isGraphed: true,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#5bc0de'
+  },
+  {
+    name: 'instrumentalness',
+    displayName: 'Instrumentalness',
+    isActive: true,
+    isGraphed: false,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#5CB85C'
+  },
+  {
+    name: 'valence',
+    displayName: 'Valence',
+    isActive: true,
+    isGraphed: true,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#f0ad4e'
+  },
+];
 
 const filters = (state = filtersInitial, action) => {
   switch(action.type) {
     case 'UPDATE_FILTER':
-      const updatedFilter = {};
-      updatedFilter[action.name] = action.data;
-      return Object.assign({}, state, updatedFilter);
+      const targetFilter = Object.assign({}, state[action.filterIndex]);
+      const updatedFilter = Object.assign(targetFilter, {currentValue: action.data});
+      return [
+        ...state.slice(0, action.filterIndex),
+        updatedFilter,
+        ...state.slice(action.filterIndex + 1)
+      ];
     default:
       return state;
   }
 }
+
+// const filtersInitial = {
+//   danceability: [0,1],
+//   instrumentalness: [0,1],
+//   valence: [0,1]
+// }
+
+// const filters = (state = filtersInitial, action) => {
+//   switch(action.type) {
+//     case 'UPDATE_FILTER':
+//       const updatedFilter = {};
+//       updatedFilter[action.name] = action.data;
+//       return Object.assign({}, state, updatedFilter);
+//     default:
+//       return state;
+//   }
+// }
 
 const app = combineReducers({
   accessToken,

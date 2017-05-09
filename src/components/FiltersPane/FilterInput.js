@@ -11,31 +11,31 @@ class Filter extends Component {
   }
 
   onChange(value) {
-    const filterName = this.props.options.name.toLowerCase();
-    this.props.handleFilterChange(filterName, value);
+    const filterIndex = this.props.filterIndex;
+    this.props.handleFilterChange(filterIndex, value);
   }
 
   render() {
-    const options = this.props.options;
+    const filterData = this.props.filterData;
 
     const marks = {};
-    marks[options.min] = {
-      label: options.min,
+    marks[filterData.min] = {
+      label: filterData.min,
       style: {color: '#ebebeb'}
     };
-    marks[options.max] = {
-      label: options.max,
+    marks[filterData.max] = {
+      label: filterData.max,
       style: {color: '#ebebeb'}
     };
 
-    const currentValue = this.props.reduxState.filters[options.name.toLowerCase()];
+    const currentValue = filterData.currentValue;
 
     const rangeOptions = {
-      min: options.min,
-      max: options.max,
-      step: (options.max - options.min)/20,
+      min: filterData.min,
+      max: filterData.max,
+      step: (filterData.max - filterData.min)/20,
       marks: marks,
-      defaultValue: [options.min, options.max],
+      defaultValue: [filterData.min, filterData.max],
       value: currentValue,
       className: "filters__range",
       onChange: this.onChange
@@ -43,7 +43,7 @@ class Filter extends Component {
 
     return (
       <div className="filters__filter well">
-        <h5>{options.name}:</h5>
+        <h5>{filterData.displayName}:</h5>
         <Range {...rangeOptions} />
       </div>
     );
