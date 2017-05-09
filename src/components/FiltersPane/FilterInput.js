@@ -19,8 +19,14 @@ class Filter extends Component {
     const options = this.props.options;
 
     const marks = {};
-    marks[options.min] = options.min;
-    marks[options.max] = options.max;
+    marks[options.min] = {
+      label: options.min,
+      style: {color: '#ebebeb'}
+    };
+    marks[options.max] = {
+      label: options.max,
+      style: {color: '#ebebeb'}
+    };
 
     const currentValue = this.props.reduxState.filters[options.name.toLowerCase()];
 
@@ -36,7 +42,7 @@ class Filter extends Component {
     }
 
     return (
-      <div className="filters__filter">
+      <div className="filters__filter well">
         <h5>{options.name}:</h5>
         <Range {...rangeOptions} />
       </div>

@@ -9,12 +9,12 @@ class FeaturesLineChart extends Component {
         <LineChart
           data={data}
         >
-          <XAxis stroke="#ebebeb"/>
-          <YAxis stroke="#ebebeb" domain={[0, 1]} />
+          <XAxis stroke="#ebebeb" strokeWidth={2} />
+          <YAxis stroke="#ebebeb" strokeWidth={2} domain={[0, 1]} />
           {/*<CartesianGrid strokeDasharray="10 3"/>*/}
           <Tooltip/>
           <Legend />
-          <Line type="monotone" dataKey="danceability" stroke="#8884d8" strokeWidth={3} dot={false} activeDot={{r: 8}}/>
+          <Line type="monotone" dataKey="danceability" stroke="#5bc0de" strokeWidth={3} dot={false} activeDot={{r: 8}}/>
           {/*<Line type="monotone" dataKey="valence" stroke="#82ca9d" strokeWidth={3} dot={false} activeDot={{r: 8}}/>*/}
           {/*<Line type="monotone" dataKey="valence" stroke="#82ca9d" />*/}
         </LineChart>
