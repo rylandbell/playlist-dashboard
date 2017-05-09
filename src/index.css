@@ -15,6 +15,10 @@ body {
   background-color: hsl(99, 12%, 64%);
 }
 
+.table.table-hover tbody tr:hover {
+  background-color: hsl(99, 7%, 54%);
+}
+
 .table * {
   color: #121212;
 }

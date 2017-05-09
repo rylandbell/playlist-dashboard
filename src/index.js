@@ -63,6 +63,15 @@ function render() {
           store.dispatch(action);
         }
       }
+      handleChartedFeaturesToggle={
+        function(filterName) {
+          const action = {
+            type: 'TOGGLE_CHARTED_FEATURE',
+            data: filterName
+          }
+          store.dispatch(action);
+        }
+      }
       handleTrackRowHover={
         function(track) {
           const action = {

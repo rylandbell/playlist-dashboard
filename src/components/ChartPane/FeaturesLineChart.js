@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, ReferenceLine} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, Legend, XAxis, YAxis, Tooltip, ReferenceLine} from 'recharts';
 import {filterByFeatures} from '../../helper';
 
 
 class FeaturesLineChart extends Component {
   render () {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
-    const features = this.props.reduxState.audioFeatures;
+    const features = this.props.reduxState.audioFeaturesData;
     const filteredTracks = tracks.filter(filterByFeatures.bind(this));
     const filteredFeatures = features.filter(filterByFeatures.bind(this));
 
@@ -35,11 +35,11 @@ class FeaturesLineChart extends Component {
       <ResponsiveContainer width="95%" height={280}>
         <LineChart
           data={shiftedChartData}
-          margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
+          margin={{ top: 20, right: 12, left: 0, bottom: 0 }}
         >
           <XAxis stroke="#ebebeb" strokeWidth={2} interval={4} />
           <YAxis stroke="#ebebeb" strokeWidth={2} domain={[0, 1]} />
-          {/*<CartesianGrid strokeDasharray="10 3"/>*/}
+          <Legend />
           <ReferenceLine x={hoveredTrackPosition} stroke="#5CB85C" label={hoveredTrackName} />
           <Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}}/>
           <Line isAnimationActive={false} type="monotone" dataKey="danceability" stroke="#5bc0de" strokeWidth={3} dot={false} connectNulls={true} activeDot={{r: 8}}/>

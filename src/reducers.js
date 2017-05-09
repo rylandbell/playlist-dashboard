@@ -38,7 +38,7 @@ const selectedPlaylistTracks = (state = [], action) => {
   }
 }
 
-const audioFeatures = (state = [], action) => {
+const audioFeaturesData = (state = [], action) => {
   switch (action.type){
     case 'SELECT_PLAYLIST':
       return [];
@@ -73,6 +73,24 @@ const hasReceivedTracks = (state = false, action) => {
   switch(action.type) {
     case 'ADD_TRACKS_DATA':
       return true;
+    default:
+      return state;
+  }
+}
+
+const chartedFeaturesDefault = {
+  danceability: true,
+  instrumentalness: false,
+  valence: false
+}
+
+const chartedFeatures = (state = chartedFeaturesDefault, action) => {
+  switch (action.type){
+    case 'TOGGLE_CHARTED_FEATURE':
+      const featureToToggle = action.data;
+      const update = {};
+      update[featureToToggle] = !state[featureToToggle];
+      return Object.assign({}, state, update);
     default:
       return state;
   }
@@ -113,7 +131,8 @@ const app = combineReducers({
   playlists,
   selectedPlaylist,
   selectedPlaylistTracks,
-  audioFeatures,
+  audioFeaturesData,
+  chartedFeatures,
   activeView,
   hoveredTrack,
   hasReceivedPlaylists,

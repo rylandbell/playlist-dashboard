@@ -14,7 +14,7 @@ class SelectPlaylistsTable extends Component {
 
   render() {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
-    const features = this.props.reduxState.audioFeatures;
+    const features = this.props.reduxState.audioFeaturesData;
 
     const filteredTracks = tracks.filter(filterByFeatures.bind(this));
     const filteredFeatures = features.filter(filterByFeatures.bind(this));

@@ -1,7 +1,7 @@
 export {filterByFeatures};
 
 function filterByFeatures(track, index) {
-  const features = this.props.reduxState.audioFeatures;
+  const features = this.props.reduxState.audioFeaturesData;
   const filters = this.props.reduxState.filters;
 
   //don't do any filtering before features data loads

@@ -12,6 +12,17 @@
   margin-left: -5px;
 }
 
+.chart__controls-well {
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #4E5D6C;
+}
+
 /*.chart__pane .center-block {
   max-width: 893px;
   padding-right: 43px;

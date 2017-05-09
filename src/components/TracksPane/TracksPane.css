@@ -23,6 +23,7 @@
 
 .tracks__table * {
   color: #121212;
+  cursor: default;
 }
 
 .tracks__table small {
