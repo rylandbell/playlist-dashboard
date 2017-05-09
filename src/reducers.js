@@ -49,6 +49,17 @@ const audioFeatures = (state = [], action) => {
   }
 }
 
+const hoveredTrack = (state = null, action) => {
+  switch (action.type){
+    case 'HOVER_ON_TRACK':
+      return action.data;
+    case 'CLEAR_HOVERED_TRACK':
+      return null
+    default:
+      return state;
+  }
+}
+
 const hasReceivedPlaylists = (state = false, action) => {
   switch(action.type) {
     case 'ADD_PLAYLISTS_DATA':
@@ -104,6 +115,7 @@ const app = combineReducers({
   selectedPlaylistTracks,
   audioFeatures,
   activeView,
+  hoveredTrack,
   hasReceivedPlaylists,
   hasReceivedTracks,
   filters

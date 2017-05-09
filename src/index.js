@@ -63,6 +63,23 @@ function render() {
           store.dispatch(action);
         }
       }
+      handleTrackRowHover={
+        function(track) {
+          const action = {
+            type: 'HOVER_ON_TRACK',
+            data: track
+          }
+          store.dispatch(action);
+        }
+      }
+      handleMouseLeavesTracksTable={
+        function() {
+          const action = {
+            type: 'CLEAR_HOVERED_TRACK',
+          }
+          store.dispatch(action);
+        }
+      }
     />,
     document.getElementById('root')
   );
