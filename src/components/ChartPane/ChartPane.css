@@ -1,6 +1,6 @@
 .chart__pane {
-  /*border: 1px dashed red;*/
-  /*padding-bottom: 20px;*/
+  margin-top: 20px;
+  margin-left: -28px;
 }
 
 .chart__filter-select {
@@ -24,7 +24,7 @@
   background-color: hsl(209, 25%, 16%);
 }
 
-/*.chart__pane .center-block {
-  max-width: 893px;
-  padding-right: 43px;
-}*/
+.chart__checkbox.checkbox-inline {
+  margin-top: 40px;
+  background-color: pink;
+}

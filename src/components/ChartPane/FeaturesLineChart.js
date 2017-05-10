@@ -32,7 +32,7 @@ class FeaturesLineChart extends Component {
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
 
     return (
-      <ResponsiveContainer width="95%" height={280}>
+      <ResponsiveContainer width="100%" height={330}>
         <LineChart
           data={shiftedChartData}
           margin={{ top: 20, right: 12, left: 0, bottom: 0 }}

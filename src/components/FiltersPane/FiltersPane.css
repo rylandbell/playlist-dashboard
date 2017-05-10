@@ -21,7 +21,7 @@
   /*border-bottom-width: 1px;*/
 }
 
-.filters__filter h5 {
+.filters__filter h4 {
   margin-top: 0;
 }
 
@@ -100,8 +100,8 @@
 
 .filters__flex-left {
   /*border: 1px solid blue;*/
-  position: relative;
-  top: 8px;
+  /*position: relative;*/
+  /*top: 8px;*/
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;

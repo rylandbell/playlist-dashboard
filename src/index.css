@@ -32,3 +32,8 @@ body {
 .table * {
   border-color: #555;
 }
+
+h4 {
+  font-family: 'Audiowide', cursive;
+  color: #ccc;
+}

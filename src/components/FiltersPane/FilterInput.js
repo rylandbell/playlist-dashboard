@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Range } from 'rc-slider';
+import ChartFilterCheckbox from '../ChartPane/ChartFilterCheckbox';
 // We can just import Slider or Range to reduce bundle size
 // import Slider from 'rc-slider/lib/Slider';
 // import Range from 'rc-slider/lib/Range';
@@ -17,6 +18,7 @@ class Filter extends Component {
 
   render() {
     const filterData = this.props.filterData;
+    const filterIndex = this.props.filterIndex;
     const currentValue = filterData.currentValue;
 
     // const marks = {};
@@ -42,15 +44,23 @@ class Filter extends Component {
 
     return (
       <div className="filters__filter">
+        <h4>{filterData.displayName}</h4>
+        {/*<div className="pull-right">
+          <ChartFilterCheckbox 
+            filter={filterData}
+            filterIndex={filterIndex}
+            {...this.props}
+          />
+        </div>*/}
         <div className="flex-container">
           <div className="filters__flex-left">
             <img className="img-responsive center-block filters__filter-icon" src={`/${filterData.name}.png`} alt={`${filterData.displayName} icon`} />
           </div>
           <div className="filters__flex-right">
-            <h5 className="text-center">{filterData.displayName}</h5>
             <Range {...rangeOptions} />
           </div>
         </div>
+        
       </div>
     );
   }
