@@ -91,7 +91,7 @@ const activeView = (state = "preAuth", action) => {
   }
 }
 
-//next colors: #d9534f #DF691A
+//next colors: #5CB85C #DF691A
 
 const filtersInitial = [
   {
@@ -105,8 +105,38 @@ const filtersInitial = [
     color: '#5bc0de'
   },
   {
+    name: 'energy',
+    displayName: 'Energy',
+    isActive: true,
+    isGraphed: false,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#d9534f'
+  },
+  {
+    name: 'valence',
+    displayName: 'Positivity',
+    isActive: true,
+    isGraphed: false,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#f0ad4e'
+  },
+  {
     name: 'instrumentalness',
     displayName: 'Instrumentalness',
+    isActive: true,
+    isGraphed: false,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#EBEBEB'
+  },
+  {
+    name: 'acousticness',
+    displayName: 'Acousticness',
     isActive: true,
     isGraphed: false,
     currentValue: [0,1],
@@ -115,15 +145,15 @@ const filtersInitial = [
     color: '#5CB85C'
   },
   {
-    name: 'valence',
-    displayName: 'Valence',
+    name: 'liveness',
+    displayName: 'Liveness',
     isActive: true,
-    isGraphed: true,
+    isGraphed: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
-    color: '#f0ad4e'
-  },
+    color: '#DF691A'
+  }
 ];
 
 const filters = (state = filtersInitial, action) => {
