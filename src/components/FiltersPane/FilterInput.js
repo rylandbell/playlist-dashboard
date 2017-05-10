@@ -42,9 +42,16 @@ class Filter extends Component {
     }
 
     return (
-      <div className="filters__filter well">
-        <h5>{filterData.displayName}:</h5>
-        <Range {...rangeOptions} />
+      <div className="filters__filter">
+        <div className="flex-container">
+          <div className="filters__flex-left">
+            <img className="img-responsive center-block filters__filter-icon" src={`/${filterData.name}.png`} alt={`${filterData.displayName} icon`} />
+          </div>
+          <div className="filters__flex-right">
+            <h5 className="text-center">{filterData.displayName}</h5>
+            <Range {...rangeOptions} />
+          </div>
+        </div>
       </div>
     );
   }

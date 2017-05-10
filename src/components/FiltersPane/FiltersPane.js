@@ -10,7 +10,6 @@ class FiltersPane extends Component {
     return (
       <div className="filters__pane">
         <div className="filters__filters">
-          <h4>Filters:</h4>
           {filters.map((filter,index) => <FilterInput key={index} filterIndex={index} filterData={filter} {...this.props} />)}
         </div>
       </div>

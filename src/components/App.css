@@ -1,7 +1,12 @@
 .App {
-  background-color: #2B3E50;
   max-width: 1400px;
-  padding: 10px 10px;
+}
+
+.App>.container-fluid {
+  background-color: #2B3E50;
+  /*background-image: url('/bg-app3.png');*/
+  /*max-width: 1400px;*/
+  padding: 10px 0px;
   border-radius: 10px;
   height: 750px;
 }

@@ -14,13 +14,14 @@
 
 .chart__controls-well {
   margin-bottom: 10px;
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 5px 10px 10px 10px;
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
   background-color: #4E5D6C;
+  background-color: hsl(209, 25%, 16%);
 }
 
 /*.chart__pane .center-block {

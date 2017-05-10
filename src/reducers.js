@@ -122,17 +122,7 @@ const filtersInitial = [
     currentValue: [0,1],
     min: 0,
     max: 1,
-    color: '#f0ad4e'
-  },
-  {
-    name: 'instrumentalness',
-    displayName: 'Instrumentalness',
-    isActive: true,
-    isGraphed: false,
-    currentValue: [0,1],
-    min: 0,
-    max: 1,
-    color: '#EBEBEB'
+    color: '#5CB85C'
   },
   {
     name: 'acousticness',
@@ -142,7 +132,7 @@ const filtersInitial = [
     currentValue: [0,1],
     min: 0,
     max: 1,
-    color: '#5CB85C'
+    color: '#f0ad4e'
   },
   {
     name: 'liveness',
@@ -153,6 +143,16 @@ const filtersInitial = [
     min: 0,
     max: 1,
     color: '#DF691A'
+  },
+  {
+    name: 'instrumentalness',
+    displayName: 'Instrumentalness',
+    isActive: true,
+    isGraphed: false,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#EBEBEB'
   }
 ];
 

@@ -1,17 +1,37 @@
 .filters__pane {
   padding: 0 10px 10px 10px;
+  margin-top: 44px;
 }
 
 .filters__filter {
-  margin-bottom: 10px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  padding: 0px 10px;
+  border: 0px solid hsl(209, 15%, 20%);;
+  border-top-width: 1px;
+  padding: 10px 10px 30px 10px;
+  background-color: hsl(209, 25%, 16%);
 }
-/*#5cb85c*/
+
+.filters__filter:first-of-type {
+  border-radius: 5px 5px 0 0;
+  border-top-width: 0;
+}
+
+.filters__filter:last-of-type {
+  border-radius: 0 0 5px 5px;
+  /*border-bottom-width: 1px;*/
+}
+
+.filters__filter h5 {
+  margin-top: 0;
+}
+
+.filters__filter-icon {
+  width: 40px;
+  /*display: inline-block;*/
+}
+
 .rc-slider.filters__range {
   width: 80%;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
 }
 
 .rc-slider.filters__range * {
@@ -19,9 +39,60 @@
 }
 
 .rc-slider .rc-slider-rail {
-  background-color: #cbd2cb;
+  background-color: hsl(120, 4%, 40%);
 }
 
 .rc-slider .rc-slider-track {
-  background-color: #5cb85c;
+  background-color: #cbcbcb;
+}
+
+.flex-container {
+  /*padding: 10px 0 20px 0;*/
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: center;
+  -ms-flex-align: start;
+  align-items: center;
+}
+
+.filters__flex-left {
+  /*border: 1px solid blue;*/
+  position: relative;
+  top: 8px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.filters__flex-right {
+  /*border: 1px dashed red;*/
+  /*padding: 10px;*/
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 7 1 auto;
+  -ms-flex: 7 1 auto;
+  flex: 7 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
 }

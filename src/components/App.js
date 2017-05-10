@@ -13,9 +13,11 @@ class App extends Component {
       auth: <AuthView {...this.props} />,
     }
     return (
-      <div className="container-fluid App">
-        <div className="row">
-          {viewEnum[activeView]}
+      <div className="App center-block">
+        <div className="container-fluid">
+          <div className="row">
+            {viewEnum[activeView]}
+          </div>
         </div>
       </div>
     );

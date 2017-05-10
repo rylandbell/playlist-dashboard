@@ -9,7 +9,7 @@ class AuthView extends Component {
   render() {
     return (
       <div>
-        <div className="col-xs-12 col-sm-4 col-md-3">
+        <div className="col-xs-12 col-sm-4 col-md-3 sidebar">
           {this.props.reduxState.selectedPlaylist ?
             <FiltersPane {...this.props} />
             : <PlaylistsPane {...this.props} />
