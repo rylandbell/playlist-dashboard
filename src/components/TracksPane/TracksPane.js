@@ -25,7 +25,7 @@ class TracksPane extends Component {
           <div className="col-xs-12">
             <h4 className="clearfix">{selectedPlaylist.name}
               <button onClick={this.onClickChange} className="btn btn-primary btn-xs tracks__change-playlist-btn">Change</button>
-              <button onClick={this.onClickSave} className="btn btn-primary btn-xs tracks__change-playlist-btn">Save as...</button>
+              <button onClick={this.onClickSave} className="btn btn-primary btn-xs tracks__change-playlist-btn">Save Filtered Tracks to New Playlist</button>
             </h4>
           </div>
         </div>

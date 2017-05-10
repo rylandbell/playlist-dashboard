@@ -17,28 +17,27 @@ class Filter extends Component {
 
   render() {
     const filterData = this.props.filterData;
-
-    const marks = {};
-    marks[filterData.min] = {
-      label: filterData.min,
-      style: {color: '#ebebeb'}
-    };
-    marks[filterData.max] = {
-      label: filterData.max,
-      style: {color: '#ebebeb'}
-    };
-
     const currentValue = filterData.currentValue;
+
+    // const marks = {};
+    // marks[filterData.min] = {
+    //   label: filterData.min,
+    //   style: {color: '#ebebeb'}
+    // };
+    // marks[filterData.max] = {
+    //   label: filterData.max,
+    //   style: {color: '#ebebeb'}
+    // };
 
     const rangeOptions = {
       min: filterData.min,
       max: filterData.max,
-      step: (filterData.max - filterData.min)/20,
-      marks: marks,
+      step: (filterData.max - filterData.min)/50,
+      // marks: marks,
       defaultValue: [filterData.min, filterData.max],
       value: currentValue,
       className: "filters__range",
-      onChange: this.onChange
+      onChange: this.onChange,
     }
 
     return (

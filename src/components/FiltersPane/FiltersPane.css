@@ -40,10 +40,39 @@
 
 .rc-slider .rc-slider-rail {
   background-color: hsl(120, 4%, 40%);
+  height: 2px;
 }
 
 .rc-slider .rc-slider-track {
-  background-color: #cbcbcb;
+  /*background-color: #bbbbbb;*/
+  width: 100%;
+  height: 4px;
+  bottom: 6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  box-shadow-color: #d9534f;
+  background: #ababab;
+  border-radius: 1.3px;
+  border: 1px solid #010101;
+}
+
+.rc-slider .rc-slider-handle {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000001;
+  /*border-radius: 0;*/
+  height: 24px;
+  width: 9px;
+  background: #bbbbbb;
+  -webkit-appearance: none;
+  margin-top: -9.5px;
+}
+
+.rc-slider .rc-slider-handle-1 {
+  border-radius: 6px 0 0 6px;
+}
+
+.rc-slider .rc-slider-handle-2 {
+  border-radius: 0 6px 6px 0;
 }
 
 .flex-container {
