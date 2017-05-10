@@ -18,6 +18,7 @@ fetchCalls.handleAuthRequest = function() {
   window.location = authURI;
 }
 
+//get list of current user's playlists
 fetchCalls.getPlaylists = function(store) {
   const requestOptions = {
     method: 'GET',
@@ -36,7 +37,7 @@ fetchCalls.getPlaylists = function(store) {
     .then(res => {
       store.dispatch({
         type: 'ADD_PLAYLISTS_DATA',
-        data: res.items
+        data: res
       });
     })
     .catch(renewAuth.bind(this));
@@ -101,6 +102,51 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
       });
     })
     .catch(renewAuth.bind(this));
+}
+
+fetchCalls.handleSavePlaylist = function(store, name) {
+  this.createNewPlaylist(store, name, this.addTracksToPlaylist);
+}
+
+fetchCalls.createNewPlaylist = function(store, name, callback) {
+  const requestBody = {
+    name: name,
+    public: false,
+    collaborative: false
+  };
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + store.getState().accessToken,
+      "Content-Type": 'applicatiown/json'
+    },
+    body: JSON.stringify(requestBody)
+  };
+  const userId = store.getState().userId;
+  console.log(userId);
+  fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, requestOptions)
+    .then(res => {
+      if (!res.ok && res.status === 401) {
+        throw Error(res.statusText);
+      }
+      return res;
+    })
+    .then(res => res.json())
+    .then(res => {
+      // console.log(res);
+      this.addTracksToPlaylist(store, res.id)
+    })
+    // .then(res => {
+    //   store.dispatch({
+    //     type: 'ADD_PLAYLISTS_DATA',
+    //     data: res.items
+    //   });
+    // })
+    .catch(renewAuth.bind(this));
+}
+
+fetchCalls.addTracksToPlaylist = function(store, playlistId) {
+  console.log('created playlist with id = ', playlistId);
 }
 
 export default fetchCalls;

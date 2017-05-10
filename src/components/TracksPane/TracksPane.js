@@ -5,11 +5,16 @@ import './TracksPane.css';
 class TracksPane extends Component {
   constructor(props) {
     super(props);
-    this.onClick = this.onClick.bind(this);
+    this.onClickChange = this.onClickChange.bind(this);
+    this.onClickSave = this.onClickSave.bind(this);
   }
 
-  onClick() {
+  onClickChange() {
     this.props.handlePlaylistSelect(null);
+  }
+
+  onClickSave() {
+    this.props.handleSavePlaylist('test save' + new Date());
   }
 
   render() {
@@ -19,7 +24,8 @@ class TracksPane extends Component {
         <div className="row">
           <div className="col-xs-12">
             <h4 className="clearfix">{selectedPlaylist.name}
-              <button onClick={this.onClick} className="btn btn-primary btn-xs tracks__change-playlist-btn">Change</button>
+              <button onClick={this.onClickChange} className="btn btn-primary btn-xs tracks__change-playlist-btn">Change</button>
+              <button onClick={this.onClickSave} className="btn btn-primary btn-xs tracks__change-playlist-btn">Save as...</button>
             </h4>
           </div>
         </div>

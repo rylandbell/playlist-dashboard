@@ -12,7 +12,18 @@ const accessToken = (state = "", action) => {
 const playlists = (state = [], action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
-      return action.data.slice();
+      return action.data.items.slice();
+    default:
+      return state;
+  }
+}
+
+const userId = (state = "", action) => {
+  switch (action.type){
+    case 'ADD_PLAYLISTS_DATA':
+      const href = action.data.href;
+      const userId = href.substring(33,43);
+      return userId;
     default:
       return state;
   }
@@ -184,6 +195,7 @@ const filters = (state = filtersInitial, action) => {
 const app = combineReducers({
   accessToken,
   playlists,
+  userId,
   selectedPlaylist,
   selectedPlaylistTracks,
   audioFeaturesData,

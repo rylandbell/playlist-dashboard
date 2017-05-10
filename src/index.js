@@ -44,6 +44,11 @@ function render() {
           }
         }
       }
+      handleSavePlaylist={
+        function(name) {
+          fetchCalls.handleSavePlaylist(store, name);
+        }
+      }
       handleViewChange={
         function(view) {
           const action = {
