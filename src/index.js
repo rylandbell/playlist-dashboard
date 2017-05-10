@@ -64,10 +64,11 @@ function render() {
         }
       }
       handleChartedFeaturesToggle={
-        function(filterName) {
+        function(filterIndex, newValue) {
           const action = {
             type: 'TOGGLE_CHARTED_FEATURE',
-            data: filterName
+            filterIndex: filterIndex,
+            newValue: newValue
           }
           store.dispatch(action);
         }

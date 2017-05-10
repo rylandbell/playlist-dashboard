@@ -78,24 +78,6 @@ const hasReceivedTracks = (state = false, action) => {
   }
 }
 
-const chartedFeaturesDefault = {
-  danceability: true,
-  instrumentalness: false,
-  valence: false
-}
-
-const chartedFeatures = (state = chartedFeaturesDefault, action) => {
-  switch (action.type){
-    case 'TOGGLE_CHARTED_FEATURE':
-      const featureToToggle = action.data;
-      const update = {};
-      update[featureToToggle] = !state[featureToToggle];
-      return Object.assign({}, state, update);
-    default:
-      return state;
-  }
-}
-
 const activeView = (state = "preAuth", action) => {
   switch (action.type){
     case 'CHANGE_VIEW':
@@ -145,10 +127,20 @@ const filtersInitial = [
 ];
 
 const filters = (state = filtersInitial, action) => {
+  let targetFilter, updatedFilter;
   switch(action.type) {
     case 'UPDATE_FILTER':
-      const targetFilter = Object.assign({}, state[action.filterIndex]);
-      const updatedFilter = Object.assign(targetFilter, {currentValue: action.data});
+      targetFilter = Object.assign({}, state[action.filterIndex]);
+      updatedFilter = Object.assign(targetFilter, {currentValue: action.data});
+      return [
+        ...state.slice(0, action.filterIndex),
+        updatedFilter,
+        ...state.slice(action.filterIndex + 1)
+      ];
+    case 'TOGGLE_CHARTED_FEATURE':
+      targetFilter = Object.assign({}, state[action.filterIndex]);
+      updatedFilter = Object.assign(targetFilter, {isGraphed: action.newValue});
+
       return [
         ...state.slice(0, action.filterIndex),
         updatedFilter,
@@ -159,30 +151,12 @@ const filters = (state = filtersInitial, action) => {
   }
 }
 
-// const filtersInitial = {
-//   danceability: [0,1],
-//   instrumentalness: [0,1],
-//   valence: [0,1]
-// }
-
-// const filters = (state = filtersInitial, action) => {
-//   switch(action.type) {
-//     case 'UPDATE_FILTER':
-//       const updatedFilter = {};
-//       updatedFilter[action.name] = action.data;
-//       return Object.assign({}, state, updatedFilter);
-//     default:
-//       return state;
-//   }
-// }
-
 const app = combineReducers({
   accessToken,
   playlists,
   selectedPlaylist,
   selectedPlaylistTracks,
   audioFeaturesData,
-  chartedFeatures,
   activeView,
   hoveredTrack,
   hasReceivedPlaylists,

@@ -5,7 +5,6 @@ function renewAuth() {
 }
 
 fetchCalls.handleAuthRequest = function() {
-  console.log('handleAuthRequest');
   const clientID = '74436b5dd9624f8782f138387e69daaf';
   const redirectURI = 'http://localhost:3000';
   const scopes = ['playlist-read-private','playlist-modify-private'];
@@ -76,7 +75,6 @@ fetchCalls.getTracks = function(store, data) {
 
 //get audio features given an array of tracks
 fetchCalls.getTrackFeatures = function(store, tracks) {
-  console.log('fetched trackssss: ', tracks);
   //get track list from Spotify, dispatch to Redux store:
   const requestOptions = {
     method: 'GET',
@@ -101,7 +99,6 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
         type: 'ADD_AUDIO_FEATURES',
         data: res.audio_features
       });
-      console.log('fetched audio features: ', res.audio_features);
     })
     .catch(renewAuth.bind(this));
 }
