@@ -1,3 +1,5 @@
+import {getTracksToSave} from './helper';
+
 const fetchCalls = {};
 
 function renewAuth() {
@@ -146,7 +148,8 @@ fetchCalls.createNewPlaylist = function(store, name, callback) {
 }
 
 fetchCalls.addTracksToPlaylist = function(store, playlistId) {
-  const trackURIArray = ["spotify:track:0BxwLWELYVGKqzUGXJNmT7"];
+  const tracksToSave = getTracksToSave(store);
+  const trackURIArray = tracksToSave.map(track => track.track.uri);;
 
   const requestBody = {
     uris: trackURIArray,
@@ -170,10 +173,6 @@ fetchCalls.addTracksToPlaylist = function(store, playlistId) {
       return res;
     })
     .then(res => res.json())
-    .then(res => {
-      console.log('response from add tracks fetch call: ', res);
-      // this.addTracksToPlaylist(store, res.id)
-    })
     // .then(res => {
     //   store.dispatch({
     //     type: 'ADD_PLAYLISTS_DATA',
@@ -182,5 +181,7 @@ fetchCalls.addTracksToPlaylist = function(store, playlistId) {
     // })
     .catch(renewAuth.bind(this));
 }
+
+
 
 export default fetchCalls;
