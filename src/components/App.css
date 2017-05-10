@@ -1,16 +1,16 @@
+.container-fluid {
+    padding-right: 20px;
+    /*padding-left: 5px;*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .App {
-  max-width: 1400px;
-}
-
-.App>.container-fluid {
+  /*max-width: 98vw;*/
+  /*max-height: 98vh;*/
+  /*padding: 15px;*/
+  margin: 0;
+  width: 100vw;
   background-color: #2B3E50;
-  /*background-image: url('/bg-app3.png');*/
-  /*max-width: 1400px;*/
-  padding: 10px 0px;
-  border-radius: 10px;
-  height: 750px;
 }
 
-h4, h5 {
-  /*color: #eee;*/
-}

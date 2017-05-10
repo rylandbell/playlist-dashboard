@@ -1,12 +1,13 @@
 .filters__pane {
-  padding: 0 10px 10px 10px;
+  /*padding: 0 10px 10px 10px;*/
   margin-top: 44px;
 }
 
 .filters__filter {
   border: 0px solid hsl(209, 15%, 20%);;
   border-top-width: 1px;
-  padding: 10px 10px 30px 10px;
+  padding: 10px 5px 20px 5px;
+  margin: 0 25px;
   background-color: hsl(209, 25%, 16%);
 }
 

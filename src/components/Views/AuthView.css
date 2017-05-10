@@ -2,7 +2,15 @@
   /*margin: 0;*/
   /*margin-left: 5px;*/
   /*padding-left: 5px;*/
-  /*background-color: #1E2933;*/
-  /*height: 800px;*/
+  background-color: #1E2933;
+  height: 100vh;
+  padding: 0;
+
+  /*max-width: 200px;*/
+  /*margin-right: 10px;*/
   /*border: 1px solid red;*/
+}
+
+.not-sidebar{
+  padding-left: 40px;
 }
