@@ -103,7 +103,9 @@ const activeView = (state = "preAuth", action) => {
 const activeTab = (state = "playlists", action) => {
   switch (action.type) {
     case 'SET_ACTIVE_TAB':
-      return action.data
+      return action.data;
+    case 'ADD_AUDIO_FEATURES':
+      return "filters"
     default:
       return state;
   }
