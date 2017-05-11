@@ -13,11 +13,10 @@ class SelectPlaylistsListItem extends Component {
   render() {
     const playlist = this.props.playlist;
     const selectedPlaylist = this.props.reduxState.selectedPlaylist;
-    const trClassList = (selectedPlaylist && playlist.id === selectedPlaylist.id) ? 'playlists__row playlists__row--active' : 'playlists__row'
-    const spanClassList = playlist.selected ? 'glyphicon glyphicon-ok' : 'glyphicon';
+    const classList = (selectedPlaylist && playlist.id === selectedPlaylist.id) ? "list-group-item playlists__item active" : "list-group-item playlists__item"
 
     return (
-      <a className="list-group-item playlists__item" onClick={this.onClick}>
+      <a className={classList} onClick={this.onClick}>
         {playlist.name}
       </a>
     );
