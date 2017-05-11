@@ -6,7 +6,7 @@
 .filters__filter {
   border: 0px solid hsl(209, 15%, 20%);;
   border-top-width: 1px;
-  padding: 10px 5px 20px 5px;
+  padding: 10px 5px 10px 5px;
   margin: 0 25px;
   background-color: hsl(209, 25%, 16%);
 }
@@ -23,6 +23,53 @@
 
 .filters__filter h4 {
   margin-top: 0;
+}
+
+.filters__checkbox-container {
+  display: inline-block;
+}
+
+.chart___checkbox {
+  display: inline-block;
+  text-align: right;
+}
+
+.filters__filter .fa.fa-line-chart {
+  position: relative;
+  bottom: 4px;
+  transform: scale(1.1);
+  font-size: 1.2em;
+  border-radius: 10px;
+  padding: 8px;
+  color: #555;
+}
+
+.filters__filter .fa.fa-line-chart.is-graphed.danceability {
+  color: #5bc0de;
+}
+
+.filters__filter .fa.fa-line-chart.is-graphed.energy {
+  color: #d9534f;
+}
+
+.filters__filter .fa.fa-line-chart.is-graphed.valence {
+  color: #5CB85C;
+}
+
+.filters__filter .fa.fa-line-chart.is-graphed.acousticness {
+  color: #f0ad4e;
+}
+
+.filters__filter .fa.fa-line-chart.is-graphed.liveness {
+  color: #DF691A;
+}
+
+.filters__filter .fa.fa-line-chart.is-graphed.instrumentalness {
+  color: #EBEBEB;
+}
+
+.filters__filter .fa.fa-line-chart:hover {
+  color: #999;
 }
 
 .filters__filter-icon {

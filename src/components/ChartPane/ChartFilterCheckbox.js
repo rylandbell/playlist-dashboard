@@ -16,8 +16,9 @@ class ChartFilterCheckbox extends Component {
     const filter = this.props.filter;
     return (
       <label className="checkbox-inline chart___checkbox" >
-        <input type="checkbox" checked={filter.isGraphed} value={filter.name} onChange={this.onChange} /> 
-        <span style={{fontWeight: 'bold'}}>Show in Chart</span>
+        <span className={"fa fa-line-chart " + filter.name + ' ' + (filter.isGraphed ? 'is-graphed' : '')} aria-hidden="true"></span>
+        <input className="hidden" type="checkbox" checked={filter.isGraphed} value={filter.name} onChange={this.onChange} /> 
+        {/*<span style={{fontWeight: 'bold'}}>Show in Chart</span>*/}
       </label>
     );
   }

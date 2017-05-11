@@ -44,14 +44,16 @@ class Filter extends Component {
 
     return (
       <div className="filters__filter">
-        <h4>{filterData.displayName}</h4>
-        {/*<div className="pull-right">
-          <ChartFilterCheckbox 
-            filter={filterData}
-            filterIndex={filterIndex}
-            {...this.props}
-          />
-        </div>*/}
+        <h4>{filterData.displayName}&nbsp;
+          <span className="glyphicon glyphicon-stats pull-right hidden" />
+          <div className="filters__checkbox-container pull-right">
+            <ChartFilterCheckbox 
+              filter={filterData}
+              filterIndex={filterIndex}
+              {...this.props}
+            />
+          </div>
+        </h4>
         <div className="flex-container">
           <div className="filters__flex-left">
             <img className="img-responsive center-block filters__filter-icon" src={`/${filterData.name}.png`} alt={`${filterData.displayName} icon`} />
