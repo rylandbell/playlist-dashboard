@@ -1,3 +1,7 @@
+* {
+  /*font-family: 'Roboto', sans-serif;*/
+}
+
 body {
   /*margin-top: 20px;*/
   padding: 0;
@@ -36,4 +40,17 @@ body {
 h4 {
   font-family: 'Audiowide', cursive;
   color: #ccc;
+}
+
+.nav-tabs{
+    display: flex;
+    font-size: 13px;
+}
+.nav-tabs li {
+    display: flex;
+    flex: 1;
+}
+
+.nav-tabs li  a {
+    flex: 1;
 }

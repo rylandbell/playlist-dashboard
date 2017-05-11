@@ -100,6 +100,15 @@ const activeView = (state = "preAuth", action) => {
   }
 }
 
+const activeTab = (state = "playlists", action) => {
+  switch (action.type) {
+    case 'SET_ACTIVE_TAB':
+      return action.data
+    default:
+      return state;
+  }
+}
+
 const filtersInitial = [
   {
     name: 'danceability',
@@ -196,6 +205,7 @@ const app = combineReducers({
   selectedPlaylistTracks,
   audioFeaturesData,
   activeView,
+  activeTab,
   hoveredTrack,
   hasReceivedPlaylists,
   hasReceivedTracks,

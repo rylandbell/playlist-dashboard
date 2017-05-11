@@ -44,6 +44,15 @@ function render() {
           }
         }
       }
+      handleTabSelect={
+        function(data) {
+          const action ={
+            type: 'SET_ACTIVE_TAB',
+            data: data.substring(4)
+          }
+          store.dispatch(action);
+        }
+      }
       handleSavePlaylist={
         function(name) {
           fetchCalls.handleSavePlaylist(store, name);
