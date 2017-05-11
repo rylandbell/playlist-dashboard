@@ -23,7 +23,7 @@ class SavePane extends Component {
       <div className="sidebar__save-pane">
         <div className="lead">Clicking save will create a new Spotify playlist, populated with the tracks that pass the current filter values.</div>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Playlist Title</label>
+          {/*<label htmlFor="exampleInputEmail1">New Playlist Name</label>*/}
           <input type="text" className="form-control" value={newPlaylistName} onChange={this.onChangeText} />
         </div>
         <button onClick={this.onClickSave} className="btn btn-primary pull-right">Save</button>

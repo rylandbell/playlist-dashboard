@@ -55,6 +55,14 @@ h4 {
     flex: 1;
 }
 
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item.active {
+  cursor: default;
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

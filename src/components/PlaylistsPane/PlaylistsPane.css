@@ -1,25 +1,19 @@
 .playlists__pane {
-  padding: 0 10px 10px 10px;
-}
-
-.playlists__pane h4 {
-  margin-top: 0;
-}
-
-.playlists__table {
-  max-height: 690px;
+  max-height: 90vh;
   overflow-y: scroll;
-  margin-bottom: 20px;
 }
 
-.playlists__table > table {
-  margin-bottom: 0;
+.playlists__group {
+  margin: 0 12px 8px 12px;  
 }
 
-.playlists__row {
-  cursor: pointer;
+.playlists__item {
+  background-color: #1E2933;
+  padding: 6px;
+  margin-right: 8px;
+  border-top: 1px solid hsl(209, 15%, 20%);
 }
 
-.playlists__table > table tr:first-of-type > td {
-  border-top-width: 0;
+.playlists__item:first-of-type {
+  border-width: 0;
 }
