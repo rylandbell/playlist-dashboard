@@ -1,5 +1,15 @@
 .sidebar {
   background-color: #1E2933;
   height: 100vh;
-  padding: 0;
+  padding: 0px 0 0 0;
+}
+
+.playlist-actions {
+  border-bottom: 1px solid hsl(209, 15%, 20%);
+  padding: 20px 5px 12px 5px;
+  /*background-color: silver;*/
+}
+
+.playlist-actions h4 {
+  margin-top: 0;
 }
