@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TracksTable from './TracksTable';
-import PlaylistActions from './PlaylistActions';
 import './TracksPane.css';
 
 class TracksPane extends Component {
@@ -8,12 +7,10 @@ class TracksPane extends Component {
     return (
       <div className="col-xs-12 tracks__pane">
         <div className="row">
-          <div className="col-xs-12">
-            <PlaylistActions {...this.props} />
-          </div>
         </div>
         <div className="row">
           <div className="col-xs-12">
+            <h4>{this.props.reduxState.selectedPlaylist.name}</h4>
             <TracksTable {...this.props} />
           </div>
         </div>

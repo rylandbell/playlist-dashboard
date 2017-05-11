@@ -43,7 +43,7 @@ class Filter extends Component {
     }
 
     return (
-      <div className="filters__filter">
+      <div className="filters__filter noselect">
         <h4>{filterData.displayName}&nbsp;
           <span className="glyphicon glyphicon-stats pull-right hidden" />
           <div className="filters__checkbox-container pull-right">

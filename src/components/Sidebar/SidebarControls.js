@@ -30,7 +30,7 @@ class SidebarControls extends Component {
 
     return (
       <div className="sidebar__controls">
-        <ul className="nav nav-tabs nav-justified">
+        <ul className="nav nav-tabs nav-justified noselect">
           <li role="presentation" onClick={this.onClick} className={playlistsClasses}>
             <a id="tab-playlists">PLAYLISTS</a>
           </li>

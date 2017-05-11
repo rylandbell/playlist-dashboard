@@ -104,7 +104,7 @@ const activeTab = (state = "playlists", action) => {
   switch (action.type) {
     case 'SET_ACTIVE_TAB':
       return action.data;
-    case 'ADD_AUDIO_FEATURES':
+    case 'SELECT_PLAYLIST':
       return "filters"
     default:
       return state;
@@ -199,6 +199,17 @@ const filters = (state = filtersInitial, action) => {
   }
 }
 
+const newPlaylistName = (state = "", action) => {
+  switch (action.type) {
+    case 'SELECT_PLAYLIST':
+      return "Modified: " + action.data.name;
+    case 'CHANGE_NAME_TEXT':
+      return action.data;
+    default:
+      return state;
+  }
+}
+
 const app = combineReducers({
   accessToken,
   playlists,
@@ -211,7 +222,8 @@ const app = combineReducers({
   hoveredTrack,
   hasReceivedPlaylists,
   hasReceivedTracks,
-  filters
+  filters,
+  newPlaylistName
 });
 
 export default app;

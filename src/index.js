@@ -53,6 +53,15 @@ function render() {
           store.dispatch(action);
         }
       }
+      handleNameTextEntry={
+        function(data) {
+          const action ={
+            type: 'CHANGE_NAME_TEXT',
+            data: data
+          }
+          store.dispatch(action);
+        }
+      }
       handleSavePlaylist={
         function(name) {
           fetchCalls.handleSavePlaylist(store, name);
