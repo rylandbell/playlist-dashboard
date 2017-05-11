@@ -41,7 +41,7 @@ const selectedPlaylist = (state = null, action) => {
 const selectedPlaylistTracks = (state = [], action) => {
   switch (action.type){
     case 'SELECT_PLAYLIST':
-      return [];
+      return action.data ? [] : state;
     case 'ADD_TRACKS_DATA':
       return action.data.slice();
     default:
@@ -52,7 +52,7 @@ const selectedPlaylistTracks = (state = [], action) => {
 const audioFeaturesData = (state = [], action) => {
   switch (action.type){
     case 'SELECT_PLAYLIST':
-      return [];
+      return action.data ? [] : state;
     case 'ADD_AUDIO_FEATURES':
       return action.data.slice();
     default:
