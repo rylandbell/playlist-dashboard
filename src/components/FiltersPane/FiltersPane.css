@@ -6,7 +6,7 @@
 .filters__filter {
   border: 0px solid hsl(209, 15%, 20%);;
   border-top-width: 1px;
-  padding: 10px 5px 10px 5px;
+  padding: 12px 5px 12px 5px;
   margin: 0 25px;
   background-color: hsl(209, 25%, 16%);
 }
@@ -32,6 +32,7 @@
 .chart___checkbox {
   display: inline-block;
   text-align: right;
+  padding: 0;
 }
 
 .filters__filter .fa.fa-line-chart {

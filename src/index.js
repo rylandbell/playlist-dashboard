@@ -49,15 +49,6 @@ function render() {
           fetchCalls.handleSavePlaylist(store, name);
         }
       }
-      handleViewChange={
-        function(view) {
-          const action = {
-            type: 'CHANGE_VIEW',
-            view: view
-          }
-          store.dispatch(action);
-        }
-      }
       handleFilterChange={
         function(filterIndex, inputValue) {
           const action = {

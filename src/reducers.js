@@ -91,8 +91,6 @@ const hasReceivedTracks = (state = false, action) => {
 
 const activeView = (state = "preAuth", action) => {
   switch (action.type){
-    case 'CHANGE_VIEW':
-      return action.view;
     case 'SET_ACCESS_TOKEN':
       const isToken = action.data && action.data.length > 0;
       const view = isToken ? "auth" : "preAuth";
@@ -101,8 +99,6 @@ const activeView = (state = "preAuth", action) => {
       return state;
   }
 }
-
-//next colors: #5CB85C #DF691A
 
 const filtersInitial = [
   {
