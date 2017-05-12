@@ -10,7 +10,12 @@
   /*max-height: 98vh;*/
   /*padding: 15px;*/
   margin: 0;
-  width: 100vw;
+  /*width: 100vw;*/
   background-color: #2B3E50;
 }
 
+.App-wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  border: 1px solid hsl(209, 15%, 40%);
+}

@@ -1,6 +1,11 @@
 .playlists__pane {
-  max-height: 90vh;
+  /*max-height: 90vh;*/
   overflow-y: scroll;
+  height: calc(100% - 55px);
+  position: absolute;
+  right: 0;
+  top: 55px;
+  padding: 10px 0;
 }
 
 .playlists__group {

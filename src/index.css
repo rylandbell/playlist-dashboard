@@ -1,13 +1,10 @@
-* {
-  /*font-family: 'Roboto', sans-serif;*/
-}
 
 body {
   /*margin-top: 20px;*/
   padding: 0;
   font-family: sans-serif;
-  background-color: #333;
-  /*background-image: url('/maxime-bhm-110035.jpg');*/
+  background-color: #444;
+  background-image: url('/bg-app.png');
   /*background-size: cover;*/
 }
 

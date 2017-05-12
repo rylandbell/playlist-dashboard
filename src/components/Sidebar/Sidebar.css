@@ -2,6 +2,8 @@
   background-color: #1E2933;
   height: 100vh;
   padding: 7px 0 0 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .sidebar__content {
