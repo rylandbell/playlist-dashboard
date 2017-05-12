@@ -154,15 +154,11 @@ fetchCalls.createNewPlaylist = function(store, name, callback) {
     })
     .then(res => res.json())
     .then(res => {
-      // console.log(res);
+      store.dispatch({
+        type: 'CREATE_PLAYLIST_SUCCESS'
+      });
       this.addTracksToPlaylist(store, res.id)
     })
-    // .then(res => {
-    //   store.dispatch({
-    //     type: 'ADD_PLAYLISTS_DATA',
-    //     data: res.items
-    //   });
-    // })
     .catch(err => {
       console.log('createNewPlaylist error: ', err);
       store.dispatch({
@@ -198,12 +194,11 @@ fetchCalls.addTracksToPlaylist = function(store, playlistId) {
       return res;
     })
     .then(res => res.json())
-    // .then(res => {
-    //   store.dispatch({
-    //     type: 'ADD_PLAYLISTS_DATA',
-    //     data: res.items
-    //   });
-    // })
+    .then(res => {
+      store.dispatch({
+        type: 'ADD_TRACKS_TO_PLAYLIST_SUCCESS'
+      });
+    })
     .catch(err => {
       console.log('addTracksToPlaylist error: ', err);
       store.dispatch({

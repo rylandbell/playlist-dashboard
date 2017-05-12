@@ -232,6 +232,8 @@ const getPlaylistsFailure = (state = false, action) => {
       return false;
     case 'GET_PLAYLISTS_FAILURE':
       return true;
+    case 'ADD_PLAYLISTS_DATA':
+      return false;
     default:
       return state;
   }
@@ -244,6 +246,8 @@ const getTracksPending = (state = false, action) => {
     case 'GET_TRACKS_SUCCESS':
       return false;
     case 'GET_TRACKS_FAILURE':
+      return false;
+    case 'ADD_TRACKS_DATA':
       return false;
     default:
       return state;
@@ -258,6 +262,8 @@ const getTracksSuccess = (state = false, action) => {
       return true;
     case 'GET_TRACKS_FAILURE':
       return false;
+    case 'ADD_TRACKS_DATA':
+      return true;
     default:
       return state;
   }
@@ -271,6 +277,8 @@ const getTracksFailure = (state = false, action) => {
       return false;
     case 'GET_TRACKS_FAILURE':
       return true;
+    case 'ADD_TRACKS_DATA':
+      return false;
     default:
       return state;
   }
@@ -284,6 +292,8 @@ const getFeaturesPending = (state = false, action) => {
       return false;
     case 'GET_FEATURES_FAILURE':
       return true;
+    case 'ADD_AUDIO_FEATURES':
+      return false;
     default:
       return state;
   }
@@ -296,6 +306,8 @@ const getFeaturesSuccess = (state = false, action) => {
     case 'GET_FEATURES_SUCCESS':
       return false;
     case 'GET_FEATURES_FAILURE':
+      return true;
+    case 'ADD_AUDIO_FEATURES':
       return true;
     default:
       return state;
@@ -310,6 +322,8 @@ const getFeaturesFailure = (state = false, action) => {
       return false;
     case 'GET_FEATURES_FAILURE':
       return true;
+    case 'ADD_AUDIO_FEATURES':
+      return false;
     default:
       return state;
   }
