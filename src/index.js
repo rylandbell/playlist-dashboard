@@ -25,6 +25,9 @@ function render() {
       reduxState={store.getState()}
       getPlaylists={
         function() {
+          store.dispatch({
+            type: 'GET_PLAYLISTS_PENDING'
+          });
           fetchCalls.getPlaylists(store)
         }
       }

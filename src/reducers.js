@@ -202,6 +202,8 @@ const getPlaylistsPending = (state = false, action) => {
       return false;
     case 'GET_PLAYLISTS_FAILURE':
       return false;
+    case 'ADD_PLAYLISTS_DATA':
+      return false;
     default:
       return state;
   }

@@ -22,6 +22,7 @@ fetchCalls.handleAuthRequest = function() {
 
 //get list of current user's playlists
 fetchCalls.getPlaylists = function(store) {
+  
   const requestOptions = {
     method: 'GET',
     headers: {
@@ -42,7 +43,13 @@ fetchCalls.getPlaylists = function(store) {
         data: res
       });
     })
-    .catch(renewAuth.bind(this));
+    .catch(err => {
+      console.log('getPlaylists error: ', err);
+      store.dispatch({
+        type: 'GET_PLAYLISTS_FAILURE'
+      });
+      renewAuth.bind(this)
+    });
 }
 
 //get track info for a given playlist
@@ -73,7 +80,13 @@ fetchCalls.getTracks = function(store, data) {
       });
       this.getTrackFeatures(store, res.items);
     })
-    .catch(renewAuth.bind(this));
+    .catch(err => {
+      console.log('getTracks error: ', err);
+      store.dispatch({
+        type: 'GET_TRACKS_FAILURE'
+      });
+      renewAuth.bind(this)
+    });
 }
 
 //get audio features given an array of tracks
@@ -103,7 +116,13 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
         data: res.audio_features
       });
     })
-    .catch(renewAuth.bind(this));
+    .catch(err => {
+      console.log('getTrackFeatures error: ', err);
+      store.dispatch({
+        type: 'GET_FEATURES_FAILURE'
+      });
+      renewAuth.bind(this)
+    });
 }
 
 fetchCalls.handleSavePlaylist = function(store, name) {
@@ -144,7 +163,13 @@ fetchCalls.createNewPlaylist = function(store, name, callback) {
     //     data: res.items
     //   });
     // })
-    .catch(renewAuth.bind(this));
+    .catch(err => {
+      console.log('createNewPlaylist error: ', err);
+      store.dispatch({
+        type: 'CREATE_PLAYLIST_FAILURE'
+      });
+      renewAuth.bind(this)
+    });
 }
 
 fetchCalls.addTracksToPlaylist = function(store, playlistId) {
@@ -179,7 +204,13 @@ fetchCalls.addTracksToPlaylist = function(store, playlistId) {
     //     data: res.items
     //   });
     // })
-    .catch(renewAuth.bind(this));
+    .catch(err => {
+      console.log('addTracksToPlaylist error: ', err);
+      store.dispatch({
+        type: 'ADD_TRACKS_TO_PLAYLIST_FAILURE'
+      });
+      renewAuth.bind(this)
+    });
 }
 
 
