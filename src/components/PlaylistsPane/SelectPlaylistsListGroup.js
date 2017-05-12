@@ -3,7 +3,9 @@ import SelectPlaylistsListItem from './SelectPlaylistsListItem';
 
 class SelectPlaylistsListGroup extends Component {
   componentDidMount() {
-    if (!this.props.reduxState.hasReceivedPlaylists) {
+    const state = this.props.reduxState;
+    const playlistsLoaded = state.playlists && state.playlists.length > 0;
+    if (!playlistsLoaded) {
       this.props.getPlaylists();
     }
   }

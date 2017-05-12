@@ -71,24 +71,6 @@ const hoveredTrack = (state = null, action) => {
   }
 }
 
-const hasReceivedPlaylists = (state = false, action) => {
-  switch(action.type) {
-    case 'ADD_PLAYLISTS_DATA':
-      return true;
-    default:
-      return state;
-  }
-}
-
-const hasReceivedTracks = (state = false, action) => {
-  switch(action.type) {
-    case 'ADD_TRACKS_DATA':
-      return true;
-    default:
-      return state;
-  }
-}
-
 const activeView = (state = "preAuth", action) => {
   switch (action.type){
     case 'SET_ACCESS_TOKEN':
@@ -210,6 +192,223 @@ const newPlaylistName = (state = "", action) => {
   }
 }
 
+//~~~~~~~~~fetch statuses:~~~~~~~~~~~
+
+const getPlaylistsPending = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_PLAYLISTS_PENDING':
+      return true;
+    case 'GET_PLAYLISTS_SUCCESS':
+      return false;
+    case 'GET_PLAYLISTS_FAILURE':
+      return false;
+    default:
+      return state;
+  }
+}
+
+const getPlaylistsSuccess = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_PLAYLISTS_PENDING':
+      return false;
+    case 'GET_PLAYLISTS_SUCCESS':
+      return true;
+    case 'GET_PLAYLISTS_FAILURE':
+      return false;
+    case 'ADD_PLAYLISTS_DATA':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const getPlaylistsFailure = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_PLAYLISTS_PENDING':
+      return false;
+    case 'GET_PLAYLISTS_SUCCESS':
+      return false;
+    case 'GET_PLAYLISTS_FAILURE':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const getTracksPending = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_TRACKS_PENDING':
+      return true;
+    case 'GET_TRACKS_SUCCESS':
+      return false;
+    case 'GET_TRACKS_FAILURE':
+      return false;
+    default:
+      return state;
+  }
+}
+
+const getTracksSuccess = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_TRACKS_PENDING':
+      return false;
+    case 'GET_TRACKS_SUCCESS':
+      return true;
+    case 'GET_TRACKS_FAILURE':
+      return false;
+    default:
+      return state;
+  }
+}
+
+const getTracksFailure = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_TRACKS_PENDING':
+      return false;
+    case 'GET_TRACKS_SUCCESS':
+      return false;
+    case 'GET_TRACKS_FAILURE':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const getFeaturesPending = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_FEATURES_PENDING':
+      return false;
+    case 'GET_FEATURES_SUCCESS':
+      return false;
+    case 'GET_FEATURES_FAILURE':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const getFeaturesSuccess = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_FEATURES_PENDING':
+      return false;
+    case 'GET_FEATURES_SUCCESS':
+      return false;
+    case 'GET_FEATURES_FAILURE':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const getFeaturesFailure = (state = false, action) => {
+  switch(action.type) {
+    case 'GET_FEATURES_PENDING':
+      return false;
+    case 'GET_FEATURES_SUCCESS':
+      return false;
+    case 'GET_FEATURES_FAILURE':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const createPlaylistPending = (state = false, action) => {
+  switch(action.type) {
+    case 'CREATE_PLAYLIST_PENDING':
+      return true;
+    case 'CREATE_PLAYLIST_SUCCESS':
+      return false;
+    case 'CREATE_PLAYLIST_FAILURE':
+      return false;
+    default:
+      return state;
+  }
+}
+
+const createPlaylistSuccess = (state = false, action) => {
+  switch(action.type) {
+    case 'CREATE_PLAYLIST_PENDING':
+      return false;
+    case 'CREATE_PLAYLIST_SUCCESS':
+      return true;
+    case 'CREATE_PLAYLIST_FAILURE':
+      return false;
+    default:
+      return state;
+  }
+}
+
+const createPlaylistFailure = (state = false, action) => {
+  switch(action.type) {
+    case 'CREATE_PLAYLIST_PENDING':
+      return false;
+    case 'CREATE_PLAYLIST_SUCCESS':
+      return false;
+    case 'CREATE_PLAYLIST_FAILURE':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const addTracksToPlaylistPending = (state = false, action) => {
+  switch(action.type) {
+    case 'ADD_TRACKS_TO_PLAYLIST_PENDING':
+      return true;
+    case 'ADD_TRACKS_TO_PLAYLIST_SUCCESS':
+      return false;
+    case 'ADD_TRACKS_TO_PLAYLIST_FAILURE':
+      return false;
+    default:
+      return state;
+  }
+}
+
+const addTracksToPlaylistSuccess = (state = false, action) => {
+  switch(action.type) {
+    case 'ADD_TRACKS_TO_PLAYLIST_PENDING':
+      return false;
+    case 'ADD_TRACKS_TO_PLAYLIST_SUCCESS':
+      return true;
+    case 'ADD_TRACKS_TO_PLAYLIST_FAILURE':
+      return false;
+    default:
+      return state;
+  }
+}
+
+const addTracksToPlaylistFailure = (state = false, action) => {
+  switch(action.type) {
+    case 'ADD_TRACKS_TO_PLAYLIST_PENDING':
+      return false;
+    case 'ADD_TRACKS_TO_PLAYLIST_SUCCESS':
+      return false;
+    case 'ADD_TRACKS_TO_PLAYLIST_FAILURE':
+      return true;
+    default:
+      return state;
+  }
+}
+
+const fetchStatus = combineReducers({
+  getPlaylistsPending,
+  getPlaylistsSuccess,
+  getPlaylistsFailure,
+  getTracksPending,
+  getTracksSuccess,
+  getTracksFailure,
+  getFeaturesPending,
+  getFeaturesSuccess,
+  getFeaturesFailure,
+  createPlaylistPending,
+  createPlaylistSuccess,
+  createPlaylistFailure,
+  addTracksToPlaylistPending,
+  addTracksToPlaylistSuccess,
+  addTracksToPlaylistFailure
+});
+
 const app = combineReducers({
   accessToken,
   playlists,
@@ -218,10 +417,9 @@ const app = combineReducers({
   selectedPlaylistTracks,
   audioFeaturesData,
   activeView,
+  fetchStatus,
   activeTab,
   hoveredTrack,
-  hasReceivedPlaylists,
-  hasReceivedTracks,
   filters,
   newPlaylistName
 });
