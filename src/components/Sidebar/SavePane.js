@@ -9,7 +9,12 @@ class SavePane extends Component {
   }
 
   onClickSave() {
-    const newPlaylistName = this.props.reduxState.newPlaylistName;
+    const state = this.props.reduxState;
+    const newPlaylistName = state.newPlaylistName;
+    const savePending = state.fetchStatus.createPlaylistPending || state.fetchStatus.addTracksToPlaylistPending;
+    if (savePending) {
+      return;
+    }
     this.props.handleSavePlaylist(newPlaylistName);
   }
 
@@ -25,11 +30,11 @@ class SavePane extends Component {
 
     return (
       <div className="sidebar__save-pane">
-        <div className="lead">Clicking save will create a new Spotify playlist, populated with the tracks that pass the current filter values.</div>
+        <div className="lead">Clicking save will create a new Spotify playlist from the filtered tracks.</div>
         <div className="form-group">
           <input type="text" className="form-control" value={newPlaylistName} onChange={this.onChangeText} />
         </div>
-        <button onClick={this.onClickSave} className="btn btn-primary pull-right">Save</button>
+        <button onClick={this.onClickSave} className={"btn btn-primary pull-right " + (savePending ? 'disabled' : '')} >Save</button>
         <br />
         {savePending ? <Message classList="" loading={true} text="Saving on Spotify... " {...this.props} /> : null}
         {saveSuccess ? <Message classList="" success={true} text="Playlist successfully created.&nbsp;" {...this.props} /> : null}

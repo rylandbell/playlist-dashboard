@@ -7,9 +7,10 @@ class Message extends Component {
     return (
       <div className="text-center">
         <div className={"message " + classList}>
+          {this.props.success ? <i className="fa fa-check">&nbsp;</i> : null}
           {this.props.text || null}
           {this.props.loading ? <i className="fa fa-spinner fa-spin fa-fw"></i> : null}
-          {this.props.success ? <i className="fa fa-check"></i> : null}
+          
         </div>
       </div>
     );

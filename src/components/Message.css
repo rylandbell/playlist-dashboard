@@ -1,14 +1,14 @@
 .message {
   display: inline-block;
-  border: 1px solid hsl(209, 15%, 40%);
+  /*border: 1px solid hsl(209, 15%, 30%);*/
   border-radius: 5px;
-  padding: 5px 10px;
-  margin: 5px 50px;
+  padding: 5px 15px;
+  margin: 15px 50px;
 }
 
 .message.big {
   font-size: 24px;
-  padding: 5px 10px;
+  padding: 15px 30px;
   margin-top: 100px;
 }
 
