@@ -287,11 +287,11 @@ const getTracksFailure = (state = false, action) => {
 const getFeaturesPending = (state = false, action) => {
   switch(action.type) {
     case 'GET_FEATURES_PENDING':
-      return false;
+      return true;
     case 'GET_FEATURES_SUCCESS':
       return false;
     case 'GET_FEATURES_FAILURE':
-      return true;
+      return false;
     case 'ADD_AUDIO_FEATURES':
       return false;
     default:
@@ -304,9 +304,9 @@ const getFeaturesSuccess = (state = false, action) => {
     case 'GET_FEATURES_PENDING':
       return false;
     case 'GET_FEATURES_SUCCESS':
-      return false;
-    case 'GET_FEATURES_FAILURE':
       return true;
+    case 'GET_FEATURES_FAILURE':
+      return false;
     case 'ADD_AUDIO_FEATURES':
       return true;
     default:

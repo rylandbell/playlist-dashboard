@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Message from '../Message';
 
 class SavePane extends Component {
   constructor(props) {
@@ -17,16 +18,21 @@ class SavePane extends Component {
   }
 
   render() {
-    // const playlistName = this.props.reduxState.selectedPlaylist.name;
-    const newPlaylistName = this.props.reduxState.newPlaylistName;
+    const state = this.props.reduxState;
+    const newPlaylistName = state.newPlaylistName;
+    const savePending = state.fetchStatus.createPlaylistPending || state.fetchStatus.addTracksToPlaylistPending;
+    const saveSuccess = state.fetchStatus.addTracksToPlaylistSuccess;
+
     return (
       <div className="sidebar__save-pane">
         <div className="lead">Clicking save will create a new Spotify playlist, populated with the tracks that pass the current filter values.</div>
         <div className="form-group">
-          {/*<label htmlFor="exampleInputEmail1">New Playlist Name</label>*/}
           <input type="text" className="form-control" value={newPlaylistName} onChange={this.onChangeText} />
         </div>
         <button onClick={this.onClickSave} className="btn btn-primary pull-right">Save</button>
+        <br />
+        {savePending ? <Message classList="" loading={true} text="Saving on Spotify... " {...this.props} /> : null}
+        {saveSuccess ? <Message classList="" success={true} text="Playlist successfully created.&nbsp;" {...this.props} /> : null}
       </div>
     );
   }
