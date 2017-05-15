@@ -14,7 +14,7 @@ import './index.css';
 // import 'bootstrap/dist/css/bootstrap-theme.css';
 
 //create a store from the above reducer, then subscribe a React render function to it
-const store = createStore(reducers);
+const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 dispatchAccessToken();
 store.subscribe(render);
 render();
@@ -25,9 +25,6 @@ function render() {
       reduxState={store.getState()}
       getPlaylists={
         function() {
-          store.dispatch({
-            type: 'GET_PLAYLISTS_PENDING'
-          });
           fetchCalls.getPlaylists(store)
         }
       }

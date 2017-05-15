@@ -22,7 +22,10 @@ fetchCalls.handleAuthRequest = function() {
 
 //get list of current user's playlists
 fetchCalls.getPlaylists = function(store) {
-  
+  store.dispatch({
+    type: 'GET_PLAYLISTS_PENDING'
+  });
+
   const requestOptions = {
     method: 'GET',
     headers: {
@@ -54,6 +57,10 @@ fetchCalls.getPlaylists = function(store) {
 
 //get track info for a given playlist
 fetchCalls.getTracks = function(store, data) {
+  store.dispatch({
+    type: 'GET_TRACKS_PENDING'
+  });
+
   const requestOptions = {
     method: 'GET',
     headers: {
@@ -91,6 +98,10 @@ fetchCalls.getTracks = function(store, data) {
 
 //get audio features given an array of tracks
 fetchCalls.getTrackFeatures = function(store, tracks) {
+  store.dispatch({
+    type: 'GET_FEATURES_PENDING'
+  });
+
   //get track list from Spotify, dispatch to Redux store:
   const requestOptions = {
     method: 'GET',
@@ -130,6 +141,9 @@ fetchCalls.handleSavePlaylist = function(store, name) {
 }
 
 fetchCalls.createNewPlaylist = function(store, name, callback) {
+  store.dispatch({
+    type: 'CREATE_PLAYLIST_PENDING'
+  });
   const requestBody = {
     name: name,
     public: false,
@@ -169,6 +183,10 @@ fetchCalls.createNewPlaylist = function(store, name, callback) {
 }
 
 fetchCalls.addTracksToPlaylist = function(store, playlistId) {
+  store.dispatch({
+    type: 'ADD_TRACKS_TO_PLAYLIST_PENDING'
+  });
+
   const tracksToSave = getTracksToSave(store);
   const trackURIArray = tracksToSave.map(track => track.track.uri);;
 
