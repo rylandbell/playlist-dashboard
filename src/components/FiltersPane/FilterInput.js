@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Tooltip from 'rc-tooltip';
 import { Range, Handle } from 'rc-slider';
-import ChartFilterCheckbox from '../ChartPane/ChartFilterCheckbox';
+import ChartedFeatureCheckbox from './ChartedFeatureCheckbox';
 // We can just import Slider or Range to reduce bundle size
 // import Slider from 'rc-slider/lib/Slider';
 // import Range from 'rc-slider/lib/Range';
@@ -63,7 +63,7 @@ class Filter extends Component {
         <h4>{filterData.displayName}&nbsp;
           <span className="glyphicon glyphicon-stats pull-right hidden" />
           <div className="filters__checkbox-container pull-right">
-            <ChartFilterCheckbox 
+            <ChartedFeatureCheckbox 
               filter={filterData}
               filterIndex={filterIndex}
               {...this.props}

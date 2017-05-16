@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Tooltip from 'rc-tooltip';
 import 'rc-tooltip/assets/bootstrap.css';
 
-class ChartFilterCheckbox extends Component {
+class ChartedFeatureCheckbox extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
@@ -34,4 +34,4 @@ class ChartFilterCheckbox extends Component {
 
 }
 
-export default ChartFilterCheckbox;
+export default ChartedFeatureCheckbox;
