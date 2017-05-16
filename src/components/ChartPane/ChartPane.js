@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-// import TracksTable from './TracksTable';
 import './ChartPane.css';
 import FeaturesLineChart from './FeaturesLineChart';
-// import ChartControls from './ChartControls';
 
 class TracksPane extends Component {
   render() {

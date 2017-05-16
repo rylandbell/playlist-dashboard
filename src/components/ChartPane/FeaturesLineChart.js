@@ -41,7 +41,7 @@ class FeaturesLineChart extends Component {
           <YAxis stroke="#ebebeb" strokeWidth={2} domain={[0, 1]} />
           <Legend />
           <ReferenceLine x={hoveredTrackPosition} stroke="#5CB85C" label={hoveredTrackName} />
-          <Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}}/>
+          <Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}} />
           {graphedFilters.map(filter => 
             <Line 
               dataKey={filter.name}
