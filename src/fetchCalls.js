@@ -53,7 +53,7 @@ fetchCalls.getPlaylists = function(store) {
       store.dispatch({
         type: 'GET_PLAYLISTS_FAILURE'
       });
-      console.log(err);
+      console.log('getPlaylists Error:', err);
     });
 }
 

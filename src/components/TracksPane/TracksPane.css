@@ -3,6 +3,10 @@
   /*border: 1px dashed red;*/
 }
 
+.tracks__pane h4 {
+  color: #eee;
+}
+
 .tracks__change-playlist-btn {
   margin-left: 10px;
   margin-right: 20px;

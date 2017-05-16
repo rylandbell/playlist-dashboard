@@ -5,6 +5,19 @@ import Message from '../Message';
 import './AuthView.css';
 
 class AuthView extends Component {
+
+  //fetch playlists when AuthView first mounts
+  componentDidMount() {
+    const state = this.props.reduxState;
+    const playlistsLoaded = state.playlists && state.playlists.length > 0;
+    const getPlaylistsFailure = state.fetchStatus.getPlaylistsFailure;
+    const shouldGetPlaylists = !playlistsLoaded && !getPlaylistsFailure;
+    
+    if (shouldGetPlaylists) {
+      this.props.getPlaylists();
+    }
+  }
+  
   render() {
     const state = this.props.reduxState;
     const tracksLoaded = state.selectedPlaylistTracks && state.selectedPlaylistTracks.length > 0;
