@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
-import { Range } from 'rc-slider';
+import Tooltip from 'rc-tooltip';
+import { Range, Handle } from 'rc-slider';
 import ChartFilterCheckbox from '../ChartPane/ChartFilterCheckbox';
 // We can just import Slider or Range to reduce bundle size
 // import Slider from 'rc-slider/lib/Slider';
 // import Range from 'rc-slider/lib/Range';
+
+const handle = (props) => {
+  const { value, dragging, index, ...restProps } = props;
+  return (
+    <Tooltip
+      prefixCls="rc-slider-tooltip"
+      overlay={value}
+      visible={true}
+      placement="bottom"
+      key={index}
+    >
+      <Handle {...restProps} />
+    </Tooltip>
+  );
+};
 
 class Filter extends Component {
   constructor(props) {
@@ -59,7 +75,7 @@ class Filter extends Component {
             <img className="img-responsive center-block filters__filter-icon" src={`/${filterData.name}.png`} alt={`${filterData.displayName} icon`} />
           </div>
           <div className="filters__flex-right">
-            <Range {...rangeOptions} />
+            <Range handle={handle} {...rangeOptions} />
           </div>
         </div>
         
