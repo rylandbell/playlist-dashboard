@@ -15,9 +15,11 @@ class SelectPlaylistsTable extends Component {
   render() {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
     const features = this.props.reduxState.audioFeaturesData;
+    const allFilters = this.props.reduxState.filters;
+    // const graphedFilters = allFilters.filter(x => x.isGraphed);
 
     const filteredTracks = tracks.filter(filterByFeatures.bind(this));
-    const filteredFeatures = features.filter(filterByFeatures.bind(this));
+    const filteredFeaturesData = features.filter(filterByFeatures.bind(this));
 
     return (
       <div className="tracks__table">
@@ -25,14 +27,12 @@ class SelectPlaylistsTable extends Component {
           <thead>
             <tr>
               <th>Track</th>
-              <th className="text-right">Danceability</th>
-              <th className="text-right">Instrumentalness</th>
-              <th className="text-right">Valence</th>
+              {allFilters.map(filter => <th className="text-right" key={filter.name} >{filter.displayName}</th>)}
             </tr>
           </thead>
           <tbody>
             {filteredTracks.map((track, index) => 
-              <TracksTableRow key={track.track.id + track.added_at + index} track={track} features={filteredFeatures[index]} {...this.props} />
+              <TracksTableRow key={track.track.id + track.added_at + index} track={track} featuresData={filteredFeaturesData[index]} {...this.props} />
             )}
           </tbody>
         </table>

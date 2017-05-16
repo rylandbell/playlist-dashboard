@@ -12,19 +12,15 @@ class TracksTableRow extends Component {
 
   render() {
     const track = this.props.track.track;
-    const features = this.props.features;
-    const danceability = features ? features.danceability : 'N/A';
-    const instrumentalness = features ? features.instrumentalness : 'N/A';
-    const valence = features ? features.valence : 'N/A';
-    
+    const featuresData = this.props.featuresData;
+    const allFilters = this.props.reduxState.filters;
+    // const graphedFilters = this.props.reduxState.filters.filter(x => x.isGraphed);
     return (
       <tr className="tracks__row" onMouseEnter={this.onMouseEnter}> 
         <td>{track.name}&nbsp;
           <small>{track.artists[0].name}</small>
         </td>
-        <td className="text-right">{danceability || '0'}</td>
-        <td className="text-right">{instrumentalness || '0'}</td>
-        <td className="text-right">{valence || '0'}</td>
+        {allFilters.map(filter => <td key={filter.name} className="text-right">{featuresData[filter.name] || '0'}</td>)}
       </tr>
     );
   }

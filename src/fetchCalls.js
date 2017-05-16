@@ -3,10 +3,12 @@ import {getTracksToSave} from './helper';
 const fetchCalls = {};
 
 function renewAuth() {
+  console.log('renewAuth runs');
   this.handleAuthRequest();
 }
 
 fetchCalls.handleAuthRequest = function() {
+  console.log('handleAuthRequest runs');
   const clientID = '74436b5dd9624f8782f138387e69daaf';
   const redirectURI = 'http://localhost:3000';
   const scopes = ['playlist-read-private','playlist-modify-private'];
@@ -35,7 +37,8 @@ fetchCalls.getPlaylists = function(store) {
   fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        throw Error(res.statusText);
+        this.handleAuthRequest();
+        throw new Error(res.statusText);
       }
       return res;
     })
@@ -47,11 +50,10 @@ fetchCalls.getPlaylists = function(store) {
       });
     })
     .catch(err => {
-      console.log('getPlaylists error: ', err);
       store.dispatch({
         type: 'GET_PLAYLISTS_FAILURE'
       });
-      renewAuth.bind(this)
+      console.log(err);
     });
 }
 
@@ -75,7 +77,8 @@ fetchCalls.getTracks = function(store, data) {
   fetch(playlistURI, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        throw Error(res.statusText);
+        this.handleAuthRequest();
+        throw new Error(res.statusText);
       }
       return res;
     })
@@ -116,7 +119,8 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
   fetch(featuresURI, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        throw Error(res.statusText);
+        this.handleAuthRequest();
+        throw new Error(res.statusText);
       }
       return res;
     })
@@ -162,7 +166,8 @@ fetchCalls.createNewPlaylist = function(store, name, callback) {
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        throw Error(res.statusText);
+        this.handleAuthRequest();
+        throw new Error(res.statusText);
       }
       return res;
     })
@@ -207,7 +212,8 @@ fetchCalls.addTracksToPlaylist = function(store, playlistId) {
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        throw Error(res.statusText);
+        this.handleAuthRequest();
+        throw new Error(res.statusText);
       }
       return res;
     })
