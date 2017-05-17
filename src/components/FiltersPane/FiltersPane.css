@@ -137,6 +137,10 @@
   bottom: 6px !important;
 }
 
+.rc-slider-tooltip-arrow {
+  display: none;
+}
+
 .flex-container {
   /*padding: 10px 0 20px 0;*/
   display: -ms-flexbox;
