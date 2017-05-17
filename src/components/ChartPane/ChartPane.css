@@ -28,3 +28,11 @@
   margin-top: 40px;
   background-color: pink;
 }
+
+.recharts-reference-line .recharts-reference-line-label .recharts-text {
+  font-weight: bold;
+}
+
+.chart__track-info {
+  font-weight: bold;
+}

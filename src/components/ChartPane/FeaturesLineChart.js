@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, Legend, XAxis, YAxis, Tooltip, ReferenceLine} from 'recharts';
 import {filterByFeatures} from '../../helper';
+import TrackInfo from './TrackInfo';
 
 
 class FeaturesLineChart extends Component {
@@ -40,8 +41,9 @@ class FeaturesLineChart extends Component {
           <XAxis stroke="#ebebeb" strokeWidth={2} interval={4} dataKey={name} />
           <YAxis stroke="#ebebeb" strokeWidth={2} domain={[0, 1]} />
           <Legend />
-          <ReferenceLine x={hoveredTrackPosition} stroke="#5CB85C" label={hoveredTrackName} />
-          <Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}} />
+          <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
+          {/*<Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}} wrapperStyle={{backgroundColor: 'rgba(0,0,0,0)', borderColor: 'rgba(0,0,0,0)'}} />*/}
+          <Tooltip content={<TrackInfo />} />
           {graphedFilters.map(filter => 
             <Line 
               dataKey={filter.name}

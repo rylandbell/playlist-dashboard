@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ChartPane.css';
 import FeaturesLineChart from './FeaturesLineChart';
 
-class TracksPane extends Component {
+class ChartPane extends Component {
   render() {
     return (
       <div className="col-xs-12 chart__pane">
@@ -12,4 +12,4 @@ class TracksPane extends Component {
   }
 }
 
-export default TracksPane;
+export default ChartPane;
