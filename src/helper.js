@@ -1,14 +1,19 @@
 export {filterByFeatures, getTracksToSave};
 
 function filterByFeatures(track, index, array, passedReduxState) {
-  // console.log(track, index, array, passedReduxState);
+
   const state = passedReduxState || this.props.reduxState;
   const features = state.audioFeaturesData;
   const filters = state.filters;
 
   //don't do any filtering before features data loads
-  if (!features || features.length < 1) {
+  if (!features || features.length < 1 ) {
     return true;
+  }
+
+  //eliminate tracks without available features data:
+  if (!features[index]) {
+    return false;
   }
 
   const passesAllFilters = filters.reduce(
