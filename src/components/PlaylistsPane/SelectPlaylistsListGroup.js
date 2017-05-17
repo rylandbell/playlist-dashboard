@@ -3,12 +3,17 @@ import SelectPlaylistsListItem from './SelectPlaylistsListItem';
 
 class SelectPlaylistsListGroup extends Component {
   render() {
+    const playlists = this.props.reduxState.playlists;
+
+    const mappedPlaylists = playlists.map(list => 
+      <SelectPlaylistsListItem key={list.id} playlist={list} {...this.props} />
+    );
     return (
-      <div className="list-group playlists__group">
-        {this.props.reduxState.playlists.map(list => 
-          <SelectPlaylistsListItem key={list.id} playlist={list} {...this.props} />
-        )}
-      </div>
+      playlists.length > 0 ? 
+        (<div className="list-group playlists__group">
+          {mappedPlaylists}
+        </div>)
+        : <p>No playlists found for this account.</p>
     );
   }
 }
