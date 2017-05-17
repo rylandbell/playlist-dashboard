@@ -104,6 +104,14 @@ function render() {
           store.dispatch(action);
         }
       }
+      stopAnimatingChart={
+        function() {
+          const action = {
+            type: 'STOP_ANIMATING_CHART',
+          }
+          store.dispatch(action);
+        }
+      }
     />,
     document.getElementById('root')
   );

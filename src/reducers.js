@@ -192,6 +192,19 @@ const newPlaylistName = (state = "", action) => {
   }
 }
 
+const animateNextChartDraw = (state = true, action) => {
+  switch (action.type) {
+    case 'STOP_ANIMATING_CHART':
+      return false;
+    case 'ADD_AUDIO_FEATURES':
+      return true;
+    // case 'TOGGLE_CHARTED_FEATURE':
+    //   return true;
+    default:
+      return state;
+  }
+}
+
 //~~~~~~~~~fetch statuses:~~~~~~~~~~~
 
 const getPlaylistsPending = (state = false, action) => {
@@ -436,6 +449,7 @@ const app = combineReducers({
   fetchStatus,
   activeTab,
   hoveredTrack,
+  animateNextChartDraw,
   filters,
   newPlaylistName
 });

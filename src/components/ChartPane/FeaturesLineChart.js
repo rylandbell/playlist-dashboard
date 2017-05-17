@@ -5,6 +5,14 @@ import TrackInfo from './TrackInfo';
 
 
 class FeaturesLineChart extends Component {
+
+  //Don't animate chart on updates:
+  componentWillUpdate(e) {
+    if (this.props.reduxState.animateNextChartDraw) {
+     this.props.stopAnimatingChart();
+    }
+  }
+
   render () {
     const graphedFilters = this.props.reduxState.filters.filter(x => x.isGraphed);
     const tracks = this.props.reduxState.selectedPlaylistTracks;
@@ -48,7 +56,8 @@ class FeaturesLineChart extends Component {
             <Line 
               dataKey={filter.name}
               name={filter.displayName}
-              isAnimationActive={false} 
+              isAnimationActive={this.props.reduxState.animateNextChartDraw} 
+              animationDuration={1500}
               type="monotone" 
               stroke={filter.color} 
               strokeWidth={3} 
