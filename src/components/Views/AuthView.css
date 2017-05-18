@@ -3,3 +3,11 @@
   padding-left: 60px;
   padding-right: 30px;
 }
+
+.selected-tracks-count {
+  margin-right: 15px;
+  position: relative;
+  bottom: 5px;
+  font-size: 12px;
+  color: #ccc;
+}

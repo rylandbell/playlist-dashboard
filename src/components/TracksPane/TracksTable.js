@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TracksTableRow from './TracksTableRow';
-import {filterByFeatures} from '../../helper';
 
 class SelectPlaylistsTable extends Component {
   constructor(props) {
@@ -13,13 +12,9 @@ class SelectPlaylistsTable extends Component {
   }
 
   render() {
-    const tracks = this.props.reduxState.selectedPlaylistTracks;
-    const features = this.props.reduxState.audioFeaturesData;
-    const allFilters = this.props.reduxState.filters;
-    // const graphedFilters = allFilters.filter(x => x.isGraphed);
-
-    const filteredTracks = tracks.filter(filterByFeatures.bind(this));
-    const filteredFeaturesData = features.filter(filterByFeatures.bind(this));
+    const allFilters = this.props.allFilters;
+    const filteredTracks = this.props.filteredTracks;
+    const filteredFeaturesData = this.props.filteredFeaturesData;
 
     return (
       <div className="tracks__table">

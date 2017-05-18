@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, Legend, XAxis, YAxis, Tooltip, ReferenceLine} from 'recharts';
-import {filterByFeatures} from '../../helper';
 import TrackInfo from './TrackInfo';
 
 
@@ -15,14 +14,12 @@ class FeaturesLineChart extends Component {
 
   render () {
     const graphedFilters = this.props.reduxState.filters.filter(x => x.isGraphed);
-    const tracks = this.props.reduxState.selectedPlaylistTracks;
-    const features = this.props.reduxState.audioFeaturesData;
 
-    const filteredTracks = tracks.filter(filterByFeatures.bind(this));
-    const filteredFeatures = features.filter(filterByFeatures.bind(this));
+    const filteredTracks = this.props.filteredTracks;
+    const filteredFeaturesData = this.props.filteredFeaturesData;
 
     //add track name and artist to the features data, to pass to Recharts
-    const chartData = filteredFeatures.map((track, index) => {
+    const chartData = filteredFeaturesData.map((track, index) => {
       const trackInfo = {
         name: filteredTracks[index].track.name,
         artist: filteredTracks[index].track.artists[0].name
