@@ -42,11 +42,14 @@ class AuthView extends Component {
     }
 
     return (
-      <div>
-        <Sidebar {...this.props} />
-        <div className="col-xs-12 col-sm-8 col-md-8 col-lg-9 not-sidebar">
-          {viewEnum[loadingStatus]}
-          
+      <div className="auth-view__wrapper">
+        <div className="container-fluid">
+          <div className="row">
+            <Sidebar {...this.props} />
+            <div className="col-xs-12 col-sm-8 col-md-8 col-lg-9 not-sidebar">
+              {viewEnum[loadingStatus]}
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -13,14 +13,8 @@ class App extends Component {
       auth: <AuthView {...this.props} />,
     }
     return (
-      <div className="App-wrapper">
-        <div className="App">
-          <div className="container-fluid">
-            <div className="row">
-              {viewEnum[activeView]}
-            </div>
-          </div>
-        </div>
+      <div className="App">
+        {viewEnum[activeView]}
       </div>
     );
   }

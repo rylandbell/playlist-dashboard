@@ -13,9 +13,36 @@ class PreAuthView extends Component {
 
   render() {
     return (
-      <div className="col-xs-12 pre-auth__view">
-        <h3>First, you should authorize this app to access your Spotify account:</h3>
-        <button onClick={this.onClick} type="button" className="btn btn-primary center-block">Authorize</button>
+      <div className="pre-auth-view">
+        <div className="container pre-auth-view__container">
+          <div className="row">
+            <div className="col-md-4">
+              <div className="thumbnail">
+                <img src="chart.png" alt="Charts" />
+                <div className="caption">
+                  <h3>Visualize.</h3>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="thumbnail">
+                <img className="img-responsive" src="filters.png" alt="Filters" />
+                <div className="caption">
+                  <h4>Filter.</h4>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="thumbnail">
+                <img src="..." alt="..." />
+                <div className="caption">
+                  <h3>Save.</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onClick={this.onClick} type="button" className="btn btn-primary center-block">Authorize</button>
+        </div>
       </div>
     );
   }
