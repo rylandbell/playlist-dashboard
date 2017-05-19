@@ -5,8 +5,6 @@ body {
   font-family: sans-serif;
   background-color: #444;
   background-image: url('/bg-app.png');
-  background-image: url('/eric-nopanen-208576.jpg');
-  background-size: cover;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {

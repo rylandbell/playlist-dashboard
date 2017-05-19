@@ -1,8 +1,22 @@
+.pre-auth-view {
+  background-image: url('/clem-onojeghuo-173534.jpg');
+  background-size: cover;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .pre-auth-view {
+    padding-top: 0px;
+    background-image: none;
+  }
+}
+
 .pre-auth-view__container {
   max-width: 900px;
   border: 1px solid hsl(209, 15%, 40%);
   background-color: hsla(209, 30%, 24%, .92);
-  margin-top: 20px;
+  /*margin-top: 50px;*/
   margin-bottom: 20px;
   padding: 10px 30px 30px 30px;
   border-radius: 10px;
@@ -10,27 +24,6 @@
 
 .pre-auth-view__header {
   padding: 0 30px 0 30px;
-}
-
-.photo-div {
-  margin: 0 0 25px 0;
-  height: 500px;
-  background-image: url('/eric-nopanen-208576.jpg');
-  background-size: cover;
-  padding: 30px;
-}
-
-.photo-div h1 {
-  margin-top: 0;
-}
-
-.photo-div * {
-  color: black;
-}
-
-.pre-auth-view__caption {
-  margin-top: 7px;
-  font-family: 'Audiowide', sans-serif;
 }
 
 .pre-auth-view__img {
@@ -42,3 +35,4 @@
   padding: 10px;
   border-radius: 5px;
 }
+

@@ -15,11 +15,10 @@ class PreAuthView extends Component {
     return (
       <div className="pre-auth-view">
         <div className="container pre-auth-view__container">
-          
           <div className="row">
             <div className="col-md-12">
-              <h3>What are Audio Features?</h3>
-              <div className="lead">Spotify's music analysis algorithms assign every track a score for features like Danceability and Instrumentalness.</div>
+              <h3>Analyze Your Spotify Playlists</h3>
+              <div className="lead">Spotify's music analysis algorithms assign every track a score for features like Danceability and Instrumentalness. This app will let view this data in numerical or graphical form.</div>
             </div>
           </div>
           {/*<div className="row">
@@ -50,7 +49,7 @@ class PreAuthView extends Component {
           </div>*/}
           <div className="row">
             <div className="col-md-12">
-              <h3>Filter Your Playlists</h3>
+              <h3>Filter By Audio Features</h3>
               <div className="lead">Refine your playlists by setting an allowed range for any number of features. Heading to the gym? Look for high-energy, high-danceability tracks. Want to focus? Look for tracks with a high instrumentalness score. </div>
             </div>
           </div>
