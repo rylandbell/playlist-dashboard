@@ -90,6 +90,14 @@
   /*display: inline-block;*/
 }
 
+.fa-question-circle {
+  font-size: 14px;
+}
+
+.filters__feature-info {
+  max-width: 350px;
+}
+
 .rc-slider {
   position: relative;
   bottom: 0px;
