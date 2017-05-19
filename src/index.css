@@ -5,7 +5,8 @@ body {
   font-family: sans-serif;
   background-color: #444;
   background-image: url('/bg-app.png');
-  /*background-size: cover;*/
+  background-image: url('/eric-nopanen-208576.jpg');
+  background-size: cover;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
@@ -34,8 +35,9 @@ body {
   border-color: #555;
 }
 
-h4 {
-  font-family: 'Audiowide', cursive;
+h1, h2, h3, h4 {
+  font-family: 'Audiowide', sans-serif;
+  font-family: 'Gotham',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .nav-tabs{
@@ -57,6 +59,10 @@ h4 {
 
 .list-group-item.active {
   cursor: default;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .noselect {
