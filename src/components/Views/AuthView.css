@@ -5,6 +5,10 @@
   background-color: #2B3E50;
 }
 
+.not-sidebar {
+  padding-top: 20px;
+}
+
 @media(min-width: 769px) {
   .not-sidebar{
     padding-top: 10px;

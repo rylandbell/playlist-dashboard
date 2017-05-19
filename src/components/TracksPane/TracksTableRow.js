@@ -20,7 +20,7 @@ class TracksTableRow extends Component {
         <td>{track.name}&nbsp;
           <small>{track.artists[0].name}</small>
         </td>
-        {allFilters.map(filter => <td key={filter.name} className="text-right">{featuresData[filter.name] || '0'}</td>)}
+        {allFilters.map(filter => <td key={filter.name} className="text-right hidden-xs">{featuresData[filter.name] || '0'}</td>)}
       </tr>
     );
   }

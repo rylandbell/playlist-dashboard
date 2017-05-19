@@ -12,7 +12,7 @@ const handle = (props) => {
     <Tooltip
       prefixCls="rc-slider-tooltip"
       overlay={value}
-      visible={true}
+      visible={dragging}
       placement="bottom"
       key={index}
     >

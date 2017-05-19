@@ -5,9 +5,20 @@
 .filters__filter {
   border: 0px solid hsl(209, 15%, 20%);
   border-top-width: 1px;
-  padding: 15px 5px 15px 5px;
+  padding: 15px 5px;
   /*margin: 0 25px;*/
   background-color: hsl(209, 25%, 16%);
+}
+
+@media (max-width: 768px) {
+  .filters__pane {
+    padding: 0 10px;
+  }
+
+  .filters__filter {
+    padding: 15px 0;
+  }
+
 }
 
 .filters__filter:first-of-type {
@@ -81,7 +92,7 @@
 
 .rc-slider {
   position: relative;
-  bottom: 9px;
+  bottom: 0px;
 }
 
 .rc-slider.filters__range {
@@ -128,6 +139,22 @@
 
 .rc-slider .rc-slider-handle-2 {
   border-radius: 0 6px 6px 0;
+}
+
+@media (max-width: 768px) {
+  .rc-slider .rc-slider-handle {
+    height: 30px;
+    width: 12px;
+    margin-top: -14px;
+  }
+
+  .rc-slider .rc-slider-handle-1 {
+    border-radius: 8px 0 0 8px;
+  }
+
+  .rc-slider .rc-slider-handle-2 {
+    border-radius: 0 8px 8px 0;
+  }
 }
 
 .rc-slider-tooltip .rc-slider-tooltip-inner {
@@ -192,3 +219,4 @@
   -ms-flex-item-align: auto;
   align-self: auto;
 }
+
