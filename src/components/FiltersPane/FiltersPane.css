@@ -21,8 +21,9 @@
 }
 
 .filters__filter h4 {
-  color: #ccc;
+  color: #ddd;
   margin-top: 0;
+  font-family: 'Audiowide', sans-serif;
 }
 
 .filters__checkbox-container {

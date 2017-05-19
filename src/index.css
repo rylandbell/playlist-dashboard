@@ -35,9 +35,13 @@ body {
   border-color: #555;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Audiowide', sans-serif;
+h1, h2, h3 {
+  
   font-family: 'Gotham',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h4 {
+  font-family: 'Audiowide', sans-serif;
 }
 
 .nav-tabs{

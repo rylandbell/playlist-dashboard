@@ -43,9 +43,11 @@ class FeaturesLineChart extends Component {
           data={shiftedChartData}
           margin={{ top: 20, right: 12, left: 0, bottom: 0 }}
         >
-          <XAxis stroke="#ebebeb" strokeWidth={2} interval={4} dataKey={name} />
+          <XAxis stroke="#ebebeb" strokeWidth={2} interval={4} />
           <YAxis stroke="#ebebeb" strokeWidth={2} domain={[0, 1]} />
-          <Legend />
+          <Legend 
+            iconSize={18}
+          />
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
           {/*<Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}} wrapperStyle={{backgroundColor: 'rgba(0,0,0,0)', borderColor: 'rgba(0,0,0,0)'}} />*/}
           <Tooltip content={<TrackInfo />} />

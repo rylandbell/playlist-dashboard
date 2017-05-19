@@ -18,7 +18,7 @@
 
 .tracks__table {
   padding: 0 15px;
-  margin-right: 20px;
+  
   background-color: hsl(99, 12%, 64%);
   height: 346px;
   overflow-y: scroll;
@@ -26,6 +26,12 @@
 /*  -webkit-box-shadow: inset 3px 3px 5px 0px rgba(94,102,90,0.75);
   -moz-box-shadow: inset 3px 3px 5px 0px rgba(94,102,90,0.75);
   box-shadow: inset 3px 3px 5px 0px rgba(94,102,90,0.75);*/
+}
+
+@media(min-width: 769px) {
+  .tracks__table {
+    margin-right: 20px;
+  }
 }
 
 .tracks__table p {
