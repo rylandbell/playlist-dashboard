@@ -1,5 +1,6 @@
 // import 'bootstrap/dist/css/bootstrap.css';
 import 'bootswatch/superhero/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -10,8 +11,6 @@ import reducers from './reducers';
 import fetchCalls from './fetchCalls';
 
 import './index.css';
-
-// import 'bootstrap/dist/css/bootstrap-theme.css';
 
 //create a store from the above reducer, then subscribe a React render function to it
 const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
