@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import Message from '../Message';
-// import SelectPlaylistsTable from './SelectPlaylistsTable';
 import SelectPlaylistsListGroup from './SelectPlaylistsListGroup';
 import './PlaylistsPane.css';
 
 class PlaylistsPane extends Component {
   render() {
     const getPlaylistsPending = this.props.reduxState.fetchStatus.getPlaylistsPending;
+    const getPlaylistsFailure = this.props.reduxState.fetchStatus.getPlaylistsFailure;
+
+    let activeContent = 'showPlaylists';
+    if (getPlaylistsPending) { 
+      activeContent = 'getPlaylistsPending';
+    } else if (getPlaylistsFailure) {
+      activeContent = 'getPlaylistsFailure';
+    }
+
+    const contentEnum = {
+      getPlaylistsPending: <Message classList="" loading={true} text="Loading playlist data... " {...this.props} />,
+      getPlaylistsFailure: <Message classList="" error={true} text="Error loading playlist data. Check your internet connection and try again." {...this.props} />,
+      showPlaylists: 
+        <div className="playlists__pane">
+          <SelectPlaylistsListGroup {...this.props} />
+        </div>
+    };
+
     return (
-      <div>
-        {getPlaylistsPending ? 
-          <Message classList="" loading={true} text="Loading playlist data... " {...this.props} /> : 
-          <div className="playlists__pane">
-            <SelectPlaylistsListGroup {...this.props} />
-          </div>
-        }
-      </div>
+      contentEnum[activeContent]
     );
   }
 }

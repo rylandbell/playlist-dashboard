@@ -3,7 +3,7 @@
   /*border: 1px solid hsl(209, 15%, 30%);*/
   border-radius: 5px;
   padding: 5px 15px;
-  margin: 15px 50px;
+  margin: 15px 30px;
 }
 
 .message.big {
@@ -14,5 +14,10 @@
 
 .fa.fa-check {
   color: #5CB85C;
+  display: inline;
+}
+
+.fa.fa-exclamation-triangle {
+  color: #D9534F;
   display: inline;
 }
