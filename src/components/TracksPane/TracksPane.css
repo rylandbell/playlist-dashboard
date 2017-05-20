@@ -3,8 +3,11 @@
   /*border: 1px dashed red;*/
 }
 
-.tracks__pane h4 {
+.tracks__pane h3 {
   color: #eee;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  font-family: 'Gotham',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .tracks__heading {

@@ -38,7 +38,7 @@ class AuthView extends Component {
     const viewEnum = {
       pending: <Message classList="big" loading={true} text="Loading tracks data... " {...this.props} />,
       dataLoaded: <ExploreTracks {...this.props} />,
-      none: <h4> Choose a playlist. </h4>
+      none: <div className="lead"> Select a playlist to get started. </div>
     }
 
     return (

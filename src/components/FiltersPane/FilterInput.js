@@ -77,7 +77,7 @@ class Filter extends Component {
         </h4>
         <div className="flex-container">
           <div className="filters__flex-left">
-            <img className="img-responsive center-block filters__filter-icon" src={`/${filterData.name}.png`} alt={`${filterData.displayName} icon`} />
+            <img className="img-responsive center-block filters__filter-icon" src={`/img/${filterData.name}.png`} alt={`${filterData.displayName} icon`} />
           </div>
           <div className="filters__flex-right">
             <Range handle={handle} {...rangeOptions} />
