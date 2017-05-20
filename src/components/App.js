@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import PreAuthView from './Views/PreAuthView';
+import PreAuthView from './PreAuthView/PreAuthView';
 
 class AuthView extends React.Component {
   componentWillMount = () => {
-    import('./Views/AuthView').then(Component => {
+    import('./AuthView/AuthView').then(Component => {
       console.log('Component = ', Component);
       this.Component = Component;
       this.forceUpdate();

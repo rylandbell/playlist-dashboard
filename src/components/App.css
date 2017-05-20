@@ -1,8 +1,4 @@
 .container-fluid {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-@media (min-width: 768px) {
-  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ExploreTracks from './ExploreTracks';
+import ExploreTracksRegion from './ExploreTracksRegion';
 import Sidebar from '../Sidebar/Sidebar';
 import Message from '../Message';
 import './AuthView.css';
@@ -37,7 +37,7 @@ class AuthView extends Component {
 
     const viewEnum = {
       pending: <Message classList="big" loading={true} text="Loading tracks data... " {...this.props} />,
-      dataLoaded: <ExploreTracks {...this.props} />,
+      dataLoaded: <ExploreTracksRegion {...this.props} />,
       none: <div className="lead"> Select a playlist to get started. </div>
     }
 
@@ -46,7 +46,7 @@ class AuthView extends Component {
         <div className="container-fluid">
           <div className="row">
             <Sidebar {...this.props} />
-            <div className="col-xs-12 col-sm-8 col-md-8 col-lg-9 not-sidebar">
+            <div className="col-xs-12 col-sm-8 col-md-8 col-lg-9 auth-view__explore-tracks-region">
               {viewEnum[loadingStatus]}
             </div>
           </div>
