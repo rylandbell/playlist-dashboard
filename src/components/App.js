@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import PreAuthView from './Views/PreAuthView';
-// import AuthView from './Views/AuthView';
 
 class AuthView extends React.Component {
   componentWillMount = () => {

@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, Legend, XAxis, YAxis, Tooltip, ReferenceLine} from 'recharts';
+// import {ResponsiveContainer, LineChart, Line, Legend, XAxis, YAxis, Tooltip, ReferenceLine} from 'recharts';
+import ResponsiveContainer from 'recharts/lib/component/ResponsiveContainer';
+import LineChart from 'recharts/lib/chart/LineChart';
+import Line from 'recharts/lib/cartesian/Line';
+import Legend from 'recharts/lib/component/Legend';
+import XAxis from 'recharts/lib/cartesian/XAxis';
+import YAxis from 'recharts/lib/cartesian/YAxis';
+import Tooltip from 'recharts/lib/component/Tooltip';
+import ReferenceLine from 'recharts/lib/cartesian/ReferenceLine';
+
 import TrackInfo from './TrackInfo';
 
 

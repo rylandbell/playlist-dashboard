@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Tooltip from 'rc-tooltip';
-import { Range, Handle } from 'rc-slider';
+import Range from 'rc-slider/lib/Range';
+import Handle from 'rc-slider/lib/Handle'; 
+
 import ChartedFeatureCheckbox from './ChartedFeatureCheckbox';
 import FeatureInfoTooltip from './FeatureInfoTooltip';
 
