@@ -1,23 +1,6 @@
-## Description
-Live version at [spotify.ryland-bell.com](http://spotify.ryland-bell.com).
-
-**Analyze Your Spotify Playlists**
-
-Spotify's music analysis algorithms assign every track a score for features like Danceability and Instrumentalness. This app will let view this data in numerical or graphical form.
-
-**Filter By Audio Features**
-
-Refine your playlists by setting an allowed range for any number of features. Heading to the gym? Look for high-energy, high-danceability tracks. Want to focus? Look for tracks with a high instrumentalness score.
-
-**Save the Result**
-
-Filter your Spotify playlists by features like danceability and instrumentalness.
-
-## License
-
 MIT License
 
-Copyright (c) 2017 Ryland Bell
+Copyright (c) 2016 Ryland Bell
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
