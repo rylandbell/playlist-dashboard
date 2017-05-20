@@ -4,6 +4,15 @@ import { Range, Handle } from 'rc-slider';
 import ChartedFeatureCheckbox from './ChartedFeatureCheckbox';
 import FeatureInfoTooltip from './FeatureInfoTooltip';
 
+import acousticness from './img/acousticness.png';
+import danceability from './img/danceability.png';
+import energy from './img/energy.png';
+import instrumentalness from './img/instrumentalness.png';
+import liveness from './img/liveness.png';
+import valence from './img/valence.png';
+
+const imagesTable = {acousticness, danceability, energy, instrumentalness, liveness, valence};
+
 const handle = (props) => {
   const { value, dragging, index, ...restProps } = props;
   return (
@@ -63,7 +72,7 @@ class Filter extends Component {
         </h4>
         <div className="flex-container">
           <div className="filters__flex-left">
-            <img className="img-responsive center-block filters__filter-icon" src={`./img/${filterData.name}.png`} alt={`${filterData.displayName} icon`} />
+            <img className="img-responsive center-block filters__filter-icon" src={imagesTable[filterData.name]} alt={`${filterData.displayName} icon`} />
           </div>
           <div className="filters__flex-right">
             <Range handle={handle} {...rangeOptions} />
