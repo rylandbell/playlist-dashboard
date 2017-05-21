@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Message from '../../Message';
+import Message from '../../Utilities/Message/Message';
 
 class SavePane extends Component {
   constructor(props) {

@@ -1,0 +1,23 @@
+.message {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 15px 30px;
+
+  &.big {
+    font-size: 24px;
+    padding: 15px 30px;
+    margin-top: 100px;
+  }
+
+  .fa {
+    display: inline;
+
+    .fa-check {
+      color: #5CB85C;
+    }
+
+    .fa-exclamation-triangle {
+      color: #D9534F;
+    }
+  }
+}
