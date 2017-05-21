@@ -24,11 +24,14 @@ class AuthView extends Component {
     const featuresLoaded = state.audioFeaturesData && state.audioFeaturesData.length > 0;
     const dataLoaded = tracksLoaded && featuresLoaded;
     const fetchPending = state.fetchStatus.getTracksPending || state.fetchStatus.getFeaturesPending;
+    const fetchFailure = state.fetchStatus.getTracksFailure || state.fetchStatus.getFeaturesFailure;
 
     let loadingStatus;
     
     if (fetchPending) {
       loadingStatus = 'pending';
+    } else if (fetchFailure) {
+      loadingStatus = 'failure';
     } else if (dataLoaded) {
       loadingStatus = 'dataLoaded';
     } else {
@@ -37,6 +40,7 @@ class AuthView extends Component {
 
     const viewEnum = {
       pending: <Message classList="big" loading={true} text="Loading tracks data... " {...this.props} />,
+      failure: <Message classList="big" error={true} text="Error: failed to load tracks data." {...this.props} />,
       dataLoaded: <ExploreTracksRegion {...this.props} />,
       none: <div className="lead"> Select a playlist to get started. </div>
     }

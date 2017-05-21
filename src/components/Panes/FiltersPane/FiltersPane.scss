@@ -52,10 +52,13 @@
 }
 
 .filters__checkbox {
+  position: relative;
+  bottom: -5px;
   padding: 0;
   cursor: pointer;
 
   .fa.fa-line-chart {
+
 
     &.inactive {
       color: $gray;

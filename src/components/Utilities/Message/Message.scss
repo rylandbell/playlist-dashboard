@@ -14,12 +14,12 @@
   .fa {
     display: inline-block;
 
-    .fa-check {
+    &.fa-check {
       color: $brand-success;
     }
 
-    .fa-exclamation-triangle {
-      color: $brand-danger;
+    &.fa-exclamation-triangle {
+      color: $brand-warning;
     }
   }
 }
