@@ -97,6 +97,7 @@ const filtersInitial = [
   {
     name: 'danceability',
     displayName: 'Danceability',
+    shortName: 'Dance',
     isActive: true,
     isGraphed: true,
     currentValue: [0,1],
@@ -107,6 +108,7 @@ const filtersInitial = [
   {
     name: 'energy',
     displayName: 'Energy',
+    shortName: 'Energy',
     isActive: true,
     isGraphed: false,
     currentValue: [0,1],
@@ -117,6 +119,7 @@ const filtersInitial = [
   {
     name: 'valence',
     displayName: 'Positivity',
+    shortName: 'Pos',
     isActive: true,
     isGraphed: false,
     currentValue: [0,1],
@@ -127,6 +130,7 @@ const filtersInitial = [
   {
     name: 'acousticness',
     displayName: 'Acousticness',
+    shortName: 'Acous',
     isActive: true,
     isGraphed: false,
     currentValue: [0,1],
@@ -137,6 +141,7 @@ const filtersInitial = [
   {
     name: 'liveness',
     displayName: 'Liveness',
+    shortName: 'Live',
     isActive: true,
     isGraphed: false,
     currentValue: [0,1],
@@ -147,6 +152,7 @@ const filtersInitial = [
   {
     name: 'instrumentalness',
     displayName: 'Instrumentalness',
+    shortName: 'Inst',
     isActive: true,
     isGraphed: false,
     currentValue: [0,1],
