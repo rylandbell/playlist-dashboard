@@ -1,78 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide');
-
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
 body {
   padding: 0;
   font-family: sans-serif;
   background-color: #444;
-  background-image: url('./img/bg-app.png');
-}
+  background-image: url("./img/bg-app.png"); }
 
 h1, h2 {
-  font-family: 'Gotham',"Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+  font-family: 'Gotham',"Helvetica Neue",Helvetica,Arial,sans-serif; }
 
 h3, h4 {
-  font-family: 'Audiowide', sans-serif;
-}
+  font-family: 'Audiowide', sans-serif; }
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
-  outline-width: 0;
-}
+  outline-width: 0; }
 
 .table {
-  background-color: hsl(99, 12%, 64%);
-}
+  background-color: #a0ae98; }
 
 .table.table-hover tbody tr:hover {
-  background-color: hsl(99, 7%, 54%);
-}
+  background-color: #879281; }
 
 .table * {
-  color: #121212;
-}
+  color: #121212; }
 
 .table.table-condensed td,
 .table.table-condensed th {
   font-weight: bold;
-  border-color: #555;
-}
+  border-color: #555; }
 
 .table * {
-  border-color: #555;
-}
+  border-color: #555; }
 
-.nav-tabs{
+.nav-tabs {
   display: flex;
-  font-size: 13px;
-}
+  font-size: 13px; }
+
 .nav-tabs li {
   display: flex;
-  flex: 1;
-}
+  flex: 1; }
 
-.nav-tabs li  a {
-  flex: 1;
-}
+.nav-tabs li a {
+  flex: 1; }
 
 .list-group-item {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .list-group-item.active {
-  cursor: default;
-}
+  cursor: default; }
 
 .full-width {
-  width: 100%;
-}
+  width: 100%; }
 
 /*disable double-click to select where inapprorpriate:*/
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
