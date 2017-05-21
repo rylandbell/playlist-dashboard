@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Message from '../Utilities/Message/Message';
+import Message from '../../Utilities/Message/Message';
 import SelectPlaylistsListGroup from './SelectPlaylistsListGroup';
 import './PlaylistsPane.css';
-
+//
 class PlaylistsPane extends Component {
   render() {
     const getPlaylistsPending = this.props.reduxState.fetchStatus.getPlaylistsPending;

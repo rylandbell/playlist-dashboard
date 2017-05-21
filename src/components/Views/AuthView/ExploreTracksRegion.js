@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TracksPane from '../../TracksPane/TracksPane';
-import ChartPane from '../../ChartPane/ChartPane';
+import TracksPane from '../../Panes/TracksPane/TracksPane';
+import ChartPane from '../../Panes/ChartPane/ChartPane';
 import SelectedTracksCount from './SelectedTracksCount';
 import {filterByFeatures} from '../../../helper';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SidebarControls from './SidebarControls';
-import PlaylistsPane from '../../../PlaylistsPane/PlaylistsPane';
-import FiltersPane from '../../../FiltersPane/FiltersPane';
+import PlaylistsPane from '../../../Panes/PlaylistsPane/PlaylistsPane';
+import FiltersPane from '../../../Panes/FiltersPane/FiltersPane';
 import SavePane from './SavePane';
 import './Sidebar.css';
 
