@@ -6,11 +6,12 @@ class TracksPane extends Component {
   render() {
     const fetchStatus = this.props.reduxState.fetchStatus;
     const loadingData = fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
+    
     return (
       <div className="col-xs-12 tracks__pane">
         <div className="row">
           {loadingData ? 
-            <h4 className="text-center">Loading tracks data...</h4> :
+            null :
             <div className="col-xs-12">
               <h4 className="tracks__heading"> {this.props.reduxState.selectedPlaylist.name} </h4>
               <TracksTable {...this.props} />

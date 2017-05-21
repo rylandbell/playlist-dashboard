@@ -14,9 +14,9 @@ class TracksTableRow extends Component {
     const track = this.props.track.track;
     const featuresData = this.props.featuresData;
     const allFilters = this.props.reduxState.filters;
-    // const graphedFilters = this.props.reduxState.filters.filter(x => x.isGraphed);
+
     return (
-      <tr className="tracks__row" onMouseEnter={this.onMouseEnter}> 
+      <tr onMouseEnter={this.onMouseEnter}> 
         <td>{track.name}&nbsp;
           <small>{track.artists[0].name}</small>
         </td>

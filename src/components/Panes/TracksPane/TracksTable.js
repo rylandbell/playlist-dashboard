@@ -17,8 +17,8 @@ class SelectPlaylistsTable extends Component {
     const filteredFeaturesData = this.props.filteredFeaturesData;
 
     return (
-      <div className="tracks__table">
-        <table className="table table-condensed table-hover" onMouseLeave={this.onMouseLeave}>
+      <div className="tracks__scroll-window">
+        <table className="tracks__table table table-condensed table-hover" onMouseLeave={this.onMouseLeave}>
           <thead>
             <tr>
               <th>Track</th>
