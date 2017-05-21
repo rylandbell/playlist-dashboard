@@ -1,13 +1,16 @@
 .chart__pane {
   /*margin-top: 20px;*/
-  margin-left: -28px; }
+  margin-left: -28px;
+}
 
 .chart__filter-select {
   max-width: 200px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .chart__pane h4 {
-  margin-left: -5px; }
+  margin-left: -5px;
+}
 
 .chart__controls-well {
   margin-bottom: 10px;
@@ -18,14 +21,18 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #4E5D6C;
-  background-color: #1f2933; }
+  background-color: hsl(209, 25%, 16%);
+}
 
 .chart__checkbox.checkbox-inline {
   margin-top: 40px;
-  background-color: pink; }
+  background-color: pink;
+}
 
 .recharts-reference-line .recharts-reference-line-label .recharts-text {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .chart__track-info {
-  font-weight: bold; }
+  font-weight: bold;
+}
