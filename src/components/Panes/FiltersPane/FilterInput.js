@@ -22,7 +22,7 @@ const customHandle = (props) => {
       prefixCls="rc-slider-tooltip"
       overlay={value}
       visible={dragging}
-      placement="bottom"``
+      placement="bottom"
       key={index}
     >
       <Handle {...restProps} />

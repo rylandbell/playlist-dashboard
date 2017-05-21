@@ -6,10 +6,10 @@ body {
   background-image: url("./img/bg-app.png"); }
 
 h1, h2 {
-  font-family: 'Gotham',"Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font-family: "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h3, h4 {
-  font-family: 'Audiowide', sans-serif; }
+  font-family: "Audiowide", sans-serif; }
 
 .container-fluid {
   margin-right: auto;

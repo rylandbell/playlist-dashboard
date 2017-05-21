@@ -18,3 +18,7 @@ $brand-danger:          #d9534f !default;
 
 $tracks-main:          #a0ae98 !default;
 $tracks-dark:           darken(desaturate($tracks-main, 5%), 10%);
+
+$font-stack-fancy: 'Audiowide', sans-serif;
+$font-stack-heading: 'Gotham', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-stack-copy: sans-serif;
