@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
+@import 'variables.scss';
 
 body {
   padding: 0;
@@ -48,6 +49,7 @@ h3, h4 {
 .nav-tabs li {
   display: flex;
   flex: 1;
+  cursor: pointer;
 }
 
 .nav-tabs li  a {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Message from '../Message';
+import Message from '../../Message';
 
 class SavePane extends Component {
   constructor(props) {
@@ -27,6 +27,7 @@ class SavePane extends Component {
     const newPlaylistName = state.newPlaylistName;
     const savePending = state.fetchStatus.createPlaylistPending || state.fetchStatus.addTracksToPlaylistPending;
     const saveSuccess = state.fetchStatus.addTracksToPlaylistSuccess;
+    const saveFailure = state.fetchStatus.createPlaylistFailure || state.fetchStatus.addTracksToPlaylistFailure;
 
     return (
       <div className="sidebar__save-pane">
@@ -38,6 +39,7 @@ class SavePane extends Component {
         <br />
         {savePending ? <Message classList="" loading={true} text="Saving on Spotify... " {...this.props} /> : null}
         {saveSuccess ? <Message classList="" success={true} text="Playlist successfully created.&nbsp;" {...this.props} /> : null}
+        {saveFailure ? <Message classList="" error={true} text="Error: Playlist was not saved.&nbsp;" {...this.props} /> : null}
       </div>
     );
   }

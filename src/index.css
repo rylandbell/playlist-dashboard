@@ -37,7 +37,8 @@ h3, h4 {
 
 .nav-tabs li {
   display: flex;
-  flex: 1; }
+  flex: 1;
+  cursor: pointer; }
 
 .nav-tabs li a {
   flex: 1; }

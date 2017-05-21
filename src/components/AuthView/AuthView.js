@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ExploreTracksRegion from './ExploreTracksRegion';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 import Message from '../Message';
 import './AuthView.css';
 

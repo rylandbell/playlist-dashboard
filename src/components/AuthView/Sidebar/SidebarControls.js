@@ -9,7 +9,7 @@ class SidebarControls extends Component {
   onClick(e) {
     const selectedPlaylist = this.props.reduxState.selectedPlaylist;
 
-    //don't change tabs when clicked tab is disabled: 
+    //don't change tabs when clicked tab is disabled (i.e., when no selected playlist): 
     const validChange = (e.target.id === "tab-playlists") || selectedPlaylist;
     if (validChange) {
       this.props.handleTabSelect(e.target.id);      
@@ -20,11 +20,10 @@ class SidebarControls extends Component {
     const activeTab = this.props.reduxState.activeTab;
     const selectedPlaylist = this.props.reduxState.selectedPlaylist;
 
-    const playlistsClasses = (activeTab === "playlists" ? 'active': '');
-    
+    //as appropriate, mark tabs as active or disabled
+    const playlistsClasses = (activeTab === "playlists" ? 'active': '');  
     const filtersClasses = (activeTab === "filters" ? 'active': '')
       + (selectedPlaylist ? '' : ' disabled');
-    
     const saveClasses = (activeTab === "save" ? 'active': '')
       + (selectedPlaylist ? '' : ' disabled');
 
