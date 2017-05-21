@@ -16,8 +16,8 @@ class PlaylistsPane extends Component {
     }
 
     const contentEnum = {
-      getPlaylistsPending: <Message classList="" loading={true} text="Loading playlist data... " {...this.props} />,
-      getPlaylistsFailure: <Message classList="" error={true} text="Error loading playlist data. Check your internet connection and try again." {...this.props} />,
+      getPlaylistsPending: <Message loading={true} text="Loading playlist data... " {...this.props} />,
+      getPlaylistsFailure: <Message error={true} text="Error loading playlist data. Check your internet connection and try again." {...this.props} />,
       showPlaylists: 
         <div className="playlists__pane">
           <SelectPlaylistsListGroup {...this.props} />

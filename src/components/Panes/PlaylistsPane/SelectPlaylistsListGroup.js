@@ -10,7 +10,7 @@ class SelectPlaylistsListGroup extends Component {
     );
     return (
       playlists.length > 0 ? 
-        (<div className="list-group playlists__group">
+        (<div className="list-group">
           {mappedPlaylists}
         </div>)
         : <p>No playlists found for this account.</p>

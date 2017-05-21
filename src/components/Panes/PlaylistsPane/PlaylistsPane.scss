@@ -1,24 +1,18 @@
 .playlists__pane {
   overflow-y: scroll;
-  height: calc(100% - 55px);
+  height: calc(100% - 50px);
   position: absolute;
-  right: 0;
-  top: 55px;
-  padding: 10px 0;
-}
-
-.playlists__group {
-  margin: 0 12px 8px 12px;  
+  top: 50px;
+  padding: 10px 12px 8px 12px;
 }
 
 .playlists__item {
   background-color: #1E2933;
   padding: 6px;
-  margin-right: 8px;
   border-top: 1px solid hsl(209, 15%, 20%);
-  /*font-weight: 300;*/
+
+  &:first-of-type {
+    border-width: 0;
+  }
 }
 
-.playlists__item:first-of-type {
-  border-width: 0;
-}
