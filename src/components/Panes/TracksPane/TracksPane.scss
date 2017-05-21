@@ -10,7 +10,7 @@
 
 .tracks__scroll-window {
   padding: 0 15px;
-  background-color: hsl(99, 12%, 64%);
+  background-color: $tracks-main;
   height: 346px;
   overflow-y: scroll;
   border-radius: 5px;
@@ -26,10 +26,10 @@
 
 .tracks__table.table.table-condensed {
   margin-bottom: 0;
-  background-color: hsl(99, 12%, 64%);
+  background-color: $tracks-main;
 
-  tr:hover {
-    background-color: hsl(99, 7%, 54%);
+  tbody > tr:hover {
+    background-color: $tracks-dark;
   }
 
   tr > td {
@@ -39,12 +39,12 @@
   }
 
   td, th {
-    color: #121212;
+    color: $gray-darker;
     font-weight: bold;
-    border-color: #555;
+    border-color: $gray;
 
     small {
-      color: #444;
+      color: $gray;
     }
   }
 

@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 .sidebar {
-  background-color: #1E2933;
+  background-color: $bg-dark;
   min-height: 99.5vh;
   padding: 7px 0 0 0;
   overflow: hidden;
@@ -12,7 +12,7 @@
 }
 
 .sidebar__controls {
-  border-bottom: 1px solid hsl(209, 15%, 40%);
+  border-bottom: 1px solid $bg-light;
   padding: 5px 5px 0px 5px;
   margin-bottom: 8px;
 

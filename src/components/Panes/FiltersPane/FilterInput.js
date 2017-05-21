@@ -21,7 +21,7 @@ const customHandle = (props) => {
     <Tooltip
       prefixCls="rc-slider-tooltip"
       overlay={value}
-      visible={dragging}
+      visible={true}
       placement="bottom"
       key={index}
     >
@@ -38,7 +38,7 @@ class Filter extends Component {
 
   onChange(value) {
     const filterIndex = this.props.filterIndex;
-    this.props.customHandleFilterChange(filterIndex, value);
+    this.props.handleFilterChange(filterIndex, value);
   }
 
   render() {

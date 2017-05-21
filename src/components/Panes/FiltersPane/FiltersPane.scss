@@ -12,13 +12,13 @@
   }
 
   h4 {
-    color: #ddd;
+    color: $gray-lighter;
     margin-top: 0;
   }
 }
 
 .filters__filter {
-  border-top: 1px solid hsl(209, 15%, 20%);
+  border-top: 1px solid $bg-dim;
   padding: 15px 5px;
 
   @media (max-width: 768px) {
@@ -58,35 +58,35 @@
   .fa.fa-line-chart {
 
     &.inactive {
-      color: #555;
+      color: $gray;
 
       &:hover {
-        color: #999;
+        color: $gray-light;
       }
     }
 
     &.danceability {
-      color: #5bc0de;
+      color: $brand-info;
     }
   
     &.energy {
-      color: #d9534f;
+      color: $brand-danger;
     }
 
     &.valence {
-      color: #5CB85C;
+      color: $brand-success;
     }
 
     &.acousticness {
-      color: #f0ad4e;
+      color: $brand-warning;
     }
 
     &.liveness {
-      color: #DF691A;
+      color: $brand-primary;
     }
 
     &.instrumentalness {
-      color: #EBEBEB;
+      color: $gray-lighter;
     }
   }
 }
@@ -171,7 +171,7 @@
 .rc-slider-tooltip .rc-slider-tooltip-inner {
   background-color: rgba(0,0,0,0);
   box-shadow: none;
-  color: #999;
+  color: $gray-light;
   position: relative;
   bottom: 6px !important;
 }

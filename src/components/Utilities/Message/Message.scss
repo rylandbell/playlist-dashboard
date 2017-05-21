@@ -15,11 +15,11 @@
     display: inline-block;
 
     .fa-check {
-      color: #5CB85C;
+      color: $brand-success;
     }
 
     .fa-exclamation-triangle {
-      color: #D9534F;
+      color: $brand-danger;
     }
   }
 }
