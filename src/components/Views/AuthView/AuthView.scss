@@ -9,10 +9,8 @@
   padding-top: 10px;
   padding-left: 50px;
   padding-right: 20px;
-}
 
-@media(max-width: 768px) {
-  .auth-view__explore-tracks-region {
+  @media(max-width: 768px) {
     padding-top: 20px;
   }
 }

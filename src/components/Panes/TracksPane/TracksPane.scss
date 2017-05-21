@@ -18,18 +18,32 @@
   }
 
   * {
-    color: #121212;
     cursor: default;
   }
 }
 
 .tracks__table.table.table-condensed {
   margin-bottom: 0;
+  background-color: hsl(99, 12%, 64%);
+
+  tr:hover {
+    background-color: hsl(99, 7%, 54%);
+  }
 
   tr > td {
     padding-top: 3px;
     padding-bottom: 3px;
     border-width: 0;
+  }
+
+  td, th {
+    color: #121212;
+    font-weight: bold;
+    border-color: #555;
+
+    small {
+      color: #444;
+    }
   }
 
   tr:first-of-type > td {

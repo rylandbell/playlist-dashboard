@@ -3,10 +3,8 @@
   min-height: 99.5vh;
   padding: 7px 0 0 0;
   overflow: hidden;
-}
 
-@media (min-width: 769px) {
-  .sidebar {
+  @media (min-width: 769px) {
     height: 99.5vh;
   }
 }
@@ -15,6 +13,16 @@
   border-bottom: 1px solid hsl(209, 15%, 40%);
   padding: 5px 5px 0px 5px;
   margin-bottom: 8px;
+
+  .nav-tabs{
+    display: flex;
+    font-size: 13px;
+
+    li {
+      flex: 1;
+      cursor: pointer;
+    }
+  }
 }
 
 .sidebar__save-pane {
