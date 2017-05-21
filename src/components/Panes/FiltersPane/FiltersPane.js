@@ -9,9 +9,7 @@ class FiltersPane extends Component {
     const filters = this.props.reduxState.filters;
     return (
       <div className="filters__pane">
-        <div className="filters__filters">
-          {filters.map((filter,index) => <FilterInput key={index} filterIndex={index} filterData={filter} {...this.props} />)}
-        </div>
+        {filters.map((filter,index) => <FilterInput key={index} filterIndex={index} filterData={filter} {...this.props} />)}
       </div>
     );
   }

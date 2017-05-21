@@ -18,9 +18,8 @@ class FeatureInfoTooltip extends Component {
         <Tooltip
           placement="right"
           overlay={featureDescriptions[this.props.filter.name]}
-          overlayClassName="filters__feature-info"
+          overlayClassName="filters__feature-info-tooltip"
           arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
-          style={{fontWeight: 'bold', maxWidth: '200px'}}
         >
           <div className="fa fa-question-circle"></div>
         </Tooltip>

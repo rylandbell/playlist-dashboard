@@ -13,9 +13,9 @@ import instrumentalness from './img/instrumentalness.png';
 import liveness from './img/liveness.png';
 import valence from './img/valence.png';
 
-const imagesTable = {acousticness, danceability, energy, instrumentalness, liveness, valence};
+const imagesHash = {acousticness, danceability, energy, instrumentalness, liveness, valence};
 
-const handle = (props) => {
+const customHandle = (props) => {
   const { value, dragging, index, ...restProps } = props;
   return (
     <Tooltip
@@ -38,7 +38,7 @@ class Filter extends Component {
 
   onChange(value) {
     const filterIndex = this.props.filterIndex;
-    this.props.handleFilterChange(filterIndex, value);
+    this.props.customHandleFilterChange(filterIndex, value);
   }
 
   render() {
@@ -64,20 +64,18 @@ class Filter extends Component {
             filterIndex={filterIndex}
             {...this.props}
           />
-          <div className="filters__checkbox-container pull-right">
-            <ChartedFeatureCheckbox 
-              filter={filterData}
-              filterIndex={filterIndex}
-              {...this.props}
-            />
-          </div>
+          <ChartedFeatureCheckbox 
+            filter={filterData}
+            filterIndex={filterIndex}
+            {...this.props}
+          />
         </h4>
-        <div className="flex-container">
+        <div className="filters__flex-container">
           <div className="filters__flex-left">
-            <img className="img-responsive center-block filters__filter-icon" src={imagesTable[filterData.name]} alt={`${filterData.displayName} icon`} />
+            <img className="filters__filter-icon img-responsive center-block" src={imagesHash[filterData.name]} alt={`${filterData.displayName} icon`} />
           </div>
           <div className="filters__flex-right">
-            <Range handle={handle} {...rangeOptions} />
+            <Range customHandle={customHandle} {...rangeOptions} />
           </div>
         </div>
         
