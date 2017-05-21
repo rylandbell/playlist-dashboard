@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import {ResponsiveContainer, LineChart, Line, Legend, XAxis, YAxis, Tooltip, ReferenceLine} from 'recharts';
+
+//import components separately to reduce bundle size:
 import ResponsiveContainer from 'recharts/lib/component/ResponsiveContainer';
 import LineChart from 'recharts/lib/chart/LineChart';
 import Line from 'recharts/lib/cartesian/Line';
@@ -9,8 +10,7 @@ import YAxis from 'recharts/lib/cartesian/YAxis';
 import Tooltip from 'recharts/lib/component/Tooltip';
 import ReferenceLine from 'recharts/lib/cartesian/ReferenceLine';
 
-import TrackInfo from './TrackInfo';
-
+import TrackInfoTooltip from './TrackInfoTooltip';
 
 class FeaturesLineChart extends Component {
 
@@ -43,7 +43,7 @@ class FeaturesLineChart extends Component {
     const hoveredTrack = this.props.reduxState.hoveredTrack;
     const hoveredTrackName = hoveredTrack ? hoveredTrack.track.name : null;
 
-    //gives position of hovered track in filtered playlist (shifted by 1 for indexing-from-1)
+    //gives position of hovered track in filtered playlist (shifted by 1 for counting-from-1)
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
 
     return (
@@ -58,8 +58,7 @@ class FeaturesLineChart extends Component {
             iconSize={18}
           />
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
-          {/*<Tooltip itemStyle={{color: 'black'}} labelStyle={{color: 'black'}} wrapperStyle={{backgroundColor: 'rgba(0,0,0,0)', borderColor: 'rgba(0,0,0,0)'}} />*/}
-          <Tooltip content={<TrackInfo />} />
+          <Tooltip content={<TrackInfoTooltip />} />
           {graphedFilters.map(filter => 
             <Line 
               dataKey={filter.name}
