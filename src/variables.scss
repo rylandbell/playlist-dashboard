@@ -1,12 +1,17 @@
+$bg-main:               #2B3E50 !default;
+$bg-dark:               #1E2933 !default;
+$bg-light:              desaturate(lighten($bg-main, 15%), 10%) !default;
+
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #4E5D6C !default;   // #999
-$gray-lighter:           #EBEBEB !default; // #eee
+$gray-lighter:           #ccc !default; // #eee
 
 $brand-primary:         #DF691A !default;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
+

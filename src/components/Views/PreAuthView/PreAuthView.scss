@@ -1,5 +1,7 @@
+@import 'variables.scss';
+
 .pre-auth-view {
-  background-image: url('../../img/clem-onojeghuo-173534.jpg');
+  background-image: url('./clem-onojeghuo-173534.jpg');
   background-size: cover;
   height: 100vh;
   padding-top: 50px;
@@ -10,12 +12,10 @@
   }
 }
 
-
-
 .pre-auth-view__container {
   max-width: 900px;
-  border: 1px solid hsl(209, 15%, 40%);
-  background-color: hsla(209, 30%, 24%, .92);
+  border: 1px solid $bg-light;
+  background-color: rgba($bg-main, 0.92);
   margin-bottom: 20px;
   padding: 10px 30px 30px 30px;
   border-radius: 10px;

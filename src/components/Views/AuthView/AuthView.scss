@@ -1,8 +1,10 @@
+@import 'variables.scss';
+
 .auth-view__wrapper {
   max-width: 1500px;
   margin: 0 auto;
-  border: 1px solid hsl(209, 15%, 40%);
-  background-color: #2B3E50;
+  border: 1px solid $bg-light;
+  background-color: $bg-main;
 }
 
 .auth-view__explore-tracks-region{
@@ -20,5 +22,5 @@
   position: relative;
   bottom: 5px;
   font-size: 12px;
-  color: #ccc;
+  color: $gray-lighter;
 }
