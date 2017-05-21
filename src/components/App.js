@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import PreAuthView from './PreAuthView/PreAuthView';
+import PreAuthView from './Views/PreAuthView/PreAuthView';
 
 //load AuthView as separate module, once authorization has been established
 class AuthView extends React.Component {
   componentWillMount = () => {
-    import('./AuthView/AuthView').then(Component => {
+    import('./Views/AuthView/AuthView').then(Component => {
       this.Component = Component;
       this.forceUpdate();
     })

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import TracksPane from '../TracksPane/TracksPane';
-import ChartPane from '../ChartPane/ChartPane';
+import TracksPane from '../../TracksPane/TracksPane';
+import ChartPane from '../../ChartPane/ChartPane';
 import SelectedTracksCount from './SelectedTracksCount';
-import {filterByFeatures} from '../../helper';
+import {filterByFeatures} from '../../../helper';
 
 class ExploreTracksRegion extends Component {
   render() {

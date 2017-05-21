@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ExploreTracksRegion from './ExploreTracksRegion';
 import Sidebar from './Sidebar/Sidebar';
-import Message from '../Utilities/Message/Message';
+import Message from '../../Utilities/Message/Message';
 import './AuthView.css';
 
 class AuthView extends Component {
