@@ -21,8 +21,8 @@ const customHandle = (props) => {
     <Tooltip
       prefixCls="rc-slider-tooltip"
       overlay={value}
-      visible={true}
-      placement="bottom"
+      visible={dragging}
+      placement="bottom"``
       key={index}
     >
       <Handle {...restProps} />
@@ -75,7 +75,7 @@ class Filter extends Component {
             <img className="filters__filter-icon img-responsive center-block" src={imagesHash[filterData.name]} alt={`${filterData.displayName} icon`} />
           </div>
           <div className="filters__flex-right">
-            <Range customHandle={customHandle} {...rangeOptions} />
+            <Range handle={customHandle} {...rangeOptions} />
           </div>
         </div>
         
