@@ -23,6 +23,24 @@
     li {
       flex: 1;
       cursor: pointer;
+
+      a {
+        border-bottom-color: $bg-lighter;
+
+        &:hover {
+          background-color: $bg-lighter;
+          border-color: $bg-lighter;
+        }
+      }
+    }
+
+    li.active a {
+      border-color: $bg-lighter;
+      background-color: $bg-light;
+
+      &:hover {
+        border-color: $bg-lighter;
+      }
     }
   }
 }
