@@ -7,7 +7,9 @@ class ExporeTracks extends Component {
     const filteredTracksCount = this.props.filteredTracks.length;
 
     return (
-      <div className="auth-view__selected-tracks-count pull-right">{`${filteredTracksCount} of ${allTracksCount} Selected`}</div>
+      <div className="row auth-view__selected-tracks-count-wrapper">
+        <div className="auth-view__selected-tracks-count pull-right">{`${filteredTracksCount} of ${allTracksCount} Selected`}</div>
+      </div>
     );
   }
 }

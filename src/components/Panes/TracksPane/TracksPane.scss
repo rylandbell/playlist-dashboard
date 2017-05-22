@@ -1,22 +1,26 @@
 @import 'variables.scss';
 
 .tracks__pane {
-  padding: 0px 10px 10px 10px;
+  background-color: $tracks-bg;
+  padding: 10px 10px 15px 20px;
 }
 
 .tracks__heading {
+  color: white;
+  margin-top: 5px;
   margin-right: 20px;
 }
 
 .tracks__scroll-window {
-  padding: 0 15px;
-  background-color: $tracks-main;
-  height: 346px;
-  overflow-y: scroll;
+  margin-top: 15px;
+  padding: 0 10px 0 0;
+  background-color: $tracks-bg;
+  max-height: 350px;
+  overflow-y: auto;
   border-radius: 5px;
 
   @media(min-width: 769px) {
-    margin-right: 20px;
+    margin-right: 6px;
   }
 
   * {
@@ -24,29 +28,42 @@
   }
 }
 
-.tracks__table.table.table-condensed {
+.tracks__table.table.table-condensed.table-hover {
   margin-bottom: 0;
-  background-color: $tracks-main;
+  background-color: $tracks-bg;
 
   tbody > tr:hover {
-    background-color: $tracks-dark;
+    background-color: $bg-light;
   }
 
   tr > td {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-width: 0;
-    min-width: 36px;
+    border-bottom: 1px solid $bg-light;
+    min-width: 40px;
   }
 
   td, th {
-    color: $gray-darker;
-    font-weight: bold;
-    border-color: $gray;
+    font-family: $font-stack-copy;
+    border-color: $bg-light;
+    color: $text-light;
+  }
+
+  td {
+    font-size: 14px;
 
     small {
       color: $gray;
     }
+  }
+
+  th {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-width: 1px;
   }
 
   tr:first-of-type > td {

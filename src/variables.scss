@@ -1,7 +1,7 @@
-$bg-main:               #2B3E50 !default;
-$bg-dark:               #1E2933 !default;
-$bg-light:              desaturate(lighten($bg-main, 15%), 10%) !default;
-$bg-dim:                lighten($bg-dark, 4%) !default;
+$bg-main:               rgb(24,24,24) !default;
+$bg-secondary:          rgb(18,18,18) !default;
+$bg-light:              rgb(40,40,40) !default;
+$bg-dim:                lighten($bg-secondary, 4%) !default;
 
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 8%) !default; // #222
@@ -16,9 +16,11 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
-$tracks-main:          #a0ae98 !default;
-$tracks-dark:           darken(desaturate($tracks-main, 5%), 10%);
+$tracks-bg:             $bg-main !default;
+$tracks-dark:           darken(desaturate($tracks-bg, 5%), 10%);
+
+$text-light:            rgb(186,186,186) !default;
 
 $font-stack-fancy: 'Audiowide', sans-serif;
 $font-stack-heading: 'Gotham', "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-stack-copy: sans-serif;
+$font-stack-copy: "Helvetica Neue", Helvetica, Arial, sans-serif;

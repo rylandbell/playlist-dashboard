@@ -13,7 +13,7 @@ class TracksPane extends Component {
           {loadingData ? 
             null :
             <div className="col-xs-12">
-              <h4 className="tracks__heading"> {this.props.reduxState.selectedPlaylist.name} </h4>
+              <h3 className="tracks__heading"> {this.props.reduxState.selectedPlaylist.name} </h3>
               <TracksTable {...this.props} />
             </div>
           }

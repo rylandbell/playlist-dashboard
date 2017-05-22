@@ -8,9 +8,12 @@
 }
 
 .auth-view__explore-tracks-region{
-  padding-top: 10px;
-  padding-left: 50px;
-  padding-right: 20px;
+  min-height: 99.5vh;
+  padding: 0 20px 0 15px;
+  // padding-top: 10px;
+  // padding-left: 50px;
+  // padding-right: 20px;
+  background-color: $bg-light;
 
   @media(max-width: 768px) {
     padding-top: 20px;
@@ -23,4 +26,9 @@
   bottom: 5px;
   font-size: 12px;
   color: $gray-lighter;
+}
+
+.auth-view__selected-tracks-count-wrapper {
+  background-color: $bg-main;
+  height: 20px;
 }
