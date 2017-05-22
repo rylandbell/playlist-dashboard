@@ -39,6 +39,7 @@
   order: 0;
   flex: 0 0 52px;
   padding: 10px 5px;
+  background: linear-gradient(to bottom, $bg-light, $bg-main);
 }
 
 .auth-view__tracks-row {
