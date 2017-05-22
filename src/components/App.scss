@@ -1,0 +1,11 @@
+@import 'variables.scss';
+
+.App ::-webkit-scrollbar {
+  background-color: $bg-secondary;
+}
+
+.App ::-webkit-scrollbar-thumb {
+    background-color: $bg-light;
+    border-radius: 20px;
+    border: 2px solid $bg-secondary;
+}
