@@ -31,7 +31,7 @@ class TracksTableRow extends Component {
         <td>{track.name}&nbsp;
           <small>{track.artists[0].name}</small>
         </td>
-        {allFilters.map(filter => <td key={filter.name} className="text-right hidden-xs">{formatValueDisplay(featuresData[filter.name])}</td>)}
+        {allFilters.map(filter => <td key={filter.name} className="text-center hidden-xs">{formatValueDisplay(featuresData[filter.name])}</td>)}
       </tr>
     );
   }

@@ -22,7 +22,7 @@ class SelectPlaylistsTable extends Component {
           <thead>
             <tr>
               <th>Track</th>
-              {allFilters.map(filter => <th className="text-right hidden-xs" key={filter.name} >{filter.shortName}</th>)}
+              {allFilters.map(filter => <th className="text-center hidden-xs" key={filter.name} >{filter.shortName}</th>)}
             </tr>
           </thead>
           <tbody>
