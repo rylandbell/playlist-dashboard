@@ -64,7 +64,7 @@ class PreAuthView extends Component {
           <div className="lead text-center">
             Want to try it? Let's start by connecting to your Spotify account.
           </div>
-          <button onClick={this.onClick} type="button" className="btn btn-primary btn-lg center-block">
+          <button onClick={this.onClick} type="button" className="btn btn-lg center-block pre-auth-view__btn">
             
             <span className="fa fa-lg fa-spotify" />&nbsp;&nbsp;Connect to Spotify
           </button>

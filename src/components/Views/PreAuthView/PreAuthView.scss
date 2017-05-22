@@ -20,3 +20,23 @@
   padding: 10px 30px 30px 30px;
   border-radius: 10px;
 }
+
+.pre-auth-view__btn {
+  background-color: desaturate(darken($spotify-green, 15%), 10%);
+
+  &:hover, &:hover:focus, &:hover:active {
+    background-color: desaturate(darken($spotify-green, 22%), 10%);
+  }
+
+  &:focus {
+    background-color: desaturate(darken($spotify-green, 15%), 10%);
+  }
+
+  &:active {
+    background-color: desaturate(darken($spotify-green, 15%), 10%);
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+  outline-width: 0;
+}
