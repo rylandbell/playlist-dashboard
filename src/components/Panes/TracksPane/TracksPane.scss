@@ -2,7 +2,7 @@
 
 .tracks__pane {
   background-color: $tracks-bg;
-  padding: 10px 10px 15px 20px;
+  padding: 0px 0px 0px 20px;
 }
 
 .tracks__heading {
@@ -12,16 +12,16 @@
 }
 
 .tracks__scroll-window {
-  margin-top: 15px;
+  // margin-top: 15px;
   padding: 0 10px 0 0;
   background-color: $tracks-bg;
   
-  overflow-y: auto;
+  // overflow-y: auto;
   border-radius: 5px;
 
   @media(min-width: 769px) {
-    max-height: 350px;
-    margin-right: 6px;
+    // max-height: 350px;
+    // margin-right: 6px;
   }
 
   * {

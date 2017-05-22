@@ -4,17 +4,10 @@
   background-color: $bg-secondary;
   min-height: 99.5vh;
   padding: 7px 0 0 0;
-  overflow: hidden;
-
-  @media (min-width: 769px) {
-    height: 99.5vh;
-  }
 }
 
 .sidebar__controls {
-  // border-bottom: 1px solid $bg-light;
   padding: 5px 5px 0px 5px;
-  // margin-bottom: 8px;
 
   .nav-tabs{
     display: flex;

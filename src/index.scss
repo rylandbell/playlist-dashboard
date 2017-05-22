@@ -14,7 +14,7 @@ body {
   font-family: $font-stack-copy;
   background-color: $gray;
   overflow-x: hidden;
-  // background-image: url('./img/bg-app.png');
+  background-image: url('./img/bg-app.png');
 }
 
 h1, h2 {
@@ -28,6 +28,7 @@ h3, h4 {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
+  padding-right: 0;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
