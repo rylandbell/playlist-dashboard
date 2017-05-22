@@ -82,12 +82,22 @@ const activeView = (state = "preAuth", action) => {
   }
 }
 
+// on first playlist select, automatically push user to Filters tab. after that, let user control tabs
+const autoTabSwitch = (state = true, action) => {
+  switch (action.type) {
+    case 'SELECT_PLAYLIST':
+      return false;
+    default:
+      return state;
+  }
+}
+
 const activeTab = (state = "playlists", action) => {
   switch (action.type) {
     case 'SET_ACTIVE_TAB':
       return action.data;
     case 'SELECT_PLAYLIST':
-      return "filters"
+      return action.forceTabSwitch ? "filters" : state;
     default:
       return state;
   }
@@ -453,6 +463,7 @@ const app = combineReducers({
   audioFeaturesData,
   activeView,
   fetchStatus,
+  autoTabSwitch,
   activeTab,
   hoveredTrack,
   animateNextChartDraw,

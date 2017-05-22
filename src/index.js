@@ -1,4 +1,3 @@
-// import 'bootstrap/dist/css/bootstrap.css';
 import 'bootswatch/superhero/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
@@ -31,9 +30,10 @@ function render() {
         fetchCalls.handleAuthRequest
       }
       handlePlaylistSelect={
-        function(data) {
+        function(data, forceTabSwitch) {
           const action = {
             type: 'SELECT_PLAYLIST',
+            forceTabSwitch: forceTabSwitch,
             data: data
           }
           store.dispatch(action);
