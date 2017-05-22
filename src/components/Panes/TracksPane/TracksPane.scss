@@ -15,11 +15,12 @@
   margin-top: 15px;
   padding: 0 10px 0 0;
   background-color: $tracks-bg;
-  max-height: 350px;
+  
   overflow-y: auto;
   border-radius: 5px;
 
   @media(min-width: 769px) {
+    max-height: 350px;
     margin-right: 6px;
   }
 

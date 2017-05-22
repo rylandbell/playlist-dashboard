@@ -3,25 +3,21 @@
 .auth-view__wrapper {
   max-width: 1500px;
   margin: 0 auto;
-  border: 1px solid $bg-light;
+  // border: 1px solid $bg-light;
   background-color: $bg-main;
 }
 
 .auth-view__explore-tracks-region{
-  min-height: 99.5vh;
-  padding: 0 20px 0 15px;
-  // padding-top: 10px;
-  // padding-left: 50px;
-  // padding-right: 20px;
   background-color: $bg-light;
 
-  @media(max-width: 768px) {
-    padding-top: 20px;
+  @media(min-width: 769px) {
+    padding: 0 15px 0 15px;
+    min-height: 99.5vh;
   }
 }
 
 .auth-view__selected-tracks-count {
-  margin-right: 15px;
+  margin-right: 16px;
   position: relative;
   bottom: 5px;
   font-size: 12px;
