@@ -4,6 +4,12 @@
   padding-top: 10px;
 }
 
-.recharts-reference-line .recharts-reference-line-label .recharts-text {
-  // font-weight: bold;
+.recharts-default-legend {
+  min-width: 175px;
+  padding-left: 20px !important;
+
+  .recharts-legend-item {
+    letter-spacing: .5px;
+    color: $text-light;
+  }
 }

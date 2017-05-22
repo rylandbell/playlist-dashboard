@@ -5,7 +5,11 @@
 }
 
 .App ::-webkit-scrollbar-thumb {
-    background-color: $bg-light;
-    border-radius: 20px;
-    border: 2px solid $bg-secondary;
+  background-color: $bg-light;
+  border-radius: 20px;
+  border: 2px solid $bg-secondary;
+
+  &:hover {
+    background-color: $bg-lighter;
+  }
 }

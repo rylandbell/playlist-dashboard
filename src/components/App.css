@@ -5,3 +5,5 @@
   background-color: #282828;
   border-radius: 20px;
   border: 2px solid #121212; }
+  .App ::-webkit-scrollbar-thumb:hover {
+    background-color: #383838; }

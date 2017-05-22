@@ -50,12 +50,27 @@ class FeaturesLineChart extends Component {
       <ResponsiveContainer width="100%" height={300}>
         <LineChart
           data={shiftedChartData}
-          margin={{ top: 20, right: 12, left: 0, bottom: 0 }}
+          margin={{ top: 20, right: 0, left: -20, bottom: 0 }}
         >
-          <XAxis stroke="#ebebeb" strokeWidth={2} interval={4} />
-          <YAxis stroke="#ebebeb" strokeWidth={2} domain={[0, 1]} />
+          <XAxis 
+            stroke="rgb(186,186,186)" 
+            strokeWidth={1} 
+            interval={4} 
+            label="Track"
+            tick={{ dy: 5 }}
+          />
+          <YAxis 
+            stroke="rgb(186,186,186)  " 
+            strokeWidth={1} 
+            domain={[0, 1]} 
+            interval={1} 
+            tick={{ dx: -5}}
+          />
           <Legend 
             iconSize={18}
+            align="right"
+            verticalAlign="middle"
+            layout="vertical"
           />
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
           <Tooltip content={<TrackInfoTooltip />} />
@@ -67,7 +82,7 @@ class FeaturesLineChart extends Component {
               animationDuration={1500}
               type="monotone" 
               stroke={filter.color} 
-              strokeWidth={3} 
+              strokeWidth={2} 
               dot={false} 
               connectNulls={true} 
               activeDot={{r: 8}} 
