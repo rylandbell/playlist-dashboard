@@ -58,7 +58,7 @@ class Filter extends Component {
 
     return (
       <div className="filters__filter noselect">
-        <h4>{filterData.displayName}&nbsp;
+        <span className="filters__filter-name">{filterData.displayName}&nbsp;
           <FeatureInfoTooltip 
             filter={filterData}
             filterIndex={filterIndex}
@@ -69,7 +69,7 @@ class Filter extends Component {
             filterIndex={filterIndex}
             {...this.props}
           />
-        </h4>
+        </span>
         <div className="filters__flex-container">
           <div className="filters__flex-left">
             <img className="filters__filter-icon img-responsive center-block" src={imagesHash[filterData.name]} alt={`${filterData.displayName} icon`} />

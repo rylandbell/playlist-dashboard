@@ -14,16 +14,12 @@
 }
 
 .auth-view__selected-tracks-count {
-  margin-right: 16px;
-  position: relative;
-  bottom: 5px;
+  // margin-right: 16px;
+  // position: relative;
+  // bottom: 5px;
   font-size: 12px;
-  color: $gray-lighter;
-}
-
-.auth-view__selected-tracks-count-wrapper {
-  background-color: $bg-main;
-  height: 20px;
+  color: $gray-light;
+  margin-left: 2px;
 }
 
 .auth-view__explore-tracks-flexbox {

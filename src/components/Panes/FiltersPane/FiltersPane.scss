@@ -94,6 +94,17 @@
   }
 }
 
+.filters__filter-name {
+  color: $text-light;
+  font-size: 18px;
+  // font-weight: 300;
+  letter-spacing: 1.5px;
+
+  .fa-question-circle {
+    color: darken($text-light, 10%);
+  }
+}
+
 .filters__filter-icon {
   width: 40px;
 }
