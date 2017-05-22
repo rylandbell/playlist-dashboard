@@ -3,15 +3,20 @@
 .playlists__pane {
   margin-top: 2px;
   overflow-y: scroll;
-  height: calc(100% - 50px);
-  position: absolute;
   top: 50px;
-  padding: 5px 12px 8px 12px;
+  padding: 5px 12px 8px 6px;
+
+  @media (min-width: 769px) {
+    height: calc(100% - 50px);
+    position: absolute;
+  }
 
   .playlists__item {
     color: $text-light;
     background-color: $bg-secondary;
-    padding: 6px;
+    padding: 0px 6px 2px 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
     // border-top: 1px solid $bg-dim;
     cursor: pointer;
 
@@ -28,12 +33,11 @@
     &.active {
       cursor: default;
       background-color: $bg-secondary;
-      border-left: 6px solid $spotify-green;
+      box-shadow: -6px 0px 0px 0px $spotify-green;
       color: white;
 
       &:hover {
         background-color: $bg-secondary;
-        border-left: 6px solid $spotify-green;
         color: white;
       }
     }
