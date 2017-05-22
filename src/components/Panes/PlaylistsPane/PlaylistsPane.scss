@@ -1,25 +1,44 @@
 @import 'variables.scss';
 
 .playlists__pane {
+  margin-top: 2px;
   overflow-y: scroll;
   height: calc(100% - 50px);
   position: absolute;
   top: 50px;
-  padding: 10px 12px 8px 12px;
+  padding: 5px 12px 8px 12px;
+
+  .playlists__item {
+    color: $text-light;
+    background-color: $bg-secondary;
+    padding: 6px;
+    // border-top: 1px solid $bg-dim;
+    cursor: pointer;
+
+    &:first-of-type {
+      z-index: 0 !important;
+      border-width: 0 ;
+    }
+
+    &:hover {
+      background-color: $bg-secondary;
+      color: white;
+    }
+
+    &.active {
+      cursor: default;
+      background-color: $bg-secondary;
+      border-left: 6px solid $spotify-green;
+      color: white;
+
+      &:hover {
+        background-color: $bg-secondary;
+        border-left: 6px solid $spotify-green;
+        color: white;
+      }
+    }
+  }
 }
 
-.playlists__item {
-  background-color: $bg-secondary;
-  padding: 6px;
-  border-top: 1px solid $bg-dim;
-  cursor: pointer;
 
-  &:first-of-type {
-    border-width: 0;
-  }
-
-  &.active {
-    cursor: default;
-  }
-}
 
