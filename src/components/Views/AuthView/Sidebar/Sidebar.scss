@@ -2,8 +2,11 @@
 
 .sidebar {
   background-color: $bg-secondary;
-  min-height: 100vh;
   padding: 7px 0 0 0;
+
+  @media (min-width: 769px) {
+    min-height: 100vh;
+  }
 }
 
 .sidebar__controls {

@@ -18,6 +18,30 @@
   margin-left: 2px;
 }
 
+.auth-view__instructions-wrapper {
+  text-align: center;
+}
+
+.auth-view__instructions {
+  margin-top: 5%;
+  max-width: 80%;
+
+  display: inline-block;
+  text-align: left;
+  td {
+    padding: 20px 25px;
+    color: $text-light;
+
+    * {
+      margin: 0;
+    }
+
+    img {
+      width: 90px;
+    }
+  }
+}
+
 @media (min-width: 769px) {
   .auth-view__explore-tracks-flexbox {
     height: 99.5vh;
@@ -48,3 +72,9 @@
   }
 }
 
+@media (max-width: 768px) {
+  .auth-view__explore-tracks-flexbox {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

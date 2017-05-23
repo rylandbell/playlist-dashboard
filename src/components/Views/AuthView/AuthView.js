@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ExploreTracksRegion from './ExploreTracksRegion';
 import Sidebar from './Sidebar/Sidebar';
+import Instructions from './Instructions';
 import Message from '../../Utilities/Message/Message';
 import './AuthView.css';
 
@@ -42,7 +43,7 @@ class AuthView extends Component {
       pending: <Message classList="big" loading={true} text="Loading tracks data... " {...this.props} />,
       failure: <Message classList="big" error={true} text="Error: failed to load tracks data." {...this.props} />,
       dataLoaded: <ExploreTracksRegion {...this.props} />,
-      none: <h3> Select a playlist to get started. </h3>
+      none: <Instructions />
     }
 
     return (
