@@ -22,18 +22,19 @@
 }
 
 .pre-auth-view__btn {
-  background-color: desaturate(darken($spotify-green, 15%), 10%);
+  border-radius: 50px;
+  background-color: desaturate(darken($spotify-green, 22%), 10%);
 
   &:hover, &:hover:focus, &:hover:active {
-    background-color: desaturate(darken($spotify-green, 22%), 10%);
+    background-color: desaturate(darken($spotify-green, 15%), 10%);
   }
 
   &:focus {
-    background-color: desaturate(darken($spotify-green, 15%), 10%);
+    background-color: desaturate(darken($spotify-green, 22%), 10%);
   }
 
   &:active {
-    background-color: desaturate(darken($spotify-green, 15%), 10%);
+    background-color: desaturate(darken($spotify-green, 22%), 10%);
   }
 }
 

@@ -7,12 +7,12 @@
   padding: 5px 12px 8px 6px;
 
   @media (min-width: 769px) {
-    height: calc(100% - 50px);
+    height: calc(100% - 55px);
     position: absolute;
   }
 
   .playlists__item {
-    color: $text-light;
+    color: darken($text-light, 15%);
     background-color: $bg-secondary;
     padding: 0px 6px 2px 12px;
     margin-top: 6px;
@@ -27,18 +27,18 @@
 
     &:hover {
       background-color: $bg-secondary;
-      color: white;
+      color: lighten($text-light, 15%);
     }
 
     &.active {
       cursor: default;
       background-color: $bg-secondary;
       box-shadow: -6px 0px 0px 0px $spotify-green;
-      color: white;
+      color: lighten($text-light, 15%);
 
       &:hover {
         background-color: $bg-secondary;
-        color: white;
+        color: lighten($text-light, 15%);
       }
     }
   }
