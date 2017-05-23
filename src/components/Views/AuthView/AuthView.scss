@@ -10,8 +10,7 @@
 
 .auth-view__explore-tracks-region{
   flex: 1 1 auto;
-  
-  
+  width: 0;
 }
 
 .auth-view__selected-tracks-count {
@@ -48,11 +47,8 @@
   .auth-view__explore-tracks-flexbox {
     height: 99.5vh;
     min-height: 600px;
-    width: 100%;
     display: flex;
     flex-direction: column;
-
-    
   }
 
   .auth-view__playlist-title-row {

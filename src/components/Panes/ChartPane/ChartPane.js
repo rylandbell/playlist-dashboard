@@ -5,7 +5,7 @@ import FeaturesLineChart from './FeaturesLineChart';
 class ChartPane extends Component {
   render() {
     return (
-      <div className="hidden-xs col-sm-12 chart__pane">
+      <div className="chart__pane">
         <FeaturesLineChart {...this.props} />
       </div>
     );
