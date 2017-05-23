@@ -14,7 +14,8 @@ h3, h4 {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 0; }
+  padding-right: 0;
+  min-height: 100vh; }
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
   outline-width: 0; }

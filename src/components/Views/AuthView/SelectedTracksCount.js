@@ -32,7 +32,7 @@ class ExporeTracks extends Component {
 
     return (
       <div>
-        <span className="auth-view__selected-tracks-count">{`Showing ${filteredTracksCount} / ${allTracksCount} songs, ${durationPhrase}`}</span>
+        <span className="auth-view__selected-tracks-count">{`${filteredTracksCount} of ${allTracksCount} songs, ${durationPhrase}`}</span>
       </div>
     );
   }

@@ -6,10 +6,11 @@
 
 .recharts-default-legend {
   min-width: 175px;
-  padding-left: 20px !important;
+  padding-left: 25px !important;
 
   .recharts-legend-item {
     letter-spacing: .5px;
     color: $text-light;
+    margin-bottom: 5px;
   }
 }
