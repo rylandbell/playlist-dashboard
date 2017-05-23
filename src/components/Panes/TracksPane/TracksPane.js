@@ -8,16 +8,11 @@ class TracksPane extends Component {
     const loadingData = fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
     
     return (
-      <div className="col-xs-12 tracks__pane">
-        <div className="row">
-          {loadingData ? 
-            null :
-            <div className="col-xs-12">
-              {/*<h3 className="tracks__heading"> {this.props.reduxState.selectedPlaylist.name} </h3>*/}
-              <TracksTable {...this.props} />
-            </div>
-          }
-        </div>
+      <div className="tracks__pane">
+        {loadingData ? 
+          null :
+          <TracksTable {...this.props} />
+        }
       </div>
     );
   }

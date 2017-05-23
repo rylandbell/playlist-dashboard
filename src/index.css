@@ -7,12 +7,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 0;
-  min-height: 100vh; }
-
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
   outline-width: 0; }
 
