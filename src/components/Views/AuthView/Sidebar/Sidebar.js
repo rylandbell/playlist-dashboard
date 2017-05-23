@@ -9,7 +9,7 @@ class Sidebar extends Component {
   render() {
     const activeTab = this.props.reduxState.activeTab;
     return (
-      <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 sidebar">
+      <div className="sidebar">
         <SidebarControls {...this.props} />
         <div className="sidebar__content">
           {activeTab === 'playlists' ? <PlaylistsPane {...this.props} /> : null}

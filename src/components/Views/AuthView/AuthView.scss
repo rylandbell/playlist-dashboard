@@ -4,12 +4,14 @@
   max-width: 1500px;
   margin: 0 auto;
   background-color: $bg-main;
+
+  display: flex;
 }
 
 .auth-view__explore-tracks-region{
-  @media(min-width: 769px) {
-    padding: 0 0 0 15px;
-  }
+  flex: 1 1 auto;
+  
+  
 }
 
 .auth-view__selected-tracks-count {
@@ -49,6 +51,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    
   }
 
   .auth-view__playlist-title-row {

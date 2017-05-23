@@ -6,11 +6,6 @@
   top: 50px;
   padding: 5px 12px 8px 6px;
 
-  @media (min-width: 769px) {
-    height: calc(100% - 55px);
-    position: absolute;
-  }
-
   .playlists__item {
     color: darken($text-light, 15%);
     background-color: $bg-secondary;

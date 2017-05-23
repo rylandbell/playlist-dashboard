@@ -16,16 +16,16 @@ class ExploreTracksRegion extends Component {
 
     return (
       <div className="auth-view__explore-tracks-flexbox">
-        <div className="row auth-view__playlist-title-row">
-          <div className="col-xs-12">
+        <div className="auth-view__playlist-title-row">
+          <div>
             <PlaylistHeading {...this.props} />
             <SelectedTracksCount filteredTracks={filteredTracks} featuresData={featuresData} {...this.props} />
           </div>
         </div>
-        <div className="row auth-view__tracks-row">
+        <div className="auth-view__tracks-row">
           <TracksPane allFilters={allFilters} filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} {...this.props} /> 
         </div>
-        <div className="row auth-view__chart-row">
+        <div className="auth-view__chart-row">
           <ChartPane filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} {...this.props} />
         </div>
       </div>

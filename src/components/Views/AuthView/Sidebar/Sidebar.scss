@@ -1,11 +1,13 @@
 @import 'variables.scss';
 
 .sidebar {
+  flex: 0 0 350px;
   background-color: $bg-secondary;
   padding: 7px 0 0 0;
+  overflow-y: scroll;
 
   @media (min-width: 769px) {
-    min-height: 100vh;
+    height: 100vh;
   }
 }
 
