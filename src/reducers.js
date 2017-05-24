@@ -110,6 +110,7 @@ const filtersInitial = [
     shortName: 'Dance',
     isActive: true,
     isGraphed: true,
+    isDragging: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -121,6 +122,7 @@ const filtersInitial = [
     shortName: 'Energy',
     isActive: true,
     isGraphed: false,
+    isDragging: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -132,6 +134,7 @@ const filtersInitial = [
     shortName: 'Pos',
     isActive: true,
     isGraphed: false,
+    isDragging: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -143,6 +146,7 @@ const filtersInitial = [
     shortName: 'Acous',
     isActive: true,
     isGraphed: false,
+    isDragging: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -154,6 +158,7 @@ const filtersInitial = [
     shortName: 'Live',
     isActive: true,
     isGraphed: false,
+    isDragging: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -165,6 +170,7 @@ const filtersInitial = [
     shortName: 'Inst',
     isActive: true,
     isGraphed: false,
+    isDragging: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -186,6 +192,24 @@ const filters = (state = filtersInitial, action) => {
     case 'TOGGLE_CHARTED_FEATURE':
       targetFilter = Object.assign({}, state[action.filterIndex]);
       updatedFilter = Object.assign(targetFilter, {isGraphed: action.newValue});
+
+      return [
+        ...state.slice(0, action.filterIndex),
+        updatedFilter,
+        ...state.slice(action.filterIndex + 1)
+      ];
+    case 'START_DRAGGING_FILTER':
+      targetFilter = Object.assign({}, state[action.filterIndex]);
+      updatedFilter = Object.assign(targetFilter, {isDragging: true});
+
+      return [
+        ...state.slice(0, action.filterIndex),
+        updatedFilter,
+        ...state.slice(action.filterIndex + 1)
+      ];
+    case 'STOP_DRAGGING_FILTER':
+      targetFilter = Object.assign({}, state[action.filterIndex]);
+      updatedFilter = Object.assign(targetFilter, {isDragging: false});
 
       return [
         ...state.slice(0, action.filterIndex),

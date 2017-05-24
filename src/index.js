@@ -77,6 +77,24 @@ function renderApp() {
           store.dispatch(action);
         }
       }
+      startDraggingFilter={
+        function(filterIndex) {
+          const action = {
+            type: 'START_DRAGGING_FILTER',
+            filterIndex: filterIndex
+          }
+          store.dispatch(action);
+        }
+      }
+      stopDraggingFilter={
+        function(filterIndex) {
+          const action = {
+            type: 'STOP_DRAGGING_FILTER',
+            filterIndex: filterIndex
+          }
+          store.dispatch(action);
+        }
+      }
       handleChartedFeaturesToggle={
         function(filterIndex, newValue) {
           const action = {

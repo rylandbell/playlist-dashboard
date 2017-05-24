@@ -22,7 +22,12 @@ class FeaturesLineChart extends Component {
   }
 
   render () {
-    const graphedFilters = this.props.reduxState.filters.filter(x => x.isGraphed);
+    const filters = this.props.reduxState.filters;
+    const graphedFilters = filters.filter(x => x.isGraphed);
+
+    //find the filter currently being dragged, when applicable
+    const draggedFilterIndex = filters.findIndex(filter => filter.isDragging);
+    const filterIsDragging = draggedFilterIndex >= 0;
 
     const filteredTracks = this.props.filteredTracks;
     const filteredFeaturesData = this.props.filteredFeaturesData;
@@ -73,7 +78,15 @@ class FeaturesLineChart extends Component {
             layout="vertical"
           />
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
-          <Tooltip content={<TrackInfoTooltip />} />
+          {filterIsDragging ? 
+            <ReferenceLine y={filters[draggedFilterIndex].currentValue[0]} label={filters[draggedFilterIndex].currentValue[0]} stroke={filters[draggedFilterIndex].color} strokeDasharray="3 3" /> : 
+            null
+          }
+          {filterIsDragging ? 
+            <ReferenceLine y={filters[draggedFilterIndex].currentValue[1]} label={filters[draggedFilterIndex].currentValue[1]} stroke={filters[draggedFilterIndex].color} strokeDasharray="3 3" /> :
+            null
+          }
+          <Tooltip content={<TrackInfoTooltip />} /> 
           {graphedFilters.map(filter => 
             <Line 
               dataKey={filter.name}
