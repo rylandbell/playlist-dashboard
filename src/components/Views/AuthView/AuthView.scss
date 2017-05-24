@@ -5,12 +5,16 @@
   margin: 0 auto;
   background-color: $bg-main;
 
-  display: flex;
+  @media (min-width: 769px) {
+    display: flex;
+  }
 }
 
 .auth-view__explore-tracks-region{
-  flex: 1 1 auto;
-  width: 0;
+  @media (min-width: 769px) {
+    flex: 1 1 auto;
+    width: 0;
+  }
 }
 
 .auth-view__selected-tracks-count {
@@ -74,7 +78,12 @@
 
 @media (max-width: 768px) {
   .auth-view__explore-tracks-flexbox {
-    padding-top: 20px;
+    // padding-top: 20px;
     padding-bottom: 20px;
+  }
+
+  .auth-view__playlist-title-row {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, $bg-light, $bg-main);
   }
 }

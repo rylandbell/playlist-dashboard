@@ -1,7 +1,9 @@
 @import 'variables.scss';
 
 .sidebar {
-  flex: 0 0 300px;
+  @media (min-width: 769px) {
+    flex: 0 0 300px;    
+  }
   
   display: flex;
   flex-direction: column;
@@ -30,7 +32,7 @@
       cursor: pointer;
 
       a {
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.5px;
         border: 1px solid transparent;
         box-sizing: border-box;
@@ -61,5 +63,5 @@
 }
 
 .sidebar__save-pane {
-  padding: 10px 25px;
+  padding: 25px 25px 40px 25px;
 }
