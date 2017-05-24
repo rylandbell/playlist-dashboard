@@ -1,0 +1,42 @@
+@import 'variables.scss';
+
+.instructions__wrapper {
+  height: 100%;
+  padding: 35px 25px 25px 25px;
+}
+
+.instructions {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+
+  td {
+    padding: 20px 25px;
+    color: $text-light;
+
+    * {
+      margin: 0;
+    }
+
+    img {
+      width: 90px;
+    }
+  }
+}
+
+.instructions__connect-btn {
+  border-radius: 50px;
+  background-color: desaturate(darken($spotify-green, 22%), 10%);
+
+  &:hover, &:hover:focus, &:hover:active {
+    background-color: desaturate(darken($spotify-green, 15%), 10%);
+  }
+
+  &:focus {
+    background-color: desaturate(darken($spotify-green, 22%), 10%);
+  }
+
+  &:active {
+    background-color: desaturate(darken($spotify-green, 22%), 10%);
+  }
+}

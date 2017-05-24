@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import ConnectButton from './ConnectButton';
+
+import './Instructions.css';
 import playlistImg from './img/playlist.png';
 import filterImg from './img/filter.png';
 import saveImg from './img/save.png';
 
 class Instructions extends Component {
   render() {
+    const showButton = this.props.reduxState.activeView === "preAuth";
     return (
-      <div>
-        <div className="auth-view__instructions-wrapper">
-          <table className="auth-view__instructions">
+      <div className="instructions__wrapper">
+        <div className ="instructions">
+          <table>
             <tbody>
               <tr>
                 <td><img src={playlistImg} alt="playlist icon" /></td>
@@ -33,15 +37,8 @@ class Instructions extends Component {
               </tr>
             </tbody>
           </table>
+          {showButton ? <ConnectButton {...this.props} /> : null}
         </div>
-        {/*<br />
-        <div className="lead text-center">
-          Let's start by connecting to your Spotify account.
-        </div>
-        <button type="button" className="btn btn-lg center-block pre-auth-view__btn">
-          
-          <span className="fa fa-lg fa-spotify" />&nbsp;&nbsp;Connect to Spotify
-        </button>*/}
       </div>
     );
   }
