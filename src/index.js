@@ -17,6 +17,8 @@ dispatchAccessToken();
 store.subscribe(render);
 render();
 
+console.log(process.env);
+
 function render() {
   ReactDOM.render(
     <App 

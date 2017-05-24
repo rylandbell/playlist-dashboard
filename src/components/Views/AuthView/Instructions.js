@@ -34,14 +34,14 @@ class Instructions extends Component {
             </tbody>
           </table>
         </div>
-        <br />
+        {/*<br />
         <div className="lead text-center">
           Let's start by connecting to your Spotify account.
         </div>
         <button type="button" className="btn btn-lg center-block pre-auth-view__btn">
           
           <span className="fa fa-lg fa-spotify" />&nbsp;&nbsp;Connect to Spotify
-        </button>
+        </button>*/}
       </div>
     );
   }
