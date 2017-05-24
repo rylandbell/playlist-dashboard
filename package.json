@@ -16,12 +16,13 @@
   "devDependencies": {
     "node-sass-chokidar": "0.0.1",
     "npm-run-all": "^4.0.2",
-    "react-scripts": "canary"
+    "react-scripts": "canary",
+    "react-snapshot": "^1.1.0"
   },
   "scripts": {
     "start-js": "react-scripts start",
     "start": "NODE_PATH=src npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "build": "npm run build-css && react-scripts build && react-snapshot",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build && firebase deploy",

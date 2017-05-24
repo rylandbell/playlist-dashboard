@@ -2,7 +2,8 @@ import 'bootswatch/superhero/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import { createStore } from 'redux';
 
 import App from './components/App';
@@ -14,11 +15,11 @@ import './index.css';
 //create a store from the above reducer, then subscribe a React render function to it
 const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 dispatchAccessToken();
-store.subscribe(render);
-render();
+store.subscribe(renderApp);
+renderApp();
 
-function render() {
-  ReactDOM.render(
+function renderApp() {
+  render(
     <App 
       reduxState={store.getState()}
       getPlaylists={

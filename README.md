@@ -1,5 +1,5 @@
 ## Description
-Live version at [rylandbell.github.io/spotify-features-filter/]( https://rylandbell.github.io/spotify-features-filter/).
+Live version at [spotify.ryland-bell.com]( https://spotify.ryland-bell.com).
 
 **Analyze Your Spotify Playlists**
 
