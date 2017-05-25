@@ -1,6 +1,4 @@
-export {filterByFeatures, getTracksToSave};
-
-function filterByFeatures(track, index, array, passedReduxState) {
+export function filterByFeatures(track, index, array, passedReduxState) {
 
   const state = passedReduxState || this.props.reduxState;
   const features = state.audioFeaturesData;
@@ -32,13 +30,24 @@ function filterByFeatures(track, index, array, passedReduxState) {
   return passesAllFilters;
 }
 
-function getTracksToSave(store) {
+export function getTracksToSave(store) {
   const state = store.getState();
   const { selectedPlaylistTracks } = state;
   const filteredTracks = selectedPlaylistTracks.filter(
     (track, index, arr) => filterByFeatures(track, index, arr, state)
   );
-  // const filteredTracksUris = filteredTracks.map(track => track.uri)
-  // console.log(filteredTracks[0].track.name);
+
   return filteredTracks;
+}
+
+export function getHashParams() {
+  var hashParams = {};
+  var e, r = /([^&;=]+)=?([^&;]*)/g,
+    q = window.location.hash.substring(1);
+  e = r.exec(q);
+  while ( e ) {
+    hashParams[e[1]] = decodeURIComponent(e[2]);
+    e = r.exec(q)
+  }
+  return hashParams;
 }

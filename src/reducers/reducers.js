@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const accessToken = (state = "", action) => {
+export const accessToken = (state = "", action) => {
   switch (action.type){
     case 'SET_ACCESS_TOKEN':
       return action.data;
@@ -9,7 +9,7 @@ const accessToken = (state = "", action) => {
   }
 }
 
-const playlists = (state = [], action) => {
+export const playlists = (state = [], action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
       return action.data.items.slice();
@@ -18,7 +18,7 @@ const playlists = (state = [], action) => {
   }
 }
 
-const userId = (state = "", action) => {
+export const userId = (state = "", action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
       const href = action.data.href;
@@ -29,7 +29,7 @@ const userId = (state = "", action) => {
   }
 }
 
-const selectedPlaylist = (state = null, action) => {
+export const selectedPlaylist = (state = null, action) => {
   switch(action.type) {
     case 'SELECT_PLAYLIST':
       return action.data;
@@ -38,7 +38,7 @@ const selectedPlaylist = (state = null, action) => {
   }
 }
 
-const selectedPlaylistTracks = (state = [], action) => {
+export const selectedPlaylistTracks = (state = [], action) => {
   switch (action.type){
     case 'SELECT_PLAYLIST':
       return action.data ? [] : state;
@@ -49,7 +49,7 @@ const selectedPlaylistTracks = (state = [], action) => {
   }
 }
 
-const audioFeaturesData = (state = [], action) => {
+export const audioFeaturesData = (state = [], action) => {
   switch (action.type){
     case 'SELECT_PLAYLIST':
       return action.data ? [] : state;
@@ -60,7 +60,7 @@ const audioFeaturesData = (state = [], action) => {
   }
 }
 
-const hoveredTrack = (state = null, action) => {
+export const hoveredTrack = (state = null, action) => {
   switch (action.type){
     case 'HOVER_ON_TRACK':
       return action.data;
@@ -71,7 +71,7 @@ const hoveredTrack = (state = null, action) => {
   }
 }
 
-const activeView = (state = "preAuth", action) => {
+export const activeView = (state = "preAuth", action) => {
   switch (action.type){
     case 'SET_ACCESS_TOKEN':
       const isToken = action.data && action.data.length > 0;
@@ -83,7 +83,7 @@ const activeView = (state = "preAuth", action) => {
 }
 
 // on first playlist select, automatically push user to Filters tab. after that, let user control tabs
-const autoTabSwitch = (state = true, action) => {
+export const autoTabSwitch = (state = true, action) => {
   switch (action.type) {
     case 'SELECT_PLAYLIST':
       return false;
@@ -92,7 +92,7 @@ const autoTabSwitch = (state = true, action) => {
   }
 }
 
-const activeTab = (state = "playlists", action) => {
+export const activeTab = (state = "playlists", action) => {
   switch (action.type) {
     case 'SET_ACTIVE_TAB':
       return action.data;
@@ -178,7 +178,7 @@ const filtersInitial = [
   }
 ];
 
-const filters = (state = filtersInitial, action) => {
+export const filters = (state = filtersInitial, action) => {
   let targetFilter, updatedFilter;
   switch(action.type) {
     case 'UPDATE_FILTER':
@@ -212,7 +212,7 @@ const filters = (state = filtersInitial, action) => {
   }
 }
 
-const newPlaylistName = (state = "", action) => {
+export const newPlaylistName = (state = "", action) => {
   switch (action.type) {
     case 'SELECT_PLAYLIST':
       return "Modified: " + action.data.name;
@@ -223,7 +223,7 @@ const newPlaylistName = (state = "", action) => {
   }
 }
 
-const animateNextChartDraw = (state = true, action) => {
+export const animateNextChartDraw = (state = true, action) => {
   switch (action.type) {
     case 'STOP_ANIMATING_CHART':
       return false;
@@ -451,7 +451,7 @@ const addTracksToPlaylistFailure = (state = false, action) => {
   }
 }
 
-const fetchStatus = combineReducers({
+export const fetchStatus = combineReducers({
   getPlaylistsPending,
   getPlaylistsSuccess,
   getPlaylistsFailure,
@@ -468,22 +468,3 @@ const fetchStatus = combineReducers({
   addTracksToPlaylistSuccess,
   addTracksToPlaylistFailure
 });
-
-const app = combineReducers({
-  accessToken,
-  playlists,
-  userId,
-  selectedPlaylist,
-  selectedPlaylistTracks,
-  audioFeaturesData,
-  activeView,
-  fetchStatus,
-  autoTabSwitch,
-  activeTab,
-  hoveredTrack,
-  animateNextChartDraw,
-  filters,
-  newPlaylistName
-});
-
-export default app;
