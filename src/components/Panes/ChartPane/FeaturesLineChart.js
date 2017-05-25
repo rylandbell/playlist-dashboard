@@ -70,6 +70,7 @@ class FeaturesLineChart extends Component {
             domain={[0, 1]} 
             interval={1} 
             tick={{ dx: -5}}
+            padding={{ bottom: 15 }}
           />
           <Legend 
             iconSize={18}

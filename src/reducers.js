@@ -202,7 +202,7 @@ const filters = (state = filtersInitial, action) => {
         if (index === action.filterIndex) {
           return Object.assign({}, filter, {showReferenceLine: true, isGraphed: true});
         } else {
-          return Object.assign({}, filter, {showReferenceLine: false});
+          return Object.assign({}, filter, {showReferenceLine: false, isGraphed: false});
         }
       });
     case 'SELECT_PLAYLIST':
