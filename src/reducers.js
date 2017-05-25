@@ -206,6 +206,8 @@ const filters = (state = filtersInitial, action) => {
           return Object.assign(filter, {isDragging: false});
         }
       });
+    case 'SELECT_PLAYLIST':
+      return state.map( filter => Object.assign(filter, {isDragging: false}) );
     default:
       return state;
   }
