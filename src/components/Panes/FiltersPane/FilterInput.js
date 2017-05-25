@@ -35,7 +35,6 @@ class Filter extends Component {
     super(props);
     this.onChange = this.onChange.bind(this);
     this.onBeforeChange = this.onBeforeChange.bind(this);
-    this.onAfterChange = this.onAfterChange.bind(this);    
   }
 
   onChange(value) {
@@ -45,10 +44,6 @@ class Filter extends Component {
 
   onBeforeChange(value) {
     this.props.startDraggingFilter(this.props.filterIndex);
-  }
-
-  onAfterChange(value) {
-    this.props.stopDraggingFilter(this.props.filterIndex);
   }
 
   render() {
@@ -64,8 +59,7 @@ class Filter extends Component {
       value: currentValue,
       className: "filters__range",
       onChange: this.onChange,
-      onBeforeChange: this.onBeforeChange,
-      onAfterChange: this.onAfterChange
+      onBeforeChange: this.onBeforeChange
     }
 
     return (

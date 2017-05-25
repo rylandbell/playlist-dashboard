@@ -199,23 +199,13 @@ const filters = (state = filtersInitial, action) => {
         ...state.slice(action.filterIndex + 1)
       ];
     case 'START_DRAGGING_FILTER':
-      targetFilter = Object.assign({}, state[action.filterIndex]);
-      updatedFilter = Object.assign(targetFilter, {isDragging: true});
-
-      return [
-        ...state.slice(0, action.filterIndex),
-        updatedFilter,
-        ...state.slice(action.filterIndex + 1)
-      ];
-    case 'STOP_DRAGGING_FILTER':
-      targetFilter = Object.assign({}, state[action.filterIndex]);
-      updatedFilter = Object.assign(targetFilter, {isDragging: false});
-
-      return [
-        ...state.slice(0, action.filterIndex),
-        updatedFilter,
-        ...state.slice(action.filterIndex + 1)
-      ];
+      return state.map( (filter,index) => {
+        if (index === action.filterIndex) {
+          return Object.assign(filter, {isDragging: true});
+        } else {
+          return Object.assign(filter, {isDragging: false});
+        }
+      });
     default:
       return state;
   }
