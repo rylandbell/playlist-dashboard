@@ -25,7 +25,7 @@ class Instructions extends Component {
                 <td><img src={filterImg} alt="playlist icon" /></td>
                 <td>
                   <h3> Adjust some filters. </h3>
-                  <div className="lead">Refine your playlists by setting an allowed range for any number of features. Heading to the gym? Look for high-energy, high-danceability tracks. Want to focus? Look for tracks with a high instrumentalness score.</div>
+                  <div className="lead">Refine your playlists by setting an allowed range for any number of audio features. Heading to the gym? Look for high-energy, high-danceability tracks. Want to focus? Look for tracks with a high instrumentalness score.</div>
                 </td>
               </tr>
               <tr>
