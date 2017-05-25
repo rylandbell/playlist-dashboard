@@ -22,7 +22,7 @@ const userId = (state = "", action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
       const href = action.data.href;
-      const userId = href.substring(33,43);
+      const userId = href.split('/')[5];
       return userId;
     default:
       return state;
@@ -201,7 +201,7 @@ const filters = (state = filtersInitial, action) => {
     case 'START_DRAGGING_FILTER':
       return state.map( (filter,index) => {
         if (index === action.filterIndex) {
-          return Object.assign(filter, {isDragging: true});
+          return Object.assign(filter, {isDragging: true, isGraphed: true});
         } else {
           return Object.assign(filter, {isDragging: false});
         }

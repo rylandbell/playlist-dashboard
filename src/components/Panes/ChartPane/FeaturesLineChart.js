@@ -55,7 +55,7 @@ class FeaturesLineChart extends Component {
       <ResponsiveContainer width="100%" height={300}>
         <LineChart
           data={shiftedChartData}
-          margin={{ top: 20, right: 0, left: -20, bottom: 0 }}
+          margin={{ top: 20, right: 10, left: -20, bottom: 0 }}
         >
           <XAxis 
             stroke="rgb(186,186,186)" 

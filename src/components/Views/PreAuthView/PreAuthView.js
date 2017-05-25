@@ -6,7 +6,9 @@ import Instructions from '../../Utilities/Instructions/Instructions';
 class PreAuthView extends Component {
   render() {
     return (
-      <Instructions {...this.props} />
+      <div className="pre-auth-view">
+        <Instructions {...this.props} />
+      </div>
     );
   }
 }

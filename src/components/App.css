@@ -1,6 +1,5 @@
 .App {
-  min-height: 100vh;
-  background-color: #181818; }
+  min-height: 100vh; }
   @media (min-width: 769px) {
     .App {
       height: 100vh; } }
