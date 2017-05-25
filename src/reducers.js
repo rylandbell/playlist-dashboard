@@ -110,7 +110,7 @@ const filtersInitial = [
     shortName: 'Dance',
     isActive: true,
     isGraphed: true,
-    isDragging: false,
+    showReferenceLine: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -122,7 +122,7 @@ const filtersInitial = [
     shortName: 'Energy',
     isActive: true,
     isGraphed: false,
-    isDragging: false,
+    showReferenceLine: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -134,7 +134,7 @@ const filtersInitial = [
     shortName: 'Pos',
     isActive: true,
     isGraphed: false,
-    isDragging: false,
+    showReferenceLine: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -146,7 +146,7 @@ const filtersInitial = [
     shortName: 'Acous',
     isActive: true,
     isGraphed: false,
-    isDragging: false,
+    showReferenceLine: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -158,7 +158,7 @@ const filtersInitial = [
     shortName: 'Live',
     isActive: true,
     isGraphed: false,
-    isDragging: false,
+    showReferenceLine: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -170,7 +170,7 @@ const filtersInitial = [
     shortName: 'Inst',
     isActive: true,
     isGraphed: false,
-    isDragging: false,
+    showReferenceLine: false,
     currentValue: [0,1],
     min: 0,
     max: 1,
@@ -190,24 +190,23 @@ const filters = (state = filtersInitial, action) => {
         ...state.slice(action.filterIndex + 1)
       ];
     case 'TOGGLE_CHARTED_FEATURE':
-      targetFilter = Object.assign({}, state[action.filterIndex]);
-      updatedFilter = Object.assign(targetFilter, {isGraphed: action.newValue});
-
-      return [
-        ...state.slice(0, action.filterIndex),
-        updatedFilter,
-        ...state.slice(action.filterIndex + 1)
-      ];
+      return state.map( (filter, index) => {
+        if (index === action.filterIndex) {
+          return Object.assign(filter, {showReferenceLine: false, isGraphed: action.newValue})
+        } else {
+          return Object.assign({}, filter, {showReferenceLine: false});
+        }
+      });
     case 'START_DRAGGING_FILTER':
       return state.map( (filter,index) => {
         if (index === action.filterIndex) {
-          return Object.assign(filter, {isDragging: true, isGraphed: true});
+          return Object.assign({}, filter, {showReferenceLine: true, isGraphed: true});
         } else {
-          return Object.assign(filter, {isDragging: false});
+          return Object.assign({}, filter, {showReferenceLine: false});
         }
       });
     case 'SELECT_PLAYLIST':
-      return state.map( filter => Object.assign(filter, {isDragging: false}) );
+      return state.map( filter => Object.assign(filter, {showReferenceLine: false}) );
     default:
       return state;
   }

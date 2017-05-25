@@ -26,8 +26,8 @@ class FeaturesLineChart extends Component {
     const graphedFilters = filters.filter(x => x.isGraphed);
 
     //find the filter currently being dragged, when applicable
-    const draggedFilterIndex = filters.findIndex(filter => filter.isDragging);
-    const filterIsDragging = draggedFilterIndex >= 0;
+    const draggedFilterIndex = filters.findIndex(filter => filter.showReferenceLine);
+    const showAnyReferenceLine = draggedFilterIndex >= 0;
 
     const filteredTracks = this.props.filteredTracks;
     const filteredFeaturesData = this.props.filteredFeaturesData;
@@ -78,11 +78,11 @@ class FeaturesLineChart extends Component {
             layout="vertical"
           />
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
-          {filterIsDragging ? 
+          {showAnyReferenceLine ? 
             <ReferenceLine y={filters[draggedFilterIndex].currentValue[0]} label={filters[draggedFilterIndex].currentValue[0]} stroke={filters[draggedFilterIndex].color} strokeDasharray="3 3" /> : 
             null
           }
-          {filterIsDragging ? 
+          {showAnyReferenceLine ? 
             <ReferenceLine y={filters[draggedFilterIndex].currentValue[1]} label={filters[draggedFilterIndex].currentValue[1]} stroke={filters[draggedFilterIndex].color} strokeDasharray="3 3" /> :
             null
           }
