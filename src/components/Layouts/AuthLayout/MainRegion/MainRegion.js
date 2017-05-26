@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
-import ExploreTracksRegion from './ExploreTracksRegion';
-import Sidebar from './Sidebar/Sidebar';
-import Instructions from '../../Utilities/Instructions/Instructions';
-import Message from '../../Utilities/Message/Message';
-import './AuthView.css';
+import ExploreTracksView from './ExploreTracksView';
+import Instructions from '../../../Blocks/Instructions/Instructions';
+import Message from '../../../Blocks/Message/Message';
+import './MainRegion.css';
 
-class AuthView extends Component {
-
-  //fetch playlists when AuthView first mounts
-  componentDidMount() {
-    const state = this.props.reduxState;
-    const playlistsLoaded = state.playlists && state.playlists.length > 0;
-    const getPlaylistsFailure = state.fetchStatus.getPlaylistsFailure;
-    const shouldGetPlaylists = !playlistsLoaded && !getPlaylistsFailure;
-    
-    if (shouldGetPlaylists) {
-      this.props.getPlaylists();
-    }
-  }
+class MainRegion extends Component {
   
   render() {
     const state = this.props.reduxState;
@@ -42,20 +29,17 @@ class AuthView extends Component {
     const viewEnum = {
       pending: <Message classList="big" loading={true} text="Loading tracks data... " {...this.props} />,
       failure: <Message classList="big" error={true} text="Error: failed to load tracks data." {...this.props} />,
-      dataLoaded: <ExploreTracksRegion {...this.props} />,
+      dataLoaded: <ExploreTracksView {...this.props} />,
       none: <Instructions {...this.props} />
     }
 
     return (
-      <div className="auth-view__wrapper">
-        <Sidebar {...this.props} />
-        <div className="auth-view__explore-tracks-region">
-          {viewEnum[loadingStatus]}
-        </div>
+      <div className="main-region">
+        {viewEnum[loadingStatus]}
       </div>
     );
   }
 }
 
-export default AuthView;
+export default MainRegion;
 

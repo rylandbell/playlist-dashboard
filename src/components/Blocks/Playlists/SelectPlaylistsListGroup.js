@@ -8,6 +8,7 @@ class SelectPlaylistsListGroup extends Component {
     const mappedPlaylists = playlists.map(list => 
       <SelectPlaylistsListItem key={list.id} playlist={list} {...this.props} />
     );
+    
     return (
       playlists.length > 0 ? 
         (<div className="list-group">

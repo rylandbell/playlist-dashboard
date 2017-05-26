@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './ChartPane.css';
+import './Chart.css';
 import FeaturesLineChart from './FeaturesLineChart';
 
-class ChartPane extends Component {
+class Chart extends Component {
   render() {
     return (
       <div className="chart__pane">
@@ -12,4 +12,4 @@ class ChartPane extends Component {
   }
 }
 
-export default ChartPane;
+export default Chart;

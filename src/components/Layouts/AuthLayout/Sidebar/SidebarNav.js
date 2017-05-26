@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SidebarControls extends Component {
+class SidebarNav extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
@@ -28,7 +28,7 @@ class SidebarControls extends Component {
       + (selectedPlaylist ? '' : ' disabled');
 
     return (
-      <div className="sidebar__controls">
+      <div className="sidebar__nav">
         <ul className="nav nav-tabs nav-justified noselect">
           <li role="presentation" onClick={this.onClick} className={playlistsClasses}>
             <a id="tab-playlists">PLAYLISTS</a>
@@ -45,4 +45,4 @@ class SidebarControls extends Component {
   }
 }
 
-export default SidebarControls;
+export default SidebarNav;

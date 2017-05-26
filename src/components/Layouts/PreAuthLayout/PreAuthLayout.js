@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './PreAuthLayout.css';
 
-import Instructions from '../../Utilities/Instructions/Instructions';
+import Instructions from '../../Blocks/Instructions/Instructions';
 
 class PreAuthLayout extends Component {
   render() {

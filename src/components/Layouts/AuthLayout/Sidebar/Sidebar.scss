@@ -17,7 +17,7 @@
   }
 }
 
-.sidebar__controls {
+.sidebar__nav {
   flex: 0 0 auto;
 
   padding: 5px 5px 0px 5px;
@@ -59,9 +59,4 @@
 .sidebar__content {
   flex: 1 1 auto;
   overflow-y: scroll;
-  // height: 0px;
-}
-
-.sidebar__save-pane {
-  padding: 25px 25px 40px 25px;
 }

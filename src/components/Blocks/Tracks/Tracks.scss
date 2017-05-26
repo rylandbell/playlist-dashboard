@@ -1,29 +1,10 @@
 @import 'variables';
 
 .tracks__pane {
-  background-color: $tracks-bg;
-  padding: 0px 0px 0px 20px;
-}
-
-.tracks__heading {
-  color: white;
-  margin-top: 5px;
-  margin-right: 20px;
-  margin-bottom: 0;
-}
-
-.tracks__scroll-window {
-  // margin-top: 15px;
-  padding: 0 10px 0 0;
+  padding: 0 10px 0 20px;
   background-color: $tracks-bg;
   
-  // overflow-y: auto;
   border-radius: 5px;
-
-  @media(min-width: 769px) {
-    // max-height: 350px;
-    // margin-right: 6px;
-  }
 
   * {
     cursor: default;

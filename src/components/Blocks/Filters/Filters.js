@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import FilterInput from './FilterInput';
 
-import './FiltersPane.css';
+import './Filters.css';
 import 'rc-slider/assets/index.css';
 
-class FiltersPane extends Component {
+class Filters extends Component {
   render() {
     const filters = this.props.reduxState.filters;
     return (
@@ -15,4 +15,4 @@ class FiltersPane extends Component {
   }
 }
 
-export default FiltersPane;
+export default Filters;

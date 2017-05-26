@@ -1,37 +1,21 @@
 @import 'variables';
 
-.auth-view__wrapper {
-  max-width: 1500px;
-  margin: 0 auto;
-  background-color: $bg-main;
 
-  @media (min-width: 769px) {
-    display: flex;
-  }
-}
 
-.auth-view__explore-tracks-region{
-  @media (min-width: 769px) {
+@media (min-width: 769px) {
+  .main-region{
     flex: 1 1 auto;
     width: 0;
   }
-}
 
-.auth-view__selected-tracks-count {
-  font-size: 12px;
-  color: $gray-light;
-  margin-left: 2px;
-}
-
-@media (min-width: 769px) {
-  .auth-view__explore-tracks-flexbox {
+  .main-region__explore-tracks-flexbox {
     height: 99.5vh;
     min-height: 600px;
     display: flex;
     flex-direction: column;
   }
 
-  .auth-view__playlist-title-row {
+  .main-region__playlist-heading-row {
     width: 100%;
     order: 0;
     flex: 0 0 52px;
@@ -39,26 +23,25 @@
     background: linear-gradient(to bottom, $bg-light, $bg-main);
   }
 
-  .auth-view__tracks-row {
+  .main-region__tracks-row {
     overflow-y: auto;
     overflow-x: hidden;
     width: 100%;
     flex: 1 1 auto;
   }
 
-  .auth-view__chart-row {
+  .main-region__chart-row {
     width: 100%;
     flex: 0 0 330px;
   }
 }
 
 @media (max-width: 768px) {
-  .auth-view__explore-tracks-flexbox {
-    // padding-top: 20px;
+  .main-region__explore-tracks-flexbox {
     padding-bottom: 20px;
   }
 
-  .auth-view__playlist-title-row {
+  .main-region__playlist-heading-row {
     padding: 10px 20px;
     background: linear-gradient(to bottom, $bg-light, $bg-main);
   }

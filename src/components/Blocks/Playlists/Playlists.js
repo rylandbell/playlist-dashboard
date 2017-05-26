@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Message from '../../Utilities/Message/Message';
+import Message from '../../Blocks/Message/Message';
 import SelectPlaylistsListGroup from './SelectPlaylistsListGroup';
-import './PlaylistsPane.css';
+import './Playlists.css';
 
-class PlaylistsPane extends Component {
+class Playlists extends Component {
   render() {
     const getPlaylistsPending = this.props.reduxState.fetchStatus.getPlaylistsPending;
     const getPlaylistsFailure = this.props.reduxState.fetchStatus.getPlaylistsFailure;
@@ -30,4 +30,4 @@ class PlaylistsPane extends Component {
   }
 }
 
-export default PlaylistsPane;
+export default Playlists;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Message from '../../../Utilities/Message/Message';
+import './SavePane.css';
+import Message from '../../Blocks/Message/Message';
 
 class SavePane extends Component {
   constructor(props) {
@@ -30,16 +31,16 @@ class SavePane extends Component {
     const saveFailure = state.fetchStatus.createPlaylistFailure || state.fetchStatus.addTracksToPlaylistFailure;
 
     return (
-      <div className="sidebar__save-pane">
+      <div className="save-pane">
         <div className="lead">Create a new Spotify playlist from the currently selected tracks.</div>
         <div className="form-group">
           <input type="text" className="form-control" value={newPlaylistName} onChange={this.onChangeText} />
         </div>
         <button onClick={this.onClickSave} className={"btn btn-primary pull-right " + (savePending ? 'disabled' : '')} >Save</button>
         <br />
-        {savePending ? <Message classList="" loading={true} text="Saving on Spotify... " {...this.props} /> : null}
-        {saveSuccess ? <Message classList="" success={true} text="Playlist successfully created.&nbsp;" {...this.props} /> : null}
-        {saveFailure ? <Message classList="" error={true} text="Error: Playlist was not saved.&nbsp;" {...this.props} /> : null}
+        {savePending && <Message classList="" loading={true} text="Saving on Spotify... " {...this.props} />}
+        {saveSuccess && <Message classList="" success={true} text="Playlist successfully created.&nbsp;" {...this.props} />}
+        {saveFailure && <Message classList="" error={true} text="Error: Playlist was not saved.&nbsp;" {...this.props} />}
       </div>
     );
   }

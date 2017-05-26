@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import TracksTable from './TracksTable';
-import './TracksPane.css';
+import './Tracks.css';
 
-class TracksPane extends Component {
+class Tracks extends Component {
   render() {
     const fetchStatus = this.props.reduxState.fetchStatus;
     const loadingData = fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
@@ -18,4 +18,4 @@ class TracksPane extends Component {
   }
 }
 
-export default TracksPane;
+export default Tracks;

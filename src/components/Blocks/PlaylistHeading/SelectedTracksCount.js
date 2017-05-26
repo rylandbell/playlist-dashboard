@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ExporeTracks extends Component {
+class SelectedTracksCount extends Component {
   render() {
     const getPlaylistDuration = tracksArray => {
       const total_ms = tracksArray.reduce(
@@ -32,11 +32,11 @@ class ExporeTracks extends Component {
 
     return (
       <div>
-        <span className="auth-view__selected-tracks-count">{`${filteredTracksCount} of ${allTracksCount} songs, ${durationPhrase}`}</span>
+        <span className="playlist-heading__tracks-count">{`${filteredTracksCount} of ${allTracksCount} songs, ${durationPhrase}`}</span>
       </div>
     );
   }
 }
 
-export default ExporeTracks;
+export default SelectedTracksCount;
 

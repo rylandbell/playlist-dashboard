@@ -1,0 +1,11 @@
+@import 'variables';
+
+.auth-layout__container {
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: $bg-main;
+
+  @media (min-width: 769px) {
+    display: flex;
+  }
+}
