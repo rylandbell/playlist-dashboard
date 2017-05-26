@@ -43,7 +43,7 @@ class Filter extends Component {
   }
 
   onBeforeChange(value) {
-    this.props.startDraggingFeatureSlider(this.props.filterIndex);
+    this.props.handleStartDraggingFeatureSlider(this.props.filterIndex);
   }
 
   render() {
