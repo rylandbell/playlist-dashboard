@@ -7,7 +7,7 @@ class SelectPlaylistsListItem extends Component {
   }
 
   onClick() {
-    this.props.handlePlaylistSelect(this.props.playlist, this.props.reduxState.autoTabSwitch);
+    this.props.handlePlaylistSelect(this.props.playlist, this.props.reduxState.autoSidebarTabSwitch);
   }
 
   render() {

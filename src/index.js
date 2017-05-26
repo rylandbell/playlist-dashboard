@@ -13,7 +13,7 @@ import { setAccessToken, selectPlaylist, setActiveTab, changeNameText, updateFil
 import { getHashParams } from './helper';
 
 //create a store from the above reducer, then subscribe a React render function to it
-// (the second argument enables Redux dev tools)
+// (the second argument enables Redux dev tools in browser)
 const store = createStore(combineReducers(reducers), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 dispatchAccessToken();
 store.subscribe(renderApp);

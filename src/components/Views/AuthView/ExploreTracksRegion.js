@@ -8,7 +8,7 @@ import {filterByFeatures} from '../../../helper';
 class ExploreTracksRegion extends Component {
   render() {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
-    const featuresData = this.props.reduxState.audioFeaturesData;
+    const featuresData = this.props.reduxState.selectedPlaylistAudioFeatures;
     const allFilters = this.props.reduxState.filters;
 
     const filteredTracks = tracks.filter(filterByFeatures.bind(this));

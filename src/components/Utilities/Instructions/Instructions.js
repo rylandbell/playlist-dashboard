@@ -8,7 +8,7 @@ import saveImg from './img/save.png';
 
 class Instructions extends Component {
   render() {
-    const showButton = this.props.reduxState.activeView === "preAuth";
+    const showButton = !this.props.reduxState.authStatus;
     return (
       <div className="instructions__wrapper">
         <div className ="instructions">

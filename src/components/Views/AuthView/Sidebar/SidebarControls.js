@@ -17,14 +17,14 @@ class SidebarControls extends Component {
   }
 
   render() {
-    const activeTab = this.props.reduxState.activeTab;
+    const activeSidebarTab = this.props.reduxState.activeSidebarTab;
     const selectedPlaylist = this.props.reduxState.selectedPlaylist;
 
     //as appropriate, mark tabs as active or disabled
-    const playlistsClasses = (activeTab === "playlists" ? 'active': '');  
-    const filtersClasses = (activeTab === "filters" ? 'active': '')
+    const playlistsClasses = (activeSidebarTab === "playlists" ? 'active': '');  
+    const filtersClasses = (activeSidebarTab === "filters" ? 'active': '')
       + (selectedPlaylist ? '' : ' disabled');
-    const saveClasses = (activeTab === "save" ? 'active': '')
+    const saveClasses = (activeSidebarTab === "save" ? 'active': '')
       + (selectedPlaylist ? '' : ' disabled');
 
     return (

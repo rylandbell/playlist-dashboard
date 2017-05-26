@@ -7,14 +7,14 @@ import './Sidebar.css';
 
 class Sidebar extends Component {
   render() {
-    const activeTab = this.props.reduxState.activeTab;
+    const activeSidebarTab = this.props.reduxState.activeSidebarTab;
     return (
       <div className="sidebar">
         <SidebarControls {...this.props} />
         <div className="sidebar__content">
-          {activeTab === 'playlists' ? <PlaylistsPane {...this.props} /> : null}
-          {activeTab === 'filters' ? <FiltersPane {...this.props} /> : null}
-          {activeTab === 'save' ? <SavePane {...this.props} /> : null}
+          {activeSidebarTab === 'playlists' ? <PlaylistsPane {...this.props} /> : null}
+          {activeSidebarTab === 'filters' ? <FiltersPane {...this.props} /> : null}
+          {activeSidebarTab === 'save' ? <SavePane {...this.props} /> : null}
         </div>
       </div>
     );

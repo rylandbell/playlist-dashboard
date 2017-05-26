@@ -18,11 +18,11 @@ import AuthView from './Views/AuthView/AuthView';
 
 class App extends Component {
   render() {
-    const activeView = this.props.reduxState.activeView;
+    const authStatus = this.props.reduxState.authStatus;
 
     return (
       <div className="App">
-        {activeView === 'auth' ? <AuthView {...this.props} /> : <PreAuthView {...this.props} /> }
+        {authStatus ? <AuthView {...this.props} /> : <PreAuthView {...this.props} /> }
       </div>
     );
   }

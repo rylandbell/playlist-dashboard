@@ -22,7 +22,7 @@ class AuthView extends Component {
   render() {
     const state = this.props.reduxState;
     const tracksLoaded = state.selectedPlaylistTracks && state.selectedPlaylistTracks.length > 0;
-    const featuresLoaded = state.audioFeaturesData && state.audioFeaturesData.length > 0;
+    const featuresLoaded = state.selectedPlaylistAudioFeatures && state.selectedPlaylistAudioFeatures.length > 0;
     const dataLoaded = tracksLoaded && featuresLoaded;
     const fetchPending = state.fetchStatus.getTracksPending || state.fetchStatus.getFeaturesPending;
     const fetchFailure = state.fetchStatus.getTracksFailure || state.fetchStatus.getFeaturesFailure;
