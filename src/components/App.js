@@ -12,7 +12,7 @@ import AuthLayout from './Layouts/AuthLayout/AuthLayout';
 //     })
 //   }
 //   render = () => (
-//     this.Component ? <this.Component.default {...this.props} /> : null
+//     this.Component && <this.Component.default {...this.props} />
 //   )
 // }
 

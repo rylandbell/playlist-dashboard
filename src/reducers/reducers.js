@@ -21,6 +21,15 @@ export const authStatus = (state = "preAuth", action) => {
   }
 }
 
+export const badAuthToken = (state = false, action) => {
+  switch (action.type){
+    case 'BAD_AUTH_TOKEN':
+      return true;
+    default:
+      return state;
+  }
+}
+
 export const userId = (state = "", action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':

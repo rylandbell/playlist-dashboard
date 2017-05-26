@@ -46,7 +46,7 @@ class FeaturesLineChart extends Component {
 
     //display vertical reference line for track when hovered in the table (not the chart);
     const hoveredTrackRow = this.props.reduxState.hoveredTrackRow;
-    const hoveredTrackName = hoveredTrackRow ? hoveredTrackRow.track.name : null;
+    const hoveredTrackName = hoveredTrackRow && hoveredTrackRow.track.name;
 
     //gives position of hovered track in filtered playlist (shifted by 1 for counting-from-1)
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrackRow) + 1;

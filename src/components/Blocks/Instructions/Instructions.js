@@ -37,7 +37,7 @@ class Instructions extends Component {
               </tr>
             </tbody>
           </table>
-          {showButton ? <ConnectButton {...this.props} /> : null}
+          {showButton && <ConnectButton {...this.props} />}
         </div>
       </div>
     );

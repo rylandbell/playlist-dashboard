@@ -8,6 +8,7 @@ class MainRegion extends Component {
   
   render() {
     const state = this.props.reduxState;
+    const badAuthToken = state.badAuthToken;
     const tracksLoaded = state.selectedPlaylistTracks && state.selectedPlaylistTracks.length > 0;
     const featuresLoaded = state.selectedPlaylistAudioFeatures && state.selectedPlaylistAudioFeatures.length > 0;
     const dataLoaded = tracksLoaded && featuresLoaded;
@@ -16,7 +17,9 @@ class MainRegion extends Component {
 
     let loadingStatus;
     
-    if (fetchPending) {
+    if (badAuthToken) {
+      loadingStatus = 'badAuthToken'
+    } else if (fetchPending) {
       loadingStatus = 'pending';
     } else if (fetchFailure) {
       loadingStatus = 'failure';
@@ -30,6 +33,7 @@ class MainRegion extends Component {
       pending: <Message classList="big" loading={true} text="Loading tracks data... " {...this.props} />,
       failure: <Message classList="big" error={true} text="Error: failed to load tracks data." {...this.props} />,
       dataLoaded: <ExploreTracksView {...this.props} />,
+      badAuthToken: <Message classList="big" error={true} text="Refreshing authorization token..." {...this.props} />,
       none: <Instructions {...this.props} />
     }
 
