@@ -35,9 +35,9 @@ export const updateFilter = (filterIndex, inputValue) => (
   }
 );
 
-export const startDraggingFilter = filterIndex => (
+export const startDraggingFeatureSlider = filterIndex => (
   {
-    type: 'START_DRAGGING_FILTER',
+    type: 'START_DRAGGING_FEATURE_SLIDER',
     filterIndex: filterIndex
   }
 );

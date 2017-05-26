@@ -9,7 +9,7 @@ import { createStore, combineReducers } from 'redux';
 import App from './components/App';
 import * as reducers from './reducers/reducers';
 import fetchCalls from './fetchCalls';
-import { setAccessToken, selectPlaylist, setActiveTab, changeNameText, updateFilter, startDraggingFilter, toggleChartedFeature, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
+import { setAccessToken, selectPlaylist, setActiveTab, changeNameText, updateFilter, startDraggingFeatureSlider, toggleChartedFeature, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
 import { getHashParams } from './helper';
 
 //create a store from the above reducer, then subscribe a React render function to it
@@ -41,7 +41,7 @@ function renderApp() {
       
       handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
       
-      startDraggingFilter = {filterIndex => {store.dispatch(startDraggingFilter(filterIndex))}}
+      startDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
       
       handleChartedFeaturesToggle = {(filterIndex, newValue) => {store.dispatch(toggleChartedFeature(filterIndex, newValue))}}
      

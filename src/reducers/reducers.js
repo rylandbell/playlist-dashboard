@@ -3,7 +3,6 @@ import * as fetchStatusReducers from './fetchStatus';
 
 export const fetchStatus = combineReducers(fetchStatusReducers);
 
-
 export const accessToken = (state = "", action) => {
   switch (action.type){
     case 'SET_ACCESS_TOKEN':
@@ -199,7 +198,7 @@ export const filters = (state = filtersInitial, action) => {
           return Object.assign({}, filter, {showReferenceLine: false});
         }
       });
-    case 'START_DRAGGING_FILTER':
+    case 'START_DRAGGING_FEATURE_SLIDER':
       return state.map( (filter,index) => {
         if (index === action.filterIndex) {
           return Object.assign({}, filter, {showReferenceLine: true, isGraphed: true});
