@@ -2,23 +2,24 @@
 
 .App {
   min-height: 100vh;
-  // background-color: $bg-light;
   
   @media (min-width: 769px) {
     height: 100vh;
   }
-}
 
-.App ::-webkit-scrollbar {
-  background-color: $bg-secondary;
-}
+  ::-webkit-scrollbar {
+    background-color: $bg-secondary;
+  }
 
-.App ::-webkit-scrollbar-thumb {
-  background-color: $bg-light;
-  border-radius: 20px;
-  border: 2px solid $bg-secondary;
+  ::-webkit-scrollbar-thumb {
+    background-color: $bg-light;
+    border-radius: 20px;
+    border: 2px solid $bg-secondary;
 
-  &:hover {
-    background-color: $bg-lighter;
+    &:hover {
+      background-color: $bg-lighter;
+    }
   }
 }
+
+

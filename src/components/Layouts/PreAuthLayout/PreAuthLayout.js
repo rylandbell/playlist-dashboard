@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './PreAuthView.css';
+import './PreAuthLayout.css';
 
 import Instructions from '../../Utilities/Instructions/Instructions';
 
-class PreAuthView extends Component {
+class PreAuthLayout extends Component {
   render() {
     return (
-      <div className="pre-auth-view">
+      <div className="pre-auth-layout">
         <Instructions {...this.props} />
       </div>
     );
   }
 }
 
-export default PreAuthView;
+export default PreAuthLayout;

@@ -41,7 +41,7 @@ function renderApp() {
       
       handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
       
-      startDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
+      handleStartDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
       
       handleChartedFeaturesToggle = {(filterIndex, newValue) => {store.dispatch(toggleChartedFeature(filterIndex, newValue))}}
      

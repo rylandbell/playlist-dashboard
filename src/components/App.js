@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import PreAuthView from './Views/PreAuthView/PreAuthView';
-import AuthView from './Views/AuthView/AuthView';
+import PreAuthLayout from './Layouts/PreAuthLayout/PreAuthLayout';
+import AuthView from './Layouts/AuthView/AuthView';
 
 //load AuthView as separate module, once authorization has been established
 // class AuthView extends React.Component {
 //   componentWillMount = () => {
-//     import('./Views/AuthView/AuthView').then(Component => {
+//     import('./Layouts/AuthView/AuthView').then(Component => {
 //       this.Component = Component;
 //       this.forceUpdate();
 //     })
@@ -22,7 +22,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        {authStatus ? <AuthView {...this.props} /> : <PreAuthView {...this.props} /> }
+        {authStatus ? <AuthView {...this.props} /> : <PreAuthLayout {...this.props} /> }
       </div>
     );
   }
