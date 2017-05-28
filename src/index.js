@@ -27,9 +27,7 @@ function renderApp() {
         reduxState = {store.getState()}
         
         getPlaylists = {() => {fetchCalls.getPlaylists(store)}}
-        
-        handleAuthRequest = {fetchCalls.handleAuthRequest}
-        
+                
         handleTabSelect = {data => {store.dispatch(setActiveTab(data))}}
        
         handleTrackRowHover = {track => {store.dispatch(hoverOnTrack(track))}}
