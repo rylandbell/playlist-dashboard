@@ -20,10 +20,10 @@ class ExploreTracksView extends Component {
           </div>
         </div>
         <div className="main-region__tracks-row">
-          <Tracks filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} {...this.props} /> 
+          <Tracks filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} /> 
         </div>
         <div className="main-region__chart-row">
-          <Chart filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} {...this.props} />
+          <Chart filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} />
         </div>
       </div>
     );
@@ -31,4 +31,3 @@ class ExploreTracksView extends Component {
 }
 
 export default ExploreTracksView;
-

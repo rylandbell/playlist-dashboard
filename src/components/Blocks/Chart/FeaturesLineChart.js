@@ -16,13 +16,13 @@ class FeaturesLineChart extends Component {
 
   //Don't animate chart on updates:
   componentWillUpdate(e) {
-    if (this.props.reduxState.animateNextChartDraw) {
+    if (this.props.animateNextChartDraw) {
      this.props.stopAnimatingChart();
     }
   }
 
   render () {
-    const filters = this.props.reduxState.filters;
+    const filters = this.props.filters;
     const graphedFilters = filters.filter(x => x.isGraphed);
 
     //find the filter currently being dragged, when applicable
@@ -45,7 +45,7 @@ class FeaturesLineChart extends Component {
     const shiftedChartData = [{}].concat(chartData);
 
     //display vertical reference line for track when hovered in the table (not the chart);
-    const hoveredTrackRow = this.props.reduxState.hoveredTrackRow;
+    const hoveredTrackRow = this.props.hoveredTrackRow;
     const hoveredTrackName = hoveredTrackRow && hoveredTrackRow.track.name;
 
     //gives position of hovered track in filtered playlist (shifted by 1 for counting-from-1)
@@ -92,7 +92,7 @@ class FeaturesLineChart extends Component {
             <Line 
               dataKey={filter.name}
               name={filter.displayName}
-              isAnimationActive={this.props.reduxState.animateNextChartDraw} 
+              isAnimationActive={this.props.animateNextChartDraw} 
               animationDuration={1500}
               type="monotone" 
               stroke={filter.color} 
