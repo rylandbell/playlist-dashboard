@@ -1,29 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import fetchCalls from '../../../fetchCalls';
 
 import Sidebar from './Sidebar/Sidebar';
 import MainRegion from './MainRegion/MainRegion';
 import './AuthLayout.css';
-
-const mapStateToProps = (state) => {
-  return {
-    playlists: state.playlists,
-    fetchStatus: state.fetchStatus,
-    accessToken: state.accessToken,
-    activeSidebarTab: state.activeSidebarTab,
-    badAuthToken: state.badAuthToken,
-    selectedPlaylistTracks: state.selectedPlaylistTracks,
-    selectedPlaylistAudioFeatures: state.selectedPlaylistAudioFeatures,
-    fullState: state
-  }
-}
-
-const mapDispatchToProps = (dispatch, accessToken) => {
-  return {
-    getPlaylists: (accessToken) => {fetchCalls.getPlaylists(dispatch, accessToken)}
-  }
-}
 
 class AuthLayout extends Component {
 
@@ -54,9 +33,4 @@ class AuthLayout extends Component {
   }
 }
 
-const AuthLayoutContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AuthLayout)
-
-export default AuthLayoutContainer;
+export default AuthLayout;

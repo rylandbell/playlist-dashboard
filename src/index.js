@@ -22,9 +22,7 @@ renderApp();
 function renderApp() {
   render(
     <Provider store={store}>
-      <App 
-        reduxState = {store.getState()}
-      />
+      <App />
     </Provider>,
     document.getElementById('root')
   );

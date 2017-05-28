@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import fetchCalls from '../fetchCalls';
+
 import './App.css';
 import PreAuthLayout from './Layouts/PreAuthLayout/PreAuthLayout';
 import AuthLayout from './Layouts/AuthLayout/AuthLayout';
@@ -16,16 +19,35 @@ import AuthLayout from './Layouts/AuthLayout/AuthLayout';
 //   )
 // }
 
-class App extends Component {
-  render() {
-    const authStatus = this.props.reduxState.authStatus;
-
-    return (
-      <div className="App">
-        {authStatus ? <AuthLayout {...this.props} /> : <PreAuthLayout {...this.props} /> }
-      </div>
-    );
+const mapStateToProps = (state) => {
+  return {
+    authStatus: state.authStatus,
+    playlists: state.playlists,
+    fetchStatus: state.fetchStatus,
+    accessToken: state.accessToken,
+    activeSidebarTab: state.activeSidebarTab,
+    badAuthToken: state.badAuthToken,
+    selectedPlaylistTracks: state.selectedPlaylistTracks,
+    selectedPlaylistAudioFeatures: state.selectedPlaylistAudioFeatures,
+    fullState: state
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch, accessToken) => {
+  return {
+    getPlaylists: (accessToken) => {fetchCalls.getPlaylists(dispatch, accessToken)}
+  }
+}
+
+const App = (props) => (
+  <div className="App">
+    {props.authStatus ? <AuthLayout {...props} /> : <PreAuthLayout /> }
+  </div>
+);
+
+const AppContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
+
+export default AppContainer;
