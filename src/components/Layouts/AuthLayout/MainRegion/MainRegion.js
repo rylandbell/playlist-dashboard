@@ -11,31 +11,23 @@ const MainRegion = ({badAuthToken, selectedPlaylistTracks, selectedPlaylistAudio
   const fetchPending = fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
   const fetchFailure = fetchStatus.getTracksFailure || fetchStatus.getFeaturesFailure;
 
-  let loadingStatus;
+  let content;
   
   if (badAuthToken) {
-    loadingStatus = 'badAuthToken'
+    content = <Message classList="big" error={true} text="Refreshing authorization token..." />
   } else if (fetchPending) {
-    loadingStatus = 'pending';
+    content = <Message classList="big" loading={true} text="Loading tracks data... " />;
   } else if (fetchFailure) {
-    loadingStatus = 'failure';
+    content = <Message classList="big" error={true} text="Error: failed to load tracks data." />;
   } else if (dataLoaded) {
-    loadingStatus = 'dataLoaded';
+    content = <ExploreTracksView selectedPlaylistTracks={selectedPlaylistTracks} selectedPlaylistAudioFeatures={selectedPlaylistAudioFeatures} fullState={fullState} />;
   } else {
-    loadingStatus = 'none';
-  }
-
-  const viewEnum = {
-    pending: <Message classList="big" loading={true} text="Loading tracks data... " />,
-    failure: <Message classList="big" error={true} text="Error: failed to load tracks data." />,
-    dataLoaded: <ExploreTracksView selectedPlaylistTracks={selectedPlaylistTracks} selectedPlaylistAudioFeatures={selectedPlaylistAudioFeatures} fullState={fullState} />,
-    badAuthToken: <Message classList="big" error={true} text="Refreshing authorization token..." />,
-    none: <Instructions />
+    content = <Instructions />;
   }
 
   return (
     <div className="main-region">
-      {viewEnum[loadingStatus]}
+      {content}
     </div>
   );
 }

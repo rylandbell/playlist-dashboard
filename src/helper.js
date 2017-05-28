@@ -1,3 +1,14 @@
+import { setAccessToken } from './actions';
+
+export function dispatchAccessToken(dispatch) {
+  const params = getHashParams();
+  let data = "";
+  if (params && params.access_token) {
+    data = params.access_token;
+  }
+  dispatch(setAccessToken(data));
+}
+
 //takes a track, looks up its audio features and the current filter values, checks if the track passes all filters
 export function filterByFeatures(trackIndex, passedReduxState) {
 
