@@ -51,3 +51,20 @@ export function getHashParams() {
   }
   return hashParams;
 }
+
+export function getPlaylistDuration (tracksArray) {
+  const total_ms = tracksArray.reduce(
+    (accumulator, track) => {
+      return accumulator + track.track.duration_ms;
+    },
+    0
+  );
+
+  const total_min = Math.round(total_ms / (1000 * 60));
+
+  const duration = {
+    hr: Math.floor(total_min / 60),
+    min: Math.floor(total_min % 60)
+  }
+  return duration;
+}

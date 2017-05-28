@@ -17,7 +17,7 @@ class ExploreTracksView extends Component {
       <div className="main-region__explore-tracks-flexbox">
         <div className="main-region__playlist-heading-row">
           <div>
-            <PlaylistHeading filteredTracks={filteredTracks} featuresData={featuresData} {...this.props} />
+            <PlaylistHeading filteredTracks={filteredTracks} featuresData={featuresData} />
           </div>
         </div>
         <div className="main-region__tracks-row">

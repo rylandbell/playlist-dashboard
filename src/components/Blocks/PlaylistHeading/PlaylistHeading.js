@@ -1,23 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+
 import SelectedTracksCount from './SelectedTracksCount';
 
 import './PlaylistHeading.css';
 
-class PlaylistHeading extends Component {
-  render() {
-    const userId = this.props.reduxState.userId;
-    const playlistOwnerId = this.props.reduxState.selectedPlaylist.owner.id;
-    const idMatch = userId === playlistOwnerId;
-    return (
-      <div>
-        <h3 className="playlist-heading__title"> {this.props.reduxState.selectedPlaylist.name}
-          {idMatch ? null: <small>&nbsp;by {playlistOwnerId}</small>}
-        </h3>
-        <SelectedTracksCount {...this.props} />
-      </div>
-    );
+const mapStateToProps = (state) => {
+  return {
+    userId: state.userId,
+    selectedPlaylist: state.selectedPlaylist
   }
 }
 
-export default PlaylistHeading;
+const mapDispatchToProps = (dispatch) => {
+  return {}
+}
+
+const PlaylistHeading = ({userId, selectedPlaylist, filteredTracks, featuresData}) => {
+  const playlistOwnerId = selectedPlaylist.owner.id;
+  const idMatch = userId === playlistOwnerId;
+  return (
+    <div>
+      <h3 className="playlist-heading__title"> {selectedPlaylist.name}
+        {idMatch ? null: <small>&nbsp;by {playlistOwnerId}</small>}
+      </h3>
+      <SelectedTracksCount featuresData={featuresData} filteredTracks={filteredTracks} />
+    </div>
+  );
+}
+
+const PlaylistHeadingContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PlaylistHeading)
+
+export default PlaylistHeadingContainer;
 
