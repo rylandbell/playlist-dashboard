@@ -9,7 +9,6 @@ import { render } from 'react-snapshot';
 
 import App from './components/App';
 import * as reducers from './reducers/reducers';
-import fetchCalls from './fetchCalls';
 import { setAccessToken } from './actions';
 import { getHashParams } from './helper';
 
@@ -25,9 +24,6 @@ function renderApp() {
     <Provider store={store}>
       <App 
         reduxState = {store.getState()}
-        
-        getPlaylists = {() => {fetchCalls.getPlaylists(store)}}
-                
       />
     </Provider>,
     document.getElementById('root')

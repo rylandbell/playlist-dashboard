@@ -7,10 +7,10 @@ import './Sidebar.css';
 
 class Sidebar extends Component {
   render() {
-    const activeSidebarTab = this.props.reduxState.activeSidebarTab;
+    const activeSidebarTab = this.props.activeSidebarTab;
     return (
       <div className="sidebar">
-        <SidebarNav {...this.props} />
+        <SidebarNav />
         <div className="sidebar__content">
           {activeSidebarTab === 'playlists' && <Playlists />}
           {activeSidebarTab === 'filters' && <Filters />}

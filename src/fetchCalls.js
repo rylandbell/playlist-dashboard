@@ -18,21 +18,21 @@ fetchCalls.handleAuthRequest = function() {
 }
 
 //get list of current user's playlists
-fetchCalls.getPlaylists = function(store) {
-  store.dispatch({
+fetchCalls.getPlaylists = function(dispatch, accessToken) {
+  dispatch({
     type: 'GET_PLAYLISTS_PENDING'
   });
 
   const requestOptions = {
     method: 'GET',
     headers: {
-      Authorization: 'Bearer ' + store.getState().accessToken
+      Authorization: 'Bearer ' + accessToken
     },
   }
   fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        store.dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch({type: 'BAD_AUTH_TOKEN'});
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -40,13 +40,13 @@ fetchCalls.getPlaylists = function(store) {
     })
     .then(res => res.json())
     .then(res => {
-      store.dispatch({
+      dispatch({
         type: 'ADD_PLAYLISTS_DATA',
         data: res
       });
     })
     .catch(err => {
-      store.dispatch({
+      dispatch({
         type: 'GET_PLAYLISTS_FAILURE'
       });
       console.log('getPlaylists Error:', err);
