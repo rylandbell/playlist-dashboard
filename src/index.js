@@ -3,13 +3,14 @@ import 'font-awesome/css/font-awesome.css';
 import './index.css';
 
 import React from 'react';
-import { render } from 'react-snapshot';
 import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import { render } from 'react-snapshot';
 
 import App from './components/App';
 import * as reducers from './reducers/reducers';
 import fetchCalls from './fetchCalls';
-import { setAccessToken, selectPlaylist, setActiveTab, changeNameText, updateFilter, startDraggingFeatureSlider, toggleChartedFeature, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
+import { setAccessToken, setActiveTab, changeNameText, updateFilter, startDraggingFeatureSlider, toggleChartedFeature, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
 import { getHashParams } from './helper';
 
 //create a store from the above reducer, then subscribe a React render function to it
@@ -21,36 +22,38 @@ renderApp();
 
 function renderApp() {
   render(
-    <App 
-      reduxState = {store.getState()}
-      
-      getPlaylists = {() => {fetchCalls.getPlaylists(store)}}
-      
-      handleAuthRequest = {fetchCalls.handleAuthRequest}
-      
-      handlePlaylistSelect={(playlist, forceTabSwitch) => {
-          store.dispatch(selectPlaylist(playlist, forceTabSwitch));
-          fetchCalls.getTracks(store, playlist);
-      }}
-      
-      handleTabSelect = {data => {store.dispatch(setActiveTab(data))}}
-      
-      handleNameTextEntry = {data => {store.dispatch(changeNameText(data))}}
-      
-      handleSavePlaylist = {name => {fetchCalls.handleSavePlaylist(store, name)}}
-      
-      handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
-      
-      handleStartDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
-      
-      handleChartedFeaturesToggle = {(filterIndex, newValue) => {store.dispatch(toggleChartedFeature(filterIndex, newValue))}}
-     
-      handleTrackRowHover = {track => {store.dispatch(hoverOnTrack(track))}}
-      
-      handleMouseLeavesTracksTable = {() => {store.dispatch(clearHoveredTrack())}}
-      
-      stopAnimatingChart = {() => {store.dispatch(stopAnimatingChart())}}
-    />,
+    <Provider store={store}>
+      <App 
+        reduxState = {store.getState()}
+        
+        getPlaylists = {() => {fetchCalls.getPlaylists(store)}}
+        
+        handleAuthRequest = {fetchCalls.handleAuthRequest}
+        
+        // handlePlaylistSelect={(playlist, forceTabSwitch) => {
+        //     store.dispatch(selectPlaylist(playlist, forceTabSwitch));
+        //     fetchCalls.getTracks(store, playlist);
+        // }}
+        
+        handleTabSelect = {data => {store.dispatch(setActiveTab(data))}}
+        
+        handleNameTextEntry = {data => {store.dispatch(changeNameText(data))}}
+        
+        handleSavePlaylist = {name => {fetchCalls.handleSavePlaylist(store, name)}}
+        
+        handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
+        
+        handleStartDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
+        
+        handleChartedFeaturesToggle = {(filterIndex, newValue) => {store.dispatch(toggleChartedFeature(filterIndex, newValue))}}
+       
+        handleTrackRowHover = {track => {store.dispatch(hoverOnTrack(track))}}
+        
+        handleMouseLeavesTracksTable = {() => {store.dispatch(clearHoveredTrack())}}
+        
+        stopAnimatingChart = {() => {store.dispatch(stopAnimatingChart())}}
+      />
+    </Provider>,
     document.getElementById('root')
   );
 }

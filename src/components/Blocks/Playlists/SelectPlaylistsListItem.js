@@ -7,13 +7,17 @@ class SelectPlaylistsListItem extends Component {
   }
 
   onClick() {
-    this.props.handlePlaylistSelect(this.props.playlist, this.props.reduxState.autoSidebarTabSwitch);
+    this.props.handlePlaylistSelect(this.props.accessToken, this.props.playlist, this.props.autoSidebarTabSwitch);
   }
 
   render() {
     const playlist = this.props.playlist;
-    const selectedPlaylist = this.props.reduxState.selectedPlaylist;
-    const classList = (selectedPlaylist && playlist.id === selectedPlaylist.id) ? "playlists__item list-group-item active" : "playlists__item list-group-item"
+    const selectedPlaylist = this.props.selectedPlaylist;
+    const playlistIsSelected = selectedPlaylist && (playlist.id === selectedPlaylist.id);
+
+    const classList = playlistIsSelected ?
+      "playlists__item list-group-item active" :
+      "playlists__item list-group-item";
 
     return (
       <a className={classList} onClick={this.onClick}>

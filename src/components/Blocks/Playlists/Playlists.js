@@ -1,33 +1,54 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+
+import fetchCalls from '../../../fetchCalls';
+import { selectPlaylist } from '../../../actions';
 import Message from '../../Blocks/Message/Message';
 import SelectPlaylistsListGroup from './SelectPlaylistsListGroup';
 import './Playlists.css';
 
-class Playlists extends Component {
-  render() {
-    const getPlaylistsPending = this.props.reduxState.fetchStatus.getPlaylistsPending;
-    const getPlaylistsFailure = this.props.reduxState.fetchStatus.getPlaylistsFailure;
-
-    let activeContent = 'showPlaylists';
-    if (getPlaylistsPending) { 
-      activeContent = 'getPlaylistsPending';
-    } else if (getPlaylistsFailure) {
-      activeContent = 'getPlaylistsFailure';
-    }
-
-    const contentEnum = {
-      getPlaylistsPending: <Message loading={true} text="Loading playlist data... " {...this.props} />,
-      getPlaylistsFailure: <Message error={true} text="Error loading playlist data. Check your internet connection and try again." {...this.props} />,
-      showPlaylists: 
-        <div className="playlists__pane">
-          <SelectPlaylistsListGroup {...this.props} />
-        </div>
-    };
-
-    return (
-      contentEnum[activeContent]
-    );
+const mapStateToProps = (state) => {
+  return {
+    accessToken: state.accessToken,
+    fetchStatus: state.fetchStatus,
+    playlists: state.playlists,
+    selectedPlaylist: state.selectedPlaylist,
+    autoSidebarTabSwitch: state.autoSidebarTabSwitch
   }
 }
 
-export default Playlists;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handlePlaylistSelect: (accessToken, playlist, forceTabSwitch) => {
+      dispatch(selectPlaylist(playlist, forceTabSwitch));
+      fetchCalls.getTracks(dispatch, accessToken, playlist);
+    }
+  }
+}
+
+const Playlists = ({accessToken, fetchStatus, playlists, selectedPlaylist, autoSidebarTabSwitch, handlePlaylistSelect}) => {
+
+  if (fetchStatus.getPlaylistsPending) { 
+    return <Message loading={true} text="Loading playlist data... " />;
+  } else if (fetchStatus.getPlaylistsFailure) {
+    return  <Message error={true} text="Error loading playlist data. Check your internet connection and try again." />;
+  }
+
+  return (
+    <div className="playlists__pane">
+      <SelectPlaylistsListGroup 
+        accessToken={accessToken} 
+        playlists={playlists}
+        selectedPlaylist={selectedPlaylist}
+        autoSidebarTabSwitch={autoSidebarTabSwitch}
+        handlePlaylistSelect={handlePlaylistSelect}  />
+    </div>
+  );
+}
+
+const PlaylistsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Playlists)
+
+export default PlaylistsContainer;

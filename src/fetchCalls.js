@@ -54,15 +54,15 @@ fetchCalls.getPlaylists = function(store) {
 }
 
 //get track info for a given playlist
-fetchCalls.getTracks = function(store, data) {
-  store.dispatch({
+fetchCalls.getTracks = function(dispatch, accessToken, data) {
+  dispatch({
     type: 'GET_TRACKS_PENDING'
   });
 
   const requestOptions = {
     method: 'GET',
     headers: {
-      Authorization: 'Bearer ' + store.getState().accessToken
+      Authorization: 'Bearer ' + accessToken
     },
   }
 
@@ -73,7 +73,7 @@ fetchCalls.getTracks = function(store, data) {
   fetch(playlistURI, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        store.dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch({type: 'BAD_AUTH_TOKEN'});
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -81,23 +81,26 @@ fetchCalls.getTracks = function(store, data) {
     })
     .then(res => res.json())
     .then(res => {
-      store.dispatch({
+      dispatch({
+        type: 'GET_TRACKS_SUCCESS'
+      });
+      dispatch({
         type: 'ADD_TRACKS_DATA',
         data: res.items
       });
-      this.getTrackFeatures(store, res.items);
+      this.getTrackFeatures(dispatch, accessToken, res.items);
     })
     .catch(err => {
       console.log('getTracks error: ', err);
-      store.dispatch({
+      dispatch({
         type: 'GET_TRACKS_FAILURE'
       });
     });
 }
 
 //get audio features given an array of tracks
-fetchCalls.getTrackFeatures = function(store, tracks) {
-  store.dispatch({
+fetchCalls.getTrackFeatures = function(dispatch, accessToken, tracks) {
+  dispatch({
     type: 'GET_FEATURES_PENDING'
   });
 
@@ -105,7 +108,7 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
   const requestOptions = {
     method: 'GET',
     headers: {
-      Authorization: 'Bearer ' + store.getState().accessToken
+      Authorization: 'Bearer ' + accessToken
     },
   }
 
@@ -115,7 +118,7 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
   fetch(featuresURI, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        store.dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch({type: 'BAD_AUTH_TOKEN'});
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -123,14 +126,14 @@ fetchCalls.getTrackFeatures = function(store, tracks) {
     })
     .then(res => res.json())
     .then(res => {
-      store.dispatch({
+      dispatch({
         type: 'ADD_AUDIO_FEATURES',
         data: res.audio_features
       });
     })
     .catch(err => {
       console.log('getTrackFeatures error: ', err);
-      store.dispatch({
+      dispatch({
         type: 'GET_FEATURES_FAILURE'
       });
     });
