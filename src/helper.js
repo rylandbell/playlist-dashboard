@@ -1,4 +1,5 @@
-export function filterByFeatures(track, index, array, passedReduxState) {
+//takes a track, looks up its audio features and the current filter values, checks if the track passes all filters
+export function filterByFeatures(trackIndex, passedReduxState) {
 
   const state = passedReduxState || this.props.reduxState;
   const features = state.selectedPlaylistAudioFeatures;
@@ -10,7 +11,7 @@ export function filterByFeatures(track, index, array, passedReduxState) {
   }
 
   //eliminate tracks without available features data:
-  if (!features[index]) {
+  if (!features[trackIndex]) {
     return false;
   }
 
@@ -21,7 +22,7 @@ export function filterByFeatures(track, index, array, passedReduxState) {
       }
       
       let filterName = filter.name;
-      let passesFilter = features[index][filterName] >= filter.currentValue[0] && features[index][filterName] <= filter.currentValue[1];
+      let passesFilter = features[trackIndex][filterName] >= filter.currentValue[0] && features[trackIndex][filterName] <= filter.currentValue[1];
       return passesFilter && accumulator;
     },
     true
@@ -33,7 +34,7 @@ export function filterByFeatures(track, index, array, passedReduxState) {
 export function getTracksToSave(fullState) {
   const { selectedPlaylistTracks } = fullState;
   const filteredTracks = selectedPlaylistTracks.filter(
-    (track, index, arr) => filterByFeatures(track, index, arr, fullState)
+    (track, index) => filterByFeatures(index, fullState)
   );
 
   return filteredTracks;

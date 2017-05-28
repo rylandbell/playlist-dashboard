@@ -10,8 +10,8 @@ class ExploreTracksView extends Component {
     const featuresData = this.props.reduxState.selectedPlaylistAudioFeatures;
     const allFilters = this.props.reduxState.filters;
 
-    const filteredTracks = tracks.filter(filterByFeatures.bind(this));
-    const filteredFeaturesData = featuresData.filter(filterByFeatures.bind(this));
+    const filteredTracks = tracks.filter((track, index) => filterByFeatures.bind(this)(index));
+    const filteredFeaturesData = featuresData.filter((track, index) => filterByFeatures.bind(this)(index));
 
     return (
       <div className="main-region__explore-tracks-flexbox">

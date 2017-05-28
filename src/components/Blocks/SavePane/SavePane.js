@@ -21,7 +21,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleNameTextEntry: data => {dispatch(changeNameText(data))},
     handleSavePlaylist: (accessToken, userId, name, fullState) => {
-      console.log(fullState);
       fetchCalls.handleSavePlaylist(dispatch, accessToken, userId, name, fullState)}
   }
 }
