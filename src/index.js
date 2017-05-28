@@ -10,7 +10,7 @@ import { render } from 'react-snapshot';
 import App from './components/App';
 import * as reducers from './reducers/reducers';
 import fetchCalls from './fetchCalls';
-import { setAccessToken, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
+import { setAccessToken, stopAnimatingChart } from './actions';
 import { getHashParams } from './helper';
 
 //create a store from the above reducer, then subscribe a React render function to it
@@ -30,9 +30,9 @@ function renderApp() {
                 
         // handleTabSelect = {data => {store.dispatch(setActiveTab(data))}}
        
-        handleTrackRowHover = {track => {store.dispatch(hoverOnTrack(track))}}
+        // handleTrackRowHover = {track => {store.dispatch(hoverOnTrack(track))}}
         
-        handleMouseLeavesTracksTable = {() => {store.dispatch(clearHoveredTrack())}}
+        // handleMouseLeavesTracksTable = {() => {store.dispatch(clearHoveredTrack())}}
         
         stopAnimatingChart = {() => {store.dispatch(stopAnimatingChart())}}
       />

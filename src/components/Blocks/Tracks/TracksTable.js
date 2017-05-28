@@ -12,7 +12,7 @@ class SelectPlaylistsTable extends Component {
   }
 
   render() {
-    const allFilters = this.props.allFilters;
+    const filters = this.props.filters;
     const filteredTracks = this.props.filteredTracks;
     const filteredFeaturesData = this.props.filteredFeaturesData;
 
@@ -21,12 +21,18 @@ class SelectPlaylistsTable extends Component {
         <thead>
           <tr>
             <th>Track</th>
-            {allFilters.map(filter => <th className="text-center hidden-xs" key={filter.name} >{filter.shortName}</th>)}
+            {filters.map(filter => <th className="text-center hidden-xs" key={filter.name} >{filter.shortName}</th>)}
           </tr>
         </thead>
         <tbody>
           {filteredTracks.map((track, index) => 
-            <TracksTableRow key={track.track.id + track.added_at + index} track={track} featuresData={filteredFeaturesData[index]} {...this.props} />
+            <TracksTableRow 
+              key={track.track.id + track.added_at + index} 
+              track={track} 
+              featuresData={filteredFeaturesData[index]}
+              filters={this.props.filters}
+              handleTrackRowHover={this.props.handleTrackRowHover}
+            />
           )}
         </tbody>
       </table>

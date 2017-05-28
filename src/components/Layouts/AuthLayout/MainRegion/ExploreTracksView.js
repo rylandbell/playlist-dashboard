@@ -8,7 +8,6 @@ class ExploreTracksView extends Component {
   render() {
     const tracks = this.props.reduxState.selectedPlaylistTracks;
     const featuresData = this.props.reduxState.selectedPlaylistAudioFeatures;
-    const allFilters = this.props.reduxState.filters;
 
     const filteredTracks = tracks.filter((track, index) => filterByFeatures.bind(this)(index));
     const filteredFeaturesData = featuresData.filter((track, index) => filterByFeatures.bind(this)(index));
@@ -21,7 +20,7 @@ class ExploreTracksView extends Component {
           </div>
         </div>
         <div className="main-region__tracks-row">
-          <Tracks allFilters={allFilters} filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} {...this.props} /> 
+          <Tracks filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} {...this.props} /> 
         </div>
         <div className="main-region__chart-row">
           <Chart filteredTracks={filteredTracks} filteredFeaturesData={filteredFeaturesData} {...this.props} />

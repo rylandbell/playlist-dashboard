@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-//display '<.01' for tiny decimals, and '0.5' for missing values
+//display '<.01' for tiny decimals, and ' ' for missing values
 const formatValueDisplay = value => {
   if (typeof value !== 'number') {
     return ' ';
@@ -24,14 +24,14 @@ class TracksTableRow extends Component {
   render() {
     const track = this.props.track.track;
     const featuresData = this.props.featuresData;
-    const allFilters = this.props.reduxState.filters;
+    const filters = this.props.filters;
 
     return (
       <tr onMouseEnter={this.onMouseEnter}> 
         <td>{track.name}&nbsp;
           <small>{track.artists[0].name}</small>
         </td>
-        {allFilters.map(filter => <td key={filter.name} className="text-center hidden-xs">{formatValueDisplay(featuresData[filter.name])}</td>)}
+        {filters.map(filter => <td key={filter.name} className="text-center hidden-xs">{formatValueDisplay(featuresData[filter.name])}</td>)}
       </tr>
     );
   }
