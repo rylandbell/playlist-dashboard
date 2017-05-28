@@ -10,7 +10,7 @@ import { render } from 'react-snapshot';
 import App from './components/App';
 import * as reducers from './reducers/reducers';
 import fetchCalls from './fetchCalls';
-import { setAccessToken, setActiveTab, changeNameText, updateFilter, startDraggingFeatureSlider, toggleChartedFeature, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
+import { setAccessToken, setActiveTab, updateFilter, startDraggingFeatureSlider, toggleChartedFeature, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
 import { getHashParams } from './helper';
 
 //create a store from the above reducer, then subscribe a React render function to it
@@ -37,9 +37,9 @@ function renderApp() {
         
         handleTabSelect = {data => {store.dispatch(setActiveTab(data))}}
         
-        handleNameTextEntry = {data => {store.dispatch(changeNameText(data))}}
+        // handleNameTextEntry = {data => {store.dispatch(changeNameText(data))}}
         
-        handleSavePlaylist = {name => {fetchCalls.handleSavePlaylist(store, name)}}
+        // handleSavePlaylist = {name => {fetchCalls.handleSavePlaylist(store, name)}}
         
         handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
         

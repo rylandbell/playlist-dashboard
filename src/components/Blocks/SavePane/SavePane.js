@@ -1,6 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import fetchCalls from '../../../fetchCalls';
+import { changeNameText } from '../../../actions';
+
 import './SavePane.css';
 import Message from '../../Blocks/Message/Message';
+
+const mapStateToProps = (state) => {
+  return {
+    newPlaylistName: state.newPlaylistName,
+    fetchStatus: state.fetchStatus,
+    accessToken: state.accessToken,
+    userId: state.userId,
+    fullState: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleNameTextEntry: data => {dispatch(changeNameText(data))},
+    handleSavePlaylist: (accessToken, userId, name, fullState) => {
+      console.log(fullState);
+      fetchCalls.handleSavePlaylist(dispatch, accessToken, userId, name, fullState)}
+  }
+}
 
 class SavePane extends Component {
   constructor(props) {
@@ -10,13 +34,12 @@ class SavePane extends Component {
   }
 
   onClickSave() {
-    const state = this.props.reduxState;
-    const newPlaylistName = state.newPlaylistName;
-    const savePending = state.fetchStatus.createPlaylistPending || state.fetchStatus.addTracksToPlaylistPending;
+    const newPlaylistName = this.props.newPlaylistName;
+    const savePending = this.props.fetchStatus.createPlaylistPending || this.props.fetchStatus.addTracksToPlaylistPending;
     if (savePending) {
       return;
     }
-    this.props.handleSavePlaylist(newPlaylistName);
+    this.props.handleSavePlaylist(this.props.accessToken, this.props.userId, newPlaylistName, this.props.fullState);
   }
 
   onChangeText(e) {
@@ -24,11 +47,10 @@ class SavePane extends Component {
   }
 
   render() {
-    const state = this.props.reduxState;
-    const newPlaylistName = state.newPlaylistName;
-    const savePending = state.fetchStatus.createPlaylistPending || state.fetchStatus.addTracksToPlaylistPending;
-    const saveSuccess = state.fetchStatus.addTracksToPlaylistSuccess;
-    const saveFailure = state.fetchStatus.createPlaylistFailure || state.fetchStatus.addTracksToPlaylistFailure;
+    const newPlaylistName = this.props.newPlaylistName;
+    const savePending = this.props.fetchStatus.createPlaylistPending || this.props.fetchStatus.addTracksToPlaylistPending;
+    const saveSuccess = this.props.fetchStatus.addTracksToPlaylistSuccess;
+    const saveFailure = this.props.fetchStatus.createPlaylistFailure || this.props.fetchStatus.addTracksToPlaylistFailure;
 
     return (
       <div className="save-pane">
@@ -38,12 +60,17 @@ class SavePane extends Component {
         </div>
         <button onClick={this.onClickSave} className={"btn btn-primary pull-right " + (savePending ? 'disabled' : '')} >Save</button>
         <br />
-        {savePending && <Message classList="" loading={true} text="Saving on Spotify... " {...this.props} />}
-        {saveSuccess && <Message classList="" success={true} text="Playlist successfully created.&nbsp;" {...this.props} />}
-        {saveFailure && <Message classList="" error={true} text="Error: Playlist was not saved.&nbsp;" {...this.props} />}
+        {savePending && <Message classList="" loading={true} text="Saving on Spotify... " />}
+        {saveSuccess && <Message classList="" success={true} text="Playlist successfully created.&nbsp;"  />}
+        {saveFailure && <Message classList="" error={true} text="Error: Playlist was not saved.&nbsp;" />}
       </div>
     );
   }
 }
 
-export default SavePane;
+const SavePaneContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SavePane)
+
+export default SavePaneContainer;

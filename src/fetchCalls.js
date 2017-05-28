@@ -139,12 +139,12 @@ fetchCalls.getTrackFeatures = function(dispatch, accessToken, tracks) {
     });
 }
 
-fetchCalls.handleSavePlaylist = function(store, name) {
-  this.createNewPlaylist(store, name, this.addTracksToPlaylist);
+fetchCalls.handleSavePlaylist = function(dispatch, accessToken, userId, name, fullState) {
+  this.createNewPlaylist(dispatch, accessToken, userId, name, fullState);
 }
 
-fetchCalls.createNewPlaylist = function(store, name, callback) {
-  store.dispatch({
+fetchCalls.createNewPlaylist = function(dispatch, accessToken, userId, name, fullState) {
+  dispatch({
     type: 'CREATE_PLAYLIST_PENDING'
   });
   const requestBody = {
@@ -155,17 +155,16 @@ fetchCalls.createNewPlaylist = function(store, name, callback) {
   const requestOptions = {
     method: 'POST',
     headers: {
-      Authorization: 'Bearer ' + store.getState().accessToken,
+      Authorization: 'Bearer ' + accessToken,
       "Content-Type": 'applicatiown/json'
     },
     body: JSON.stringify(requestBody)
   };
-  const userId = store.getState().userId;
 
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        store.dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch({type: 'BAD_AUTH_TOKEN'});
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -173,25 +172,25 @@ fetchCalls.createNewPlaylist = function(store, name, callback) {
     })
     .then(res => res.json())
     .then(res => {
-      store.dispatch({
+      dispatch({
         type: 'CREATE_PLAYLIST_SUCCESS'
       });
-      this.addTracksToPlaylist(store, res.id)
+      this.addTracksToPlaylist(dispatch, accessToken, userId, res.id, fullState)
     })
     .catch(err => {
       console.log('createNewPlaylist error: ', err);
-      store.dispatch({
+      dispatch({
         type: 'CREATE_PLAYLIST_FAILURE'
       });
     });
 }
 
-fetchCalls.addTracksToPlaylist = function(store, playlistId) {
-  store.dispatch({
+fetchCalls.addTracksToPlaylist = function(dispatch, accessToken, userId, playlistId, fullState) {
+  dispatch({
     type: 'ADD_TRACKS_TO_PLAYLIST_PENDING'
   });
 
-  const tracksToSave = getTracksToSave(store);
+  const tracksToSave = getTracksToSave(fullState);
   const trackURIArray = tracksToSave.map(track => track.track.uri);;
 
   const requestBody = {
@@ -201,17 +200,16 @@ fetchCalls.addTracksToPlaylist = function(store, playlistId) {
   const requestOptions = {
     method: 'POST',
     headers: {
-      Authorization: 'Bearer ' + store.getState().accessToken,
+      Authorization: 'Bearer ' + accessToken,
       "Content-Type": 'applicatiown/json'
     },
     body: JSON.stringify(requestBody)
   };
-  const userId = store.getState().userId;
 
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        store.dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch({type: 'BAD_AUTH_TOKEN'});
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -219,18 +217,16 @@ fetchCalls.addTracksToPlaylist = function(store, playlistId) {
     })
     .then(res => res.json())
     .then(res => {
-      store.dispatch({
+      dispatch({
         type: 'ADD_TRACKS_TO_PLAYLIST_SUCCESS'
       });
     })
     .catch(err => {
       console.log('addTracksToPlaylist error: ', err);
-      store.dispatch({
+      dispatch({
         type: 'ADD_TRACKS_TO_PLAYLIST_FAILURE'
       });
     });
 }
-
-
 
 export default fetchCalls;

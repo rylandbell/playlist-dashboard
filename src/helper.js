@@ -30,11 +30,10 @@ export function filterByFeatures(track, index, array, passedReduxState) {
   return passesAllFilters;
 }
 
-export function getTracksToSave(store) {
-  const state = store.getState();
-  const { selectedPlaylistTracks } = state;
+export function getTracksToSave(fullState) {
+  const { selectedPlaylistTracks } = fullState;
   const filteredTracks = selectedPlaylistTracks.filter(
-    (track, index, arr) => filterByFeatures(track, index, arr, state)
+    (track, index, arr) => filterByFeatures(track, index, arr, fullState)
   );
 
   return filteredTracks;
