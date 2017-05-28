@@ -10,7 +10,7 @@ import { render } from 'react-snapshot';
 import App from './components/App';
 import * as reducers from './reducers/reducers';
 import fetchCalls from './fetchCalls';
-import { setAccessToken, setActiveTab, updateFilter, startDraggingFeatureSlider, toggleChartedFeature, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
+import { setAccessToken, setActiveTab, hoverOnTrack, clearHoveredTrack, stopAnimatingChart } from './actions';
 import { getHashParams } from './helper';
 
 //create a store from the above reducer, then subscribe a React render function to it
@@ -41,11 +41,11 @@ function renderApp() {
         
         // handleSavePlaylist = {name => {fetchCalls.handleSavePlaylist(store, name)}}
         
-        handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
+        // handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
         
-        handleStartDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
+        // handleStartDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
         
-        handleChartedFeaturesToggle = {(filterIndex, newValue) => {store.dispatch(toggleChartedFeature(filterIndex, newValue))}}
+        // handleChartedFeaturesToggle = {(filterIndex, newValue) => {store.dispatch(toggleChartedFeature(filterIndex, newValue))}}
        
         handleTrackRowHover = {track => {store.dispatch(hoverOnTrack(track))}}
         

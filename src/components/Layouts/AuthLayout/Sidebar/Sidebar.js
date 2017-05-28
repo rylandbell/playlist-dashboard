@@ -13,8 +13,8 @@ class Sidebar extends Component {
         <SidebarNav {...this.props} />
         <div className="sidebar__content">
           {activeSidebarTab === 'playlists' && <Playlists />}
-          {activeSidebarTab === 'filters' && <Filters {...this.props} />}
-          {activeSidebarTab === 'save' && <SavePane {...this.props} />}
+          {activeSidebarTab === 'filters' && <Filters />}
+          {activeSidebarTab === 'save' && <SavePane />}
         </div>
       </div>
     );

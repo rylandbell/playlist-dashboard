@@ -68,12 +68,11 @@ class Filter extends Component {
           <FeatureInfoTooltip 
             filter={filterData}
             filterIndex={filterIndex}
-            {...this.props}
           />
           <ChartedFeatureCheckbox 
             filter={filterData}
             filterIndex={filterIndex}
-            {...this.props}
+            handleChartedFeaturesToggle={this.props.handleChartedFeaturesToggle}
           />
         </span>
         <div className="filters__flex-container">
