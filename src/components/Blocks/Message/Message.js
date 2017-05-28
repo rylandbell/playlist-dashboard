@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Message.css';
 
-class Message extends Component {
-  render() {
-    const classList = this.props.classList || "";
-    return (
-      <div className="text-center">
-        <div className={"message " + classList}>
-          {this.props.success && <i className="fa fa-check">&nbsp;</i>}
-          {this.props.error && <i className="fa fa-exclamation-triangle">&nbsp;</i>}
-          {this.props.text || null}
-          {this.props.loading && <i className="fa fa-spinner fa-spin fa-fw"></i>}
-          
-        </div>
+const Message = ({classList, success, error, text, loading}) => {
+  classList = classList || "";
+  return (
+    <div className="text-center">
+      <div className={"message " + classList}>
+        {success && <i className="fa fa-check">&nbsp;</i>}
+        {error && <i className="fa fa-exclamation-triangle">&nbsp;</i>}
+        {text || null}
+        {loading && <i className="fa fa-spinner fa-spin fa-fw"></i>}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Message;

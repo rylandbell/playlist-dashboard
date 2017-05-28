@@ -30,7 +30,7 @@ const customHandle = (props) => {
   );
 };
 
-class Filter extends Component {
+class FilterInput extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
@@ -89,4 +89,4 @@ class Filter extends Component {
   }
 }
 
-export default Filter;
+export default FilterInput;

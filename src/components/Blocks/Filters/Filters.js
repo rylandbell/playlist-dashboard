@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import FilterInput from './FilterInput';
@@ -21,25 +21,20 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-class Filters extends Component {
-  render() {
-    const filters = this.props.filters;
-    return (
-      <div className="filters__pane">
-        {filters.map((filter,index) => 
-          <FilterInput 
-            key={index} 
-            filterIndex={index} 
-            filterData={filter}
-            handleFilterChange={this.props.handleFilterChange}
-            handleStartDraggingFeatureSlider={this.props.handleStartDraggingFeatureSlider}
-            handleChartedFeaturesToggle={this.props.handleChartedFeaturesToggle}
-          />
-        )}
-      </div>
-    );
-  }
-}
+const Filters = ({filters, handleFilterChange, handleStartDraggingFeatureSlider, handleChartedFeaturesToggle}) => (
+  <div className="filters__pane">
+    {filters.map((filter,index) => 
+      <FilterInput 
+        key={index} 
+        filterIndex={index} 
+        filterData={filter}
+        handleFilterChange={handleFilterChange}
+        handleStartDraggingFeatureSlider={handleStartDraggingFeatureSlider}
+        handleChartedFeaturesToggle={handleChartedFeaturesToggle}
+      />
+    )}
+  </div>
+);
 
 const FiltersContainer = connect(
   mapStateToProps,

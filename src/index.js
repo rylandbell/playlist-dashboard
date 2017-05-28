@@ -30,22 +30,7 @@ function renderApp() {
         
         handleAuthRequest = {fetchCalls.handleAuthRequest}
         
-        // handlePlaylistSelect={(playlist, forceTabSwitch) => {
-        //     store.dispatch(selectPlaylist(playlist, forceTabSwitch));
-        //     fetchCalls.getTracks(store, playlist);
-        // }}
-        
         handleTabSelect = {data => {store.dispatch(setActiveTab(data))}}
-        
-        // handleNameTextEntry = {data => {store.dispatch(changeNameText(data))}}
-        
-        // handleSavePlaylist = {name => {fetchCalls.handleSavePlaylist(store, name)}}
-        
-        // handleFilterChange = {(filterIndex, inputValue) => {store.dispatch(updateFilter(filterIndex, inputValue))}}
-        
-        // handleStartDraggingFeatureSlider = {filterIndex => {store.dispatch(startDraggingFeatureSlider(filterIndex))}}
-        
-        // handleChartedFeaturesToggle = {(filterIndex, newValue) => {store.dispatch(toggleChartedFeature(filterIndex, newValue))}}
        
         handleTrackRowHover = {track => {store.dispatch(hoverOnTrack(track))}}
         

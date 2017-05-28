@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Tooltip from 'rc-tooltip';
 import 'rc-tooltip/assets/bootstrap.css';
 
@@ -11,22 +11,17 @@ const featureDescriptions = {
   instrumentalness: 'Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.'
 }
 
-class FeatureInfoTooltip extends Component {
-  render() {
-    return (
-      <span className="hidden-xs">
-        <Tooltip
-          placement="right"
-          overlay={featureDescriptions[this.props.filter.name]}
-          overlayClassName="filters__feature-info-tooltip"
-          arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
-        >
-          <div className="fa fa-question-circle"></div>
-        </Tooltip>
-      </span>
-    );
-  }
-
-}
+const FeatureInfoTooltip = ({filter}) => (
+  <span className="hidden-xs">
+    <Tooltip
+      placement="right"
+      overlay={featureDescriptions[filter.name]}
+      overlayClassName="filters__feature-info-tooltip"
+      arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
+    >
+      <div className="fa fa-question-circle"></div>
+    </Tooltip>
+  </span>
+);
 
 export default FeatureInfoTooltip;
