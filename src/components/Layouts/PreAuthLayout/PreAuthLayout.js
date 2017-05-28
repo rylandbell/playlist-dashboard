@@ -7,7 +7,7 @@ class PreAuthLayout extends Component {
   render() {
     return (
       <div className="pre-auth-layout">
-        <Instructions {...this.props} />
+        <Instructions />
       </div>
     );
   }

@@ -30,11 +30,11 @@ class MainRegion extends Component {
     }
 
     const viewEnum = {
-      pending: <Message classList="big" loading={true} text="Loading tracks data... " {...this.props} />,
-      failure: <Message classList="big" error={true} text="Error: failed to load tracks data." {...this.props} />,
+      pending: <Message classList="big" loading={true} text="Loading tracks data... " />,
+      failure: <Message classList="big" error={true} text="Error: failed to load tracks data." />,
       dataLoaded: <ExploreTracksView {...this.props} />,
-      badAuthToken: <Message classList="big" error={true} text="Refreshing authorization token..." {...this.props} />,
-      none: <Instructions {...this.props} />
+      badAuthToken: <Message classList="big" error={true} text="Refreshing authorization token..." />,
+      none: <Instructions />
     }
 
     return (

@@ -1,4 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {setActiveTab} from '../../../../actions';
+
+const mapStateToProps = (state) => {
+  return {
+    selectedPlaylist: state.selectedPlaylist,
+    activeSidebarTab: state.activeSidebarTab,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleTabSelect: data => {dispatch(setActiveTab(data))}
+  }
+}
 
 class SidebarNav extends Component {
   constructor(props) {
@@ -7,7 +22,7 @@ class SidebarNav extends Component {
   }
 
   onClick(e) {
-    const selectedPlaylist = this.props.reduxState.selectedPlaylist;
+    const selectedPlaylist = this.props.selectedPlaylist;
 
     //don't change tabs when clicked tab is disabled (i.e., when no selected playlist): 
     const validChange = (e.target.id === "tab-playlists") || selectedPlaylist;
@@ -17,8 +32,8 @@ class SidebarNav extends Component {
   }
 
   render() {
-    const activeSidebarTab = this.props.reduxState.activeSidebarTab;
-    const selectedPlaylist = this.props.reduxState.selectedPlaylist;
+    const activeSidebarTab = this.props.activeSidebarTab;
+    const selectedPlaylist = this.props.selectedPlaylist;
 
     //as appropriate, mark tabs as active or disabled
     const playlistsClasses = (activeSidebarTab === "playlists" ? 'active': '');  
@@ -45,4 +60,9 @@ class SidebarNav extends Component {
   }
 }
 
-export default SidebarNav;
+const SidebarNavContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SidebarNav)
+
+export default SidebarNavContainer;
