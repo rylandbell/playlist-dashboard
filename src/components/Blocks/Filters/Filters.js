@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 
 import FilterInput from './FilterInput';
 import { updateFilter, startDraggingFeatureSlider, toggleChartedFeature } from '../../../actions';
+import {getFilters} from '../../../selectors/filters';
 
 import './Filters.css';
 import 'rc-slider/assets/index.css';
 
 const mapStateToProps = (state) => {
   return {
-    filters: state.filters
+    filters: getFilters(state)
   }
 }
 

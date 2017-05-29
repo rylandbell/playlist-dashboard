@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import fetchCalls from '../fetchCalls';
-import {getFilteredTracks} from '../selectors/filteredTracks'; 
+import {getFilteredTracks} from '../selectors/filteredTracks';
 
 import './App.css';
 import PreAuthLayout from './Layouts/PreAuthLayout/PreAuthLayout';

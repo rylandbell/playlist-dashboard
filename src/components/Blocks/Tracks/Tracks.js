@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { hoverOnTrack, clearHoveredTrack } from '../../../actions';
+import {getFilters} from '../../../selectors/filters';
 
 import TracksTable from './TracksTable';
 import './Tracks.css';
@@ -8,7 +9,7 @@ import './Tracks.css';
 const mapStateToProps = (state) => {
   return {
     fetchStatus: state.fetchStatus,
-    filters: state.filters,
+    filters: getFilters(state)
   }
 }
 
