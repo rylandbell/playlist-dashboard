@@ -21,14 +21,14 @@ const filtersInitial = [
     currentValue: [0,1],
   },
   {
-    name: 'acousticness',
+    name: 'popularity',
     isActive: true,
     isGraphed: false,
     showReferenceLine: false,
     currentValue: [0,1],
   },
   {
-    name: 'liveness',
+    name: 'acousticness',
     isActive: true,
     isGraphed: false,
     showReferenceLine: false,
@@ -41,13 +41,13 @@ const filtersInitial = [
     showReferenceLine: false,
     currentValue: [0,1],
   },
-  {
-    name: 'popularity',
-    isActive: true,
-    isGraphed: false,
-    showReferenceLine: false,
-    currentValue: [0,1],
-  }
+  // {
+  //   name: 'liveness',
+  //   isActive: true,
+  //   isGraphed: false,
+  //   showReferenceLine: false,
+  //   currentValue: [0,1],
+  // },
 ];
 
 export const filterValues = (state = filtersInitial, action) => {

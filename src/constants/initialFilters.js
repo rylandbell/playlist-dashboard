@@ -24,20 +24,20 @@ export const initialFilters = [
     color: '#5CB85C'
   },
   {
+    name: 'popularity',
+    displayName: 'Popularity',
+    shortName: 'Pop',
+    min: 0,
+    max: 1,
+    color: '#DF691A'
+  },
+  {
     name: 'acousticness',
     displayName: 'Acousticness',
     shortName: 'Acous',
     min: 0,
     max: 1,
     color: '#f0ad4e'
-  },
-  {
-    name: 'liveness',
-    displayName: 'Liveness',
-    shortName: 'Live',
-    min: 0,
-    max: 1,
-    color: '#DF691A'
   },
   {
     name: 'instrumentalness',
@@ -47,12 +47,12 @@ export const initialFilters = [
     max: 1,
     color: '#EBEBEB'
   },
-  {
-    name: 'popularity',
-    displayName: 'Popularity',
-    shortName: 'Pop',
-    min: 0,
-    max: 1,
-    color: '#EBEBEB'
-  }
+  // {
+  //   name: 'liveness',
+  //   displayName: 'Liveness',
+  //   shortName: 'Live',
+  //   min: 0,
+  //   max: 1,
+  //   color: '#DF691A'
+  // },
 ];

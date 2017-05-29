@@ -10,11 +10,11 @@ import acousticness from './img/acousticness.png';
 import danceability from './img/danceability.png';
 import energy from './img/energy.png';
 import instrumentalness from './img/instrumentalness.png';
-import liveness from './img/liveness.png';
+// import liveness from './img/liveness.png';
 import valence from './img/valence.png';
-import popularity from './img/liveness.png';
+import popularity from './img/popularity.png';
 
-const imagesHash = {acousticness, danceability, energy, instrumentalness, liveness, valence, popularity};
+const imagesHash = {acousticness, danceability, energy, instrumentalness, valence, popularity};
 
 const customHandle = (props) => {
   const { value, dragging, index, ...restProps } = props;
