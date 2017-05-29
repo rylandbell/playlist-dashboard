@@ -1,10 +1,10 @@
 import React from 'react';
 import {getPlaylistDuration} from '../../../helper.js';
 
-const SelectedTracksCount = ({featuresData, filteredTracks}) => {
+const SelectedTracksCount = ({tracks, filteredTracks}) => {
 
   //only count tracks with non-null features data
-  const allTracksCount = featuresData.filter(track => !!track).length;
+  const allTracksCount = tracks.filter(track => !!track).length;
   const filteredTracksCount = filteredTracks.length;
   const duration = getPlaylistDuration(filteredTracks);
 

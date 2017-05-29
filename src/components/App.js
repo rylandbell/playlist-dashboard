@@ -28,7 +28,6 @@ const mapStateToProps = (state) => {
     activeSidebarTab: state.ui.activeSidebarTab,
     badAuthToken: state.auth.badAuthToken,
     tracks: state.tracks,
-    audioFeatures: state.audioFeatures,
     fullState: state
   }
 }

@@ -13,16 +13,16 @@ export function dispatchAccessToken(dispatch) {
 export function filterByFeatures(trackIndex, passedReduxState) {
 
   const state = passedReduxState || this.props.reduxState;
-  const features = state.audioFeatures;
+  const tracks = state.tracks;
   const filters = state.filters;
 
   //don't do any filtering before features data loads
-  if (!features || features.length < 1 ) {
+  if (!tracks || tracks.length < 1 ) {
     return true;
   }
 
   //eliminate tracks without available features data:
-  if (!features[trackIndex]) {
+  if (!tracks[trackIndex]) {
     return false;
   }
 
@@ -33,7 +33,7 @@ export function filterByFeatures(trackIndex, passedReduxState) {
       }
       
       let filterName = filter.name;
-      let passesFilter = features[trackIndex][filterName] >= filter.currentValue[0] && features[trackIndex][filterName] <= filter.currentValue[1];
+      let passesFilter = tracks[trackIndex][filterName] >= filter.currentValue[0] && tracks[trackIndex][filterName] <= filter.currentValue[1];
       return passesFilter && accumulator;
     },
     true

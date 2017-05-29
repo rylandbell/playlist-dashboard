@@ -25,7 +25,6 @@ class AuthLayout extends Component {
           badAuthToken={this.props.badAuthToken}
           fetchStatus={this.props.fetchStatus}
           tracks={this.props.tracks}
-          audioFeatures={this.props.audioFeatures}
           fullState={this.props.fullState}
         />
       </div>

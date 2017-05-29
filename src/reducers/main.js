@@ -45,16 +45,6 @@ export const tracks = (state = [], action) => {
           uri: data.track.uri
         }));
     case 'ADD_AUDIO_FEATURES':
-      // return Object.assign({}, state,
-      //   {
-      //     danceability: action.data.danceability,
-      //     energy: action.data.energy,
-      //     valence: action.data.valence,
-      //     acousticness: action.data.acousticness,
-      //     liveness: action.data.liveness,
-      //     instrumentalness: action.data.instrumentalness
-      //   }
-      // );
       return state.map((stateData, index) => {
         if (stateData.id === action.data[index].id) {
           return Object.assign({}, stateData, {
@@ -70,17 +60,6 @@ export const tracks = (state = [], action) => {
           return state;
         }
       });
-    default:
-      return state;
-  }
-}
-
-export const audioFeatures = (state = [], action) => {
-  switch (action.type){
-    case 'SELECT_PLAYLIST':
-      return action.data ? [] : state;
-    case 'ADD_AUDIO_FEATURES':
-      return action.data.slice();
     default:
       return state;
   }

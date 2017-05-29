@@ -23,7 +23,6 @@ class TracksTableRow extends Component {
 
   render() {
     const track = this.props.track;
-    const featuresData = this.props.featuresData;
     const filters = this.props.filters;
 
     return (
@@ -31,7 +30,7 @@ class TracksTableRow extends Component {
         <td>{track.name}&nbsp;
           <small>{track.artist}</small>
         </td>
-        {filters.map(filter => <td key={filter.name} className="text-center hidden-xs">{formatValueDisplay(featuresData[filter.name])}</td>)}
+        {filters.map(filter => <td key={filter.name} className="text-center hidden-xs">{formatValueDisplay(track[filter.name])}</td>)}
       </tr>
     );
   }

@@ -14,7 +14,6 @@ class SelectPlaylistsTable extends Component {
   render() {
     const filters = this.props.filters;
     const filteredTracks = this.props.filteredTracks;
-    const filteredFeaturesData = this.props.filteredFeaturesData;
 
     return (
       <table className="tracks__table table table-condensed table-hover" onMouseLeave={this.onMouseLeave}>
@@ -29,7 +28,6 @@ class SelectPlaylistsTable extends Component {
             <TracksTableRow 
               key={track.id + index} 
               track={track} 
-              featuresData={filteredFeaturesData[index]}
               filters={this.props.filters}
               handleTrackRowHover={this.props.handleTrackRowHover}
             />

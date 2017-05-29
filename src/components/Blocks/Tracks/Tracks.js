@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const Tracks = ({fetchStatus, filters, filteredTracks, filteredFeaturesData, handleTrackRowHover, handleMouseLeavesTracksTable}) => {
+const Tracks = ({fetchStatus, filters, filteredTracks, handleTrackRowHover, handleMouseLeavesTracksTable}) => {
   const loadingData = fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
   
   return (
@@ -29,7 +29,6 @@ const Tracks = ({fetchStatus, filters, filteredTracks, filteredFeaturesData, han
         <TracksTable 
           filters={filters}
           filteredTracks={filteredTracks}
-          filteredFeaturesData={filteredFeaturesData}
           handleTrackRowHover={handleTrackRowHover}
           handleMouseLeavesTracksTable={handleMouseLeavesTracksTable}
         />

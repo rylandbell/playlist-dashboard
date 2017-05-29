@@ -30,19 +30,9 @@ class FeaturesLineChart extends Component {
     const showAnyReferenceLine = draggedFilterIndex >= 0;
 
     const filteredTracks = this.props.filteredTracks;
-    const filteredFeaturesData = this.props.filteredFeaturesData;
-
-    //add track name and artist to the features data, to pass to Recharts
-    const chartData = filteredFeaturesData.map((track, index) => {
-      const trackInfo = {
-        name: filteredTracks[index].name,
-        artist: filteredTracks[index].artist.name
-      }
-      return Object.assign({}, track, trackInfo);
-    });
 
     //count track numbers from 1, not 0:
-    const shiftedChartData = [{}].concat(chartData);
+    const shiftedChartData = [{}].concat(filteredTracks);
 
     //display vertical reference line for track when hovered in the table (not the chart);
     const hoveredTrackRow = this.props.hoveredTrackRow;
