@@ -26,6 +26,7 @@ class AuthLayout extends Component {
           fetchStatus={this.props.fetchStatus}
           tracks={this.props.tracks}
           fullState={this.props.fullState}
+          filteredTracks={this.props.filteredTracks}
         />
       </div>
     );

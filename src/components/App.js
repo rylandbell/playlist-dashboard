@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import fetchCalls from '../fetchCalls';
+import {getFilteredTracks} from '../selectors/filteredTracks'; 
 
 import './App.css';
 import PreAuthLayout from './Layouts/PreAuthLayout/PreAuthLayout';
@@ -28,7 +29,8 @@ const mapStateToProps = (state) => {
     activeSidebarTab: state.ui.activeSidebarTab,
     badAuthToken: state.auth.badAuthToken,
     tracks: state.tracks,
-    fullState: state
+    fullState: state,
+    filteredTracks: getFilteredTracks(state)
   }
 }
 

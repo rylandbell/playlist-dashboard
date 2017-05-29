@@ -9,47 +9,6 @@ export function dispatchAccessToken(dispatch) {
   dispatch(setAccessToken(data));
 }
 
-//takes a track, compares its audio features and the current filter values, returns true if the track passes all filters
-export function filterByFeatures(trackIndex, passedReduxState) {
-
-  const state = passedReduxState || this.props.reduxState;
-  const tracks = state.tracks;
-  const filters = state.filters;
-
-  //don't do any filtering before features data loads
-  if (!state.fetchStatus.getFeaturesSuccess) {
-    return true;
-  }
-
-  const passesAllFilters = filters.reduce(
-    (accumulator, filter) => {
-      if (!filter.isActive) {
-        return true;
-
-      //return false if the track doesn't have a value for the given filter
-      } else if (tracks[trackIndex][filter.name] === undefined) {
-        return false;
-      }
-      
-      let filterName = filter.name;
-      let passesFilter = tracks[trackIndex][filterName] >= filter.currentValue[0] && tracks[trackIndex][filterName] <= filter.currentValue[1];
-      return passesFilter && accumulator;
-    },
-    true
-  );
-
-  return passesAllFilters;
-}
-
-export function getTracksToSave(fullState) {
-  const { tracks } = fullState;
-  const filteredTracks = tracks.filter(
-    (track, index) => filterByFeatures(index, fullState)
-  );
-
-  return filteredTracks;
-}
-
 export function getHashParams() {
   var hashParams = {};
   var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -77,4 +36,26 @@ export function getPlaylistDuration (tracksArray) {
     min: Math.floor(total_min % 60)
   }
   return duration;
+}
+
+//takes a track, compares its audio features and the current filter values, returns true if the track passes all filters
+export function filterByFeatures (trackIndex, tracks, filters) {
+  const passesAllFilters = filters.reduce(
+    (accumulator, filter) => {
+      if (!filter.isActive) {
+        return true;
+
+      //return false if the track doesn't have a value for the given filter
+      } else if (tracks[trackIndex][filter.name] === undefined) {
+        return false;
+      }
+      
+      let filterName = filter.name;
+      let passesFilter = tracks[trackIndex][filterName] >= filter.currentValue[0] && tracks[trackIndex][filterName] <= filter.currentValue[1];
+      return passesFilter && accumulator;
+    },
+    true
+  );
+
+  return passesAllFilters;
 }

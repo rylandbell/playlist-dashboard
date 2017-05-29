@@ -1,5 +1,5 @@
 import { getPlaylistsPending, getPlaylistsFailure, badAuthToken, addPlaylistsData } from './actions';
-import {getTracksToSave} from './helper';
+import {getFilteredTracks} from './selectors/filteredTracks'; 
 
 const fetchCalls = {};
 
@@ -184,7 +184,7 @@ fetchCalls.addTracksToPlaylist = function(dispatch, accessToken, userId, playlis
     type: 'ADD_TRACKS_TO_PLAYLIST_PENDING'
   });
 
-  const tracksToSave = getTracksToSave(fullState);
+  const tracksToSave = getFilteredTracks(fullState);
   const trackURIArray = tracksToSave.map(track => track.uri);;
 
   const requestBody = {

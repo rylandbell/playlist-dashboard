@@ -4,7 +4,7 @@ import Instructions from '../../../Blocks/Instructions/Instructions';
 import Message from '../../../Blocks/Message/Message';
 import './MainRegion.css';
 
-const MainRegion = ({badAuthToken, tracks, fetchStatus, fullState}) => {
+const MainRegion = ({badAuthToken, tracks, fetchStatus, filteredTracks, fullState}) => {
   const tracksLoaded = tracks && tracks.length > 0;
   const featuresLoaded = fetchStatus.getFeaturesSuccess;
   const dataLoaded = tracksLoaded && featuresLoaded;
@@ -20,7 +20,7 @@ const MainRegion = ({badAuthToken, tracks, fetchStatus, fullState}) => {
   } else if (fetchFailure) {
     content = <Message classList="big" error={true} text="Error: failed to load tracks data." />;
   } else if (dataLoaded) {
-    content = <ExploreTracksView tracks={tracks} fullState={fullState} />;
+    content = <ExploreTracksView tracks={tracks} filteredTracks={filteredTracks} />;
   } else {
     content = <Instructions />;
   }
