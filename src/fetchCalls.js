@@ -1,3 +1,4 @@
+import { getPlaylistsPending, getPlaylistsFailure, badAuthToken, addPlaylistsData } from './actions';
 import {getTracksToSave} from './helper';
 
 const fetchCalls = {};
@@ -19,9 +20,7 @@ fetchCalls.handleAuthRequest = function() {
 
 //get list of current user's playlists
 fetchCalls.getPlaylists = function(dispatch, accessToken) {
-  dispatch({
-    type: 'GET_PLAYLISTS_PENDING'
-  });
+  dispatch(getPlaylistsPending());
 
   const requestOptions = {
     method: 'GET',
@@ -32,7 +31,7 @@ fetchCalls.getPlaylists = function(dispatch, accessToken) {
   fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch(badAuthToken());
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -40,15 +39,10 @@ fetchCalls.getPlaylists = function(dispatch, accessToken) {
     })
     .then(res => res.json())
     .then(res => {
-      dispatch({
-        type: 'ADD_PLAYLISTS_DATA',
-        data: res
-      });
+      dispatch(addPlaylistsData(res));
     })
     .catch(err => {
-      dispatch({
-        type: 'GET_PLAYLISTS_FAILURE'
-      });
+      dispatch(getPlaylistsFailure());
       console.log('getPlaylists Error:', err);
     });
 }
@@ -73,7 +67,7 @@ fetchCalls.getTracks = function(dispatch, accessToken, data) {
   fetch(playlistURI, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch(badAuthToken());
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -118,7 +112,7 @@ fetchCalls.getTrackFeatures = function(dispatch, accessToken, tracks) {
   fetch(featuresURI, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch(badAuthToken());
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -164,7 +158,7 @@ fetchCalls.createNewPlaylist = function(dispatch, accessToken, userId, name, ful
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch(badAuthToken());
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }
@@ -209,7 +203,7 @@ fetchCalls.addTracksToPlaylist = function(dispatch, accessToken, userId, playlis
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, requestOptions)
     .then(res => {
       if (!res.ok && res.status === 401) {
-        dispatch({type: 'BAD_AUTH_TOKEN'});
+        dispatch(badAuthToken());
         this.handleAuthRequest();
         throw new Error(res.statusText);
       }

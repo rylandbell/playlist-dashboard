@@ -68,3 +68,28 @@ export const stopAnimatingChart = () => (
     type: 'STOP_ANIMATING_CHART',
   }
 );
+
+export const badAuthToken = () => (
+  {
+    type: 'BAD_AUTH_TOKEN'
+  }
+);
+
+export const addPlaylistsData = (data) => (
+  {
+    type: 'ADD_PLAYLISTS_DATA',
+    data: data
+  }
+);
+
+export const getPlaylistsPending = () => (
+  {
+    type: 'GET_PLAYLISTS_PENDING'
+  }
+);
+
+export const getPlaylistsFailure = () => (
+  {
+    type: 'GET_PLAYLISTS_FAILURE'
+  }
+);
