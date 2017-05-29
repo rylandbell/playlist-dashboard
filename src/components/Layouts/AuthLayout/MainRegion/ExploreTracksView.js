@@ -4,8 +4,7 @@ import Chart from '../../../Blocks/Chart/Chart';
 import PlaylistHeading from '../../../Blocks/PlaylistHeading/PlaylistHeading';
 import {filterByFeatures} from '../../../../helper';
 
-const ExploreTracksView = ({selectedPlaylistTracks, selectedPlaylistAudioFeatures, fullState}) => {
-  const tracks = selectedPlaylistTracks;
+const ExploreTracksView = ({tracks, selectedPlaylistAudioFeatures, fullState}) => {
   const featuresData = selectedPlaylistAudioFeatures;
 
   const filteredTracks = tracks.filter((track, index) => filterByFeatures.bind(this)(index, fullState));

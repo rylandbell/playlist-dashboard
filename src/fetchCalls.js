@@ -185,7 +185,7 @@ fetchCalls.addTracksToPlaylist = function(dispatch, accessToken, userId, playlis
   });
 
   const tracksToSave = getTracksToSave(fullState);
-  const trackURIArray = tracksToSave.map(track => track.track.uri);;
+  const trackURIArray = tracksToSave.map(track => track.uri);;
 
   const requestBody = {
     uris: trackURIArray,

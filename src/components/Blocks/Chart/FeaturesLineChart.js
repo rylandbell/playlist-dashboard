@@ -35,8 +35,8 @@ class FeaturesLineChart extends Component {
     //add track name and artist to the features data, to pass to Recharts
     const chartData = filteredFeaturesData.map((track, index) => {
       const trackInfo = {
-        name: filteredTracks[index].track.name,
-        artist: filteredTracks[index].track.artists[0].name
+        name: filteredTracks[index].name,
+        artist: filteredTracks[index].artist.name
       }
       return Object.assign({}, track, trackInfo);
     });
@@ -46,7 +46,7 @@ class FeaturesLineChart extends Component {
 
     //display vertical reference line for track when hovered in the table (not the chart);
     const hoveredTrackRow = this.props.hoveredTrackRow;
-    const hoveredTrackName = hoveredTrackRow && hoveredTrackRow.track.name;
+    const hoveredTrackName = hoveredTrackRow && hoveredTrackRow.name;
 
     //gives position of hovered track in filtered playlist (shifted by 1 for counting-from-1)
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrackRow) + 1;

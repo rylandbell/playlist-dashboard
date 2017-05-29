@@ -43,8 +43,8 @@ export function filterByFeatures(trackIndex, passedReduxState) {
 }
 
 export function getTracksToSave(fullState) {
-  const { selectedPlaylistTracks } = fullState;
-  const filteredTracks = selectedPlaylistTracks.filter(
+  const { tracks } = fullState;
+  const filteredTracks = tracks.filter(
     (track, index) => filterByFeatures(index, fullState)
   );
 
@@ -66,7 +66,7 @@ export function getHashParams() {
 export function getPlaylistDuration (tracksArray) {
   const total_ms = tracksArray.reduce(
     (accumulator, track) => {
-      return accumulator + track.track.duration_ms;
+      return accumulator + track.duration_ms;
     },
     0
   );

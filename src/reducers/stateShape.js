@@ -18,6 +18,7 @@ playlists
   artist
   duration_ms
   popularity
+  uri
   features(obj)
 [playlist]
   id

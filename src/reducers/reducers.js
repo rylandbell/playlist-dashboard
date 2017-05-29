@@ -25,18 +25,27 @@ export const playlists = (state = [], action) => {
 export const selectedPlaylist = (state = null, action) => {
   switch(action.type) {
     case 'SELECT_PLAYLIST':
-      return action.data;
+      return {...action.data};
     default:
       return state;
   }
 }
 
-export const selectedPlaylistTracks = (state = [], action) => {
+export const tracks = (state = [], action) => {
   switch (action.type){
     case 'SELECT_PLAYLIST':
       return action.data ? [] : state;
     case 'ADD_TRACKS_DATA':
-      return action.data.slice();
+      const shapedTracks = action.data
+        .map(data => ({
+          id: data.track.id,
+          name: data.track.name,
+          artist: data.track.artists[0].name,
+          duration_ms: data.track.duration_ms,
+          popularity: data.track.popularity,
+          uri: data.track.uri
+      }));
+      return shapedTracks;
     default:
       return state;
   }

@@ -27,7 +27,7 @@ class SelectPlaylistsTable extends Component {
         <tbody>
           {filteredTracks.map((track, index) => 
             <TracksTableRow 
-              key={track.track.id + track.added_at + index} 
+              key={track.id + index} 
               track={track} 
               featuresData={filteredFeaturesData[index]}
               filters={this.props.filters}
