@@ -21,12 +21,12 @@ import AuthLayout from './Layouts/AuthLayout/AuthLayout';
 
 const mapStateToProps = (state) => {
   return {
-    authStatus: state.authStatus,
+    authStatus: state.auth.authStatus,
     playlists: state.playlists,
     fetchStatus: state.fetchStatus,
-    accessToken: state.accessToken,
-    activeSidebarTab: state.activeSidebarTab,
-    badAuthToken: state.badAuthToken,
+    accessToken: state.auth.accessToken,
+    activeSidebarTab: state.ui.activeSidebarTab,
+    badAuthToken: state.auth.badAuthToken,
     selectedPlaylistTracks: state.selectedPlaylistTracks,
     selectedPlaylistAudioFeatures: state.selectedPlaylistAudioFeatures,
     fullState: state

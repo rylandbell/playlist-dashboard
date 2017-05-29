@@ -9,10 +9,10 @@ import Message from '../../Blocks/Message/Message';
 
 const mapStateToProps = (state) => {
   return {
-    newPlaylistName: state.newPlaylistName,
+    newPlaylistName: state.ui.newPlaylistName,
     fetchStatus: state.fetchStatus,
-    accessToken: state.accessToken,
-    userId: state.userId,
+    accessToken: state.auth.accessToken,
+    userId: state.auth.userId,
     fullState: state
   }
 }

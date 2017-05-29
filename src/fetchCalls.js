@@ -60,7 +60,7 @@ fetchCalls.getTracks = function(dispatch, accessToken, data) {
     },
   }
 
-  const userId = data.owner.id;
+  const userId = data.ownerId;
   const playlistId = data.id;
   const playlistURI = `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`;
 

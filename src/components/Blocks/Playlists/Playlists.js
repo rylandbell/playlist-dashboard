@@ -9,11 +9,11 @@ import './Playlists.css';
 
 const mapStateToProps = (state) => {
   return {
-    accessToken: state.accessToken,
+    accessToken: state.auth.accessToken,
     fetchStatus: state.fetchStatus,
     playlists: state.playlists,
     selectedPlaylist: state.selectedPlaylist,
-    autoSidebarTabSwitch: state.autoSidebarTabSwitch
+    autoSidebarTabSwitch: state.ui.autoSidebarTabSwitch
   }
 }
 

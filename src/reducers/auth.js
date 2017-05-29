@@ -7,7 +7,7 @@ export const accessToken = (state = "", action) => {
   }
 }
 
-export const authStatus = (state = "preAuth", action) => {
+export const authStatus = (state = false, action) => {
   switch (action.type){
     case 'SET_ACCESS_TOKEN':
       return action.data && action.data.length > 0;

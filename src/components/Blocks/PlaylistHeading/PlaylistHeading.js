@@ -7,7 +7,7 @@ import './PlaylistHeading.css';
 
 const mapStateToProps = (state) => {
   return {
-    userId: state.userId,
+    userId: state.auth.userId,
     selectedPlaylist: state.selectedPlaylist
   }
 }
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const PlaylistHeading = ({userId, selectedPlaylist, filteredTracks, featuresData}) => {
-  const playlistOwnerId = selectedPlaylist.owner.id;
+  const playlistOwnerId = selectedPlaylist.ownerId;
   const idMatch = userId === playlistOwnerId;
   return (
     <div>

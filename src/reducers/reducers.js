@@ -14,8 +14,7 @@ export const playlists = (state = [], action) => {
         .map(playlist => ({
           id: playlist.id,
           name: playlist.name,
-          ownerId: playlist.owner.id,
-          selected: false
+          ownerId: playlist.owner.id
         }));
       return shapedData;
     default:

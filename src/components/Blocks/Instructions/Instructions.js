@@ -11,7 +11,7 @@ import saveImg from './img/save.png';
 
 const mapStateToProps = (state) => {
   return {
-    authStatus: state.authStatus
+    authStatus: state.auth.authStatus
   }
 }
 

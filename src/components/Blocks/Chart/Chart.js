@@ -7,9 +7,9 @@ import FeaturesLineChart from './FeaturesLineChart';
 
 const mapStateToProps = (state) => {
   return {
-    animateNextChartDraw: state.animateNextChartDraw,
+    animateNextChartDraw: state.ui.animateNextChartDraw,
     filters: state.filters,
-    hoveredTrackRow: state.hoveredTrackRow
+    hoveredTrackRow: state.ui.hoveredTrackRow
   }
 }
 
