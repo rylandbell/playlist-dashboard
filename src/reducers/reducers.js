@@ -10,7 +10,14 @@ export const auth = combineReducers(authReducers);
 export const playlists = (state = [], action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
-      return action.data.items.slice();
+      const shapedData = action.data.items
+        .map(playlist => ({
+          id: playlist.id,
+          name: playlist.name,
+          ownerId: playlist.owner.id,
+          selected: false
+        }));
+      return shapedData;
     default:
       return state;
   }

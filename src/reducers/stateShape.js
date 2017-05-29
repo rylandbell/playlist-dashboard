@@ -23,7 +23,6 @@ playlists
   id
   name
   owner
-  href
   selected
 
 features //for a single track
