@@ -41,7 +41,7 @@ export const tracks = (state = [], action) => {
           name: data.track.name,
           artist: data.track.artists[0].name,
           duration_ms: data.track.duration_ms,
-          popularity: data.track.popularity,
+          popularity: data.track.popularity ? data.track.popularity/100 : 0,
           uri: data.track.uri
         }));
     case 'ADD_AUDIO_FEATURES':
@@ -130,6 +130,18 @@ const filtersInitial = [
     name: 'instrumentalness',
     displayName: 'Instrumentalness',
     shortName: 'Inst',
+    isActive: true,
+    isGraphed: false,
+    showReferenceLine: false,
+    currentValue: [0,1],
+    min: 0,
+    max: 1,
+    color: '#EBEBEB'
+  },
+  {
+    name: 'popularity',
+    displayName: 'Popularity',
+    shortName: 'Pop',
     isActive: true,
     isGraphed: false,
     showReferenceLine: false,
