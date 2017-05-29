@@ -1,0 +1,621 @@
+{
+  "href" : "https://api.spotify.com/v1/users/1237555400/playlists?offset=0&limit=20",
+  "items" : [ {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/4rvUUyA24tUHzvhzNJjPqx"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/4rvUUyA24tUHzvhzNJjPqx",
+    "id" : "4rvUUyA24tUHzvhzNJjPqx",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/541402f235d395782dd4309869d32350fcdcd3a4",
+      "width" : 640
+    } ],
+    "name" : "Modified: Mirah – You Think It's Like This, But Really It's Like This",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "n2+pv3IbX6pDNI7Ltnre3Ym7n+bU3DvlFCYTmC5C7hpnMc81jXhMSjTf4FRC2yKM",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/4rvUUyA24tUHzvhzNJjPqx/tracks",
+      "total" : 16
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:4rvUUyA24tUHzvhzNJjPqx"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/4U8BX8OCJynGKl93Bhrs0D"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/4U8BX8OCJynGKl93Bhrs0D",
+    "id" : "4U8BX8OCJynGKl93Bhrs0D",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/cfb2948cf2e897460b0fe5bb954d68ef1e29d6d8",
+      "width" : 640
+    } ],
+    "name" : "Modified: Bruce Springsteen – Hammersmith Odeon, London '75",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "GCu/OCUT8tIcVa0ovYPprZefyavYfnsLXAO28YiX4ZaKgq9F2izDsDiPpk+so616",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/4U8BX8OCJynGKl93Bhrs0D/tracks",
+      "total" : 7
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:4U8BX8OCJynGKl93Bhrs0D"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/1l7Vg4xIPYTlAmPz9O6TVa"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/1l7Vg4xIPYTlAmPz9O6TVa",
+    "id" : "1l7Vg4xIPYTlAmPz9O6TVa",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/541402f235d395782dd4309869d32350fcdcd3a4",
+      "width" : 640
+    } ],
+    "name" : "Mirah – You Think It's Like This, But Really It's Like This",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "nmgEyMQHrtmm2dFz+y7b/1l04kgoog2Y4/ccG3zCGmHuj91PhZTH6mWOJ1RMIkCM",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/1l7Vg4xIPYTlAmPz9O6TVa/tracks",
+      "total" : 16
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:1l7Vg4xIPYTlAmPz9O6TVa"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/77eXeHXBiAf9G4CqIO95qn"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/77eXeHXBiAf9G4CqIO95qn",
+    "id" : "77eXeHXBiAf9G4CqIO95qn",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/32d7d3432ff965abb01f706ec2efc38282a11b45",
+      "width" : 640
+    } ],
+    "name" : "Kendrick Lamar – To Pimp A Butterfly",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "Sy3FsQJJFe5AhLiXIxf2flj1CeKoMwNUNcYLt8cBXsPO43PvgsmrP/fy4HWHNAu4",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/77eXeHXBiAf9G4CqIO95qn/tracks",
+      "total" : 16
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:77eXeHXBiAf9G4CqIO95qn"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/4sqbsb38I8K3dV2aEYBFar"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/4sqbsb38I8K3dV2aEYBFar",
+    "id" : "4sqbsb38I8K3dV2aEYBFar",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/cfb2948cf2e897460b0fe5bb954d68ef1e29d6d8",
+      "width" : 640
+    } ],
+    "name" : "Bruce Springsteen – Hammersmith Odeon, London '75",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "n3PogJWz9VktEF/2+7gDjZAKGNp0S/HWUEjFH88BXxRS4v4ruGvLmXw35YPErqBh",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/4sqbsb38I8K3dV2aEYBFar/tracks",
+      "total" : 16
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:4sqbsb38I8K3dV2aEYBFar"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/5q2D3ERyPvQSuMm2lBNJoi"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/5q2D3ERyPvQSuMm2lBNJoi",
+    "id" : "5q2D3ERyPvQSuMm2lBNJoi",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/fb5a21ae19850c03216fea7e06b9d31e1ec1645c",
+      "width" : 640
+    } ],
+    "name" : "Radiohead – I Might Be Wrong",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "35l5rCcHhC7SJVPI1iIR/TPeEFxIautOV6iacVOEbhL+Rvo00ZfeRNF5AWiCI6ZK",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/5q2D3ERyPvQSuMm2lBNJoi/tracks",
+      "total" : 8
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:5q2D3ERyPvQSuMm2lBNJoi"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/0NYoFewNKXFZpmVRa7jlvr"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/0NYoFewNKXFZpmVRa7jlvr",
+    "id" : "0NYoFewNKXFZpmVRa7jlvr",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/7faa16835aee312077945f30dc5cd48215c7044a",
+      "width" : 640
+    } ],
+    "name" : "Run The Jewels – Run the Jewels 2",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "LKKFOgXfM5t5qc+BmO3p2tn2A0arGAhP6ZMwgUk09MV1v805q0VXdA9Nd7TGl8ur",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/0NYoFewNKXFZpmVRa7jlvr/tracks",
+      "total" : 11
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:0NYoFewNKXFZpmVRa7jlvr"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/7xv31XJwm3YPv9qzRYKARO"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/7xv31XJwm3YPv9qzRYKARO",
+    "id" : "7xv31XJwm3YPv9qzRYKARO",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/87982737e43f86e172dbf9897f6e437fde2d7caf",
+      "width" : 640
+    } ],
+    "name" : "Kanye West – Yeezus",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "sz4dDESz2lLiFt+Qf0VDnrldkOEP29MJCGKmTcfGW3O0JJ/iRsLd+uS0uvOXXZEg",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/7xv31XJwm3YPv9qzRYKARO/tracks",
+      "total" : 10
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:7xv31XJwm3YPv9qzRYKARO"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/2fDqukD3ZTYgwYg1loTHJf"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/2fDqukD3ZTYgwYg1loTHJf",
+    "id" : "2fDqukD3ZTYgwYg1loTHJf",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/0a6b1c237ab9f7d7da0a04e3e5dba0f022daa20c",
+      "width" : 640
+    } ],
+    "name" : "Radiohead – Kid A",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "tT+48oTVV8JoiYeHyWsSx4m+nodxhk9SR7ySI0rZlj7K8ulFLmo/wyjp7+9jJlvU",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/2fDqukD3ZTYgwYg1loTHJf/tracks",
+      "total" : 11
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:2fDqukD3ZTYgwYg1loTHJf"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/tobillo24601/playlist/3X6rjNPRzgtRmwPhCpVVlQ"
+    },
+    "href" : "https://api.spotify.com/v1/users/tobillo24601/playlists/3X6rjNPRzgtRmwPhCpVVlQ",
+    "id" : "3X6rjNPRzgtRmwPhCpVVlQ",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://u.scdn.co/images/pl/default/16bfc1822ab18d74ff9cf00cc4e496c5c33d3da2",
+      "width" : null
+    } ],
+    "name" : "Your Musical Caffeine Substitute",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/tobillo24601"
+      },
+      "href" : "https://api.spotify.com/v1/users/tobillo24601",
+      "id" : "tobillo24601",
+      "type" : "user",
+      "uri" : "spotify:user:tobillo24601"
+    },
+    "public" : false,
+    "snapshot_id" : "mLGgU52ZEAsPVfujWRe7z4XjR7IrcQ0b6cIAn55WGi01FG0hxMWsIIfOlZIReS4N",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/tobillo24601/playlists/3X6rjNPRzgtRmwPhCpVVlQ/tracks",
+      "total" : 20
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:tobillo24601:playlist:3X6rjNPRzgtRmwPhCpVVlQ"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/sonymusicthelegacy/playlist/1cUJDDYTSqd5LTuImKdrlJ"
+    },
+    "href" : "https://api.spotify.com/v1/users/sonymusicthelegacy/playlists/1cUJDDYTSqd5LTuImKdrlJ",
+    "id" : "1cUJDDYTSqd5LTuImKdrlJ",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://u.scdn.co/images/pl/default/730d5dee42723bc5be34face689b1cb8091dac49",
+      "width" : null
+    } ],
+    "name" : "HipHop Classics",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/sonymusicthelegacy"
+      },
+      "href" : "https://api.spotify.com/v1/users/sonymusicthelegacy",
+      "id" : "sonymusicthelegacy",
+      "type" : "user",
+      "uri" : "spotify:user:sonymusicthelegacy"
+    },
+    "public" : false,
+    "snapshot_id" : "TzpAcgVetdpClWa51fq585vRa8/cfFjoEO2JhkJdidvMGQZaPmNs0+8MXimESXjn",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/sonymusicthelegacy/playlists/1cUJDDYTSqd5LTuImKdrlJ/tracks",
+      "total" : 124
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:sonymusicthelegacy:playlist:1cUJDDYTSqd5LTuImKdrlJ"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/spotify/playlist/37i9dQZF1DX0r3x8OtiwEM"
+    },
+    "href" : "https://api.spotify.com/v1/users/spotify/playlists/37i9dQZF1DX0r3x8OtiwEM",
+    "id" : "37i9dQZF1DX0r3x8OtiwEM",
+    "images" : [ {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/2a2d4142670b65c5a3638bdf7d627bbf75c61a0d",
+      "width" : 300
+    } ],
+    "name" : "Brick By Brick",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify",
+      "id" : "spotify",
+      "type" : "user",
+      "uri" : "spotify:user:spotify"
+    },
+    "public" : false,
+    "snapshot_id" : "mttXmwqX4Om0OmRmza9DEJBoXVsHu91fY8AxhlnBwlT6KkHIyP5eGKFn/wxg5j8ffMwTJpgEF8A=",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/37i9dQZF1DX0r3x8OtiwEM/tracks",
+      "total" : 74
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:spotify:playlist:37i9dQZF1DX0r3x8OtiwEM"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/3ORAO2ZGUGYb3pSbiFd7rK"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/3ORAO2ZGUGYb3pSbiFd7rK",
+    "id" : "3ORAO2ZGUGYb3pSbiFd7rK",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/fdce21f4a373a44f831f71f70cbbd02360b676c9158e2e862a598d1cc217a902c63f372504d5330b9dd4fb2a71bc1600563ae7b98edf45017df16631e90cd7b76ddb5c5cefd2c3119f4e7658e2427dac",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/fdce21f4a373a44f831f71f70cbbd02360b676c9158e2e862a598d1cc217a902c63f372504d5330b9dd4fb2a71bc1600563ae7b98edf45017df16631e90cd7b76ddb5c5cefd2c3119f4e7658e2427dac",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/fdce21f4a373a44f831f71f70cbbd02360b676c9158e2e862a598d1cc217a902c63f372504d5330b9dd4fb2a71bc1600563ae7b98edf45017df16631e90cd7b76ddb5c5cefd2c3119f4e7658e2427dac",
+      "width" : 60
+    } ],
+    "name" : "2017",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "EFajW8+7jSMi2TslkiQ5ZTTiC4mbqhcvFK9CekQToQbE2n+cxUmA/Lf9jd/9X+ST",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/3ORAO2ZGUGYb3pSbiFd7rK/tracks",
+      "total" : 29
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:3ORAO2ZGUGYb3pSbiFd7rK"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/7fqPGcq7hX8Ok4TTnIVy8i"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/7fqPGcq7hX8Ok4TTnIVy8i",
+    "id" : "7fqPGcq7hX8Ok4TTnIVy8i",
+    "images" : [ ],
+    "name" : "Test (blank)",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "HhAwlOimE78Wo0j02Ge7cE98OO4D5zNKmpw9DLs/x6RKooLVMS7gyqN61aiFAPt9",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/7fqPGcq7hX8Ok4TTnIVy8i/tracks",
+      "total" : 0
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:7fqPGcq7hX8Ok4TTnIVy8i"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/spotify/playlist/37i9dQZF1DWXLeA8Omikj7"
+    },
+    "href" : "https://api.spotify.com/v1/users/spotify/playlists/37i9dQZF1DWXLeA8Omikj7",
+    "id" : "37i9dQZF1DWXLeA8Omikj7",
+    "images" : [ {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/dda236b91eaf1f41bbdd77c381cf88ee4fc87a8a",
+      "width" : 300
+    } ],
+    "name" : "Brain Food",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify",
+      "id" : "spotify",
+      "type" : "user",
+      "uri" : "spotify:user:spotify"
+    },
+    "public" : false,
+    "snapshot_id" : "EaM+typ788fvfogXzEAiY7cl32fYH+ki0Wjm/tUoScye9FotXWyBqNKY1+93eRuOlkpysXGHGe4=",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/37i9dQZF1DWXLeA8Omikj7/tracks",
+      "total" : 50
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:spotify:playlist:37i9dQZF1DWXLeA8Omikj7"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/spotify/playlist/37i9dQZEVXcFWbqkL0SSlA"
+    },
+    "href" : "https://api.spotify.com/v1/users/spotify/playlists/37i9dQZEVXcFWbqkL0SSlA",
+    "id" : "37i9dQZEVXcFWbqkL0SSlA",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://u.scdn.co/images/pl/default/13fd8263e4f3bcc3890ea1afb05141e220e50837",
+      "width" : null
+    } ],
+    "name" : "Discover Weekly",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify",
+      "id" : "spotify",
+      "type" : "user",
+      "uri" : "spotify:user:spotify"
+    },
+    "public" : false,
+    "snapshot_id" : "OBNnaKuYHrziN6WXWsV2+cAaLCyT3KMbCEagBZLSaINRsGxrMefwgwTUVndbQc4hVorxR3R5yWw=",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/37i9dQZEVXcFWbqkL0SSlA/tracks",
+      "total" : 30
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:spotify:playlist:37i9dQZEVXcFWbqkL0SSlA"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/frank_ocean/playlist/6HEegfWHhUcytwQFAm1QbK"
+    },
+    "href" : "https://api.spotify.com/v1/users/frank_ocean/playlists/6HEegfWHhUcytwQFAm1QbK",
+    "id" : "6HEegfWHhUcytwQFAm1QbK",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://u.scdn.co/images/pl/default/433e5ea38b52eea4f8cbe692fb47ac12300e5426",
+      "width" : null
+    } ],
+    "name" : "Blonded",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/frank_ocean"
+      },
+      "href" : "https://api.spotify.com/v1/users/frank_ocean",
+      "id" : "frank_ocean",
+      "type" : "user",
+      "uri" : "spotify:user:frank_ocean"
+    },
+    "public" : false,
+    "snapshot_id" : "F2bSzr2IkdFSpTRM5StpyqjyhK7Lx/3TzgOJFCCp8d6v6ll1nD/uRYp0xrHCGeFk",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/frank_ocean/playlists/6HEegfWHhUcytwQFAm1QbK/tracks",
+      "total" : 27
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:frank_ocean:playlist:6HEegfWHhUcytwQFAm1QbK"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/tobillo24601/playlist/284iTzCId32KEGwQLGKh1B"
+    },
+    "href" : "https://api.spotify.com/v1/users/tobillo24601/playlists/284iTzCId32KEGwQLGKh1B",
+    "id" : "284iTzCId32KEGwQLGKh1B",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://u.scdn.co/images/pl/default/8faa104d0a128e1fabddcd1f9f3c7444e51fa70e",
+      "width" : null
+    } ],
+    "name" : "Rise Up Eyes Up Wise Up",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/tobillo24601"
+      },
+      "href" : "https://api.spotify.com/v1/users/tobillo24601",
+      "id" : "tobillo24601",
+      "type" : "user",
+      "uri" : "spotify:user:tobillo24601"
+    },
+    "public" : false,
+    "snapshot_id" : "eCs80S+CzKmq0Xwgd6LYt3j4u4ikg4NlKrvFifRfs0Q7lNjuSqxwHW2S71JWJowb",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/tobillo24601/playlists/284iTzCId32KEGwQLGKh1B/tracks",
+      "total" : 17
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:tobillo24601:playlist:284iTzCId32KEGwQLGKh1B"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/2ETqqthQ2Ip5hV8lwaIqfg"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/2ETqqthQ2Ip5hV8lwaIqfg",
+    "id" : "2ETqqthQ2Ip5hV8lwaIqfg",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://u.scdn.co/images/pl/default/a65fa98634e8e91031560a2445eafb60c6ab0c20",
+      "width" : null
+    } ],
+    "name" : "@@@ Easton Mega-Mix 2K16 @@@",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "E4k48+qfzx+GuYKzUiuJRiskNeJr9pyfcjI9C6PDmyiM64XPNYf+ajxxl4MeD4Vt",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/2ETqqthQ2Ip5hV8lwaIqfg/tracks",
+      "total" : 17
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:2ETqqthQ2Ip5hV8lwaIqfg"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/1237555400/playlist/5NMTHrw4soCSZ8bKKwVUyj"
+    },
+    "href" : "https://api.spotify.com/v1/users/1237555400/playlists/5NMTHrw4soCSZ8bKKwVUyj",
+    "id" : "5NMTHrw4soCSZ8bKKwVUyj",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/402d75a165a4b7321ba95c092144063eb796f8e92e82bac8c64908ef1504e8391362c030b0fdad2ebaf3906e9f093397cde0aa068731e899032d6a70765dd18a89c2dbbb8d548dfb6387001eb362d25c",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/402d75a165a4b7321ba95c092144063eb796f8e92e82bac8c64908ef1504e8391362c030b0fdad2ebaf3906e9f093397cde0aa068731e899032d6a70765dd18a89c2dbbb8d548dfb6387001eb362d25c",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/402d75a165a4b7321ba95c092144063eb796f8e92e82bac8c64908ef1504e8391362c030b0fdad2ebaf3906e9f093397cde0aa068731e899032d6a70765dd18a89c2dbbb8d548dfb6387001eb362d25c",
+      "width" : 60
+    } ],
+    "name" : "Starred",
+    "owner" : {
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/1237555400"
+      },
+      "href" : "https://api.spotify.com/v1/users/1237555400",
+      "id" : "1237555400",
+      "type" : "user",
+      "uri" : "spotify:user:1237555400"
+    },
+    "public" : false,
+    "snapshot_id" : "I020wukFCuQqttEc3QiXU02C3Yj/1YR8dEjqZhlKRg6UWc+XKAwCzJK49qhZjsjL",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/users/1237555400/playlists/5NMTHrw4soCSZ8bKKwVUyj/tracks",
+      "total" : 150
+    },
+    "type" : "playlist",
+    "uri" : "spotify:user:1237555400:playlist:5NMTHrw4soCSZ8bKKwVUyj"
+  } ],
+  "limit" : 20,
+  "next" : "https://api.spotify.com/v1/users/1237555400/playlists?offset=20&limit=20",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 46
+}
