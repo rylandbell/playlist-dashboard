@@ -13,7 +13,7 @@ export function dispatchAccessToken(dispatch) {
 export function filterByFeatures(trackIndex, passedReduxState) {
 
   const state = passedReduxState || this.props.reduxState;
-  const features = state.selectedPlaylistAudioFeatures;
+  const features = state.audioFeatures;
   const filters = state.filters;
 
   //don't do any filtering before features data loads

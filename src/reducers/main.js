@@ -10,13 +10,12 @@ export const auth = combineReducers(authReducers);
 export const playlists = (state = [], action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
-      const shapedData = action.data.items
+      return action.data.items
         .map(playlist => ({
           id: playlist.id,
           name: playlist.name,
           ownerId: playlist.owner.id
         }));
-      return shapedData;
     default:
       return state;
   }
@@ -36,7 +35,7 @@ export const tracks = (state = [], action) => {
     case 'SELECT_PLAYLIST':
       return action.data ? [] : state;
     case 'ADD_TRACKS_DATA':
-      const shapedTracks = action.data
+      return action.data
         .map(data => ({
           id: data.track.id,
           name: data.track.name,
@@ -44,14 +43,39 @@ export const tracks = (state = [], action) => {
           duration_ms: data.track.duration_ms,
           popularity: data.track.popularity,
           uri: data.track.uri
-      }));
-      return shapedTracks;
+        }));
+    case 'ADD_AUDIO_FEATURES':
+      // return Object.assign({}, state,
+      //   {
+      //     danceability: action.data.danceability,
+      //     energy: action.data.energy,
+      //     valence: action.data.valence,
+      //     acousticness: action.data.acousticness,
+      //     liveness: action.data.liveness,
+      //     instrumentalness: action.data.instrumentalness
+      //   }
+      // );
+      return state.map((stateData, index) => {
+        if (stateData.id === action.data[index].id) {
+          return Object.assign({}, stateData, {
+            danceability: action.data[index].danceability,
+            energy: action.data[index].energy,
+            valence: action.data[index].valence,
+            acousticness: action.data[index].acousticness,
+            liveness: action.data[index].liveness,
+            instrumentalness: action.data[index].instrumentalness
+          })
+        } else {
+          console.log('ID mismatch');
+          return state;
+        }
+      });
     default:
       return state;
   }
 }
 
-export const selectedPlaylistAudioFeatures = (state = [], action) => {
+export const audioFeatures = (state = [], action) => {
   switch (action.type){
     case 'SELECT_PLAYLIST':
       return action.data ? [] : state;

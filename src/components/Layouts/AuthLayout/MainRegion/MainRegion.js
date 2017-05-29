@@ -4,9 +4,9 @@ import Instructions from '../../../Blocks/Instructions/Instructions';
 import Message from '../../../Blocks/Message/Message';
 import './MainRegion.css';
 
-const MainRegion = ({badAuthToken, tracks, selectedPlaylistAudioFeatures, fetchStatus, fullState}) => {
+const MainRegion = ({badAuthToken, tracks, audioFeatures, fetchStatus, fullState}) => {
   const tracksLoaded = tracks && tracks.length > 0;
-  const featuresLoaded = selectedPlaylistAudioFeatures && selectedPlaylistAudioFeatures.length > 0;
+  const featuresLoaded = audioFeatures && audioFeatures.length > 0;
   const dataLoaded = tracksLoaded && featuresLoaded;
   const fetchPending = fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
   const fetchFailure = fetchStatus.getTracksFailure || fetchStatus.getFeaturesFailure;
@@ -20,7 +20,7 @@ const MainRegion = ({badAuthToken, tracks, selectedPlaylistAudioFeatures, fetchS
   } else if (fetchFailure) {
     content = <Message classList="big" error={true} text="Error: failed to load tracks data." />;
   } else if (dataLoaded) {
-    content = <ExploreTracksView tracks={tracks} selectedPlaylistAudioFeatures={selectedPlaylistAudioFeatures} fullState={fullState} />;
+    content = <ExploreTracksView tracks={tracks} audioFeatures={audioFeatures} fullState={fullState} />;
   } else {
     content = <Instructions />;
   }

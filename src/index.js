@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { render } from 'react-snapshot';
 
 import App from './components/App';
-import * as reducers from './reducers/reducers';
+import * as reducers from './reducers/main';
 import {dispatchAccessToken } from './helper';
 
 //create a store from the above reducer, then subscribe a React render function to it
