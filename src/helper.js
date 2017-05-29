@@ -9,7 +9,7 @@ export function dispatchAccessToken(dispatch) {
   dispatch(setAccessToken(data));
 }
 
-//takes a track, looks up its audio features and the current filter values, checks if the track passes all filters
+//takes a track, compares its audio features and the current filter values, returns true if the track passes all filters
 export function filterByFeatures(trackIndex, passedReduxState) {
 
   const state = passedReduxState || this.props.reduxState;
@@ -17,19 +17,18 @@ export function filterByFeatures(trackIndex, passedReduxState) {
   const filters = state.filters;
 
   //don't do any filtering before features data loads
-  if (!tracks || tracks.length < 1 ) {
+  if (!state.fetchStatus.getFeaturesSuccess) {
     return true;
-  }
-
-  //eliminate tracks without available features data:
-  if (!tracks[trackIndex]) {
-    return false;
   }
 
   const passesAllFilters = filters.reduce(
     (accumulator, filter) => {
       if (!filter.isActive) {
         return true;
+
+      //return false if the track doesn't have a value for the given filter
+      } else if (tracks[trackIndex][filter.name] === undefined) {
+        return false;
       }
       
       let filterName = filter.name;
