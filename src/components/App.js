@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fetchCalls from '../fetchCalls';
 import {getFilteredTracks} from '../selectors/filteredTracks';
+import {getHashParams} from '../helper';
+import {setAccessToken} from '../actions';
 
 import './App.css';
 import PreAuthLayout from './Layouts/PreAuthLayout/PreAuthLayout';
@@ -36,15 +38,32 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, accessToken) => {
   return {
-    getPlaylists: (accessToken) => {fetchCalls.getPlaylists(dispatch, accessToken)}
+    getPlaylists: (accessToken) => {fetchCalls.getPlaylists(dispatch, accessToken)},
+    getAccessToken: () => {
+      const params = getHashParams();
+      let data = "";
+      if (params && params.access_token) {
+        data = params.access_token;
+      }
+      dispatch(setAccessToken(data));
+    }
   }
 }
 
-const App = (props) => (
-  <div className="App">
-    {props.authStatus ? <AuthLayout {...props} /> : <PreAuthLayout /> }
-  </div>
-);
+class App extends Component {
+  componentDidMount() {
+    this.props.getAccessToken();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {this.props.authStatus ? <AuthLayout {...this.props} /> : <PreAuthLayout /> }
+      </div>
+    );
+  }
+}
+  
 
 const AppContainer = connect(
   mapStateToProps,

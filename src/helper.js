@@ -1,14 +1,3 @@
-import { setAccessToken } from './actions';
-
-export function dispatchAccessToken(dispatch) {
-  const params = getHashParams();
-  let data = "";
-  if (params && params.access_token) {
-    data = params.access_token;
-  }
-  dispatch(setAccessToken(data));
-}
-
 export function getHashParams() {
   var hashParams = {};
   var e, r = /([^&;=]+)=?([^&;]*)/g,
