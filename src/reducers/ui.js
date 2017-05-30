@@ -1,7 +1,7 @@
-export const hoveredTrackRow = (state = null, action) => {
+export const hoveredTrackId = (state = "", action) => {
   switch (action.type){
     case 'HOVER_ON_TRACK':
-      return action.data;
+      return action.data.id;
     case 'CLEAR_HOVERED_TRACK':
       return null
     default:

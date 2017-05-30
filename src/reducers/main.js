@@ -49,7 +49,7 @@ export const tracks = (state = [], action) => {
         }));
     case 'ADD_AUDIO_FEATURES':
       return state.map((stateData, index) => {
-        if (stateData.id === action.data[index].id) {
+        if (action.data[index] && (stateData.id === action.data[index].id)) {
           return Object.assign({}, stateData, {
             danceability: action.data[index].danceability,
             energy: action.data[index].energy,

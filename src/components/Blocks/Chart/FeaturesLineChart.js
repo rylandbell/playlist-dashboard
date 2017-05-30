@@ -23,24 +23,23 @@ class FeaturesLineChart extends Component {
 
   render () {
     const filters = this.props.filters;
+    const filteredTracks = this.props.filteredTracks;
+    const hoveredTrackId = this.props.hoveredTrackId;
+
     const graphedFilters = filters.filter(x => x.isGraphed);
 
     //find the filter currently being dragged, when applicable
     const draggedFilterIndex = filters.findIndex(filter => filter.showReferenceLine);
     const showAnyReferenceLine = draggedFilterIndex >= 0;
 
-    const filteredTracks = this.props.filteredTracks;
-
+    //display vertical reference line for track when hovered in the table (not the chart);
+    const hoveredTrack = filteredTracks.find(track => (track.id === hoveredTrackId));
+    const hoveredTrackName = hoveredTrack && hoveredTrack.name;
+    
     //count track numbers from 1, not 0:
     const shiftedChartData = [{}].concat(filteredTracks);
-
-    //display vertical reference line for track when hovered in the table (not the chart);
-    const hoveredTrackRow = this.props.hoveredTrackRow;
-    const hoveredTrackName = hoveredTrackRow && hoveredTrackRow.name;
-
-    //gives position of hovered track in filtered playlist (shifted by 1 for counting-from-1)
-    const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrackRow) + 1;
-
+    const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
+    
     return (
       <ResponsiveContainer width="100%" height={300}>
         <LineChart
