@@ -5,7 +5,8 @@ export const initialFilters = [
     shortName: 'Dance',
     min: 0,
     max: 1,
-    color: '#5bc0de'
+    color: 'hsl(194, 66%, 61%)',
+    dimColor: 'hsl(194, 46%, 21%)'
   },
   {
     name: 'energy',
@@ -13,7 +14,8 @@ export const initialFilters = [
     shortName: 'Energy',
     min: 0,
     max: 1,
-    color: '#d9534f'
+    color: 'hsl(2, 64%, 58%)',
+    dimColor: 'hsl(2, 44%, 18%)'
   },
   {
     name: 'valence',
@@ -21,7 +23,8 @@ export const initialFilters = [
     shortName: 'Pos',
     min: 0,
     max: 1,
-    color: '#5CB85C'
+    color: 'hsl(120, 39%, 54%)',
+    dimColor: 'hsl(120, 19%, 14%)'
   },
   {
     name: 'popularity',
@@ -29,7 +32,8 @@ export const initialFilters = [
     shortName: 'Pop',
     min: 0,
     max: 1,
-    color: '#DF691A'
+    color: 'hsl(24, 79%, 49%)',
+    dimColor: 'hsl(24, 59%, 19%)'
   },
   {
     name: 'acousticness',
@@ -37,7 +41,8 @@ export const initialFilters = [
     shortName: 'Acous',
     min: 0,
     max: 1,
-    color: '#f0ad4e'
+    color: 'hsl(35, 84%, 62%)',
+    dimColor: 'hsl(35, 64%, 17%)'
   },
   {
     name: 'instrumentalness',
@@ -45,7 +50,8 @@ export const initialFilters = [
     shortName: 'Inst',
     min: 0,
     max: 1,
-    color: '#EBEBEB'
+    color: 'hsl(0, 0%, 92%)',
+    dimColor: 'hsl(0, 0%, 32%)'
   },
   // {
   //   name: 'liveness',

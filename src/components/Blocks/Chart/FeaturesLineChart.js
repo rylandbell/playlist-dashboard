@@ -84,7 +84,7 @@ class FeaturesLineChart extends Component {
               isAnimationActive={this.props.animateNextChartDraw} 
               animationDuration={1500}
               type="monotone" 
-              stroke={filter.color} 
+              stroke={filter.isDim ? filter.dimColor : filter.color} 
               strokeWidth={2} 
               dot={false} 
               connectNulls={true} 

@@ -3,6 +3,7 @@ const filtersInitial = [
     name: 'danceability',
     isActive: true,
     isGraphed: true,
+    isDim: false,
     showReferenceLine: false,
     currentValue: [0,1],
   },
@@ -10,6 +11,7 @@ const filtersInitial = [
     name: 'energy',
     isActive: true,
     isGraphed: false,
+    isDim: false,
     showReferenceLine: false,
     currentValue: [0,1],
   },
@@ -17,6 +19,7 @@ const filtersInitial = [
     name: 'valence',
     isActive: true,
     isGraphed: false,
+    isDim: false,
     showReferenceLine: false,
     currentValue: [0,1],
   },
@@ -24,6 +27,7 @@ const filtersInitial = [
     name: 'popularity',
     isActive: true,
     isGraphed: false,
+    isDim: false,
     showReferenceLine: false,
     currentValue: [0,1],
   },
@@ -31,6 +35,7 @@ const filtersInitial = [
     name: 'acousticness',
     isActive: true,
     isGraphed: false,
+    isDim: false,
     showReferenceLine: false,
     currentValue: [0,1],
   },
@@ -38,6 +43,7 @@ const filtersInitial = [
     name: 'instrumentalness',
     isActive: true,
     isGraphed: false,
+    isDim: false,
     showReferenceLine: false,
     currentValue: [0,1],
   },
@@ -45,6 +51,7 @@ const filtersInitial = [
   //   name: 'liveness',
   //   isActive: true,
   //   isGraphed: false,
+    // isDim: false,
   //   showReferenceLine: false,
   //   currentValue: [0,1],
   // },
@@ -74,11 +81,13 @@ export const filterValues = (state = filtersInitial, action) => {
         if (index === action.filterIndex) {
           return Object.assign({}, filter, {showReferenceLine: true, isGraphed: true});
         } else {
-          return Object.assign(filter);
+          return Object.assign({}, filter, {isDim: true});
         }
       });
     case 'STOP_DRAGGING_FEATURE_SLIDER':
-      return state.map( filter => Object.assign({}, filter, {showReferenceLine: false}));
+      return state.map( filter => 
+        Object.assign({}, filter, {showReferenceLine: false, isDim: false})
+      );
     case 'SELECT_PLAYLIST':
       return state.map( filter => Object.assign(filter, {showReferenceLine: false}) );
     default:
