@@ -88,6 +88,13 @@ export const addPlaylistsData = (data) => (
   }
 );
 
+export const addTracksData = (data) => (
+  {
+    type: 'ADD_TRACKS_DATA',
+    data: data
+  }
+);
+
 export const getPlaylistsPending = () => (
   {
     type: 'GET_PLAYLISTS_PENDING'
@@ -97,5 +104,23 @@ export const getPlaylistsPending = () => (
 export const getPlaylistsFailure = () => (
   {
     type: 'GET_PLAYLISTS_FAILURE'
+  }
+);
+
+export const getTracksPending = () => (
+  {
+    type: 'GET_TRACKS_PENDING'
+  }
+);
+
+export const getTracksSuccess = () => (
+  {
+    type: 'GET_TRACKS_SUCCESS'
+  }
+);
+
+export const getTracksFailure = () => (
+  {
+    type: 'GET_TRACKS_FAILURE'
   }
 );

@@ -17,7 +17,7 @@ class ChartedFeatureCheckbox extends Component {
   render() {
     const filter = this.props.filter;
     return (
-      <label className="filters__checkbox hidden-xs pull-right" >
+      <label className="filters__checkbox pull-right" >
         <Tooltip
           placement="right"
           overlay="Include in chart"

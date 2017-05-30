@@ -1,4 +1,4 @@
-import { getPlaylistsPending, getPlaylistsFailure, badAuthToken, addPlaylistsData } from './actions';
+import { getPlaylistsPending, getPlaylistsFailure, badAuthToken, addPlaylistsData, addTracksData, getTracksPending, getTracksSuccess, getTracksFailure } from './actions';
 import {getFilteredTracks} from './selectors/filteredTracks'; 
 
 const fetchCalls = {};
@@ -49,9 +49,7 @@ fetchCalls.getPlaylists = function(dispatch, accessToken) {
 
 //get track info for a given playlist
 fetchCalls.getTracks = function(dispatch, accessToken, data) {
-  dispatch({
-    type: 'GET_TRACKS_PENDING'
-  });
+  dispatch(getTracksPending());
 
   const requestOptions = {
     method: 'GET',
@@ -75,20 +73,13 @@ fetchCalls.getTracks = function(dispatch, accessToken, data) {
     })
     .then(res => res.json())
     .then(res => {
-      dispatch({
-        type: 'GET_TRACKS_SUCCESS'
-      });
-      dispatch({
-        type: 'ADD_TRACKS_DATA',
-        data: res.items
-      });
+      dispatch(getTracksSuccess());
+      dispatch(addTracksData(res.items));
       this.getTrackFeatures(dispatch, accessToken, res.items);
     })
     .catch(err => {
       console.log('getTracks error: ', err);
-      dispatch({
-        type: 'GET_TRACKS_FAILURE'
-      });
+      dispatch(getTracksFailure());
     });
 }
 
