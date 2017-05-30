@@ -74,9 +74,11 @@ export const filterValues = (state = filtersInitial, action) => {
         if (index === action.filterIndex) {
           return Object.assign({}, filter, {showReferenceLine: true, isGraphed: true});
         } else {
-          return Object.assign({}, filter, {showReferenceLine: false, isGraphed: false});
+          return Object.assign(filter);
         }
       });
+    case 'STOP_DRAGGING_FEATURE_SLIDER':
+      return state.map( filter => Object.assign({}, filter, {showReferenceLine: false}));
     case 'SELECT_PLAYLIST':
       return state.map( filter => Object.assign(filter, {showReferenceLine: false}) );
     default:

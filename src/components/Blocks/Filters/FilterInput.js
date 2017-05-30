@@ -36,6 +36,7 @@ class FilterInput extends Component {
     super(props);
     this.onChange = this.onChange.bind(this);
     this.onBeforeChange = this.onBeforeChange.bind(this);
+    this.onAfterChange = this.onAfterChange.bind(this);
   }
 
   onChange(value) {
@@ -45,6 +46,10 @@ class FilterInput extends Component {
 
   onBeforeChange(value) {
     this.props.handleStartDraggingFeatureSlider(this.props.filterIndex);
+  }
+
+  onAfterChange() {
+    this.props.handleStopDraggingFeatureSlider();
   }
 
   render() {
@@ -60,7 +65,8 @@ class FilterInput extends Component {
       value: currentValue,
       className: "filters__range",
       onChange: this.onChange,
-      onBeforeChange: this.onBeforeChange
+      onBeforeChange: this.onBeforeChange,
+      onAfterChange: this.onAfterChange
     }
 
     return (

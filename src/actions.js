@@ -42,6 +42,12 @@ export const startDraggingFeatureSlider = filterIndex => (
   }
 );
 
+export const stopDraggingFeatureSlider = () => (
+  {
+    type: 'STOP_DRAGGING_FEATURE_SLIDER'
+  }
+);
+
 export const toggleChartedFeature = (filterIndex, newValue) => (
   {
     type: 'TOGGLE_CHARTED_FEATURE',

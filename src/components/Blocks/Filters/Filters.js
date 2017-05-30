@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import FilterInput from './FilterInput';
-import { updateFilter, startDraggingFeatureSlider, toggleChartedFeature } from '../../../actions';
+import { updateFilter, startDraggingFeatureSlider, stopDraggingFeatureSlider, toggleChartedFeature } from '../../../actions';
 import {getFilters} from '../../../selectors/filters';
 
 import './Filters.css';
@@ -18,11 +18,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleFilterChange: (filterIndex, inputValue) => {dispatch(updateFilter(filterIndex, inputValue))},
     handleStartDraggingFeatureSlider: filterIndex => {dispatch(startDraggingFeatureSlider(filterIndex))},
+    handleStopDraggingFeatureSlider: () => {dispatch(stopDraggingFeatureSlider())},
     handleChartedFeaturesToggle: (filterIndex, newValue) => {dispatch(toggleChartedFeature(filterIndex, newValue))}
   }
 }
 
-const Filters = ({filters, handleFilterChange, handleStartDraggingFeatureSlider, handleChartedFeaturesToggle}) => (
+const Filters = ({filters, handleFilterChange, handleStartDraggingFeatureSlider, handleStopDraggingFeatureSlider, handleChartedFeaturesToggle}) => (
   <div className="filters__pane">
     {filters.map((filter,index) => 
       <FilterInput 
@@ -31,6 +32,7 @@ const Filters = ({filters, handleFilterChange, handleStartDraggingFeatureSlider,
         filterData={filter}
         handleFilterChange={handleFilterChange}
         handleStartDraggingFeatureSlider={handleStartDraggingFeatureSlider}
+        handleStopDraggingFeatureSlider={handleStopDraggingFeatureSlider}
         handleChartedFeaturesToggle={handleChartedFeaturesToggle}
       />
     )}
