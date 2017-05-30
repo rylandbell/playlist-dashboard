@@ -51,7 +51,7 @@ export const initialFilters = [
     min: 0,
     max: 1,
     color: 'hsl(0, 0%, 92%)',
-    dimColor: 'hsl(0, 0%, 32%)'
+    dimColor: 'hsl(0, 0%, 22%)'
   },
   // {
   //   name: 'liveness',

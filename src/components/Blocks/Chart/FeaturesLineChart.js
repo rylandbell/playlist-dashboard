@@ -26,7 +26,9 @@ class FeaturesLineChart extends Component {
     const filteredTracks = this.props.filteredTracks;
     const hoveredTrackId = this.props.hoveredTrackId;
 
-    const graphedFilters = filters.filter(x => x.isGraphed);
+    const graphedFilters = filters
+      .filter(x => x.isGraphed)
+      .sort((x,y) => y.isDim);
 
     //find the filter currently being dragged, when applicable
     const draggedFilterIndex = filters.findIndex(filter => filter.showReferenceLine);
