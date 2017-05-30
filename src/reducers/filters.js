@@ -61,8 +61,8 @@ export const filterValues = (state = filtersInitial, action) => {
   let targetFilter, updatedFilter;
   switch(action.type) {
     case 'UPDATE_FILTER':
-      targetFilter = Object.assign({}, state[action.filterIndex]);
-      updatedFilter = Object.assign(targetFilter, {currentValue: action.data});
+      targetFilter = state[action.filterIndex];
+      updatedFilter = {...targetFilter, currentValue: action.data};
       return [
         ...state.slice(0, action.filterIndex),
         updatedFilter,
@@ -71,25 +71,25 @@ export const filterValues = (state = filtersInitial, action) => {
     case 'TOGGLE_CHARTED_FEATURE':
       return state.map( (filter, index) => {
         if (index === action.filterIndex) {
-          return Object.assign(filter, {showReferenceLine: false, isGraphed: action.newValue})
+          return {...filter, isGraphed: action.newValue}
         } else {
-          return Object.assign({}, filter, {showReferenceLine: false});
+          return filter;
         }
       });
     case 'START_DRAGGING_FEATURE_SLIDER':
       return state.map( (filter,index) => {
         if (index === action.filterIndex) {
-          return Object.assign({}, filter, {showReferenceLine: true, isGraphed: true});
+          return {...filter, showReferenceLine: true, isGraphed: true};
         } else {
-          return Object.assign({}, filter, {isDim: true});
+          return {...filter, isDim: true};
         }
       });
     case 'STOP_DRAGGING_FEATURE_SLIDER':
       return state.map( filter => 
-        Object.assign({}, filter, {showReferenceLine: false, isDim: false})
+        ({...filter, showReferenceLine: false, isDim: false})
       );
     case 'SELECT_PLAYLIST':
-      return state.map( filter => Object.assign(filter, {showReferenceLine: false}) );
+      return state.map( filter => ({...filter, showReferenceLine: false}) );
     default:
       return state;
   }

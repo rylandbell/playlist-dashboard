@@ -50,14 +50,14 @@ export const tracks = (state = [], action) => {
     case 'ADD_AUDIO_FEATURES':
       return state.map((stateData, index) => {
         if (action.data[index] && (stateData.id === action.data[index].id)) {
-          return Object.assign({}, stateData, {
+          return {...stateData, 
             danceability: action.data[index].danceability,
             energy: action.data[index].energy,
             valence: action.data[index].valence,
             acousticness: action.data[index].acousticness,
             liveness: action.data[index].liveness,
             instrumentalness: action.data[index].instrumentalness
-          })
+          }
         } else {
           console.log('ID mismatch');
           return state;

@@ -12,7 +12,7 @@ export const getFilters = createSelector(
 
       // find the corresponding filter in initialFilters (look for name match):
       const match = initialFilters.find(initialFilter => initialFilter.name === stateFilter.name);
-      return Object.assign({}, stateFilter, match);
+      return {...stateFilter, ...match};
     });
   }
 )
