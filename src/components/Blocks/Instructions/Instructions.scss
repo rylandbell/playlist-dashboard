@@ -53,10 +53,10 @@
   }
 
   &:focus {
-    background-color: desaturate(darken($spotify-green, 22%), 10%);
+    background-color: darken($spotify-green, 2%);
   }
 
   &:active {
-    background-color: desaturate(darken($spotify-green, 22%), 10%);
+    background-color: darken($spotify-green, 2%);
   }
 }
