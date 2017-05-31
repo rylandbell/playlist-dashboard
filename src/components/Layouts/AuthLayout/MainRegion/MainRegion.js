@@ -8,6 +8,7 @@ const MainRegion = ({badAuthToken, tracks, fetchStatus, filteredTracks, fullStat
   const tracksLoaded = tracks && tracks.length > 0;
   const featuresLoaded = fetchStatus.getFeaturesSuccess;
   const dataLoaded = tracksLoaded && featuresLoaded;
+  const noTracksFound = featuresLoaded && !tracksLoaded;
   const fetchPending = fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
   const fetchFailure = fetchStatus.getTracksFailure || fetchStatus.getFeaturesFailure;
 
@@ -18,7 +19,9 @@ const MainRegion = ({badAuthToken, tracks, fetchStatus, filteredTracks, fullStat
   } else if (fetchPending) {
     content = <Message classList="big" loading={true} text="Loading tracks data... " />;
   } else if (fetchFailure) {
-    content = <Message classList="big" error={true} text="Error: failed to load tracks data." />;
+    content = <Message classList="big" loading={true} text="Loading tracks data... " />;
+  } else if (noTracksFound) {
+    content = <Message classList="big" text="No tracks were found for this playlist." />;
   } else if (dataLoaded) {
     content = <ExploreTracksView tracks={tracks} filteredTracks={filteredTracks} />;
   } else {
