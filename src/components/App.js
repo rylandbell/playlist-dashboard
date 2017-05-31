@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import fetchCalls from '../fetchCalls';
 import {getFilteredTracks} from '../selectors/filteredTracks';
 import {getHashParams} from '../helper';
 import {setAccessToken} from '../actions';
+import {getPlaylists} from '../actions';
 
 import './App.css';
 import PreAuthLayout from './Layouts/PreAuthLayout/PreAuthLayout';
@@ -27,7 +27,6 @@ const mapStateToProps = (state) => {
     authStatus: state.auth.authStatus,
     playlists: state.playlists,
     fetchStatus: state.fetchStatus,
-    accessToken: state.auth.accessToken,
     activeSidebarTab: state.ui.activeSidebarTab,
     badAuthToken: state.auth.badAuthToken,
     tracks: state.tracks,
@@ -38,7 +37,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, accessToken) => {
   return {
-    getPlaylists: (accessToken) => {fetchCalls.getPlaylists(dispatch, accessToken)},
+    getPlaylists: () => dispatch(getPlaylists()),
     getAccessToken: () => {
       const params = getHashParams();
       let data = "";

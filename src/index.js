@@ -3,16 +3,23 @@ import 'font-awesome/css/font-awesome.css';
 import './index.css';
 
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { render } from 'react-snapshot';
 
 import App from './components/App';
 import * as reducers from './reducers/main';
+import {apiMiddleware} from './middleware/apiMiddleware';
+import {userFlowMiddleware} from './middleware/userFlowMiddleware';
 
-//create a store from the above reducer, then subscribe a React render function to it
 // (the second argument enables Redux dev tools in browser)
-const store = createStore(combineReducers(reducers), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+  combineReducers(reducers),
+  composeEnhancers(applyMiddleware(userFlowMiddleware, apiMiddleware))
+);
+
 store.subscribe(renderApp);
 renderApp();
 

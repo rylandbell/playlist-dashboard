@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import fetchCalls from '../../../fetchCalls';
-import { selectPlaylist } from '../../../actions';
+import { selectPlaylist, getTracks } from '../../../actions';
 import Message from '../../Blocks/Message/Message';
 import SelectPlaylistsListGroup from './SelectPlaylistsListGroup';
 import './Playlists.css';
@@ -21,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handlePlaylistSelect: (accessToken, playlist, forceTabSwitch) => {
       dispatch(selectPlaylist(playlist, forceTabSwitch));
-      fetchCalls.getTracks(dispatch, accessToken, playlist);
+      dispatch(getTracks(playlist.ownerId, playlist.id));
     }
   }
 }

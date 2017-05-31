@@ -28,7 +28,7 @@ export const badAuthToken = (state = false, action) => {
 export const userId = (state = "", action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
-      const href = action.data.href;
+      const href = action.payload.href;
       const userId = href.split('/')[5];
       return userId;
     default:

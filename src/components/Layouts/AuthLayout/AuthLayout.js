@@ -13,7 +13,7 @@ class AuthLayout extends Component {
     const shouldGetPlaylists = !playlistsLoaded && !getPlaylistsFailure;
     
     if (shouldGetPlaylists) {
-      this.props.getPlaylists(this.props.accessToken);
+      this.props.getPlaylists();
     }
   }
   

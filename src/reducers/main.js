@@ -13,7 +13,7 @@ export {filterValues};
 export const playlists = (state = [], action) => {
   switch (action.type){
     case 'ADD_PLAYLISTS_DATA':
-      return action.data.items
+      return action.payload.items
         .map(playlist => ({
           id: playlist.id,
           name: playlist.name,
@@ -38,7 +38,7 @@ export const tracks = (state = [], action) => {
     case 'SELECT_PLAYLIST':
       return action.data ? [] : state;
     case 'ADD_TRACKS_DATA':
-      return action.data
+      return action.payload.items
         .map(data => ({
           id: data.track.id,
           name: data.track.name,
@@ -48,15 +48,16 @@ export const tracks = (state = [], action) => {
           uri: data.track.uri
         }));
     case 'ADD_AUDIO_FEATURES':
+      const features = action.payload.audio_features;
       return state.map((stateData, index) => {
-        if (action.data[index] && (stateData.id === action.data[index].id)) {
+        if (features[index] && (stateData.id === features[index].id)) {
           return {...stateData, 
-            danceability: action.data[index].danceability,
-            energy: action.data[index].energy,
-            valence: action.data[index].valence,
-            acousticness: action.data[index].acousticness,
-            liveness: action.data[index].liveness,
-            instrumentalness: action.data[index].instrumentalness
+            danceability: features[index].danceability,
+            energy: features[index].energy,
+            valence: features[index].valence,
+            acousticness: features[index].acousticness,
+            liveness: features[index].liveness,
+            instrumentalness: features[index].instrumentalness
           }
         } else {
           console.log('ID mismatch');

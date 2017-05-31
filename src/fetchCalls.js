@@ -1,4 +1,4 @@
-import { getPlaylistsPending, getPlaylistsFailure, badAuthToken, addPlaylistsData, addTracksData, getTracksPending, getTracksSuccess, getTracksFailure } from './actions';
+import { badAuthToken, addTracksData, getTracksPending, getTracksSuccess, getTracksFailure } from './actions';
 import {getFilteredTracks} from './selectors/filteredTracks'; 
 
 const fetchCalls = {};
@@ -19,110 +19,110 @@ fetchCalls.handleAuthRequest = function() {
 }
 
 //get list of current user's playlists
-fetchCalls.getPlaylists = function(dispatch, accessToken) {
-  dispatch(getPlaylistsPending());
+// fetchCalls.getPlaylists = function(dispatch, accessToken) {
+//   dispatch(getPlaylistsPending());
 
-  const requestOptions = {
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + accessToken
-    },
-  }
-  fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
-    .then(res => {
-      if (!res.ok && res.status === 401) {
-        dispatch(badAuthToken());
-        this.handleAuthRequest();
-        throw new Error(res.statusText);
-      }
-      return res;
-    })
-    .then(res => res.json())
-    .then(res => {
-      dispatch(addPlaylistsData(res));
-    })
-    .catch(err => {
-      dispatch(getPlaylistsFailure());
-      console.log('getPlaylists Error:', err);
-    });
-}
+//   const requestOptions = {
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + accessToken
+//     },
+//   }
+//   fetch('https://api.spotify.com/v1/me/playlists?limit=50', requestOptions)
+//     .then(res => {
+//       if (!res.ok && res.status === 401) {
+//         dispatch(badAuthToken());
+//         this.handleAuthRequest();
+//         throw new Error(res.statusText);
+//       }
+//       return res;
+//     })
+//     .then(res => res.json())
+//     .then(res => {
+//       dispatch(addPlaylistsData(res));
+//     })
+//     .catch(err => {
+//       dispatch(getPlaylistsFailure());
+//       console.log('getPlaylists Error:', err);
+//     });
+// }
 
 //get track info for a given playlist
-fetchCalls.getTracks = function(dispatch, accessToken, data) {
-  dispatch(getTracksPending());
+// fetchCalls.getTracks = function(dispatch, accessToken, data) {
+//   dispatch(getTracksPending());
 
-  const requestOptions = {
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + accessToken
-    },
-  }
+//   const requestOptions = {
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + accessToken
+//     },
+//   }
 
-  const userId = data.ownerId;
-  const playlistId = data.id;
-  const playlistURI = `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`;
+//   const userId = data.ownerId;
+//   const playlistId = data.id;
+//   const playlistURI = `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`;
 
-  fetch(playlistURI, requestOptions)
-    .then(res => {
-      if (!res.ok && res.status === 401) {
-        dispatch(badAuthToken());
-        this.handleAuthRequest();
-        throw new Error(res.statusText);
-      }
-      return res;
-    })
-    .then(res => res.json())
-    .then(res => {
-      dispatch(getTracksSuccess());
-      dispatch(addTracksData(res.items));
-      this.getTrackFeatures(dispatch, accessToken, res.items);
-    })
-    .catch(err => {
-      console.log('getTracks error: ', err);
-      dispatch(getTracksFailure());
-    });
-}
+//   fetch(playlistURI, requestOptions)
+//     .then(res => {
+//       if (!res.ok && res.status === 401) {
+//         dispatch(badAuthToken());
+//         this.handleAuthRequest();
+//         throw new Error(res.statusText);
+//       }
+//       return res;
+//     })
+//     .then(res => res.json())
+//     .then(res => {
+//       dispatch(getTracksSuccess());
+//       dispatch(addTracksData(res.items));
+//       this.getTrackFeatures(dispatch, accessToken, res.items);
+//     })
+//     .catch(err => {
+//       console.log('getTracks error: ', err);
+//       dispatch(getTracksFailure());
+//     });
+// }
 
 //get audio features given an array of tracks
-fetchCalls.getTrackFeatures = function(dispatch, accessToken, tracks) {
-  dispatch({
-    type: 'GET_FEATURES_PENDING'
-  });
+// fetchCalls.getTrackFeatures = function(dispatch, accessToken, tracks) {
+//   dispatch({
+//     type: 'GET_FEATURES_PENDING'
+//   });
 
-  //get track list from Spotify, dispatch to Redux store:
-  const requestOptions = {
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + accessToken
-    },
-  }
+//   //get track list from Spotify, dispatch to Redux store:
+//   const requestOptions = {
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + accessToken
+//     },
+//   }
 
-  const trackIds = tracks.map(track => track.track.id).join(',');
-  const featuresURI = `https://api.spotify.com/v1/audio-features?ids=${trackIds}`;
+//   const trackIds = tracks.map(track => track.track.id).join(',');
+//   const featuresURI = `https://api.spotify.com/v1/audio-features?ids=${trackIds}`;
 
-  fetch(featuresURI, requestOptions)
-    .then(res => {
-      if (!res.ok && res.status === 401) {
-        dispatch(badAuthToken());
-        this.handleAuthRequest();
-        throw new Error(res.statusText);
-      }
-      return res;
-    })
-    .then(res => res.json())
-    .then(res => {
-      dispatch({
-        type: 'ADD_AUDIO_FEATURES',
-        data: res.audio_features
-      });
-    })
-    .catch(err => {
-      console.log('getTrackFeatures error: ', err);
-      dispatch({
-        type: 'GET_FEATURES_FAILURE'
-      });
-    });
-}
+//   fetch(featuresURI, requestOptions)
+//     .then(res => {
+//       if (!res.ok && res.status === 401) {
+//         dispatch(badAuthToken());
+//         this.handleAuthRequest();
+//         throw new Error(res.statusText);
+//       }
+//       return res;
+//     })
+//     .then(res => res.json())
+//     .then(res => {
+//       dispatch({
+//         type: 'ADD_AUDIO_FEATURES',
+//         data: res.audio_features
+//       });
+//     })
+//     .catch(err => {
+//       console.log('getTrackFeatures error: ', err);
+//       dispatch({
+//         type: 'GET_FEATURES_FAILURE'
+//       });
+//     });
+// }
 
 fetchCalls.handleSavePlaylist = function(dispatch, accessToken, userId, name, fullState) {
   this.createNewPlaylist(dispatch, accessToken, userId, name, fullState);

@@ -1,3 +1,45 @@
+export const getPlaylists = () => (
+  {
+    type: 'API',
+    payload: {
+      url: 'https://api.spotify.com/v1/me/playlists?limit=50',
+      method: 'GET',
+      success: 'ADD_PLAYLISTS_DATA',
+      failure: 'GET_PLAYLISTS_FAILURE',
+      pending: 'GET_PLAYLISTS_PENDING'
+    }
+  }
+)
+
+export const getTracks = (userId, playlistId) => (
+  {
+    type: 'API',
+    payload: {
+      url: `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+      method: 'GET',
+      success: 'ADD_TRACKS_DATA',
+      failure: 'GET_TRACKS_FAILURE',
+      pending: 'GET_TRACKS_PENDING'
+    }
+  }
+)
+
+export const getAudioFeatures = tracks => {
+  const trackIds = tracks.map(track => track.track.id).join(',');
+  return (
+    {
+      type: 'API',
+      payload: {
+        url: `https://api.spotify.com/v1/audio-features?ids=${trackIds}`,
+        method: 'GET',
+        success: 'ADD_AUDIO_FEATURES',
+        failure: 'GET_FEATURES_FAILURE',
+        pending: 'GET_FEATURES_PENDING'
+      }
+    }
+  )
+}
+
 export const setAccessToken = data => (
   {
     type: 'SET_ACCESS_TOKEN',
