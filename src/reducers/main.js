@@ -47,7 +47,7 @@ export const tracks = (state = [], action) => {
           popularity: data.track.popularity ? data.track.popularity/100 : 0,
           uri: data.track.uri
         }));
-    case 'ADD_AUDIO_FEATURES':
+    case 'ADD_FEATURES_DATA':
       const features = action.payload.audio_features;
       return state.map((stateData, index) => {
         if (features[index] && (stateData.id === features[index].id)) {

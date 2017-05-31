@@ -4,7 +4,7 @@ export const getPlaylists = () => (
     payload: {
       url: 'https://api.spotify.com/v1/me/playlists?limit=50',
       method: 'GET',
-      success: 'ADD_PLAYLISTS_DATA',
+      success: 'GET_PLAYLISTS_SUCCESS',
       failure: 'GET_PLAYLISTS_FAILURE',
       pending: 'GET_PLAYLISTS_PENDING'
     }
@@ -17,7 +17,7 @@ export const getTracks = (userId, playlistId) => (
     payload: {
       url: `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
       method: 'GET',
-      success: 'ADD_TRACKS_DATA',
+      success: 'GET_TRACKS_SUCCESS',
       failure: 'GET_TRACKS_FAILURE',
       pending: 'GET_TRACKS_PENDING'
     }
@@ -32,13 +32,34 @@ export const getAudioFeatures = tracks => {
       payload: {
         url: `https://api.spotify.com/v1/audio-features?ids=${trackIds}`,
         method: 'GET',
-        success: 'ADD_AUDIO_FEATURES',
+        success: 'GET_FEATURES_SUCCESS',
         failure: 'GET_FEATURES_FAILURE',
         pending: 'GET_FEATURES_PENDING'
       }
     }
   )
 }
+
+export const addPlaylistsData = (data) => (
+  {
+    type: 'ADD_PLAYLISTS_DATA',
+    payload: data
+  }
+);
+
+export const addTracksData = (data) => (
+  {
+    type: 'ADD_TRACKS_DATA',
+    payload: data
+  }
+);
+
+export const addFeaturesData = (data) => (
+  {
+    type: 'ADD_FEATURES_DATA',
+    payload: data
+  }
+);
 
 export const setAccessToken = data => (
   {
@@ -120,49 +141,5 @@ export const stopAnimatingChart = () => (
 export const badAuthToken = () => (
   {
     type: 'BAD_AUTH_TOKEN'
-  }
-);
-
-export const addPlaylistsData = (data) => (
-  {
-    type: 'ADD_PLAYLISTS_DATA',
-    data: data
-  }
-);
-
-export const addTracksData = (data) => (
-  {
-    type: 'ADD_TRACKS_DATA',
-    data: data
-  }
-);
-
-export const getPlaylistsPending = () => (
-  {
-    type: 'GET_PLAYLISTS_PENDING'
-  }
-);
-
-export const getPlaylistsFailure = () => (
-  {
-    type: 'GET_PLAYLISTS_FAILURE'
-  }
-);
-
-export const getTracksPending = () => (
-  {
-    type: 'GET_TRACKS_PENDING'
-  }
-);
-
-export const getTracksSuccess = () => (
-  {
-    type: 'GET_TRACKS_SUCCESS'
-  }
-);
-
-export const getTracksFailure = () => (
-  {
-    type: 'GET_TRACKS_FAILURE'
   }
 );

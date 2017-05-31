@@ -6,8 +6,6 @@ export const getPlaylistsPending = (state = false, action) => {
       return false;
     case 'GET_PLAYLISTS_FAILURE':
       return false;
-    case 'ADD_PLAYLISTS_DATA':
-      return false;
     default:
       return state;
   }
@@ -21,8 +19,6 @@ export const getPlaylistsSuccess = (state = false, action) => {
       return true;
     case 'GET_PLAYLISTS_FAILURE':
       return false;
-    case 'ADD_PLAYLISTS_DATA':
-      return true;
     default:
       return state;
   }
@@ -36,8 +32,6 @@ export const getPlaylistsFailure = (state = false, action) => {
       return false;
     case 'GET_PLAYLISTS_FAILURE':
       return true;
-    case 'ADD_PLAYLISTS_DATA':
-      return false;
     default:
       return state;
   }
@@ -50,8 +44,6 @@ export const getTracksPending = (state = false, action) => {
     case 'GET_TRACKS_SUCCESS':
       return false;
     case 'GET_TRACKS_FAILURE':
-      return false;
-    case 'ADD_TRACKS_DATA':
       return false;
     default:
       return state;
@@ -66,8 +58,6 @@ export const getTracksSuccess = (state = false, action) => {
       return true;
     case 'GET_TRACKS_FAILURE':
       return false;
-    case 'ADD_TRACKS_DATA':
-      return true;
     default:
       return state;
   }
@@ -81,8 +71,6 @@ export const getTracksFailure = (state = false, action) => {
       return false;
     case 'GET_TRACKS_FAILURE':
       return true;
-    case 'ADD_TRACKS_DATA':
-      return false;
     default:
       return state;
   }
@@ -95,8 +83,6 @@ export const getFeaturesPending = (state = false, action) => {
     case 'GET_FEATURES_SUCCESS':
       return false;
     case 'GET_FEATURES_FAILURE':
-      return false;
-    case 'ADD_AUDIO_FEATURES':
       return false;
     default:
       return state;
@@ -111,8 +97,6 @@ export const getFeaturesSuccess = (state = false, action) => {
       return true;
     case 'GET_FEATURES_FAILURE':
       return false;
-    case 'ADD_AUDIO_FEATURES':
-      return true;
     default:
       return state;
   }
@@ -126,8 +110,6 @@ export const getFeaturesFailure = (state = false, action) => {
       return false;
     case 'GET_FEATURES_FAILURE':
       return true;
-    case 'ADD_AUDIO_FEATURES':
-      return false;
     default:
       return state;
   }

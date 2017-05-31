@@ -45,7 +45,7 @@ export const animateNextChartDraw = (state = true, action) => {
   switch (action.type) {
     case 'STOP_ANIMATING_CHART':
       return false;
-    case 'ADD_AUDIO_FEATURES':
+    case 'ADD_FEATURES_DATA':
       return true;
     default:
       return state;
