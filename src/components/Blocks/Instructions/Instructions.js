@@ -1,28 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import fetchCalls from '../../../fetchCalls';
-
-import ConnectButton from './ConnectButton';
 
 import './Instructions.css';
 import playlistImg from './img/playlist.png';
 import filterImg from './img/filter.png';
 import saveImg from './img/save.png';
 
-const mapStateToProps = (state) => {
-  return {
-    authStatus: state.auth.authStatus
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleAuthRequest: fetchCalls.handleAuthRequest
-  }
-}
-
-const Instructions = ({authStatus, handleAuthRequest}) => {
-  const showButton = !authStatus;
+const Instructions = () => {
   return (
     <div className="instructions__wrapper">
       <div className ="instructions">
@@ -51,15 +34,10 @@ const Instructions = ({authStatus, handleAuthRequest}) => {
             </tr>
           </tbody>
         </table>
-        {showButton && <ConnectButton handleAuthRequest={handleAuthRequest} />}
       </div>
     </div>
   );
 }
 
-const InstructionsContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Instructions)
 
-export default InstructionsContainer;
+export default Instructions;

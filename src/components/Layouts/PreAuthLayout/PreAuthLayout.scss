@@ -3,4 +3,46 @@
 .pre-auth-layout {
   min-height: 100vh;
   background-color: $bg-main;
+  background-image: url('./clem-onojeghuo-173534.jpg');
+  background-size: cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.pre-auth-layout__content {
+  background-color: rgba($bg-main, 0.95);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 10px;
+
+  h1 {
+    margin-top: 0px;
+
+    @media (max-width: 991px) {
+      font-size: 26px;
+    }
+  }
+}
+
+.pre-auth-layout__for-spotify {
+  font-size: 20px;
+
+  img {
+    position: relative;
+    bottom: 2px;
+    margin-left: 4px;
+  }
+
+  @media (max-width: 768px) {
+    // display: block;
+    margin-top: 10px;
+    margin-left: -2px;
+    font-size: 14px;
+    img {
+      width: 70px;
+      margin-left: 2px;
+    }
+  }
 }

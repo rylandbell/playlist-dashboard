@@ -1,16 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+
+import fetchCalls from '../../../fetchCalls';
+import ConnectButton from './ConnectButton';
 import './PreAuthLayout.css';
+import spotifyLogo from './Spotify_Logo_RGB_White.png';
 
-import Instructions from '../../Blocks/Instructions/Instructions';
+const mapStateToProps = (state) => {
+  return {}
+}
 
-class PreAuthLayout extends Component {
-  render() {
-    return (
-      <div className="pre-auth-layout">
-        <Instructions />
-      </div>
-    );
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleAuthRequest: fetchCalls.handleAuthRequest
   }
 }
 
-export default PreAuthLayout;
+const PreAuthLayout = ({handleAuthRequest}) => (
+  <div className="pre-auth-layout">
+    <div className="pre-auth-layout__content">
+      <h1>Playlist Dashboard&nbsp;
+        <span className="pre-auth-layout__for-spotify">for&nbsp;
+          <img src={spotifyLogo} alt="Spotify logo" />
+        </span>
+      </h1>
+      <div className="lead">Spotify algorithmically computes values to describe song features like danceability, instrumentalness, and popularity. Playlist Dashboard lets you graph and filter your playlists by these features.</div>
+      <ConnectButton handleAuthRequest = {handleAuthRequest} />
+    </div>
+  </div>
+);
+
+const PreAuthLayoutContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PreAuthLayout)
+
+export default PreAuthLayoutContainer;
