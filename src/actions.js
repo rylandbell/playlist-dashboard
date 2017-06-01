@@ -1,3 +1,5 @@
+export const authRequest = () => ({type: 'AUTH_REQUEST'});
+
 export const getPlaylists = () => (
   {
     type: 'API',

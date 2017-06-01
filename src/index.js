@@ -11,13 +11,14 @@ import App from './components/App';
 import * as reducers from './reducers/main';
 import {apiMiddleware} from './middleware/apiMiddleware';
 import {userFlowMiddleware} from './middleware/userFlowMiddleware';
+import {authMiddleware} from './middleware/authMiddleware';
 
 // (the second argument enables Redux dev tools in browser)
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   combineReducers(reducers),
-  composeEnhancers(applyMiddleware(userFlowMiddleware, apiMiddleware))
+  composeEnhancers(applyMiddleware(userFlowMiddleware, authMiddleware, apiMiddleware))
 );
 
 store.subscribe(renderApp);

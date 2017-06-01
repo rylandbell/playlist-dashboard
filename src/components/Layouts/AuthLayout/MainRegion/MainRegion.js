@@ -19,7 +19,7 @@ const MainRegion = ({badAuthToken, tracks, fetchStatus, filteredTracks, fullStat
   } else if (fetchPending) {
     content = <Message classList="big" loading={true} text="Loading tracks data... " />;
   } else if (fetchFailure) {
-    content = <Message classList="big" loading={true} text="Loading tracks data... " />;
+    content = <Message classList="big" error={true} text="Error loading tracks." />;
   } else if (noTracksFound) {
     content = <Message classList="big" text="No tracks were found for this playlist." />;
   } else if (dataLoaded) {

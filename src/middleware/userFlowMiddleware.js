@@ -1,4 +1,4 @@
-import { getAudioFeatures, addTracksData, addPlaylistsData, addFeaturesData, addTracksToPlaylist } from '../actions';
+import { getAudioFeatures, addTracksData, addPlaylistsData, addFeaturesData, addTracksToPlaylist, authRequest } from '../actions';
 import {getFilteredTracks} from '../selectors/filteredTracks'; 
 
 export const userFlowMiddleware = ({ dispatch, getState }) => next => action => { 
@@ -25,6 +25,16 @@ export const userFlowMiddleware = ({ dispatch, getState }) => next => action => 
         action.payload.id,
         getFilteredTracks(getState()) 
       ));
+      break;
+
+    case 'GET_PLAYLISTS_FAILURE':
+    case 'GET_TRACKS_FAILURE':
+    case 'GET_FEATURES_FAILURE':
+    case 'CREATE_PLAYLIST_FAILURE':
+    case 'ADD_TRACKS_TO_PLAYLIST_FAILURE':
+      if (action.payload === 401) {
+        dispatch(authRequest());
+      }
       break;
 
     default:

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import fetchCalls from '../../../fetchCalls';
+import { authRequest } from '../../../actions';
 import ConnectButton from './ConnectButton';
 import './PreAuthLayout.css';
 import spotifyLogo from './Spotify_Logo_RGB_White.png';
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleAuthRequest: fetchCalls.handleAuthRequest
+    handleAuthRequest: () => dispatch(authRequest())
   }
 }
 

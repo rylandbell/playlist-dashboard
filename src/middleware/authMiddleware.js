@@ -1,7 +1,8 @@
-const fetchCalls = {};
+export const authMiddleware = ({ getState, dispatch }) => next => action => {
+  if (action.type !== 'AUTH_REQUEST') {
+    return next(action);
+  }
 
-fetchCalls.handleAuthRequest = function() {
-  console.log('handleAuthRequest runs');
   const clientID = '74436b5dd9624f8782f138387e69daaf';
   const redirectURI = window.location.href.split('#')[0].slice(0,-1);
   const scopes = ['playlist-read-private','playlist-modify-private'];
@@ -14,5 +15,3 @@ fetchCalls.handleAuthRequest = function() {
     + '&show-dialog=true';
   window.location = authURI;
 }
-
-export default fetchCalls;
