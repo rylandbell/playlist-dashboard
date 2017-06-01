@@ -1,4 +1,4 @@
-import { getAudioFeatures, addTracksData, addPlaylistsData, addFeaturesData, addTracksToPlaylist, authRequest } from '../actions';
+import { getAudioFeatures, addTracksData, addPlaylistsData, addFeaturesData, addTracksToPlaylist, authRequest, getPlaylists } from '../actions';
 import {getFilteredTracks} from '../selectors/filteredTracks'; 
 
 export const userFlowMiddleware = ({ dispatch, getState }) => next => action => { 
@@ -28,6 +28,10 @@ export const userFlowMiddleware = ({ dispatch, getState }) => next => action => 
         getFilteredTracks(state) 
       ));
       break;
+
+    case 'ADD_TRACKS_TO_PLAYLIST_SUCCESS':
+      dispatch(getPlaylists());
+      break; 
 
     //disallow save requests while previous request pending:
     case 'API':
