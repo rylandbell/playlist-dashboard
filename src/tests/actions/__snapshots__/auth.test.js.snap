@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Authorization actions should create an action to add an auth token to the store 1`] = `
+Object {
+  "data": "testToken",
+  "type": "SET_ACCESS_TOKEN",
+}
+`;
+
 exports[`Authorization actions should create an action to request an auth token 1`] = `
 Object {
   "type": "AUTH_REQUEST",

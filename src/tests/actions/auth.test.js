@@ -7,4 +7,7 @@ describe('Authorization actions', () => {
     expect(actions.authRequest()).toMatchSnapshot();
   });
 
+  it('should create an action to add an auth token to the store', () => {
+    expect(actions.setAccessToken('testToken')).toMatchSnapshot();
+  });
 });
