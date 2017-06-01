@@ -13,10 +13,16 @@ export const apiMiddleware = ({ getState, dispatch }) => next => action => {
     },
   }
 
+  if (action.payload.body) {
+    requestOptions.body = JSON.stringify(action.payload.body)
+  }
+
   const handleError = error => dispatch({
     type: action.payload.failure, 
     payload: error
   });
+
+  console.log('url:', action.payload.url, 'options:', requestOptions);
 
   fetch(action.payload.url, requestOptions)
     .then(response => {

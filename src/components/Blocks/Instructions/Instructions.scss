@@ -43,20 +43,3 @@
     }
   }
 }
-
-.instructions__connect-btn {
-  border-radius: 50px;
-  background-color: darken($spotify-green, 5%);
-
-  &:hover, &:hover:focus, &:hover:active {
-    background-color: $spotify-green;
-  }
-
-  &:focus {
-    background-color: darken($spotify-green, 2%);
-  }
-
-  &:active {
-    background-color: darken($spotify-green, 2%);
-  }
-}

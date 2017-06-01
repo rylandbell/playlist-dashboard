@@ -40,6 +40,26 @@ export const getAudioFeatures = tracks => {
   )
 }
 
+export const createPlaylist = (userId, name) => {
+  return (
+    {
+      type: 'API',
+      payload: {
+        url: `https://api.spotify.com/v1/users/${userId}/playlists`,
+        method: 'POST',
+        body: {
+          name: name,
+          public: false,
+          collaborative: false
+        },
+        success: 'CREATE_PLAYLIST_SUCCESS',
+        failure: 'CREATE_PLAYLIST_FAILURE',
+        pending: 'CREATE_PLAYLIST_PENDING'
+      }
+    }
+  )
+}
+
 export const addPlaylistsData = (data) => (
   {
     type: 'ADD_PLAYLISTS_DATA',

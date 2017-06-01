@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import fetchCalls from '../../../fetchCalls';
-import { changeNameText } from '../../../actions';
+import { createPlaylist, changeNameText } from '../../../actions';
 
 import './SavePane.css';
 import Message from '../../Blocks/Message/Message';
@@ -11,7 +10,6 @@ const mapStateToProps = (state) => {
   return {
     newPlaylistName: state.ui.newPlaylistName,
     fetchStatus: state.fetchStatus,
-    accessToken: state.auth.accessToken,
     userId: state.auth.userId,
     fullState: state
   }
@@ -19,9 +17,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleNameTextEntry: data => {dispatch(changeNameText(data))},
-    handleSavePlaylist: (accessToken, userId, name, fullState) => {
-      fetchCalls.handleSavePlaylist(dispatch, accessToken, userId, name, fullState)}
+    handleNameTextEntry: data => dispatch(changeNameText(data)),
+    handleSavePlaylist: (userId, newPlaylistName) => {
+      dispatch(createPlaylist(userId, newPlaylistName))
+    }
   }
 }
 
@@ -33,12 +32,11 @@ class SavePane extends Component {
   }
 
   onClickSave() {
-    const newPlaylistName = this.props.newPlaylistName;
     const savePending = this.props.fetchStatus.createPlaylistPending || this.props.fetchStatus.addTracksToPlaylistPending;
     if (savePending) {
       return;
     }
-    this.props.handleSavePlaylist(this.props.accessToken, this.props.userId, newPlaylistName, this.props.fullState);
+    this.props.handleSavePlaylist(this.props.userId, this.props.newPlaylistName);
   }
 
   onChangeText(e) {
