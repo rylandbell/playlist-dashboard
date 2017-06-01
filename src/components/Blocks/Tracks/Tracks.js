@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { hoverOnTrack, clearHoveredTrack } from '../../../actions';
+import { hoverOnTrack, clearHoveredTrack } from '../../../actions/actions';
 import {getFilters} from '../../../selectors/filters';
 
 import TracksTable from './TracksTable';

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`API actions should create an action to GET audio features, given an array of tracks 1`] = `
+Object {
+  "payload": Object {
+    "failure": "GET_FEATURES_FAILURE",
+    "method": "GET",
+    "pending": "GET_FEATURES_PENDING",
+    "success": "GET_FEATURES_SUCCESS",
+    "url": "https://api.spotify.com/v1/audio-features?ids=1,2",
+  },
+  "type": "API",
+}
+`;
+
+exports[`API actions should create an action to GET playlists 1`] = `
+Object {
+  "payload": Object {
+    "failure": "GET_PLAYLISTS_FAILURE",
+    "method": "GET",
+    "pending": "GET_PLAYLISTS_PENDING",
+    "success": "GET_PLAYLISTS_SUCCESS",
+    "url": "https://api.spotify.com/v1/me/playlists?limit=50",
+  },
+  "type": "API",
+}
+`;
+
+exports[`API actions should create an action to GET tracks, given userId and playlistId 1`] = `
+Object {
+  "payload": Object {
+    "failure": "GET_TRACKS_FAILURE",
+    "method": "GET",
+    "pending": "GET_TRACKS_PENDING",
+    "success": "GET_TRACKS_SUCCESS",
+    "url": "https://api.spotify.com/v1/users/testUserId/playlists/testPlaylistId/tracks",
+  },
+  "type": "API",
+}
+`;
+
+exports[`API actions should create an action to POST a new, empty playlist, given userId and playlist name 1`] = `
+Object {
+  "payload": Object {
+    "body": Object {
+      "collaborative": false,
+      "name": "testName",
+      "public": false,
+    },
+    "failure": "CREATE_PLAYLIST_FAILURE",
+    "method": "POST",
+    "pending": "CREATE_PLAYLIST_PENDING",
+    "success": "CREATE_PLAYLIST_SUCCESS",
+    "url": "https://api.spotify.com/v1/users/testUserId/playlists",
+  },
+  "type": "API",
+}
+`;
+
+exports[`API actions should create an action to POST tracks to a playlist, given user/playlist IDs and an array of tracks 1`] = `
+Object {
+  "payload": Object {
+    "body": Object {
+      "position": 0,
+      "uris": Array [
+        undefined,
+        undefined,
+      ],
+    },
+    "failure": "ADD_TRACKS_TO_PLAYLIST_FAILURE",
+    "method": "POST",
+    "pending": "ADD_TRACKS_TO_PLAYLIST_PENDING",
+    "success": "ADD_TRACKS_TO_PLAYLIST_SUCCESS",
+    "url": "https://api.spotify.com/v1/users/testUserId/playlists/testPlaylistId/tracks",
+  },
+  "type": "API",
+}
+`;

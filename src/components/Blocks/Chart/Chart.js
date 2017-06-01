@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { stopAnimatingChart } from '../../../actions';
+import { stopAnimatingChart } from '../../../actions/actions';
 import {getFilters} from '../../../selectors/filters';
 
 import './Chart.css';

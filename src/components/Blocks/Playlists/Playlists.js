@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectPlaylist, getTracks } from '../../../actions';
+import { selectPlaylist } from '../../../actions/actions';
+import { getTracks } from '../../../actions/api';
 import Message from '../../blocks/Message/Message';
 import SelectPlaylistsListGroup from './SelectPlaylistsListGroup';
 import './Playlists.css';

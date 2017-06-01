@@ -1,4 +1,6 @@
-import { getAudioFeatures, addTracksData, addPlaylistsData, addFeaturesData, addTracksToPlaylist, authRequest, getPlaylists } from '../actions';
+import { getAudioFeatures, addTracksToPlaylist, getPlaylists } from '../actions/api';
+import {addTracksData, addPlaylistsData, addFeaturesData} from '../actions/data';
+import {authRequest} from '../actions/auth';
 import {getFilteredTracks} from '../selectors/filteredTracks'; 
 
 export const userFlowMiddleware = ({ dispatch, getState }) => next => action => { 

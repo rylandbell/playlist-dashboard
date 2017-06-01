@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { createPlaylist, changeNameText } from '../../../actions';
+import { changeNameText } from '../../../actions/actions';
+import { createPlaylist } from '../../../actions/api';
 
 import './SavePane.css';
 import Message from '../../blocks/Message/Message';

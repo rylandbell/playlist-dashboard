@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { authRequest } from '../../../actions';
+import { authRequest } from '../../../actions/auth';
 import ConnectButton from './ConnectButton';
 import './PreAuthLayout.css';
 import spotifyLogo from './Spotify_Logo_RGB_White.png';

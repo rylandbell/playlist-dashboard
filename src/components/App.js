@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {getFilteredTracks} from '../selectors/filteredTracks';
 import {getHashParams} from '../helper';
-import {setAccessToken} from '../actions';
-import {getPlaylists} from '../actions';
+import {setAccessToken} from '../actions/auth';
+import {getPlaylists} from '../actions/api';
 
 import './App.css';
 import PreAuthLayout from './layouts/PreAuthLayout/PreAuthLayout';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {setActiveTab} from '../../../../actions';
+import {setActiveTab} from '../../../../actions/actions';
 
 const mapStateToProps = (state) => {
   return {

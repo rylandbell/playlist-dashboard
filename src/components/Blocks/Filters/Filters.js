@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import FilterInput from './FilterInput';
-import { updateFilter, startDraggingFeatureSlider, stopDraggingFeatureSlider, toggleChartedFeature } from '../../../actions';
+import { updateFilter, startDraggingFeatureSlider, stopDraggingFeatureSlider, toggleChartedFeature } from '../../../actions/actions';
 import {getFilters} from '../../../selectors/filters';
 
 import './Filters.css';
