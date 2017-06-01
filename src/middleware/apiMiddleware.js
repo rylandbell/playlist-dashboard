@@ -22,7 +22,7 @@ export const apiMiddleware = ({ getState, dispatch }) => next => action => {
     payload: error
   });
 
-  console.log('url:', action.payload.url, 'options:', requestOptions);
+  // console.log('url:', action.payload.url, 'options:', requestOptions);
 
   fetch(action.payload.url, requestOptions)
     .then(response => {

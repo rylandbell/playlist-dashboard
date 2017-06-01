@@ -60,6 +60,26 @@ export const createPlaylist = (userId, name) => {
   )
 }
 
+export const addTracksToPlaylist = (userId, playlistId, tracksToSave) => {
+  const trackURIArray = tracksToSave.map(track => track.uri);
+  return (
+    {
+      type: 'API',
+      payload: {
+        url: `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+        method: 'POST',
+        body: {
+          uris: trackURIArray,
+          position: 0
+        },
+        success: 'ADD_TRACKS_TO_PLAYLIST_SUCCESS',
+        failure: 'ADD_TRACKS_TO_PLAYLIST_FAILURE',
+        pending: 'ADD_TRACKS_TO_PLAYLIST_PENDING'
+      }
+    }
+  )
+}
+
 export const addPlaylistsData = (data) => (
   {
     type: 'ADD_PLAYLISTS_DATA',
