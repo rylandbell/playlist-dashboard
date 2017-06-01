@@ -2,6 +2,8 @@ import { getAudioFeatures, addTracksData, addPlaylistsData, addFeaturesData, add
 import {getFilteredTracks} from '../selectors/filteredTracks'; 
 
 export const userFlowMiddleware = ({ dispatch, getState }) => next => action => { 
+  const state = getState();
+
   switch (action.type) {
     case 'GET_PLAYLISTS_SUCCESS': 
       dispatch(addPlaylistsData(action.payload));
@@ -21,12 +23,23 @@ export const userFlowMiddleware = ({ dispatch, getState }) => next => action => 
 
     case 'CREATE_PLAYLIST_SUCCESS':
       dispatch(addTracksToPlaylist(
-        getState().auth.userId,
+        state.auth.userId,
         action.payload.id,
-        getFilteredTracks(getState()) 
+        getFilteredTracks(state) 
       ));
       break;
 
+    //disallow save requests while previous request pending:
+    case 'API':
+      if (action.payload.success === 'CREATE_PLAYLIST_SUCCESS') {
+        if (state.fetchStatus.createPlaylistPending || state.fetchStatus.addTracksToPlaylist) {
+          console.log('caught it');
+          return;
+        }
+      }
+      break;
+
+    //auto-request a new auth token if API returns 401 error
     case 'GET_PLAYLISTS_FAILURE':
     case 'GET_TRACKS_FAILURE':
     case 'GET_FEATURES_FAILURE':

@@ -31,10 +31,6 @@ class SavePane extends Component {
   }
 
   onClickSave() {
-    const savePending = this.props.fetchStatus.createPlaylistPending || this.props.fetchStatus.addTracksToPlaylistPending;
-    if (savePending) {
-      return;
-    }
     this.props.handleSavePlaylist(this.props.userId, this.props.newPlaylistName);
   }
 
