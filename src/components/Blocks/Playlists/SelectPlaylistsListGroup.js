@@ -1,12 +1,11 @@
 import React from 'react';
 import SelectPlaylistsListItem from './SelectPlaylistsListItem';
 
-const SelectPlaylistsListGroup = ({accessToken, playlists, selectedPlaylist, autoSidebarTabSwitch, handlePlaylistSelect}) => {
+const SelectPlaylistsListGroup = ({playlists, selectedPlaylist, autoSidebarTabSwitch, handlePlaylistSelect}) => {
   const mappedPlaylists = playlists.map(list => 
     <SelectPlaylistsListItem 
       key={list.id} 
       playlist={list} 
-      accessToken={accessToken}
       selectedPlaylist={selectedPlaylist}
       autoSidebarTabSwitch={autoSidebarTabSwitch}
       handlePlaylistSelect={handlePlaylistSelect}

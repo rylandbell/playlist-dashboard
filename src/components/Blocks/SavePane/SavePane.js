@@ -10,8 +10,7 @@ const mapStateToProps = (state) => {
   return {
     newPlaylistName: state.ui.newPlaylistName,
     fetchStatus: state.fetchStatus,
-    userId: state.auth.userId,
-    fullState: state
+    userId: state.auth.userId
   }
 }
 

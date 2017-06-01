@@ -4,7 +4,7 @@ import Instructions from '../../../Blocks/Instructions/Instructions';
 import Message from '../../../Blocks/Message/Message';
 import './MainRegion.css';
 
-const MainRegion = ({badAuthToken, tracks, fetchStatus, filteredTracks, fullState}) => {
+const MainRegion = ({badAuthToken, tracks, fetchStatus, filteredTracks}) => {
   const tracksLoaded = tracks && tracks.length > 0;
   const featuresLoaded = fetchStatus.getFeaturesSuccess;
   const dataLoaded = tracksLoaded && featuresLoaded;

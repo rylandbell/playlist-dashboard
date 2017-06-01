@@ -30,7 +30,6 @@ const mapStateToProps = (state) => {
     activeSidebarTab: state.ui.activeSidebarTab,
     badAuthToken: state.auth.badAuthToken,
     tracks: state.tracks,
-    fullState: state,
     filteredTracks: getFilteredTracks(state)
   }
 }

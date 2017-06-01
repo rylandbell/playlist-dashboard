@@ -179,9 +179,3 @@ export const stopAnimatingChart = () => (
     type: 'STOP_ANIMATING_CHART',
   }
 );
-
-export const badAuthToken = () => (
-  {
-    type: 'BAD_AUTH_TOKEN'
-  }
-);

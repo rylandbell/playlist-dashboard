@@ -8,27 +8,29 @@ import './Playlists.css';
 
 const mapStateToProps = (state) => {
   return {
-    accessToken: state.auth.accessToken,
     fetchStatus: state.fetchStatus,
     playlists: state.playlists,
     selectedPlaylist: state.selectedPlaylist,
-    autoSidebarTabSwitch: state.ui.autoSidebarTabSwitch
+    autoSidebarTabSwitch: state.ui.autoSidebarTabSwitch,
+    badAuthToken: state.auth.badAuthToken
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handlePlaylistSelect: (accessToken, playlist, forceTabSwitch) => {
+    handlePlaylistSelect: (playlist, forceTabSwitch) => {
       dispatch(selectPlaylist(playlist, forceTabSwitch));
       dispatch(getTracks(playlist.ownerId, playlist.id));
     }
   }
 }
 
-const Playlists = ({accessToken, fetchStatus, playlists, selectedPlaylist, autoSidebarTabSwitch, handlePlaylistSelect}) => {
+const Playlists = ({fetchStatus, playlists, selectedPlaylist, autoSidebarTabSwitch, badAuthToken, handlePlaylistSelect}) => {
 
   if (fetchStatus.getPlaylistsPending) { 
     return <Message loading={true} text="Loading playlist data... " />;
+  } else if (badAuthToken) {
+    return <Message text="Refreshing authorization token..." />
   } else if (fetchStatus.getPlaylistsFailure) {
     return  <Message error={true} text="Error loading playlist data. Check your internet connection and try again." />;
   }
@@ -36,7 +38,6 @@ const Playlists = ({accessToken, fetchStatus, playlists, selectedPlaylist, autoS
   return (
     <div className="playlists__pane">
       <SelectPlaylistsListGroup 
-        accessToken={accessToken} 
         playlists={playlists}
         selectedPlaylist={selectedPlaylist}
         autoSidebarTabSwitch={autoSidebarTabSwitch}

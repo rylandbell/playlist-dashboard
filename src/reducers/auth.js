@@ -18,8 +18,12 @@ export const authStatus = (state = false, action) => {
 
 export const badAuthToken = (state = false, action) => {
   switch (action.type){
-    case 'BAD_AUTH_TOKEN':
-      return true;
+    case 'GET_PLAYLISTS_FAILURE':
+    case 'GET_TRACKS_FAILURE':
+    case 'GET_FEATURES_FAILURE':
+    case 'CREATE_PLAYLIST_FAILURE':
+    case 'ADD_TRACKS_TO_PLAYLIST_FAILURE':
+      return action.payload === 401
     default:
       return state;
   }
