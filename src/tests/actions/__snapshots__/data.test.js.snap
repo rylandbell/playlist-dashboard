@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Data-adding actions should create an action to add fetched audio features data to store 1`] = `
+Object {
+  "payload": Object {
+    "data": "test",
+  },
+  "type": "ADD_FEATURES_DATA",
+}
+`;
+
+exports[`Data-adding actions should create an action to add fetched playlist data to store 1`] = `
+Object {
+  "payload": Object {
+    "data": "test",
+  },
+  "type": "ADD_PLAYLISTS_DATA",
+}
+`;
+
+exports[`Data-adding actions should create an action to add fetched tracks data to store 1`] = `
+Object {
+  "payload": Object {
+    "data": "test",
+  },
+  "type": "ADD_TRACKS_DATA",
+}
+`;
