@@ -14,7 +14,7 @@ import instrumentalness from './img/instrumentalness.png';
 import valence from './img/valence.png';
 import popularity from './img/popularity.png';
 
-const imagesHash = {acousticness, danceability, energy, instrumentalness, valence, popularity};
+const images = {acousticness, danceability, energy, instrumentalness, valence, popularity};
 
 const customHandle = (props) => {
   const { value, dragging, index, ...restProps } = props;
@@ -84,7 +84,7 @@ class FilterInput extends Component {
         </span>
         <div className="filters__flex-container">
           <div className="filters__flex-left">
-            <img className="filters__filter-icon img-responsive center-block" src={imagesHash[filterData.name]} alt={`${filterData.displayName} icon`} />
+            <img className="filters__filter-icon img-responsive center-block" src={images[filterData.name]} alt={`${filterData.displayName} icon`} />
           </div>
           <div className="filters__flex-right">
             <Range handle={customHandle} {...rangeOptions} />
