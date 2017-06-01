@@ -1,7 +1,7 @@
 import React from 'react';
-import Tracks from '../../../Blocks/Tracks/Tracks';
-import Chart from '../../../Blocks/Chart/Chart';
-import PlaylistHeading from '../../../Blocks/PlaylistHeading/PlaylistHeading';
+import Tracks from '../../../blocks/Tracks/Tracks';
+import Chart from '../../../blocks/Chart/Chart';
+import PlaylistHeading from '../../../blocks/PlaylistHeading/PlaylistHeading';
 
 const ExploreTracksView = ({tracks, filteredTracks}) => (
   <div className="main-region__explore-tracks-flexbox">

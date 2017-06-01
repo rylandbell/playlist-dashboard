@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import SidebarNav from './SidebarNav';
-import Playlists from '../../../Blocks/Playlists/Playlists';
-import Filters from '../../../Blocks/Filters/Filters';
-import SavePane from '../../../Blocks/SavePane/SavePane';
+import Playlists from '../../../blocks/Playlists/Playlists';
+import Filters from '../../../blocks/Filters/Filters';
+import SavePane from '../../../blocks/SavePane/SavePane';
 import './Sidebar.css';
 
 class Sidebar extends Component {

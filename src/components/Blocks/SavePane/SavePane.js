@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createPlaylist, changeNameText } from '../../../actions';
 
 import './SavePane.css';
-import Message from '../../Blocks/Message/Message';
+import Message from '../../blocks/Message/Message';
 
 const mapStateToProps = (state) => {
   return {

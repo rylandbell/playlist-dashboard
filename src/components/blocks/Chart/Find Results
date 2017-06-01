@@ -1,0 +1,42 @@
+Searching 87 files for "Blocks" (case sensitive)
+
+/Users/ryland/Dropbox/webdev/projects/spotify-inst/src/components/blocks/Playlists/Playlists.js:
+    3  
+    4  import { selectPlaylist, getTracks } from '../../../actions';
+    5: import Message from '../../Blocks/Message/Message';
+    6  import SelectPlaylistsListGroup from './SelectPlaylistsListGroup';
+    7  import './Playlists.css';
+
+/Users/ryland/Dropbox/webdev/projects/spotify-inst/src/components/blocks/SavePane/SavePane.js:
+    5  
+    6  import './SavePane.css';
+    7: import Message from '../../Blocks/Message/Message';
+    8  
+    9  const mapStateToProps = (state) => {
+
+/Users/ryland/Dropbox/webdev/projects/spotify-inst/src/components/Layouts/AuthLayout/MainRegion/ExploreTracksView.js:
+    1  import React from 'react';
+    2: import Tracks from '../../../Blocks/Tracks/Tracks';
+    3: import Chart from '../../../Blocks/Chart/Chart';
+    4: import PlaylistHeading from '../../../Blocks/PlaylistHeading/PlaylistHeading';
+    5  
+    6  const ExploreTracksView = ({tracks, filteredTracks}) => (
+
+/Users/ryland/Dropbox/webdev/projects/spotify-inst/src/components/Layouts/AuthLayout/MainRegion/MainRegion.js:
+    1  import React from 'react';
+    2  import ExploreTracksView from './ExploreTracksView';
+    3: import Instructions from '../../../Blocks/Instructions/Instructions';
+    4: import Message from '../../../Blocks/Message/Message';
+    5  import './MainRegion.css';
+    6  
+
+/Users/ryland/Dropbox/webdev/projects/spotify-inst/src/components/Layouts/AuthLayout/Sidebar/Sidebar.js:
+    1  import React, { Component } from 'react';
+    2  import SidebarNav from './SidebarNav';
+    3: import Playlists from '../../../Blocks/Playlists/Playlists';
+    4: import Filters from '../../../Blocks/Filters/Filters';
+    5: import SavePane from '../../../Blocks/SavePane/SavePane';
+    6  import './Sidebar.css';
+    7  
+
+10 matches across 5 files

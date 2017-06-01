@@ -1,7 +1,7 @@
 import React from 'react';
 import ExploreTracksView from './ExploreTracksView';
-import Instructions from '../../../Blocks/Instructions/Instructions';
-import Message from '../../../Blocks/Message/Message';
+import Instructions from '../../../blocks/Instructions/Instructions';
+import Message from '../../../blocks/Message/Message';
 import './MainRegion.css';
 
 const MainRegion = ({badAuthToken, tracks, fetchStatus, filteredTracks}) => {

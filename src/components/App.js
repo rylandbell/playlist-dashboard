@@ -6,13 +6,13 @@ import {setAccessToken} from '../actions';
 import {getPlaylists} from '../actions';
 
 import './App.css';
-import PreAuthLayout from './Layouts/PreAuthLayout/PreAuthLayout';
-import AuthLayout from './Layouts/AuthLayout/AuthLayout';
+import PreAuthLayout from './layouts/PreAuthLayout/PreAuthLayout';
+import AuthLayout from './layouts/AuthLayout/AuthLayout';
 
 //load AuthLayout as separate module, once authorization has been established
 // class AuthLayout extends React.Component {
 //   componentWillMount = () => {
-//     import('./Layouts/AuthLayout/AuthLayout').then(Component => {
+//     import('./layouts/AuthLayout/AuthLayout').then(Component => {
 //       this.Component = Component;
 //       this.forceUpdate();
 //     })
@@ -61,7 +61,6 @@ class App extends Component {
     );
   }
 }
-  
 
 const AppContainer = connect(
   mapStateToProps,

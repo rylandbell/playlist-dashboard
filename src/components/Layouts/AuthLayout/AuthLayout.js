@@ -8,9 +8,10 @@ class AuthLayout extends Component {
 
   //fetch playlists when AuthLayout first mounts
   componentDidMount() {
-    const playlistsLoaded = this.props.playlists && this.props.playlists.length > 0;
-    const getPlaylistsFailure = this.props.fetchStatus.getPlaylistsFailure;
-    const shouldGetPlaylists = !playlistsLoaded && !getPlaylistsFailure;
+    const {getPlaylistsSuccess, getPlaylistsPending, getPlaylistsFailure} = this.props.fetchStatus;
+
+    //only fetch if no prior attempt has been made
+    const shouldGetPlaylists = !getPlaylistsSuccess && !getPlaylistsFailure && !getPlaylistsPending;
     
     if (shouldGetPlaylists) {
       this.props.getPlaylists();

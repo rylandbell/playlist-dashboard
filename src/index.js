@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { render } from 'react-snapshot';
 
 import App from './components/App';
-import * as reducers from './reducers/main';
+import * as reducers from './reducers/root';
 import {apiMiddleware} from './middleware/apiMiddleware';
 import {userFlowMiddleware} from './middleware/userFlowMiddleware';
 import {authMiddleware} from './middleware/authMiddleware';
