@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`General actions should create an action to change playlist name input text 1`] = `
+Object {
+  "data": "testInput",
+  "type": "CHANGE_NAME_TEXT",
+}
+`;
+
+exports[`General actions should create an action to indicate that a feature slider has stopped being dragged 1`] = `
+Object {
+  "type": "STOP_DRAGGING_FEATURE_SLIDER",
+}
+`;
+
+exports[`General actions should create an action to indicate that a feature slider is being dragged 1`] = `
+Object {
+  "filterIndex": 0,
+  "type": "START_DRAGGING_FEATURE_SLIDER",
+}
+`;
+
+exports[`General actions should create an action to indicate that a track row is hovered 1`] = `
+Object {
+  "data": Object {
+    "data": "test",
+  },
+  "type": "HOVER_ON_TRACK",
+}
+`;
+
+exports[`General actions should create an action to indicate that the cursor has left the tracks table 1`] = `
+Object {
+  "type": "CLEAR_HOVERED_TRACK",
+}
+`;
+
+exports[`General actions should create an action to select a nav tab 1`] = `
+Object {
+  "data": "TabName",
+  "type": "SET_ACTIVE_TAB",
+}
+`;
+
+exports[`General actions should create an action to select a playlist 1`] = `
+Object {
+  "data": Object {
+    "data": "test",
+  },
+  "forceTabSwitch": true,
+  "type": "SELECT_PLAYLIST",
+}
+`;
+
+exports[`General actions should create an action to stop animating the chart 1`] = `
+Object {
+  "type": "STOP_ANIMATING_CHART",
+}
+`;
+
+exports[`General actions should create an action to toggle whether a feature is drawn in chart 1`] = `
+Object {
+  "filterIndex": 0,
+  "newValue": false,
+  "type": "TOGGLE_CHARTED_FEATURE",
+}
+`;
+
+exports[`General actions should create an action to update a filter's range value 1`] = `
+Object {
+  "data": Array [
+    0,
+    1,
+  ],
+  "filterIndex": 0,
+  "type": "UPDATE_FILTER",
+}
+`;
