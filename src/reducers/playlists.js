@@ -12,7 +12,7 @@ export const playlists = (state = [], action) => {
   }
 }
 
-export const selectedPlaylist = (state = null, action) => {
+export const selectedPlaylist = (state = {}, action) => {
   switch(action.type) {
     case 'SELECT_PLAYLIST':
       return {...action.data};

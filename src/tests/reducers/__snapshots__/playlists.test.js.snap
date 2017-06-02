@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Playlist reducers playlists should return the data of an ADD_PLAYLIST_DATA action 1`] = `
+Array [
+  Object {
+    "id": "testId",
+    "name": "testName",
+    "ownerId": "testOwnerId",
+  },
+  Object {
+    "id": "testId2",
+    "name": "testName2",
+    "ownerId": "testOwnerId2",
+  },
+]
+`;
+
+exports[`Playlist reducers selectedPlaylist should return the data of a SELECT_PLAYLIST action 1`] = `
+Object {
+  "id": "test",
+}
+`;

@@ -1,4 +1,3 @@
-import deepFreeze from 'deep-freeze';
 import * as reducers from '../../reducers/ui';
 
 describe("UI reducers", () => {

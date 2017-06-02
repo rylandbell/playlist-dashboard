@@ -13,7 +13,7 @@ class SelectPlaylistsListItem extends Component {
   render() {
     const playlist = this.props.playlist;
     const selectedPlaylist = this.props.selectedPlaylist;
-    const playlistIsSelected = selectedPlaylist && (playlist.id === selectedPlaylist.id);
+    const playlistIsSelected = selectedPlaylist.id && (playlist.id === selectedPlaylist.id);
 
     const classList = playlistIsSelected ?
       "playlists__item list-group-item active" :
