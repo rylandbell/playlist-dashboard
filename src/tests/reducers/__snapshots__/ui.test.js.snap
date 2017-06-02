@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI reducers activeSidebarTab should return "filters" for SELECT_PLAYLIST actions with forceTabSwitch  1`] = `"filters"`;
+
+exports[`UI reducers activeSidebarTab should return the action's data for SET_ACTIVE_TAB actions 1`] = `"test"`;
+
+exports[`UI reducers activeSidebarTab should return the state for SELECT_PLAYLIST actions without forceTabSwitch  1`] = `"playlists"`;
+
+exports[`UI reducers hoveredTrackId should return null with CLEAR_HOVERED_TRACK action type 1`] = `null`;
+
+exports[`UI reducers hoveredTrackId should return the ID of the hovered track 1`] = `"test"`;
+
+exports[`UI reducers newPlaylistName should prepend "Modified: " to action data for SELECT_PLAYLIST actions 1`] = `"Modified: test"`;
+
+exports[`UI reducers newPlaylistName should return action data for CHANGE_NAME_TEXT actions 1`] = `
+Object {
+  "name": "test",
+}
+`;
