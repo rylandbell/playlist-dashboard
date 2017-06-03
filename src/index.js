@@ -6,6 +6,7 @@ import React from 'react';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { render } from 'react-snapshot';
+import {responsiveStoreEnhancer} from 'redux-responsive'
 
 import App from './components/App';
 import * as reducers from './reducers/root';
@@ -18,7 +19,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   combineReducers(reducers),
-  composeEnhancers(applyMiddleware(userFlowMiddleware, authMiddleware, apiMiddleware))
+  composeEnhancers(responsiveStoreEnhancer, applyMiddleware(userFlowMiddleware, authMiddleware, apiMiddleware))
 );
 
 store.subscribe(renderApp);
