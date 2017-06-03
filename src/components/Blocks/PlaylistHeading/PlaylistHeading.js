@@ -23,7 +23,7 @@ const PlaylistHeading = ({userId, selectedPlaylist, filteredTracks, tracks}) => 
   const coverImage = selectedPlaylist.images.slice(-1)[0];
   return (
     <div>
-      <img className="playlist-heading__image" src={coverImage.url} alt="playlist cover" />
+      <img className="playlist-heading__image hidden-xs" src={coverImage.url} alt="playlist cover" />
       <div className="playlist-heading__text">
         <h3 className="playlist-heading__title"> {selectedPlaylist.name}
           {idMatch ? null: <small>&nbsp;by {playlistOwnerId}</small>}
