@@ -1,26 +1,23 @@
 @import 'variables';
 
 .sidebar {
-  @media (min-width: 769px) {
-    flex: 0 0 300px;    
-  }
-  
   display: flex;
   flex-direction: column;
 
   background-color: $bg-secondary;
-  padding: 2px 0 0 0;
   
   @media (min-width: 769px) {
+    flex: 0 0 300px;
     height: 100vh;
     overflow-y: hidden;
   }
 }
 
 .sidebar__nav {
+  background-color: $bg-secondary;
   flex: 0 0 auto;
 
-  padding: 5px 5px 0px 5px;
+  padding: 7px 5px 0px 5px;
 
   .nav-tabs{
     display: flex;
@@ -54,9 +51,19 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    position: fixed;
+    z-index: 3;
+  }
 }
 
 .sidebar__content {
   flex: 1 1 auto;
   overflow-y: scroll;
+
+  @media (max-width: 768px) {
+    margin-top: 44px;
+  }
 }
