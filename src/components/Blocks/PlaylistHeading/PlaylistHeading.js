@@ -20,12 +20,16 @@ const mapDispatchToProps = (dispatch) => {
 const PlaylistHeading = ({userId, selectedPlaylist, filteredTracks, tracks}) => {
   const playlistOwnerId = selectedPlaylist.ownerId;
   const idMatch = userId === playlistOwnerId;
+  const coverImage = selectedPlaylist.images.slice(-1)[0];
   return (
     <div>
-      <h3 className="playlist-heading__title"> {selectedPlaylist.name}
-        {idMatch ? null: <small>&nbsp;by {playlistOwnerId}</small>}
-      </h3>
-      <SelectedTracksCount tracks={tracks} filteredTracks={filteredTracks} />
+      <img className="playlist-heading__image" src={coverImage.url} alt="playlist cover" />
+      <div className="playlist-heading__text">
+        <h3 className="playlist-heading__title"> {selectedPlaylist.name}
+          {idMatch ? null: <small>&nbsp;by {playlistOwnerId}</small>}
+        </h3>
+        <SelectedTracksCount tracks={tracks} filteredTracks={filteredTracks} />
+      </div>
     </div>
   );
 }

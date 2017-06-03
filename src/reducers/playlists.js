@@ -5,7 +5,8 @@ export const playlists = (state = [], action) => {
         .map(playlist => ({
           id: playlist.id,
           name: playlist.name,
-          ownerId: playlist.owner.id
+          ownerId: playlist.owner.id,
+          images: playlist.images
         }));
     default:
       return state;
