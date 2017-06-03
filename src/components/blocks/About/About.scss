@@ -1,0 +1,9 @@
+@import 'variables';
+.about {
+  right: 10px;
+  bottom: 3px;
+  position: absolute;
+  a {
+    color: $text-light;
+  }
+}
