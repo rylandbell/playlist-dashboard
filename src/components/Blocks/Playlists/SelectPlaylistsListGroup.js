@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectPlaylistsListItem from './SelectPlaylistsListItem';
 
-const SelectPlaylistsListGroup = ({playlists, selectedPlaylist, autoSidebarTabSwitch, handlePlaylistSelect}) => {
+const SelectPlaylistsListGroup = ({playlists, selectedPlaylist, autoSidebarTabSwitch, handlePlaylistSelect, mediaType}) => {
   const mappedPlaylists = playlists.map(list => 
     <SelectPlaylistsListItem 
       key={list.id} 
@@ -9,6 +9,7 @@ const SelectPlaylistsListGroup = ({playlists, selectedPlaylist, autoSidebarTabSw
       selectedPlaylist={selectedPlaylist}
       autoSidebarTabSwitch={autoSidebarTabSwitch}
       handlePlaylistSelect={handlePlaylistSelect}
+      mediaType={mediaType}
     />
   );
   

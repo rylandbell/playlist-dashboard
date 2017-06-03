@@ -43,7 +43,7 @@ class FeaturesLineChart extends Component {
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
 
     //tweak chart layout for small screens
-    const smallWindow = this.props.browser.mediaType === "extraSmall" || this.props.browser.mediaType === "small";
+    const smallWindow = this.props.mediaType === "extraSmall" || this.props.mediaType === "small";
     
     return (
       <ResponsiveContainer width="100%" height={smallWindow ? 200 : 300}>

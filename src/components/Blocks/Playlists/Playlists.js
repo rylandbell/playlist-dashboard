@@ -13,20 +13,23 @@ const mapStateToProps = (state) => {
     playlists: state.playlists,
     selectedPlaylist: state.selectedPlaylist,
     autoSidebarTabSwitch: state.ui.autoSidebarTabSwitch,
-    badAuthToken: state.auth.badAuthToken
+    badAuthToken: state.auth.badAuthToken,
+    mediaType: state.browser.mediaType
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handlePlaylistSelect: (playlist, forceTabSwitch) => {
-      dispatch(selectPlaylist(playlist, forceTabSwitch));
+    handlePlaylistSelect: (playlist, forceTabSwitch, mediaType) => {
+      const smallScreen = mediaType === "extraSmall" || mediaType === "small";
+      const shouldTabSwitch = smallScreen || forceTabSwitch;
+      dispatch(selectPlaylist(playlist, shouldTabSwitch));
       dispatch(getTracks(playlist.ownerId, playlist.id));
     }
   }
 }
 
-const Playlists = ({fetchStatus, playlists, selectedPlaylist, autoSidebarTabSwitch, badAuthToken, handlePlaylistSelect}) => {
+const Playlists = ({fetchStatus, playlists, selectedPlaylist, autoSidebarTabSwitch, badAuthToken, mediaType, handlePlaylistSelect}) => {
 
   if (fetchStatus.getPlaylistsPending) { 
     return <Message loading={true} text="Loading playlist data... " />;
@@ -42,7 +45,9 @@ const Playlists = ({fetchStatus, playlists, selectedPlaylist, autoSidebarTabSwit
         playlists={playlists}
         selectedPlaylist={selectedPlaylist}
         autoSidebarTabSwitch={autoSidebarTabSwitch}
-        handlePlaylistSelect={handlePlaylistSelect}  />
+        handlePlaylistSelect={handlePlaylistSelect}
+        mediaType={mediaType}
+      />
     </div>
   );
 }

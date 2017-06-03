@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
     animateNextChartDraw: state.ui.animateNextChartDraw,
     filters: getFilters(state),
     hoveredTrackId: state.ui.hoveredTrackId,
-    browser: state.browser
+    mediaType: state.browser.mediaType
   }
 }
 
