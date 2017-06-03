@@ -4,11 +4,13 @@ exports[`Playlist reducers playlists should return the data of an ADD_PLAYLIST_D
 Array [
   Object {
     "id": "testId",
+    "images": Array [],
     "name": "testName",
     "ownerId": "testOwnerId",
   },
   Object {
     "id": "testId2",
+    "images": Array [],
     "name": "testName2",
     "ownerId": "testOwnerId2",
   },

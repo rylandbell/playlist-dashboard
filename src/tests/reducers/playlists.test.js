@@ -17,7 +17,8 @@ describe("Playlist reducers", () => {
               owner: {
                 id: 'testOwnerId'
               },
-              fake: 'fake'
+              fake: 'fake',
+              images: []
             },
             {
               id: 'testId2',
@@ -25,7 +26,8 @@ describe("Playlist reducers", () => {
               owner: {
                 id: 'testOwnerId2'
               },
-              fake: 'fake'
+              fake: 'fake',
+              images: []
             }
           ]
         }

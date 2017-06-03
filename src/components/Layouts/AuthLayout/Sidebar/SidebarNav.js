@@ -5,7 +5,7 @@ import {setActiveTab} from '../../../../actions/actions';
 const mapStateToProps = (state) => {
   return {
     selectedPlaylist: state.selectedPlaylist,
-    activeSidebarTab: state.activeSidebarTab,
+    activeSidebarTab: state.ui.activeSidebarTab,
   }
 }
 
@@ -25,7 +25,7 @@ class SidebarNav extends Component {
     const selectedPlaylist = this.props.selectedPlaylist;
 
     //don't change tabs when clicked tab is disabled (i.e., when no selected playlist): 
-    const validChange = (e.target.id === "tab-playlists") || selectedPlaylist;
+    const validChange = (e.target.id === "tab-playlists") || selectedPlaylist.id;
     if (validChange) {
       this.props.handleTabSelect(e.target.id);      
     }
@@ -38,9 +38,9 @@ class SidebarNav extends Component {
     //as appropriate, mark tabs as active or disabled
     const playlistsClasses = (activeSidebarTab === "playlists" ? 'active': '');  
     const filtersClasses = (activeSidebarTab === "filters" ? 'active': '')
-      + (selectedPlaylist ? '' : ' disabled');
+      + (selectedPlaylist.id ? '' : ' disabled');
     const saveClasses = (activeSidebarTab === "save" ? 'active': '')
-      + (selectedPlaylist ? '' : ' disabled');
+      + (selectedPlaylist.id ? '' : ' disabled');
 
     return (
       <div className="sidebar__nav">
