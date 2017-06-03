@@ -42,6 +42,8 @@ class FeaturesLineChart extends Component {
     const shiftedChartData = [{}].concat(filteredTracks);
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
 
+    const xAxisInterval = shiftedChartData.length > 50 ? 9 : 4;
+
     //tweak chart layout for small screens
     const smallWindow = this.props.mediaType === "extraSmall" || this.props.mediaType === "small";
     
@@ -54,7 +56,7 @@ class FeaturesLineChart extends Component {
           <XAxis 
             stroke="rgb(186,186,186)" 
             strokeWidth={1} 
-            interval={4} 
+            interval={xAxisInterval} 
             label={smallWindow ? null : "Track"}
             tick={{ dy: 5 }}
           />
