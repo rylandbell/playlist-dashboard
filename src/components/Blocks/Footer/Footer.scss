@@ -2,22 +2,20 @@
 
 .footer {
   background-color: rgb(40,40,40);
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
   color: $text-light;
-  flex: 1 1 auto;
-  margin: 0;
-  position: absolute;
-  bottom: 0;
   padding: 3px 10px;
   
   ul {
     margin: 0;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     
     li {
-      // text-align: center;
+      text-align: center;
       flex: 1 1 auto;
-      border: 1px dashed red;
     }
   }
 }
