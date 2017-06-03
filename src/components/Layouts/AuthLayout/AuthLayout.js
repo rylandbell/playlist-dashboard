@@ -21,7 +21,10 @@ class AuthLayout extends Component {
   render() {
     return (
       <div className="auth-layout__container">
-        <Sidebar activeSidebarTab={this.props.activeSidebarTab} />
+        <Sidebar 
+          activeSidebarTab={this.props.activeSidebarTab}
+          mediaType={this.props.mediaType}
+        />
         <MainRegion 
           badAuthToken={this.props.badAuthToken}
           fetchStatus={this.props.fetchStatus}

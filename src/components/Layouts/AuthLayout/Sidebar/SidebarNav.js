@@ -31,6 +31,13 @@ class SidebarNav extends Component {
     }
   }
 
+  componentDidUpdate() {
+    const smallWindow = this.props.mediaType === "extraSmall" || this.props.mediaType === "small";
+    if (smallWindow) {
+      window.scrollTo(0,0);
+    }
+  }
+
   render() {
     const activeSidebarTab = this.props.activeSidebarTab;
     const selectedPlaylist = this.props.selectedPlaylist;

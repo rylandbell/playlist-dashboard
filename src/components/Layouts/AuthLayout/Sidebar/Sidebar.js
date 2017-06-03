@@ -10,7 +10,7 @@ class Sidebar extends Component {
     const activeSidebarTab = this.props.activeSidebarTab;
     return (
       <div className="sidebar">
-        <SidebarNav />
+        <SidebarNav mediaType={this.props.mediaType} />
         <div className="sidebar__content">
           {activeSidebarTab === 'playlists' && <Playlists />}
           {activeSidebarTab === 'filters' && <Filters />}
