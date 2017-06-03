@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
   return {
     animateNextChartDraw: state.ui.animateNextChartDraw,
     filters: getFilters(state),
-    hoveredTrackId: state.ui.hoveredTrackId
+    hoveredTrackId: state.ui.hoveredTrackId,
+    browser: state.browser
   }
 }
 

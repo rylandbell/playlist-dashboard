@@ -41,9 +41,12 @@ class FeaturesLineChart extends Component {
     //count track numbers from 1, not 0:
     const shiftedChartData = [{}].concat(filteredTracks);
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
+
+    //tweak chart layout for small screens
+    const smallWindow = this.props.browser.mediaType === "extraSmall" || this.props.browser.mediaType === "small";
     
     return (
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={smallWindow ? 200 : 300}>
         <LineChart
           data={shiftedChartData}
           margin={{ top: 20, right: 10, left: -20, bottom: 0 }}
@@ -52,7 +55,7 @@ class FeaturesLineChart extends Component {
             stroke="rgb(186,186,186)" 
             strokeWidth={1} 
             interval={4} 
-            label="Track"
+            label={smallWindow ? null : "Track"}
             tick={{ dy: 5 }}
           />
           <YAxis 
@@ -65,9 +68,9 @@ class FeaturesLineChart extends Component {
           />
           <Legend 
             iconSize={18}
-            align="right"
-            verticalAlign="middle"
-            layout="vertical"
+            align={smallWindow ? 'center' : 'right'}
+            verticalAlign={smallWindow ? 'bottom' : 'middle'}
+            layout={smallWindow ? 'horizontal' : 'vertical'}
           />
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
           {showAnyReferenceLine ? 
