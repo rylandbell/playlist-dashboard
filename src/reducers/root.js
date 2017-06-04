@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {responsiveStateReducer} from 'redux-responsive';
+import { responsiveStateReducer } from 'redux-responsive';
 
 import * as fetchStatusReducers from './fetchStatus';
 import * as uiReducers from './ui';
@@ -11,5 +11,5 @@ import { tracks } from './tracks';
 export const fetchStatus = combineReducers(fetchStatusReducers);
 export const ui = combineReducers(uiReducers);
 export const auth = combineReducers(authReducers);
-export {filterValues, playlists, selectedPlaylist, tracks};
+export { filterValues, playlists, selectedPlaylist, tracks };
 export const browser = responsiveStateReducer;

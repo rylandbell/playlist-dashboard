@@ -1,14 +1,13 @@
 import deepFreeze from 'deep-freeze';
 import * as reducers from '../../reducers/playlists';
 
-describe("Playlist reducers", () => {
-
+describe('Playlist reducers', () => {
   describe('playlists', () => {
-    const initState = reducers.playlists(undefined, {type: 'INIT'});
+    const initState = reducers.playlists(undefined, { type: 'INIT' });
 
     it('should return the data of an ADD_PLAYLIST_DATA action', () => {
       const action = {
-        type: 'ADD_PLAYLISTS_DATA', 
+        type: 'ADD_PLAYLISTS_DATA',
         payload: {
           items: [
             {
@@ -40,14 +39,13 @@ describe("Playlist reducers", () => {
   });
 
   describe('selectedPlaylist', () => {
-    const initState = reducers.selectedPlaylist(undefined, {type: 'INIT'});
+    const initState = reducers.selectedPlaylist(undefined, { type: 'INIT' });
 
     it('should return the data of a SELECT_PLAYLIST action', () => {
-      const action = {type: 'SELECT_PLAYLIST', data: {id: 'test'}};
+      const action = { type: 'SELECT_PLAYLIST', data: { id: 'test' } };
       deepFreeze(action);
       deepFreeze(initState);
       expect(reducers.selectedPlaylist(initState, action)).toMatchSnapshot();
     });
   });
-
 });

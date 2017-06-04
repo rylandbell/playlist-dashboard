@@ -17,7 +17,11 @@ class ConnectButton extends Component {
         <div className="lead text-center">
           Let's start by connecting to your Spotify account.
         </div>
-        <button onClick={this.onClick} type="button" className="btn btn-lg center-block pre-auth-layout__connect-btn">
+        <button
+          onClick={this.onClick}
+          type="button"
+          className="btn btn-lg center-block pre-auth-layout__connect-btn"
+        >
           <span className="fa fa-lg fa-spotify" />&nbsp;&nbsp;Connect to Spotify
         </button>
       </div>
@@ -26,4 +30,3 @@ class ConnectButton extends Component {
 }
 
 export default ConnectButton;
-

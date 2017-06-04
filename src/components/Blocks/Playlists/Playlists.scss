@@ -1,7 +1,6 @@
 @import 'variables';
 
 .playlists__pane {
-
   margin-top: 2px;
   // top: 50px;
   padding: 5px 12px 8px 6px;
@@ -18,7 +17,7 @@
 
     &:first-of-type {
       z-index: 0 !important;
-      border-width: 0 ;
+      border-width: 0;
     }
 
     &:hover {

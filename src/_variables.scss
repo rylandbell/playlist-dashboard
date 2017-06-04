@@ -1,29 +1,28 @@
-$bg-main:               rgb(24,24,24) !default;
-$bg-secondary:          rgb(18,18,18) !default;
-$bg-light:              rgb(40,40,40) !default;
-$bg-lighter:            rgb(56,56,56) !default;
-$bg-dim:                lighten($bg-secondary, 4%) !default;
+$bg-main: rgb(24, 24, 24) !default;
+$bg-secondary: rgb(18, 18, 18) !default;
+$bg-light: rgb(40, 40, 40) !default;
+$bg-lighter: rgb(56, 56, 56) !default;
+$bg-dim: lighten($bg-secondary, 4%) !default;
 
-$gray-base:             #000 !default;
-$gray-darker:           lighten($gray-base, 8%) !default; // #222
-$gray-dark:             lighten($gray-base, 20%) !default;   // #333
-$gray:                  lighten($gray-base, 33.5%) !default; // #555
-$gray-light:            #999 !default;   // #999
-$gray-lighter:          #ddd !default; // #eee
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 8%) !default; // #222
+$gray-dark: lighten($gray-base, 20%) !default; // #333
+$gray: lighten($gray-base, 33.5%) !default; // #555
+$gray-light: #999 !default; // #999
+$gray-lighter: #ddd !default; // #eee
 
-$brand-primary:         #DF691A !default;
-$brand-success:         #5cb85c !default;
-$brand-info:            #5bc0de !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
+$brand-primary: #DF691A !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
 
-$tracks-bg:             $bg-main !default;
-$tracks-dark:           darken(desaturate($tracks-bg, 5%), 10%);
+$tracks-bg: $bg-main !default;
+$tracks-dark: darken(desaturate($tracks-bg, 5%), 10%);
 
-$text-light:            rgb(186,186,186) !default;
+$text-light: rgb(186, 186, 186) !default;
 
-$spotify-green:         #1DB954 !default;
+$spotify-green: #1DB954 !default;
 
 $font-stack-heading: 'Gotham', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-stack-copy: "Helvetica Neue", Helvetica, Arial, sans-serif;
-

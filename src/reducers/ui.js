@@ -1,24 +1,24 @@
 export const hoveredTrackId = (state = null, action) => {
-  switch (action.type){
+  switch (action.type) {
     case 'HOVER_ON_TRACK':
       return action.data.id;
     case 'CLEAR_HOVERED_TRACK':
-      return null
+      return null;
     default:
       return state;
   }
-}
+};
 
-export const activeSidebarTab = (state = "playlists", action) => {
+export const activeSidebarTab = (state = 'playlists', action) => {
   switch (action.type) {
     case 'SET_ACTIVE_TAB':
       return action.data;
     case 'SELECT_PLAYLIST':
-      return action.forceTabSwitch ? "filters" : state;
+      return action.forceTabSwitch ? 'filters' : state;
     default:
       return state;
   }
-}
+};
 
 // on first playlist select, automatically push user to Filters tab. after that, let user control tabs
 export const autoSidebarTabSwitch = (state = true, action) => {
@@ -28,18 +28,18 @@ export const autoSidebarTabSwitch = (state = true, action) => {
     default:
       return state;
   }
-}
+};
 
-export const newPlaylistName = (state = "", action) => {
+export const newPlaylistName = (state = '', action) => {
   switch (action.type) {
     case 'SELECT_PLAYLIST':
-      return "Modified: " + action.data.name;
+      return 'Modified: ' + action.data.name;
     case 'CHANGE_NAME_TEXT':
       return action.data;
     default:
       return state;
   }
-}
+};
 
 export const animateNextChartDraw = (state = true, action) => {
   switch (action.type) {
@@ -50,4 +50,4 @@ export const animateNextChartDraw = (state = true, action) => {
     default:
       return state;
   }
-}
+};

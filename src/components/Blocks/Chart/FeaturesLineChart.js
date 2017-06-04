@@ -13,31 +13,35 @@ import ReferenceLine from 'recharts/lib/cartesian/ReferenceLine';
 import TrackInfoTooltip from './TrackInfoTooltip';
 
 class FeaturesLineChart extends Component {
-
   //Don't animate chart on updates:
   componentWillUpdate(e) {
     if (this.props.animateNextChartDraw) {
-     this.props.stopAnimatingChart();
+      this.props.stopAnimatingChart();
     }
   }
 
-  render () {
+  render() {
     const filters = this.props.filters;
     const filteredTracks = this.props.filteredTracks;
     const hoveredTrackId = this.props.hoveredTrackId;
 
+    // (sort to move lines with isDim to back of chart)
     const graphedFilters = filters
       .filter(x => x.isGraphed)
-      .sort((x,y) => y.isDim);
+      .sort((x, y) => y.isDim);
 
     //find the filter currently being dragged, when applicable
-    const draggedFilterIndex = filters.findIndex(filter => filter.showReferenceLine);
+    const draggedFilterIndex = filters.findIndex(
+      filter => filter.showReferenceLine
+    );
     const showAnyReferenceLine = draggedFilterIndex >= 0;
 
     //display vertical reference line for track when hovered in the table (not the chart);
-    const hoveredTrack = filteredTracks.find(track => (track.id === hoveredTrackId));
+    const hoveredTrack = filteredTracks.find(
+      track => track.id === hoveredTrackId
+    );
     const hoveredTrackName = hoveredTrack && hoveredTrack.name;
-    
+
     //count track numbers from 1, not 0:
     const shiftedChartData = [{}].concat(filteredTracks);
     const hoveredTrackPosition = filteredTracks.indexOf(hoveredTrack) + 1;
@@ -45,61 +49,70 @@ class FeaturesLineChart extends Component {
     const xAxisInterval = shiftedChartData.length > 50 ? 9 : 4;
 
     //tweak chart layout for small screens
-    const smallWindow = this.props.mediaType === "extraSmall" || this.props.mediaType === "small";
-    
+    const smallWindow =
+      this.props.mediaType === 'extraSmall' || this.props.mediaType === 'small';
+
     return (
       <ResponsiveContainer width="100%" height={smallWindow ? 200 : 300}>
         <LineChart
           data={shiftedChartData}
           margin={{ top: 20, right: 10, left: -20, bottom: 0 }}
         >
-          <XAxis 
-            stroke="rgb(186,186,186)" 
-            strokeWidth={1} 
-            interval={xAxisInterval} 
-            label={smallWindow ? null : "Track"}
+          <XAxis
+            stroke="rgb(186,186,186)"
+            strokeWidth={1}
+            interval={xAxisInterval}
+            label={smallWindow ? null : 'Track'}
             tick={{ dy: 5 }}
           />
-          <YAxis 
-            stroke="rgb(186,186,186)  " 
-            strokeWidth={1} 
-            domain={[0, 1]} 
-            interval={1} 
-            tick={{ dx: -5}}
+          <YAxis
+            stroke="rgb(186,186,186)  "
+            strokeWidth={1}
+            domain={[0, 1]}
+            interval={1}
+            tick={{ dx: -5 }}
             padding={{ bottom: 15 }}
           />
-          <Legend 
+          <Legend
             iconSize={18}
             align={smallWindow ? 'center' : 'right'}
             verticalAlign={smallWindow ? 'bottom' : 'middle'}
             layout={smallWindow ? 'horizontal' : 'vertical'}
           />
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
-          {showAnyReferenceLine ? 
-            <ReferenceLine y={filters[draggedFilterIndex].currentValue[0]} label={filters[draggedFilterIndex].currentValue[0]} stroke={filters[draggedFilterIndex].color} strokeDasharray="3 3" /> : 
-            null
-          }
-          {showAnyReferenceLine ? 
-            <ReferenceLine y={filters[draggedFilterIndex].currentValue[1]} label={filters[draggedFilterIndex].currentValue[1]} stroke={filters[draggedFilterIndex].color} strokeDasharray="3 3" /> :
-            null
-          }
-          <Tooltip content={<TrackInfoTooltip />} /> 
-          {graphedFilters.map(filter => 
-            <Line 
+          {showAnyReferenceLine
+            ? <ReferenceLine
+                y={filters[draggedFilterIndex].currentValue[0]}
+                label={filters[draggedFilterIndex].currentValue[0]}
+                stroke={filters[draggedFilterIndex].color}
+                strokeDasharray="3 3"
+              />
+            : null}
+          {showAnyReferenceLine
+            ? <ReferenceLine
+                y={filters[draggedFilterIndex].currentValue[1]}
+                label={filters[draggedFilterIndex].currentValue[1]}
+                stroke={filters[draggedFilterIndex].color}
+                strokeDasharray="3 3"
+              />
+            : null}
+          <Tooltip content={<TrackInfoTooltip />} />
+          {graphedFilters.map(filter =>
+            <Line
               dataKey={filter.name}
               name={filter.displayName}
-              isAnimationActive={this.props.animateNextChartDraw} 
+              isAnimationActive={this.props.animateNextChartDraw}
               animationDuration={1500}
-              type="monotone" 
-              stroke={filter.isDim ? filter.dimColor : filter.color} 
-              strokeWidth={2} 
-              dot={false} 
-              connectNulls={true} 
-              activeDot={{r: 8}} 
-              key={filter.name} 
+              type="monotone"
+              stroke={filter.isDim ? filter.dimColor : filter.color}
+              strokeWidth={2}
+              dot={false}
+              connectNulls={true}
+              activeDot={{ r: 8 }}
+              key={filter.name}
             />
           )}
-          
+
         </LineChart>
       </ResponsiveContainer>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Tooltip from 'rc-tooltip';
 import Range from 'rc-slider/lib/Range';
-import Handle from 'rc-slider/lib/Handle'; 
+import Handle from 'rc-slider/lib/Handle';
 
 import ChartedFeatureCheckbox from './ChartedFeatureCheckbox';
 import FeatureInfoTooltip from './FeatureInfoTooltip';
@@ -14,9 +14,16 @@ import instrumentalness from './img/instrumentalness.png';
 import valence from './img/valence.png';
 import popularity from './img/popularity.png';
 
-const images = {acousticness, danceability, energy, instrumentalness, valence, popularity};
+const images = {
+  acousticness,
+  danceability,
+  energy,
+  instrumentalness,
+  valence,
+  popularity
+};
 
-const customHandle = (props) => {
+const customHandle = props => {
   const { value, dragging, index, ...restProps } = props;
   return (
     <Tooltip
@@ -60,23 +67,21 @@ class FilterInput extends Component {
     const rangeOptions = {
       min: filterData.min,
       max: filterData.max,
-      step: (filterData.max - filterData.min)/50,
+      step: (filterData.max - filterData.min) / 50,
       defaultValue: [filterData.min, filterData.max],
       value: currentValue,
-      className: "filters__range",
+      className: 'filters__range',
       onChange: this.onChange,
       onBeforeChange: this.onBeforeChange,
       onAfterChange: this.onAfterChange
-    }
+    };
 
     return (
       <div className="filters__filter noselect">
-        <span className="filters__filter-name">{filterData.displayName}&nbsp;
-          <FeatureInfoTooltip 
-            filter={filterData}
-            filterIndex={filterIndex}
-          />
-          <ChartedFeatureCheckbox 
+        <span className="filters__filter-name">
+          {filterData.displayName}&nbsp;
+          <FeatureInfoTooltip filter={filterData} filterIndex={filterIndex} />
+          <ChartedFeatureCheckbox
             filter={filterData}
             filterIndex={filterIndex}
             handleChartedFeaturesToggle={this.props.handleChartedFeaturesToggle}
@@ -84,13 +89,17 @@ class FilterInput extends Component {
         </span>
         <div className="filters__flex-container">
           <div className="filters__flex-left">
-            <img className="filters__filter-icon img-responsive center-block" src={images[filterData.name]} alt={`${filterData.displayName} icon`} />
+            <img
+              className="filters__filter-icon img-responsive center-block"
+              src={images[filterData.name]}
+              alt={`${filterData.displayName} icon`}
+            />
           </div>
           <div className="filters__flex-right">
             <Range handle={customHandle} {...rangeOptions} />
           </div>
         </div>
-        
+
       </div>
     );
   }

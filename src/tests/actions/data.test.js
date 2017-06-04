@@ -1,8 +1,8 @@
 import * as actions from '../../actions/data';
 
-const testData = {data: 'test'};
+const testData = { data: 'test' };
 
-describe('Data-adding actions', () => { 
+describe('Data-adding actions', () => {
   it('should create an action to add fetched playlist data to store', () => {
     expect(actions.addPlaylistsData(testData)).toMatchSnapshot();
   });

@@ -12,11 +12,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-stack-heading;
 }
 
-.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
   outline-width: 0;
 }
 
 /*disable double-click to select where inapprorpriate:*/
 .noselect {
-  user-select: none; 
+  user-select: none;
 }

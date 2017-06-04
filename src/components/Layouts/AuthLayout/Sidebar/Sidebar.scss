@@ -5,7 +5,7 @@
   flex-direction: column;
 
   background-color: $bg-secondary;
-  
+
   @media (min-width: 769px) {
     flex: 0 0 300px;
     height: 100vh;
@@ -19,9 +19,9 @@
 
   padding: 7px 5px 0px 5px;
 
-  .nav-tabs{
+  .nav-tabs {
     display: flex;
-    
+
     border-bottom: 1px solid $bg-lighter;
 
     li {
@@ -33,7 +33,7 @@
         letter-spacing: 0.5px;
         border: 1px solid transparent;
         box-sizing: border-box;
-        margin-bottom: 0;        
+        margin-bottom: 0;
 
         &:hover {
           background-color: $bg-lighter;

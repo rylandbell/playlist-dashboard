@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 const formatValueDisplay = value => {
   if (typeof value !== 'number') {
     return ' ';
-  } else if (value > 0 && value < .01) {
+  } else if (value > 0 && value < 0.01) {
     return '< .01';
   } else {
     return value.toFixed(2);
   }
-}
+};
 
 class TracksTableRow extends Component {
   constructor(props) {
@@ -26,11 +26,16 @@ class TracksTableRow extends Component {
     const filters = this.props.filters;
 
     return (
-      <tr onMouseEnter={this.onMouseEnter}> 
-        <td>{track.name}&nbsp;
+      <tr onMouseEnter={this.onMouseEnter}>
+        <td>
+          {track.name}&nbsp;
           <small>{track.artist}</small>
         </td>
-        {filters.map(filter => <td key={filter.name} className="text-center hidden-xs">{formatValueDisplay(track[filter.name])}</td>)}
+        {filters.map(filter =>
+          <td key={filter.name} className="text-center hidden-xs">
+            {formatValueDisplay(track[filter.name])}
+          </td>
+        )}
       </tr>
     );
   }

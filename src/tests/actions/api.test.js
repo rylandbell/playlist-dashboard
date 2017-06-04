@@ -1,8 +1,8 @@
 import * as actions from '../../actions/api';
 
-const testTracksArray = [{track: {id: 1}}, {track: {id: 2}}];
+const testTracksArray = [{ track: { id: 1 } }, { track: { id: 2 } }];
 
-describe('API actions', () => { 
+describe('API actions', () => {
   it('should create an action to GET playlists', () => {
     expect(actions.getPlaylists()).toMatchSnapshot();
   });
@@ -20,7 +20,12 @@ describe('API actions', () => {
   });
 
   it('should create an action to POST tracks to a playlist, given user/playlist IDs and an array of tracks', () => {
-    expect(actions.addTracksToPlaylist('testUserId', 'testPlaylistId', testTracksArray)).toMatchSnapshot();
+    expect(
+      actions.addTracksToPlaylist(
+        'testUserId',
+        'testPlaylistId',
+        testTracksArray
+      )
+    ).toMatchSnapshot();
   });
-
 });

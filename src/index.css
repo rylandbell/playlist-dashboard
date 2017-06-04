@@ -7,7 +7,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
   outline-width: 0; }
 
 /*disable double-click to select where inapprorpriate:*/
