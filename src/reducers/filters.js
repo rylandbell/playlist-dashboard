@@ -4,6 +4,7 @@ const filtersInitial = [
     isActive: true,
     isGraphed: true,
     isDim: false,
+    sortBy: false,
     showReferenceLine: false,
     currentValue: [0, 1]
   },
@@ -12,6 +13,7 @@ const filtersInitial = [
     isActive: true,
     isGraphed: false,
     isDim: false,
+    sortBy: false,
     showReferenceLine: false,
     currentValue: [0, 1]
   },
@@ -20,6 +22,7 @@ const filtersInitial = [
     isActive: true,
     isGraphed: false,
     isDim: false,
+    sortBy: false,
     showReferenceLine: false,
     currentValue: [0, 1]
   },
@@ -28,6 +31,7 @@ const filtersInitial = [
     isActive: true,
     isGraphed: false,
     isDim: false,
+    sortBy: false,
     showReferenceLine: false,
     currentValue: [0, 1]
   },
@@ -36,6 +40,7 @@ const filtersInitial = [
     isActive: true,
     isGraphed: false,
     isDim: false,
+    sortBy: false,
     showReferenceLine: false,
     currentValue: [0, 1]
   },
@@ -44,6 +49,7 @@ const filtersInitial = [
     isActive: true,
     isGraphed: false,
     isDim: false,
+    sortBy: false,
     showReferenceLine: false,
     currentValue: [0, 1]
   }
@@ -93,10 +99,22 @@ export const filterValues = (state = filtersInitial, action) => {
     case 'SORT_BY_FEATURE':
       return state.map(filter => {
         if (filter.name === action.payload.featureName) {
-          console.log('match');
-          return filter;
+          
+          // cycle through 'ascending', 'descending', false:
+          let newSortByValue
+          if (filter.sortBy === 'ascending') {
+            newSortByValue = 'descending';
+          } else if (filter.sortBy === 'descending') {
+            newSortByValue = false;
+          } else {
+            newSortByValue = 'ascending';
+          }
+
+          return {...filter, sortBy: newSortByValue};
+
+        //set all other features to unsorted:
         } else {
-          return filter;
+          return {...filter, sortBy: false};
         }
       });
     default:
