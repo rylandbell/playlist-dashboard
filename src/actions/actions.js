@@ -14,6 +14,13 @@ export const changeNameText = data => ({
   data: data
 });
 
+export const sortByFeature = featureName => ({
+  type: 'SORT_BY_FEATURE',
+  payload: {
+    featureName: featureName
+  }
+})
+
 export const updateFilter = (filterIndex, inputValue) => ({
   type: 'UPDATE_FILTER',
   filterIndex: filterIndex,

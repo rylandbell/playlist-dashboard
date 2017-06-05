@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TracksTableRow from './TracksTableRow';
+import TracksTableHead from './TracksTableHead';
 
-class SelectPlaylistsTable extends Component {
+class TracksTable extends Component {
   constructor(props) {
     super(props);
     this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -12,7 +13,6 @@ class SelectPlaylistsTable extends Component {
   }
 
   render() {
-    const filters = this.props.filters;
     const filteredTracks = this.props.filteredTracks;
 
     return (
@@ -20,16 +20,7 @@ class SelectPlaylistsTable extends Component {
         className="tracks__table table table-condensed table-hover"
         onMouseLeave={this.onMouseLeave}
       >
-        <thead>
-          <tr>
-            <th>Track</th>
-            {filters.map(filter =>
-              <th className="text-center hidden-xs" key={filter.name}>
-                {filter.shortName}
-              </th>
-            )}
-          </tr>
-        </thead>
+        <TracksTableHead filters={this.props.filters} handleColumnHeadingClick={this.props.handleColumnHeadingClick} />
         <tbody>
           {filteredTracks.map((track, index) =>
             <TracksTableRow
@@ -45,4 +36,4 @@ class SelectPlaylistsTable extends Component {
   }
 }
 
-export default SelectPlaylistsTable;
+export default TracksTable;

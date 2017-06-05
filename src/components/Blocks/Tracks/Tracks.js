@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { hoverOnTrack, clearHoveredTrack } from '../../../actions/actions';
+import { hoverOnTrack, clearHoveredTrack, sortByFeature } from '../../../actions/actions';
 import { getFilters } from '../../../selectors/filters';
 
 import TracksTable from './TracksTable';
@@ -20,6 +20,9 @@ const mapDispatchToProps = dispatch => {
     },
     handleMouseLeavesTracksTable: () => {
       dispatch(clearHoveredTrack());
+    },
+    handleColumnHeadingClick: featureName => {
+      dispatch(sortByFeature(featureName));
     }
   };
 };
@@ -29,7 +32,8 @@ const Tracks = ({
   filters,
   filteredTracks,
   handleTrackRowHover,
-  handleMouseLeavesTracksTable
+  handleMouseLeavesTracksTable,
+  handleColumnHeadingClick
 }) => {
   const loadingData =
     fetchStatus.getTracksPending || fetchStatus.getFeaturesPending;
@@ -43,6 +47,7 @@ const Tracks = ({
             filteredTracks={filteredTracks}
             handleTrackRowHover={handleTrackRowHover}
             handleMouseLeavesTracksTable={handleMouseLeavesTracksTable}
+            handleColumnHeadingClick={handleColumnHeadingClick}
           />}
     </div>
   );

@@ -90,8 +90,15 @@ export const filterValues = (state = filtersInitial, action) => {
         showReferenceLine: false,
         isDim: false
       }));
-    case 'SELECT_PLAYLIST':
-      return state.map(filter => ({ ...filter, showReferenceLine: false }));
+    case 'SORT_BY_FEATURE':
+      return state.map(filter => {
+        if (filter.name === action.payload.featureName) {
+          console.log('match');
+          return filter;
+        } else {
+          return filter;
+        }
+      });
     default:
       return state;
   }
