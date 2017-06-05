@@ -11,9 +11,19 @@ class TracksTableHeadCell extends Component {
   }
 
   render() {
+    let sortIndicator;
+    if (this.props.feature.sortBy === 'ascending') {
+      sortIndicator = <span className="fa fa-sort-asc" />
+    } else if (this.props.feature.sortBy === 'descending') {
+      sortIndicator = <span className="fa fa-sort-desc" />
+    } else {
+      sortIndicator = <span className="transparent fa fa-sort-desc" />
+    }
+
     return (
-      <th className="text-center hidden-xs" onClick={this.onClick}>
-        {this.props.feature.shortName}
+      <th className="tracks__table-head-cell text-center hidden-xs noselect" onClick={this.onClick}>
+        {this.props.feature.shortName}&nbsp;
+        {sortIndicator}
       </th>
     );
   }

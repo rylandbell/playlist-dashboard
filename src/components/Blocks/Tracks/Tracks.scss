@@ -52,4 +52,19 @@
   tr:first-of-type > td {
     border-top-width: 0;
   }
+
+  .tracks__table-head-cell {
+    &:hover {
+      color: $text-lighter;
+    }
+
+    .fa {
+      color: $spotify-green;
+
+      &.transparent {
+        color: rgba(0,0,0,0);
+      }
+    }
+  }
 }
+
