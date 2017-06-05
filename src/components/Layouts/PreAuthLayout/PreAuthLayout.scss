@@ -1,7 +1,13 @@
 @import 'variables';
 
 .pre-auth-layout {
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pre-auth-layout__container {
+  flex: 1 1 auto;
   background-color: $bg-main;
 
   background-size: cover;

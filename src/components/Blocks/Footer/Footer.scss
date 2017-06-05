@@ -1,12 +1,13 @@
 @import 'variables';
 
 .footer {
+  flex: 0 0 auto;
   background-color: rgb(40, 40, 40);
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
   color: $text-light;
-  padding: 3px 10px;
+  padding: 1px 10px;
 
   ul {
     margin: 0;

@@ -8,7 +8,6 @@ import { getPlaylists } from '../actions/api';
 import './App.css';
 import PreAuthLayout from './layouts/PreAuthLayout/PreAuthLayout';
 import AuthLayout from './layouts/AuthLayout/AuthLayout';
-import Footer from './blocks/Footer/Footer';
 
 //load AuthLayout as separate module, once authorization has been established
 // class AuthLayout extends React.Component {
@@ -61,7 +60,6 @@ class App extends Component {
         {this.props.authStatus
           ? <AuthLayout {...this.props} />
           : <PreAuthLayout />}
-        <Footer />
       </div>
     );
   }
