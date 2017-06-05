@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Instructions.css';
+import Footer from '../Footer/Footer';
 import playlistImg from './img/playlist.png';
 import filterImg from './img/filter.png';
 import saveImg from './img/save.png';
@@ -43,6 +44,7 @@ const Instructions = () =>
         </tbody>
       </table>
     </div>
+    <Footer />
   </div>;
 
 export default Instructions;
