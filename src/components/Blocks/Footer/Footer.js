@@ -8,7 +8,7 @@ const Footer = () =>
         <small>
           View project on&nbsp;
           <a
-            href="https://github.com/rylandbell/spotify-features-filter"
+            href="https://github.com/rylandbell/playlist-dashboard"
             target="_blank"
             rel="noopener noreferrer"
           >
