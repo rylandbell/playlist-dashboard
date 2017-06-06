@@ -54,6 +54,9 @@
   }
 
   .tracks__table-head-cell {
+    position: relative;
+    left: 8px;
+
     &:hover {
       color: $text-lighter;
     }
@@ -63,6 +66,10 @@
 
       &.transparent {
         color: rgba(0,0,0,0);
+
+        @media (max-width: 1100px) {
+          display: none;
+        }
       }
     }
   }
