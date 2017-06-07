@@ -1,6 +1,6 @@
 @import 'variables';
 
-.filters__pane {
+.feature-filters__pane {
   padding: 0 15px;
 
   @media (max-width: 768px) {
@@ -17,7 +17,7 @@
   }
 }
 
-.filters__filter {
+.feature-filters__filter {
   border-top: 1px solid $bg-dim;
   padding: 15px 5px;
 
@@ -30,7 +30,7 @@
   }
 }
 
-.filters__flex-container {
+.feature-filters__flex-container {
   margin-top: 5px;
   display: flex;
   flex-direction: row;
@@ -40,19 +40,19 @@
   align-items: center;
 }
 
-.filters__flex-left {
+.feature-filters__flex-left {
   order: 0;
   flex: 1 1 auto;
   align-self: auto;
 }
 
-.filters__flex-right {
+.feature-filters__flex-right {
   order: 0;
   flex: 7 1 auto;
   align-self: auto;
 }
 
-.filters__checkbox {
+.feature-filters__checkbox {
   position: relative;
   bottom: -5px;
   padding: 0;
@@ -97,7 +97,7 @@
   }
 }
 
-.filters__filter-name {
+.feature-filters__feature-name {
   color: $text-light;
   font-size: 16px;
   letter-spacing: 1.5px;
@@ -107,11 +107,11 @@
   }
 }
 
-.filters__filter-icon {
+.feature-filters__feature-icon {
   width: 40px;
 }
 
-.filters__feature-info-tooltip {
+.feature-filters__feature-info-tooltip {
   max-width: 350px;
 }
 
@@ -122,12 +122,12 @@
   bottom: 0px;
 }
 
-.rc-slider.filters__range {
+.rc-slider.feature-filters__range {
   width: 80%;
   margin: 0 auto;
 }
 
-.rc-slider.filters__range * {
+.rc-slider.feature-filters__range * {
   font-size: 14px;
 }
 

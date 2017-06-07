@@ -20,13 +20,13 @@ class TracksTable extends Component {
         className="tracks__table table table-condensed table-hover"
         onMouseLeave={this.onMouseLeave}
       >
-        <TracksTableHead filters={this.props.filters} handleColumnHeadingClick={this.props.handleColumnHeadingClick} />
+        <TracksTableHead features={this.props.features} handleColumnHeadingClick={this.props.handleColumnHeadingClick} />
         <tbody>
           {filteredTracks.map((track, index) =>
             <TracksTableRow
               key={track.id + index}
               track={track}
-              filters={this.props.filters}
+              features={this.props.features}
               handleTrackRowHover={this.props.handleTrackRowHover}
             />
           )}

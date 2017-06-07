@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 import { filterByFeatures } from "../helper";
 
 const getTracks = state => state.tracks;
-const getFilters = state => state.filterValues;
+const getFeaturesData = state => state.features;
 
 const sortByFeatures = (trackA, trackB, sortedFeature) => {
   const sortedFeatureName = sortedFeature.name;
@@ -16,16 +16,16 @@ const sortByFeatures = (trackA, trackB, sortedFeature) => {
 };
 
 export const getFilteredTracks = createSelector(
-  [getTracks, getFilters],
-  (tracks, filters) => {
-    const sortedFeature = filters.find(feature => feature.sortBy);
+  [getTracks, getFeaturesData],
+  (tracks, features) => {
+    const sortedFeature = features.find(feature => feature.sortBy);
     if (sortedFeature) {
       return tracks
-      .filter((track, index) => filterByFeatures(index, tracks, filters))
+      .filter((track, index) => filterByFeatures(index, tracks, features))
       .sort((trackA, trackB) => sortByFeatures(trackA, trackB, sortedFeature))
     } else {
       return tracks
-      .filter((track, index) => filterByFeatures(index, tracks, filters))
+      .filter((track, index) => filterByFeatures(index, tracks, features))
     }
   }
 );

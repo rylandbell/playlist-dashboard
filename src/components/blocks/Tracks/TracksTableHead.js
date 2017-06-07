@@ -7,7 +7,7 @@ class TracksTableHead extends Component {
   // }
 
   render() {
-    const features = this.props.filters;
+    const features = this.props.features;
 
     return (
       <thead>

@@ -21,24 +21,24 @@ export const sortByFeature = featureName => ({
   }
 })
 
-export const updateFilter = (filterIndex, inputValue) => ({
-  type: 'UPDATE_FILTER',
-  filterIndex: filterIndex,
+export const updateFeatureFilter = (featureIndex, inputValue) => ({
+  type: 'UPDATE_FEATURE_FILTER',
+  featureIndex: featureIndex,
   data: inputValue
 });
 
-export const startDraggingFeatureSlider = filterIndex => ({
+export const startDraggingFeatureSlider = featureIndex => ({
   type: 'START_DRAGGING_FEATURE_SLIDER',
-  filterIndex: filterIndex
+  featureIndex: featureIndex
 });
 
 export const stopDraggingFeatureSlider = () => ({
   type: 'STOP_DRAGGING_FEATURE_SLIDER'
 });
 
-export const toggleChartedFeature = (filterIndex, newValue) => ({
+export const toggleChartedFeature = (featureIndex, newValue) => ({
   type: 'TOGGLE_CHARTED_FEATURE',
-  filterIndex: filterIndex,
+  featureIndex: featureIndex,
   newValue: newValue
 });
 

@@ -25,23 +25,23 @@ export function getPlaylistDuration(tracksArray) {
   return duration;
 }
 
-//takes a track, compares its audio features and the current filter values, returns true if the track passes all filters
-export function filterByFeatures(trackIndex, tracks, filters) {
-  const passesAllFilters = filters.reduce((accumulator, filter) => {
-    if (!filter.isActive) {
+//takes a track, compares its audio features and the current feature filter values, returns true if the track passes all filters
+export function filterByFeatures(trackIndex, tracks, features) {
+  const passesAllFeatureFilters = features.reduce((accumulator, feature) => {
+    if (!feature.isActive) {
       return true;
 
-      //return false if the track doesn't have a value for the given filter
-    } else if (tracks[trackIndex][filter.name] === undefined) {
+      //return false if the track doesn't have a value for the given feature
+    } else if (tracks[trackIndex][feature.name] === undefined) {
       return false;
     }
 
-    let filterName = filter.name;
-    let passesFilter =
-      tracks[trackIndex][filterName] >= filter.currentValue[0] &&
-      tracks[trackIndex][filterName] <= filter.currentValue[1];
-    return passesFilter && accumulator;
+    let featureName = feature.name;
+    let passesFeatureFilter =
+      tracks[trackIndex][featureName] >= feature.currentValue[0] &&
+      tracks[trackIndex][featureName] <= feature.currentValue[1];
+    return passesFeatureFilter && accumulator;
   }, true);
 
-  return passesAllFilters;
+  return passesAllFeatureFilters;
 }

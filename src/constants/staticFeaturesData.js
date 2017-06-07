@@ -1,4 +1,4 @@
-export const initialFilters = [
+export const staticFeaturesData = [
   {
     name: 'danceability',
     displayName: 'Danceability',

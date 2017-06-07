@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { stopAnimatingChart } from '../../../actions/actions';
-import { getFilters } from '../../../selectors/filters';
+import { getFeaturesData } from '../../../selectors/features';
 
 import './Chart.css';
 import FeaturesLineChart from './FeaturesLineChart';
@@ -9,7 +9,7 @@ import FeaturesLineChart from './FeaturesLineChart';
 const mapStateToProps = state => {
   return {
     animateNextChartDraw: state.ui.animateNextChartDraw,
-    filters: getFilters(state),
+    features: getFeaturesData(state),
     hoveredTrackId: state.ui.hoveredTrackId,
     mediaType: state.browser.mediaType
   };

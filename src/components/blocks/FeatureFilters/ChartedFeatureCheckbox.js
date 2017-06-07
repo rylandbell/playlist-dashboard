@@ -9,15 +9,15 @@ class ChartedFeatureCheckbox extends Component {
   }
 
   onChange(e) {
-    const filterIndex = this.props.filterIndex;
+    const featureIndex = this.props.featureIndex;
     const newValue = e.target.checked;
-    this.props.handleChartedFeaturesToggle(filterIndex, newValue);
+    this.props.handleChartedFeaturesToggle(featureIndex, newValue);
   }
 
   render() {
-    const filter = this.props.filter;
+    const feature = this.props.feature;
     return (
-      <label className="filters__checkbox pull-right">
+      <label className="feature-filters__checkbox pull-right">
         <Tooltip
           placement="right"
           overlay="Include in chart"
@@ -26,7 +26,7 @@ class ChartedFeatureCheckbox extends Component {
           <span
             className={
               'fa fa-lg fa-line-chart ' +
-              (filter.isGraphed ? filter.name : 'inactive')
+              (feature.isGraphed ? feature.name : 'inactive')
             }
             aria-hidden="true"
           />
@@ -34,8 +34,8 @@ class ChartedFeatureCheckbox extends Component {
         <input
           className="hidden"
           type="checkbox"
-          checked={filter.isGraphed}
-          value={filter.name}
+          checked={feature.isGraphed}
+          value={feature.name}
           onChange={this.onChange}
         />
       </label>

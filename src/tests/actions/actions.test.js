@@ -1,7 +1,7 @@
 import * as actions from '../../actions/actions';
 
 const testData = { data: 'test' };
-const testFilterIndex = 0;
+const testFeatureIndex = 0;
 const testFilterValue = [0, 1];
 
 describe('General actions', () => {
@@ -17,15 +17,15 @@ describe('General actions', () => {
     expect(actions.changeNameText('testInput')).toMatchSnapshot();
   });
 
-  it("should create an action to update a filter's range value", () => {
+  it("should create an action to update a feature filter's range value", () => {
     expect(
-      actions.updateFilter(testFilterIndex, testFilterValue)
+      actions.updateFeatureFilter(testFeatureIndex, testFilterValue)
     ).toMatchSnapshot();
   });
 
   it('should create an action to indicate that a feature slider is being dragged', () => {
     expect(
-      actions.startDraggingFeatureSlider(testFilterIndex)
+      actions.startDraggingFeatureSlider(testFeatureIndex)
     ).toMatchSnapshot();
   });
 
@@ -35,7 +35,7 @@ describe('General actions', () => {
 
   it('should create an action to toggle whether a feature is drawn in chart', () => {
     expect(
-      actions.toggleChartedFeature(testFilterIndex, false)
+      actions.toggleChartedFeature(testFeatureIndex, false)
     ).toMatchSnapshot();
   });
 

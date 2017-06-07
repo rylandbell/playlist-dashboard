@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { hoverOnTrack, clearHoveredTrack, sortByFeature } from '../../../actions/actions';
-import { getFilters } from '../../../selectors/filters';
+import { getFeaturesData } from '../../../selectors/features';
 
 import TracksTable from './TracksTable';
 import './Tracks.css';
@@ -9,7 +9,7 @@ import './Tracks.css';
 const mapStateToProps = state => {
   return {
     fetchStatus: state.fetchStatus,
-    filters: getFilters(state)
+    features: getFeaturesData(state)
   };
 };
 
@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => {
 
 const Tracks = ({
   fetchStatus,
-  filters,
+  features,
   filteredTracks,
   handleTrackRowHover,
   handleMouseLeavesTracksTable,
@@ -43,7 +43,7 @@ const Tracks = ({
       {loadingData
         ? null
         : <TracksTable
-            filters={filters}
+            features={features}
             filteredTracks={filteredTracks}
             handleTrackRowHover={handleTrackRowHover}
             handleMouseLeavesTracksTable={handleMouseLeavesTracksTable}

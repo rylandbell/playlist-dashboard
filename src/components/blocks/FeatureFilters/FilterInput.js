@@ -47,12 +47,12 @@ class FilterInput extends Component {
   }
 
   onChange(value) {
-    const filterIndex = this.props.filterIndex;
-    this.props.handleFilterChange(filterIndex, value);
+    const featureIndex = this.props.featureIndex;
+    this.props.handleFilterChange(featureIndex, value);
   }
 
   onBeforeChange(value) {
-    this.props.handleStartDraggingFeatureSlider(this.props.filterIndex);
+    this.props.handleStartDraggingFeatureSlider(this.props.featureIndex);
   }
 
   onAfterChange() {
@@ -60,42 +60,42 @@ class FilterInput extends Component {
   }
 
   render() {
-    const filterData = this.props.filterData;
-    const filterIndex = this.props.filterIndex;
-    const currentValue = filterData.currentValue;
+    const featureData = this.props.featureData;
+    const featureIndex = this.props.featureIndex;
+    const currentValue = featureData.currentValue;
 
     const rangeOptions = {
-      min: filterData.min,
-      max: filterData.max,
-      step: (filterData.max - filterData.min) / 50,
-      defaultValue: [filterData.min, filterData.max],
+      min: featureData.min,
+      max: featureData.max,
+      step: (featureData.max - featureData.min) / 50,
+      defaultValue: [featureData.min, featureData.max],
       value: currentValue,
-      className: 'filters__range',
+      className: 'feature-filters__range',
       onChange: this.onChange,
       onBeforeChange: this.onBeforeChange,
       onAfterChange: this.onAfterChange
     };
 
     return (
-      <div className="filters__filter noselect">
-        <span className="filters__filter-name">
-          {filterData.displayName}&nbsp;
-          <FeatureInfoTooltip filter={filterData} filterIndex={filterIndex} />
+      <div className="feature-filters__filter noselect">
+        <span className="feature-filters__feature-name">
+          {featureData.displayName}&nbsp;
+          <FeatureInfoTooltip feature={featureData} featureIndex={featureIndex} />
           <ChartedFeatureCheckbox
-            filter={filterData}
-            filterIndex={filterIndex}
+            feature={featureData}
+            featureIndex={featureIndex}
             handleChartedFeaturesToggle={this.props.handleChartedFeaturesToggle}
           />
         </span>
-        <div className="filters__flex-container">
-          <div className="filters__flex-left">
+        <div className="feature-filters__flex-container">
+          <div className="feature-filters__flex-left">
             <img
-              className="filters__filter-icon img-responsive center-block"
-              src={images[filterData.name]}
-              alt={`${filterData.displayName} icon`}
+              className="feature-filters__feature-icon img-responsive center-block"
+              src={images[featureData.name]}
+              alt={`${featureData.displayName} icon`}
             />
           </div>
-          <div className="filters__flex-right">
+          <div className="feature-filters__flex-right">
             <Range handle={customHandle} {...rangeOptions} />
           </div>
         </div>

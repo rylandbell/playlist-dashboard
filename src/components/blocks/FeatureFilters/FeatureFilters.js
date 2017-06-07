@@ -3,52 +3,52 @@ import { connect } from 'react-redux';
 
 import FilterInput from './FilterInput';
 import {
-  updateFilter,
+  updateFeatureFilter,
   startDraggingFeatureSlider,
   stopDraggingFeatureSlider,
   toggleChartedFeature
 } from '../../../actions/actions';
-import { getFilters } from '../../../selectors/filters';
+import { getFeaturesData } from '../../../selectors/features';
 
-import './Filters.css';
+import './FeatureFilters.css';
 import 'rc-slider/assets/index.css';
 
 const mapStateToProps = state => {
   return {
-    filters: getFilters(state)
+    features: getFeaturesData(state)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleFilterChange: (filterIndex, inputValue) => {
-      dispatch(updateFilter(filterIndex, inputValue));
+    handleFilterChange: (featureIndex, inputValue) => {
+      dispatch(updateFeatureFilter(featureIndex, inputValue));
     },
-    handleStartDraggingFeatureSlider: filterIndex => {
-      dispatch(startDraggingFeatureSlider(filterIndex));
+    handleStartDraggingFeatureSlider: featureIndex => {
+      dispatch(startDraggingFeatureSlider(featureIndex));
     },
     handleStopDraggingFeatureSlider: () => {
       dispatch(stopDraggingFeatureSlider());
     },
-    handleChartedFeaturesToggle: (filterIndex, newValue) => {
-      dispatch(toggleChartedFeature(filterIndex, newValue));
+    handleChartedFeaturesToggle: (featureIndex, newValue) => {
+      dispatch(toggleChartedFeature(featureIndex, newValue));
     }
   };
 };
 
-const Filters = ({
-  filters,
+const FeatureFilters = ({
+  features,
   handleFilterChange,
   handleStartDraggingFeatureSlider,
   handleStopDraggingFeatureSlider,
   handleChartedFeaturesToggle
 }) =>
-  <div className="filters__pane">
-    {filters.map((filter, index) =>
+  <div className="feature-filters__pane">
+    {features.map((feature, index) =>
       <FilterInput
         key={index}
-        filterIndex={index}
-        filterData={filter}
+        featureIndex={index}
+        featureData={feature}
         handleFilterChange={handleFilterChange}
         handleStartDraggingFeatureSlider={handleStartDraggingFeatureSlider}
         handleStopDraggingFeatureSlider={handleStopDraggingFeatureSlider}
@@ -57,6 +57,6 @@ const Filters = ({
     )}
   </div>;
 
-const FiltersContainer = connect(mapStateToProps, mapDispatchToProps)(Filters);
+const FeatureFiltersContainer = connect(mapStateToProps, mapDispatchToProps)(FeatureFilters);
 
-export default FiltersContainer;
+export default FeatureFiltersContainer;

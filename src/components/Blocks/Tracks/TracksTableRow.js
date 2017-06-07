@@ -23,7 +23,7 @@ class TracksTableRow extends Component {
 
   render() {
     const track = this.props.track;
-    const filters = this.props.filters;
+    const features = this.props.features;
 
     return (
       <tr onMouseEnter={this.onMouseEnter}>
@@ -31,7 +31,7 @@ class TracksTableRow extends Component {
           {track.name}&nbsp;
           <small>{track.artist}</small>
         </td>
-        {filters.map(filter =>
+        {features.map(filter =>
           <td key={filter.name} className="text-center hidden-xs">
             {formatValueDisplay(track[filter.name])}
           </td>

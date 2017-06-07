@@ -1,4 +1,4 @@
-const filtersInitial = [
+const initialFeatureValues = [
   {
     name: 'danceability',
     isActive: true,
@@ -63,58 +63,58 @@ const filtersInitial = [
   // },
 ];
 
-export const filterValues = (state = filtersInitial, action) => {
-  let targetFilter, updatedFilter;
+export const features = (state = initialFeatureValues, action) => {
+  let targetFeature, updatedFeature;
   switch (action.type) {
-    case 'UPDATE_FILTER':
-      targetFilter = state[action.filterIndex];
-      updatedFilter = { ...targetFilter, currentValue: action.data };
+    case 'UPDATE_FEATURE_FILTER':
+      targetFeature = state[action.featureIndex];
+      updatedFeature = { ...targetFeature, currentValue: action.data };
       return [
-        ...state.slice(0, action.filterIndex),
-        updatedFilter,
-        ...state.slice(action.filterIndex + 1)
+        ...state.slice(0, action.featureIndex),
+        updatedFeature,
+        ...state.slice(action.featureIndex + 1)
       ];
     case 'TOGGLE_CHARTED_FEATURE':
-      return state.map((filter, index) => {
-        if (index === action.filterIndex) {
-          return { ...filter, isGraphed: action.newValue };
+      return state.map((feature, index) => {
+        if (index === action.featureIndex) {
+          return { ...feature, isGraphed: action.newValue };
         } else {
-          return filter;
+          return feature;
         }
       });
     case 'START_DRAGGING_FEATURE_SLIDER':
-      return state.map((filter, index) => {
-        if (index === action.filterIndex) {
-          return { ...filter, showReferenceLine: true, isGraphed: true };
+      return state.map((feature, index) => {
+        if (index === action.featureIndex) {
+          return { ...feature, showReferenceLine: true, isGraphed: true };
         } else {
-          return { ...filter, isDim: true };
+          return { ...feature, isDim: true };
         }
       });
     case 'STOP_DRAGGING_FEATURE_SLIDER':
-      return state.map(filter => ({
-        ...filter,
+      return state.map(feature => ({
+        ...feature,
         showReferenceLine: false,
         isDim: false
       }));
     case 'SORT_BY_FEATURE':
-      return state.map(filter => {
-        if (filter.name === action.payload.featureName) {
+      return state.map(feature => {
+        if (feature.name === action.payload.featureName) {
           
           // cycle through 'ascending', 'descending', false:
           let newSortByValue
-          if (filter.sortBy === 'ascending') {
+          if (feature.sortBy === 'ascending') {
             newSortByValue = 'descending';
-          } else if (filter.sortBy === 'descending') {
+          } else if (feature.sortBy === 'descending') {
             newSortByValue = false;
           } else {
             newSortByValue = 'ascending';
           }
 
-          return {...filter, sortBy: newSortByValue};
+          return {...feature, sortBy: newSortByValue};
 
         //set all other features to unsorted:
         } else {
-          return {...filter, sortBy: false};
+          return {...feature, sortBy: false};
         }
       });
     default:

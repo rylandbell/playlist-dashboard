@@ -21,20 +21,20 @@ class FeaturesLineChart extends Component {
   }
 
   render() {
-    const filters = this.props.filters;
+    const features = this.props.features;
     const filteredTracks = this.props.filteredTracks;
     const hoveredTrackId = this.props.hoveredTrackId;
 
     // (sort to move lines with isDim to back of chart)
-    const graphedFilters = filters
+    const graphedFeatures = features
       .filter(x => x.isGraphed)
       .sort((x, y) => y.isDim);
 
-    //find the filter currently being dragged, when applicable
-    const draggedFilterIndex = filters.findIndex(
-      filter => filter.showReferenceLine
+    //find the feature filter currently being dragged, when applicable
+    const draggedFeatureIndex = features.findIndex(
+      feature => feature.showReferenceLine
     );
-    const showAnyReferenceLine = draggedFilterIndex >= 0;
+    const showAnyReferenceLine = draggedFeatureIndex >= 0;
 
     //display vertical reference line for track when hovered in the table (not the chart);
     const hoveredTrack = filteredTracks.find(
@@ -82,34 +82,34 @@ class FeaturesLineChart extends Component {
           <ReferenceLine x={hoveredTrackPosition} label={hoveredTrackName} />
           {showAnyReferenceLine
             ? <ReferenceLine
-                y={filters[draggedFilterIndex].currentValue[0]}
-                label={filters[draggedFilterIndex].currentValue[0]}
-                stroke={filters[draggedFilterIndex].color}
+                y={features[draggedFeatureIndex].currentValue[0]}
+                label={features[draggedFeatureIndex].currentValue[0]}
+                stroke={features[draggedFeatureIndex].color}
                 strokeDasharray="3 3"
               />
             : null}
           {showAnyReferenceLine
             ? <ReferenceLine
-                y={filters[draggedFilterIndex].currentValue[1]}
-                label={filters[draggedFilterIndex].currentValue[1]}
-                stroke={filters[draggedFilterIndex].color}
+                y={features[draggedFeatureIndex].currentValue[1]}
+                label={features[draggedFeatureIndex].currentValue[1]}
+                stroke={features[draggedFeatureIndex].color}
                 strokeDasharray="3 3"
               />
             : null}
           <Tooltip content={<TrackInfoTooltip />} />
-          {graphedFilters.map(filter =>
+          {graphedFeatures.map(feature =>
             <Line
-              dataKey={filter.name}
-              name={filter.displayName}
+              dataKey={feature.name}
+              name={feature.displayName}
               isAnimationActive={this.props.animateNextChartDraw}
               animationDuration={1500}
               type="monotone"
-              stroke={filter.isDim ? filter.dimColor : filter.color}
+              stroke={feature.isDim ? feature.dimColor : feature.color}
               strokeWidth={2}
               dot={false}
               connectNulls={true}
               activeDot={{ r: 8 }}
-              key={filter.name}
+              key={feature.name}
             />
           )}
 

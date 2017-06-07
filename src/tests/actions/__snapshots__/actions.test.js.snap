@@ -15,7 +15,7 @@ Object {
 
 exports[`General actions should create an action to indicate that a feature slider is being dragged 1`] = `
 Object {
-  "filterIndex": 0,
+  "featureIndex": 0,
   "type": "START_DRAGGING_FEATURE_SLIDER",
 }
 `;
@@ -60,19 +60,19 @@ Object {
 
 exports[`General actions should create an action to toggle whether a feature is drawn in chart 1`] = `
 Object {
-  "filterIndex": 0,
+  "featureIndex": 0,
   "newValue": false,
   "type": "TOGGLE_CHARTED_FEATURE",
 }
 `;
 
-exports[`General actions should create an action to update a filter's range value 1`] = `
+exports[`General actions should create an action to update a feature filter's range value 1`] = `
 Object {
   "data": Array [
     0,
     1,
   ],
-  "filterIndex": 0,
-  "type": "UPDATE_FILTER",
+  "featureIndex": 0,
+  "type": "UPDATE_FEATURE_FILTER",
 }
 `;
