@@ -24,13 +24,7 @@ class SidebarNav extends Component {
   }
 
   onClick(e) {
-    const selectedPlaylist = this.props.selectedPlaylist;
-
-    //don't change tabs when clicked tab is disabled (i.e., when no selected playlist):
-    const validChange = e.target.id === 'tab-playlists' || selectedPlaylist.id;
-    if (validChange) {
-      this.props.handleTabSelect(e.target.id);
-    }
+    this.props.handleTabSelect(e.target.id)
   }
 
   componentDidUpdate() {

@@ -34,6 +34,14 @@ export const userFlowMiddleware = ({
       dispatch(getAudioFeatures(action.payload.items));
       break;
 
+    case 'SET_ACTIVE_TAB':
+      if (state.selectedPlaylist && state.selectedPlaylist.id) {
+        next(action);
+        break;
+      } else {
+        return;
+      }
+
     case 'CREATE_PLAYLIST_SUCCESS':
       dispatch(
         addTracksToPlaylist(

@@ -1,5 +1,5 @@
 {
-  "name": "Playlist Dashboard for Spotify",
+  "name": "playlist-dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

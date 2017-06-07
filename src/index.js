@@ -14,7 +14,7 @@ import { apiMiddleware } from './middleware/apiMiddleware';
 import { userFlowMiddleware } from './middleware/userFlowMiddleware';
 import { authMiddleware } from './middleware/authMiddleware';
 
-// (the second argument enables Redux dev tools in browser)
+// (Enables Redux dev tools in browser)
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
