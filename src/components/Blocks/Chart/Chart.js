@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const Chart = props =>
+export const Chart = props =>
   <div className="chart__pane">
     <FeaturesLineChart {...props} />
   </div>;

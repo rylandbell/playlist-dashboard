@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturesLineChart component shallow render matches snapshot 1`] = `
+<ResponsiveContainer
+  debounce={0}
+  height={200}
+  minHeight={200}
+  minWidth={200}
+  width="100%"
+>
+  <AnimationDecorator(ComposedDataDecorator(LineChart))
+    data={
+      Array [
+        Object {},
+        Object {
+          "acousticness": 0.575,
+          "artist": "KMD",
+          "danceability": 0.881,
+          "duration_ms": 241626,
+          "energy": 0.836,
+          "id": "6UUY9L3jGnK507sKWK20s3",
+          "instrumentalness": 0,
+          "liveness": 0.105,
+          "name": "Peachfuzz",
+          "popularity": 0.35,
+          "uri": "spotify:track:6UUY9L3jGnK507sKWK20s3",
+          "valence": 0.461,
+        },
+        Object {
+          "acousticness": 0.046,
+          "artist": "Tidus",
+          "danceability": 0.939,
+          "duration_ms": 192000,
+          "energy": 0.653,
+          "id": "0tJWc3RXOuli1FjEgzpCn7",
+          "instrumentalness": 0.277,
+          "liveness": 0.0336,
+          "name": "Delancey",
+          "popularity": 0.41,
+          "uri": "spotify:track:0tJWc3RXOuli1FjEgzpCn7",
+          "valence": 0.81,
+        },
+      ]
+    }
+    layout="horizontal"
+    margin={
+      Object {
+        "bottom": 0,
+        "left": -20,
+        "right": 10,
+        "top": 20,
+      }
+    }
+    stackOffset="none"
+  >
+    <XAxis
+      allowDataOverflow={false}
+      allowDecimals={true}
+      domain={
+        Array [
+          0,
+          "auto",
+        ]
+      }
+      height={30}
+      hide={false}
+      interval={4}
+      label={null}
+      mirror={false}
+      orientation="bottom"
+      padding={
+        Object {
+          "left": 0,
+          "right": 0,
+        }
+      }
+      reversed={false}
+      scale="auto"
+      stroke="rgb(186,186,186)"
+      strokeWidth={1}
+      tick={
+        Object {
+          "dy": 5,
+        }
+      }
+      tickCount={5}
+      type="category"
+      width={0}
+      xAxisId={0}
+    />
+    <YAxis
+      allowDataOverflow={false}
+      allowDecimals={true}
+      domain={
+        Array [
+          0,
+          1,
+        ]
+      }
+      height={0}
+      hide={false}
+      interval={1}
+      mirror={false}
+      orientation="left"
+      padding={
+        Object {
+          "bottom": 15,
+        }
+      }
+      reversed={false}
+      scale="auto"
+      stroke="rgb(186,186,186)  "
+      strokeWidth={1}
+      tick={
+        Object {
+          "dx": -5,
+        }
+      }
+      tickCount={5}
+      type="number"
+      width={60}
+      yAxisId={0}
+    />
+    <Legend
+      align="center"
+      iconSize={18}
+      layout="horizontal"
+      verticalAlign="bottom"
+    />
+    <ReferenceLine
+      alwaysShow={false}
+      fill="none"
+      fillOpacity={1}
+      isFront={false}
+      labelPosition="end"
+      stroke="#ccc"
+      strokeWidth={1}
+      x={0}
+      xAxisId={0}
+      yAxisId={0}
+    />
+    <ReferenceLine
+      alwaysShow={false}
+      fill="none"
+      fillOpacity={1}
+      isFront={false}
+      label={0}
+      labelPosition="end"
+      stroke="hsl(194, 66%, 61%)"
+      strokeDasharray="3 3"
+      strokeWidth={1}
+      xAxisId={0}
+      y={0}
+      yAxisId={0}
+    />
+    <ReferenceLine
+      alwaysShow={false}
+      fill="none"
+      fillOpacity={1}
+      isFront={false}
+      label={1}
+      labelPosition="end"
+      stroke="hsl(194, 66%, 61%)"
+      strokeDasharray="3 3"
+      strokeWidth={1}
+      xAxisId={0}
+      y={1}
+      yAxisId={0}
+    />
+    <Tooltip
+      active={false}
+      animationDuration={400}
+      animationEasing="ease"
+      content={<TrackInfoTooltip />}
+      coordinate={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      cursor={true}
+      cursorStyle={Object {}}
+      isAnimationActive={true}
+      itemSorter={[Function]}
+      itemStyle={Object {}}
+      labelStyle={Object {}}
+      offset={10}
+      separator=" : "
+      viewBox={
+        Object {
+          "x1": 0,
+          "x2": 0,
+          "y1": 0,
+          "y2": 0,
+        }
+      }
+      wrapperStyle={Object {}}
+    />
+    <Line
+      activeDot={
+        Object {
+          "r": 8,
+        }
+      }
+      animationBegin={0}
+      animationDuration={1500}
+      animationEasing="ease"
+      connectNulls={true}
+      dataKey="danceability"
+      dot={false}
+      fill="#fff"
+      isAnimationActive={true}
+      legendType="line"
+      name="Danceability"
+      onAnimationEnd={[Function]}
+      onAnimationStart={[Function]}
+      points={Array []}
+      stroke="hsl(194, 46%, 21%)"
+      strokeWidth={2}
+      type="monotone"
+      xAxisId={0}
+      yAxisId={0}
+    />
+  </AnimationDecorator(ComposedDataDecorator(LineChart))>
+</ResponsiveContainer>
+`;

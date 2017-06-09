@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrackInfoTooltip component shallow render matches snapshot 1`] = `
+<div
+  className="chart__track-info-tooltip"
+>
+  <p
+    className="desc"
+  >
+    testName
+  </p>
+</div>
+`;

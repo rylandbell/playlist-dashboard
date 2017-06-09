@@ -53,7 +53,7 @@ class FeaturesLineChart extends Component {
       this.props.mediaType === 'extraSmall' || this.props.mediaType === 'small';
 
     return (
-      <ResponsiveContainer width="100%" height={smallWindow ? 200 : 300}>
+      <ResponsiveContainer width="100%" minWidth={200} minHeight={200} height={smallWindow ? 200 : 300}>
         <LineChart
           data={shiftedChartData}
           margin={{ top: 20, right: 10, left: -20, bottom: 0 }}

@@ -58,6 +58,15 @@ Object {
 }
 `;
 
+exports[`General actions should create an action to toggle sorted feature 1`] = `
+Object {
+  "payload": Object {
+    "featureName": "testFeatureName",
+  },
+  "type": "SORT_BY_FEATURE",
+}
+`;
+
 exports[`General actions should create an action to toggle whether a feature is drawn in chart 1`] = `
 Object {
   "featureIndex": 0,

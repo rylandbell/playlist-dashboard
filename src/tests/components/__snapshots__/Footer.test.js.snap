@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component shallow render matches snapshot 1`] = `
+<div
+  className="footer"
+>
+  <ul
+    className="list-inline"
+  >
+    <li>
+      <small>
+        View project on 
+        <a
+          href="https://github.com/rylandbell/playlist-dashboard"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </small>
+    </li>
+    <li>
+      <small>
+        Audio features data by 
+        <a
+          href="https://spotify.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Spotify
+        </a>
+      </small>
+    </li>
+    <li>
+      <small>
+        Icons by 
+        <a
+          href="https://icons8.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Icons8
+        </a>
+      </small>
+    </li>
+  </ul>
+</div>
+`;

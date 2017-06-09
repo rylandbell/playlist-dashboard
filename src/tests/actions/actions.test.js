@@ -13,6 +13,10 @@ describe('General actions', () => {
     expect(actions.setActiveTab('testTabName')).toMatchSnapshot();
   });
 
+  it('should create an action to toggle sorted feature', () => {
+    expect(actions.sortByFeature('testFeatureName')).toMatchSnapshot();
+  });
+
   it('should create an action to change playlist name input text', () => {
     expect(actions.changeNameText('testInput')).toMatchSnapshot();
   });

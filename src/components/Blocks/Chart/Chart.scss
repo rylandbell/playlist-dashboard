@@ -3,6 +3,7 @@
 .chart__pane {
   padding-top: 10px;
   padding-left: 15px;
+  min-width: 100px;
 
   @media (max-width: 768px) {
     padding-left: 0;

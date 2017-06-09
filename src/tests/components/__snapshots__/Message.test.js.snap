@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message component shallow render matches snapshot 1`] = `
+<div
+  className="text-center"
+>
+  <div
+    className="message test class list"
+  >
+    <i
+      className="fa fa-check"
+    >
+       
+    </i>
+    <i
+      className="fa fa-exclamation-triangle"
+    >
+       
+    </i>
+    Test message text
+    <i
+      className="fa fa-spinner fa-spin fa-fw"
+    />
+  </div>
+</div>
+`;

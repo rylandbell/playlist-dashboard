@@ -26,7 +26,7 @@ export const tracks = (state = [], action) => {
           };
         } else {
           console.log('ID mismatch');
-          return state;
+          return stateData;
         }
       });
     default:

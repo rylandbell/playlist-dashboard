@@ -16,10 +16,13 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "node-sass-chokidar": "0.0.1",
     "npm-run-all": "^4.0.2",
     "react-scripts": "canary",
-    "react-snapshot": "^1.1.0"
+    "react-snapshot": "^1.1.0",
+    "react-test-renderer": "^15.5.4"
   },
   "scripts": {
     "start-js": "react-scripts start",

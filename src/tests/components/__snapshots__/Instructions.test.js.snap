@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions component shallow render matches snapshot 1`] = `
+<div
+  className="instructions__wrapper"
+>
+  <div
+    className="instructions"
+  >
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <img
+              alt="playlist icon"
+              src="playlist.png"
+            />
+          </td>
+          <td>
+            <h3>
+               Select a playlist. 
+            </h3>
+            <div
+              className="lead"
+            >
+              Not sure what to choose? Try Discover Weekly.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              alt="playlist icon"
+              src="filter.png"
+            />
+          </td>
+          <td>
+            <h3>
+               Adjust some filters. 
+            </h3>
+            <div
+              className="lead"
+            >
+              Refine your playlists by setting an allowed range for any number of audio features. Heading to the gym? Look for high-energy, high-danceability tracks. Want to focus? Look for tracks with a high instrumentalness score.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              alt="playlist icon"
+              src="save.png"
+            />
+          </td>
+          <td>
+            <h3>
+               Save the result as a new Spotify playlist. 
+            </h3>
+            <div
+              className="lead"
+            >
+              Don't worry - the original playlist will not be altered.
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <Footer />
+</div>
+`;
