@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TracksTableRow component shallow render matches snapshot 1`] = `
+<tr
+  onMouseEnter={[Function]}
+>
+  <td>
+    Peachfuzz
+     
+    <small>
+      KMD
+    </small>
+  </td>
+  <td
+    className="text-center hidden-xs"
+  >
+    0.88
+  </td>
+  <td
+    className="text-center hidden-xs"
+  >
+    0.84
+  </td>
+  <td
+    className="text-center hidden-xs"
+  >
+    0.46
+  </td>
+  <td
+    className="text-center hidden-xs"
+  >
+    0.35
+  </td>
+  <td
+    className="text-center hidden-xs"
+  >
+    0.57
+  </td>
+  <td
+    className="text-center hidden-xs"
+  >
+    0.00
+  </td>
+</tr>
+`;

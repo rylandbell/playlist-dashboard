@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TracksTableHeadCell component shallow render matches snapshot 1`] = `
+<th
+  className="tracks__table-head-cell text-center hidden-xs noselect"
+  onClick={[Function]}
+>
+  Dance
+   
+  <span
+    className="transparent fa fa-sort-desc"
+  />
+</th>
+`;

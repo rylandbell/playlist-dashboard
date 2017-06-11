@@ -27,7 +27,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const Tracks = ({
+export const Tracks = ({
   fetchStatus,
   features,
   filteredTracks,
