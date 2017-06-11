@@ -6,7 +6,7 @@ Spotify algorithmically computes numerical values to describe song features like
 Live version available [here]( https://spotify.ryland-bell.com).
 
 ## Usage
-<img src="http://g.recordit.co/KW0kfB6X2O.gif" width=100%>
+<img src="./media/demo.gif" width=100%>
 
 ### Connect to Spotify
 Playlist Dashboard needs to be able to
