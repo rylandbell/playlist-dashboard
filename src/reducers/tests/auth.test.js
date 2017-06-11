@@ -1,4 +1,4 @@
-import * as reducers from '../../reducers/auth';
+import * as reducers from '../auth';
 
 describe('Authorization reducers', () => {
   describe('accessToken', () => {

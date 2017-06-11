@@ -1,4 +1,4 @@
-import * as actions from '../../actions/data';
+import * as actions from '../data';
 
 const testData = { data: 'test' };
 

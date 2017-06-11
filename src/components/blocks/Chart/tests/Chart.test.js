@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
-import ChartContainer, { Chart } from "../../../components/blocks/Chart/Chart";
+import ChartContainer, { Chart } from "../Chart";
 import { testFeaturesData, testFilteredTracks } from "./test-data";
 
 describe("Chart component", () => {

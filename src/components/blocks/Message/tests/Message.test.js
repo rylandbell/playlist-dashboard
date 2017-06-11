@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import Message from "../../components/blocks/Message/Message";
+import Message from "../Message";
 
 describe('Message component', () => {
   it('renders without crashing', () => {

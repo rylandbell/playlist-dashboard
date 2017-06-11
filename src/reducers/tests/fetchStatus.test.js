@@ -1,4 +1,4 @@
-import * as reducers from "../../reducers/fetchStatus";
+import * as reducers from "../fetchStatus";
 
 const pendingReducers = [
   { name: "getPlaylistsPending", actionPrefix: "GET_PLAYLISTS" },

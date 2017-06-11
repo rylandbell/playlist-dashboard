@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
-import FeaturesLineChart from "../../../components/blocks/Chart/FeaturesLineChart";
+import FeaturesLineChart from "../FeaturesLineChart";
 import { testFeaturesData, testFilteredTracks } from "./test-data";
 
 describe("FeaturesLineChart component", () => {

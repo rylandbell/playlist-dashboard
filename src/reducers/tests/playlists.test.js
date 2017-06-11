@@ -1,5 +1,5 @@
 import deepFreeze from 'deep-freeze';
-import * as reducers from '../../reducers/playlists';
+import * as reducers from '../playlists';
 
 describe('Playlist reducers', () => {
   describe('playlists', () => {

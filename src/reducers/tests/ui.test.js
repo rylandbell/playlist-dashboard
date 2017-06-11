@@ -1,4 +1,4 @@
-import * as reducers from '../../reducers/ui';
+import * as reducers from '../ui';
 
 describe('UI reducers', () => {
   describe('hoveredTrackId', () => {

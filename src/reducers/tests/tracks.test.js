@@ -1,5 +1,5 @@
 import deepFreeze from 'deep-freeze';
-import * as reducers from '../../reducers/tracks';
+import * as reducers from '../tracks';
 import {testTracksData, testFeaturesData} from './data';
 
 describe('Tracks reducers', () => {

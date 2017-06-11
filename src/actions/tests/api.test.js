@@ -1,4 +1,4 @@
-import * as actions from '../../actions/api';
+import * as actions from '../api';
 
 const testTracksArray = [{ track: { id: 1 } }, { track: { id: 2 } }];
 

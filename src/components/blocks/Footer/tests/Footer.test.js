@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
-import Footer from "../../components/blocks/Footer/Footer";
+import Footer from "../Footer";
 
 describe("Footer component", () => {
   it("renders without crashing", () => {
