@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectedTracksCount component shallow render matches snapshot 1`] = `
+<div>
+  <span
+    className="playlist-heading__tracks-count"
+  >
+    2 of 3 songs, 6 hr 46 min
+  </span>
+</div>
+`;

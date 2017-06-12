@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helper functions getPlaylistDuration should return the combined length of tracks, in hours and minutes 1`] = `
+Object {
+  "hr": 2,
+  "min": 57,
+}
+`;

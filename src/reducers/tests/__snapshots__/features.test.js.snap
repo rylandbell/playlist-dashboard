@@ -1,0 +1,617 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Features reducers feature's sortBy value should go from "ascending" to "descending" for SORT_BY_FILTER actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": "descending",
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "acousticness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;
+
+exports[`Features reducers feature's sortBy value should go from "descending" to false for SORT_BY_FILTER actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "acousticness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;
+
+exports[`Features reducers feature's sortBy value should go from false to "ascending" for SORT_BY_FILTER actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": "ascending",
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "acousticness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;
+
+exports[`Features reducers features not included in payload should have sortBy values set to false for SORT_BY_FILTER actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": "ascending",
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "acousticness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;
+
+exports[`Features reducers should set all isDim and showReferenceLine values to false for a single feature with STOP_DRAGGING_FEATURE_SLIDER actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "acousticness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;
+
+exports[`Features reducers should showReferenceLine for a single feature, and set all other featuers to isDim, with START_DRAGGING_FEATURE_SLIDER actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": true,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": true,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": true,
+    "isGraphed": false,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": true,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "acousticness",
+    "showReferenceLine": true,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": true,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;
+
+exports[`Features reducers should update filter value for a single feature with UPDATE_FEATURE_FILTER actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0.1,
+      0.2,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "acousticness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;
+
+exports[`Features reducers should update isCharted value for a single feature with TOGGLE_CHARTED_FEATURE actions 1`] = `
+Array [
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "danceability",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "energy",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": true,
+    "name": "valence",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "popularity",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "acousticness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+  Object {
+    "currentValue": Array [
+      0,
+      1,
+    ],
+    "isActive": true,
+    "isDim": false,
+    "isGraphed": false,
+    "name": "instrumentalness",
+    "showReferenceLine": false,
+    "sortBy": false,
+  },
+]
+`;

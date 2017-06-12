@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
   return {};
 };
 
-const PlaylistHeading = ({
+export const PlaylistHeading = ({
   userId,
   selectedPlaylist,
   filteredTracks,
