@@ -27,7 +27,7 @@ export const PlaylistHeading = ({
   const idMatch = userId === playlistOwnerId;
   const coverImage = selectedPlaylist.images.slice(-1)[0];
   return (
-    <div>
+    <div className="playlist-heading">
       <img
         className="playlist-heading__image hidden-xs"
         src={coverImage.url}

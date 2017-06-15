@@ -1,5 +1,22 @@
 @import 'variables';
 
+.playlist-heading {
+  display: flex;
+}
+
+.playlist-heading__image {
+  flex: 0 0 48px;
+  height: 48px;
+  // vertical-align: top;
+  align-self: top;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.playlist-heading__text {
+  flex: 1 1 auto;
+}
+
 .playlist-heading__title {
   color: white;
   margin-top: 5px;
@@ -13,14 +30,4 @@
   margin-left: 2px;
 }
 
-.playlist-heading__image {
-  width: 48px;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-  margin-top: 4px;
-}
 
-.playlist-heading__text {
-  display: inline-block;
-}
