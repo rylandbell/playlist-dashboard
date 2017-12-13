@@ -1,4 +1,4 @@
-export const tracks = (state = [], action) => {
+ export const tracks = (state = [], action) => {
   switch (action.type) {
     case 'SELECT_PLAYLIST':
       return action.data ? [] : state;
@@ -25,7 +25,6 @@ export const tracks = (state = [], action) => {
             instrumentalness: features[index].instrumentalness
           };
         } else {
-          console.log('ID mismatch');
           return stateData;
         }
       });

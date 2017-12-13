@@ -14,8 +14,8 @@ describe("TracksTableHeadCell component", () => {
 };
 
   it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<TracksTableHeadCell {...props} />, div);
+    const parentNode = document.createElement("tr");
+    ReactDOM.render(<TracksTableHeadCell {...props} />, parentNode);
   });
 
   it("shallow render matches snapshot", () => {

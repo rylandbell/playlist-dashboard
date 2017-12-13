@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PlaylistHeading component shallow render matches snapshot 1`] = `
-<div>
+<div
+  className="playlist-heading"
+>
   <img
     alt="playlist cover"
     className="playlist-heading__image hidden-xs"
